@@ -10,5 +10,58 @@
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Stable Baselines</title>
+      <link>/project/stable-baselines/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/project/stable-baselines/</guid>
+      <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can read a detailed presentation of Stable Baselines in the &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34;&gt;Medium article&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
+      <link>/publication/srl-toolbox/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/srl-toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PythonRobotics: a Python code collection of robotics algorithms</title>
+      <link>/publication/python-robotics/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/python-robotics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Racing Robot</title>
+      <link>/project/racing-robot/</link>
+      <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/project/racing-robot/</guid>
+      <description>&lt;p&gt;Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: &lt;a href=&#34;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34;&gt;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Video of the car: &lt;a href=&#34;https://www.youtube.com/watch?v=xhI71ZdSh6k&#34; target=&#34;_blank&#34;&gt;https://www.youtube.com/watch?v=xhI71ZdSh6k&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unsupervised learning of state representations for multiple tasks</title>
+      <link>/publication/multiple-tasks-srl/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/multiple-tasks-srl/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

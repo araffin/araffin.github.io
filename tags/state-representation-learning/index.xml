@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>State Representation Learning on Antonin Raffin | Homepage</title>
+    <link>/tags/state-representation-learning/</link>
+    <description>Recent content in State Representation Learning on Antonin Raffin | Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/state-representation-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
+      <link>/publication/srl-toolbox/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/srl-toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unsupervised learning of state representations for multiple tasks</title>
+      <link>/publication/multiple-tasks-srl/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/multiple-tasks-srl/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

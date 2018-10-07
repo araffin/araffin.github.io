@@ -7,9 +7,100 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 27 Oct 2017 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arduino</title>
+      <link>/tags/arduino/</link>
+      <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/arduino/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>/tags/deep-learning/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kalman Filter</title>
+      <link>/tags/kalman-filter/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/kalman-filter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Path Planning</title>
+      <link>/tags/path-planning/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/path-planning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Path Tracking</title>
+      <link>/tags/path-tracking/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/path-tracking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>/tags/reinforcement-learning/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/reinforcement-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robotics</title>
+      <link>/tags/robotics/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/robotics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>State Representation Learning</title>
+      <link>/tags/state-representation-learning/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/tags/state-representation-learning/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

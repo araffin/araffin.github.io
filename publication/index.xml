@@ -12,5 +12,32 @@
 	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
+      <link>/publication/srl-toolbox/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/srl-toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PythonRobotics: a Python code collection of robotics algorithms</title>
+      <link>/publication/python-robotics/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/python-robotics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unsupervised learning of state representations for multiple tasks</title>
+      <link>/publication/multiple-tasks-srl/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/multiple-tasks-srl/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

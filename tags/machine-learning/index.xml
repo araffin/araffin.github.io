@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Antonin Raffin | Homepage</title>
+    <link>/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Antonin Raffin | Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stable Baselines</title>
+      <link>/project/stable-baselines/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/project/stable-baselines/</guid>
+      <description>Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.
+Github repository: https://github.com/hill-a/stable-baselines
+You can read a detailed presentation of Stable Baselines in the Medium article</description>
+    </item>
+    
+    <item>
+      <title>Racing Robot</title>
+      <link>/project/racing-robot/</link>
+      <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/project/racing-robot/</guid>
+      <description>Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63
+Video of the car: https://www.youtube.com/watch?v=xhI71ZdSh6k</description>
+    </item>
+    
+  </channel>
+</rss>

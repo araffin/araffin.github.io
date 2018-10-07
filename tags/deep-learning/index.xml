@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning on Antonin Raffin | Homepage</title>
+    <link>/tags/deep-learning/</link>
+    <description>Recent content in Deep Learning on Antonin Raffin | Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stable Baselines</title>
+      <link>/project/stable-baselines/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/project/stable-baselines/</guid>
+      <description>Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.
+Github repository: https://github.com/hill-a/stable-baselines
+You can read a detailed presentation of Stable Baselines in the Medium article</description>
+    </item>
+    
+  </channel>
+</rss>

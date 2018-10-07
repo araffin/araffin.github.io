@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reinforcement Learning on Antonin Raffin | Homepage</title>
+    <link>/tags/reinforcement-learning/</link>
+    <description>Recent content in Reinforcement Learning on Antonin Raffin | Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stable Baselines</title>
+      <link>/project/stable-baselines/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/project/stable-baselines/</guid>
+      <description>Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.
+Github repository: https://github.com/hill-a/stable-baselines
+You can read a detailed presentation of Stable Baselines in the Medium article</description>
+    </item>
+    
+    <item>
+      <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
+      <link>/publication/srl-toolbox/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/srl-toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unsupervised learning of state representations for multiple tasks</title>
+      <link>/publication/multiple-tasks-srl/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/multiple-tasks-srl/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
