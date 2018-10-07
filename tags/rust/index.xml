@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arduino on Antonin Raffin | Homepage</title>
-    <link>/tags/arduino/</link>
-    <description>Recent content in Arduino on Antonin Raffin | Homepage</description>
+    <title>Rust on Antonin Raffin | Homepage</title>
+    <link>/tags/rust/</link>
+    <description>Recent content in Rust on Antonin Raffin | Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 27 Oct 2017 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Racing Robot</title>
-      <link>/project/racing-robot/</link>
-      <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
-      
-      <guid>/project/racing-robot/</guid>
-      <description>Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63
-Video of the car: https://www.youtube.com/watch?v=xhI71ZdSh6k</description>
-    </item>
     
     <item>
       <title>Arduino Robust Serial</title>

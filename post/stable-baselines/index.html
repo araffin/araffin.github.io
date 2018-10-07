@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -17,10 +15,10 @@
   
     
   
-  <meta name="description" content="Research Engineer in Robotics and Machine Learning">
+  <meta name="description" content="Unified structure (scikit-learn like interface) and single codestyle with documentation">
 
   
-  <link rel="alternate" hreflang="en-us" href="/tags/">
+  <link rel="alternate" hreflang="en-us" href="/post/stable-baselines/">
 
   
 
@@ -80,15 +78,15 @@
   
 
   
-  <link rel="alternate" href="/tags/index.xml" type="application/rss+xml" title="Antonin Raffin | Homepage">
-  <link rel="feed" href="/tags/index.xml" type="application/rss+xml" title="Antonin Raffin | Homepage">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Antonin Raffin | Homepage">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Antonin Raffin | Homepage">
   
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/tags/">
+  <link rel="canonical" href="/post/stable-baselines/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -96,23 +94,25 @@
   <meta property="twitter:creator" content="@araffin2">
   
   <meta property="og:site_name" content="Antonin Raffin | Homepage">
-  <meta property="og:url" content="/tags/">
-  <meta property="og:title" content="Tags | Antonin Raffin | Homepage">
-  <meta property="og:description" content="Research Engineer in Robotics and Machine Learning">
+  <meta property="og:url" content="/post/stable-baselines/">
+  <meta property="og:title" content="Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy | Antonin Raffin | Homepage">
+  <meta property="og:description" content="Unified structure (scikit-learn like interface) and single codestyle with documentation">
   
   
     
   <meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2017-10-27T00:00:00&#43;02:00">
+  <meta property="article:published_time" content="2018-08-20T00:00:00&#43;02:00">
+  
+  <meta property="article:modified_time" content="2018-10-01T00:00:00&#43;02:00">
   
 
   
 
   
 
-  <title>Tags | Antonin Raffin | Homepage</title>
+  <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy | Antonin Raffin | Homepage</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
@@ -244,102 +244,142 @@
 </nav>
 
 
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
 
 
 
 
+  <div class="article-container">
+    <h1 itemprop="name">Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</h1>
 
-
-<div class="universal-wrapper">
-  <h1>Tags</h1>
-
-  
-
-  
-  
-  <div>
-    <h2><a href="/tags/arduino/">Arduino</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/c&#43;&#43;/">C&#43;&#43;</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/deep-learning/">Deep Learning</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/kalman-filter/">Kalman Filter</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/machine-learning/">Machine Learning</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/path-planning/">Path Planning</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/path-tracking/">Path Tracking</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/python/">Python</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/reinforcement-learning/">Reinforcement Learning</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/tags/robotics/">Robotics</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-
-  
-<nav>
-  <ul class="pagination justify-content-center">
     
+
+<div class="article-metadata">
+
+  
+  
+  
+  <div>
     
-    <li class="page-item"><a class="page-link" href="/tags/page/2/">&raquo;</a></li>
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">Antonin Raffin</span>
+    </span>, 
     
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">Ashley Hill</span>
+    </span>
+    
+  </div>
+  
+
+  <span class="article-date">
+    
+        Last updated on
+    
+    <meta content="2018-08-20 00:00:00 &#43;0200 CEST" itemprop="datePublished">
+    <time datetime="2018-10-01 00:00:00 &#43;0200 CEST" itemprop="dateModified">
+      Oct 1, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Antonin Raffin">
+  </span>
+
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Stable%20Baselines%3a%20a%20Fork%20of%20OpenAI%20Baselines%e2%80%8a%e2%80%94%e2%80%8aReinforcement%20Learning%20Made%20Easy&amp;url=%2fpost%2fstable-baselines%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fstable-baselines%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fstable-baselines%2f&amp;title=Stable%20Baselines%3a%20a%20Fork%20of%20OpenAI%20Baselines%e2%80%8a%e2%80%94%e2%80%8aReinforcement%20Learning%20Made%20Easy"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fstable-baselines%2f&amp;title=Stable%20Baselines%3a%20a%20Fork%20of%20OpenAI%20Baselines%e2%80%8a%e2%80%94%e2%80%8aReinforcement%20Learning%20Made%20Easy"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Stable%20Baselines%3a%20a%20Fork%20of%20OpenAI%20Baselines%e2%80%8a%e2%80%94%e2%80%8aReinforcement%20Learning%20Made%20Easy&amp;body=%2fpost%2fstable-baselines%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
   </ul>
-</nav>
+</div>
 
+
+  
 
 </div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Read the full article on <a href="https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82" target="_blank">Medium</a></p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/reinforcement-learning/">Reinforcement Learning</a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/publication/multiple-tasks-srl/">Unsupervised learning of state representations for multiple tasks</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
 <div class="container">
   <footer class="site-footer">
   
@@ -478,6 +518,4 @@
 
   </body>
 </html>
-
-
 

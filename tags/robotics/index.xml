@@ -22,6 +22,24 @@
     </item>
     
     <item>
+      <title>Simple and Robust {Computer — Arduino} Serial Communication</title>
+      <link>/post/arduino-serial/</link>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/post/arduino-serial/</guid>
+      <description>Read the full article on Medium</description>
+    </item>
+    
+    <item>
+      <title>Autonomous Racing Robot With an Arduino, a Raspberry Pi and a Pi Camera</title>
+      <link>/post/racing-robot/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0100</pubDate>
+      
+      <guid>/post/racing-robot/</guid>
+      <description>Read the full article on Medium</description>
+    </item>
+    
+    <item>
       <title>Racing Robot</title>
       <link>/project/racing-robot/</link>
       <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
@@ -29,6 +47,18 @@
       <guid>/project/racing-robot/</guid>
       <description>Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63
 Video of the car: https://www.youtube.com/watch?v=xhI71ZdSh6k</description>
+    </item>
+    
+    <item>
+      <title>Arduino Robust Serial</title>
+      <link>/project/arduino-robust-serial/</link>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/project/arduino-robust-serial/</guid>
+      <description>Robust Arduino Serial is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.
+Please read the Medium Article to have an overview of this protocol.
+Implementations are available in various programming languages:
+ Arduino (arduino-serial/ folder) Python C++ Rust  </description>
     </item>
     
   </channel>

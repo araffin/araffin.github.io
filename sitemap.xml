@@ -28,8 +28,40 @@
     
     <url>
     
+      <loc>/post/stable-baselines/</loc>
+      <lastmod>2018-10-01T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/arduino-serial/</loc>
+      <lastmod>2018-03-01T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/racing-robot/</loc>
+      <lastmod>2018-01-01T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/project/racing-robot/</loc>
       <lastmod>2017-10-27T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/arduino-robust-serial/</loc>
+      <lastmod>2017-10-26T00:00:00+02:00</lastmod>
     </url>
     
   
@@ -88,6 +120,15 @@
     
       <loc>/tags/arduino/</loc>
       <lastmod>2017-10-27T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/c&#43;&#43;/</loc>
+      <lastmod>2017-10-26T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -186,6 +227,15 @@
     
       <loc>/tags/robotics/</loc>
       <lastmod>2018-08-31T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/rust/</loc>
+      <lastmod>2017-10-26T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     

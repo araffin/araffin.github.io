@@ -33,5 +33,17 @@ You can read a detailed presentation of Stable Baselines in the Medium article</
 Video of the car: https://www.youtube.com/watch?v=xhI71ZdSh6k</description>
     </item>
     
+    <item>
+      <title>Arduino Robust Serial</title>
+      <link>/project/arduino-robust-serial/</link>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/project/arduino-robust-serial/</guid>
+      <description>Robust Arduino Serial is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.
+Please read the Medium Article to have an overview of this protocol.
+Implementations are available in various programming languages:
+ Arduino (arduino-serial/ folder) Python C++ Rust  </description>
+    </item>
+    
   </channel>
 </rss>
