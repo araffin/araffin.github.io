@@ -11,6 +11,36 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>S-RL Toolbox</title>
+      <link>/project/srl-toolbox/</link>
+      <pubDate>Wed, 10 Oct 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/project/srl-toolbox/</guid>
+      <description>
+
+&lt;p&gt;S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34; target=&#34;_blank&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Documentation: &lt;a href=&#34;https://s-rl-toolbox.readthedocs.io&#34; target=&#34;_blank&#34;&gt;https://s-rl-toolbox.readthedocs.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Paper: &lt;a href=&#34;https://arxiv.org/abs/1809.09369&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1809.09369&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;main-features&#34;&gt;Main Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;10 RL algorithms (&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34;&gt;Stable Baselines&lt;/a&gt; included)&lt;/li&gt;
+&lt;li&gt;logging / plotting / visdom integration / replay trained agent&lt;/li&gt;
+&lt;li&gt;hyperparameter search (hyperband, hyperopt)&lt;/li&gt;
+&lt;li&gt;integration with State Representation Learning (SRL) methods (for feature extraction)&lt;/li&gt;
+&lt;li&gt;visualisation tools (explore latent space, display action proba, live plot in the state space, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;robotics environments to compare SRL methods&lt;/li&gt;
+&lt;li&gt;easy install using anaconda env or Docker images (CPU/GPU)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Stable Baselines</title>
       <link>/project/stable-baselines/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
