@@ -548,25 +548,28 @@ a[data-fancybox] img {
   margin: 0px 0 10px 0;
 }
 
-#profile ul.network-icon {
+ul.network-icon {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   padding: 0;
+}
+
+#profile .network-icon {
   margin-top: 30px;
 }
 
-#profile .network-icon li {
+.network-icon li {
   margin-right: 10px;
 }
 
-#profile .network-icon li:last-of-type {
+.network-icon li:last-of-type {
   margin-right: 0;
 }
 
-#profile .network-icon li:hover {
+.network-icon li:hover {
   transform: scale(1.2)
 }
 
@@ -637,6 +640,10 @@ ul.share li i {
   color: #fff;
 }
 
+.dark ul.share li i {
+  color: rgb(68, 71, 90);
+}
+
 ul.share li a {
   background-color: #b5c6ce;
   display: block;
@@ -650,7 +657,7 @@ ul.share li:hover i {
 }
 
 /*************************************************
- *  Blog Articles
+ *  Page content style
  **************************************************/
 
 article {
@@ -660,12 +667,49 @@ article {
 
 .article-container {
   max-width: 760px;
-  padding: 1rem 20px 0 20px;
+  padding: 0 20px 0 20px;
   margin: 0 auto 0 auto;
 }
 
+.split-header {
+  margin-bottom: 2rem;
+}
+
+.split-header .share-box {
+  float: left;
+}
+
+.page-subtitle {
+  font-size: 1.15rem;
+  color: rgba(0,0,0,.54);
+  margin-bottom: 1rem;
+}
+
+.dark .page-subtitle {
+  color: rgba(255,255,255,0.54);
+}
+
+.split-header .page-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.split-header-content {
+  max-width: 612px;
+  width: 100%;
+  padding: 60px 60px 32px 0;
+  margin-left: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.split-header-image {
+  position: relative; /* Required for caption positioning */
+  clear: both;
+  max-width: 580px;
+}
+
 .article-header {
-  position: relative;
+  position: relative; /* Required for caption positioning */
   clear: both;
 }
 
@@ -708,12 +752,28 @@ article {
   transition: color 0.6s ease;
 }
 
+.text-muted {
+  color: rgba(0,0,0,0.54); /* Override Bootstrap */
+}
+
+.dark .text-muted {
+  color: rgba(255,255,255,0.54);
+}
+
 .article-metadata {
   margin-bottom: 15px;
   overflow: hidden;
   font-size: 14px;
   letter-spacing: 0.03em;
-  color: #888;
+  color: rgba(0,0,0,0.54);
+}
+
+.dark .article-metadata {
+  color: rgba(255,255,255,0.54);
+}
+
+.stream-meta.article-metadata {
+  margin-bottom: 5px;
 }
 
 /* For article page only, not lists. */
@@ -724,6 +784,10 @@ article .article-metadata {
 
 .article-metadata a {
   color: rgba(0,0,0,.54);
+}
+
+.dark .article-metadata a {
+  color: rgba(255,255,255,0.54);
 }
 
 .article-metadata a:hover {
@@ -817,6 +881,69 @@ article .article-metadata {
 }
 
 /*************************************************
+ *  Author profile card
+ **************************************************/
+
+.author-card {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,.05);
+}
+
+.dark .author-card {
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+
+.author-card .portrait {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-card .card-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.author-card .card-title a {
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.dark .author-card .card-title,
+.dark .author-card .card-title a {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.author-card p {
+  margin-bottom: 5px;
+}
+
+.author-card .card-subtitle {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.54);
+  margin-bottom: 7px;
+}
+
+.dark .author-card .card-subtitle {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.author-card .card-text {
+  color: rgba(0, 0, 0, 0.76);
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.dark .author-card .card-text {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/*************************************************
  *  Publications
  **************************************************/
 
@@ -849,13 +976,19 @@ article .article-metadata {
 .pub-list-item .pub-authors {
   line-height: normal;
   font-style: normal;
-  font-size: 1rem;
-  color: #3170A5;
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.54);
 }
 
 .pub-list-item .pub-publication {
-  color: #090;
-  font-size: 1rem;
+  color: rgba(0,0,0,0.54);
+  font-size: 0.9rem;
+}
+
+
+.dark .pub-authors,
+.dark .pub-publication {
+  color: rgba(255,255,255,0.54);
 }
 
 .pub-list-item .pub-links {
@@ -1037,8 +1170,12 @@ article .article-metadata {
 }
 
 .card .card-text p {
-  color: #999999;
+  color: rgba(0,0,0,0.54);
   font-size: 0.75rem;
+}
+
+.dark .card-text p {
+  color: rgb(248, 248, 242);
 }
 
 .card p:last-child {
@@ -1134,7 +1271,13 @@ footer p {
 
 .site-footer,
 footer a#back_to_top i {
-  color: #899596;
+  color: rgba(0,0,0,0.54);
+}
+
+.dark .site-footer,
+.dark footer a#back_to_top i,
+.dark .docs .body-footer {
+  color: rgba(255,255,255,0.54);
 }
 
 /**************************************************
@@ -1219,10 +1362,20 @@ a.badge:hover {
   border-color: hsl(339, 90%, 68%);
 }
 
+.dark .btn-outline-primary:not(:disabled):not(.disabled).active,
+.dark .btn-outline-primary:not(:disabled):not(.disabled):active,
+.dark .show > .btn-outline-primary.dropdown-toggle {
+  color: rgb(68, 71, 90);
+}
+
 .btn-outline-primary:hover {
   color: #fff;
   background-color: hsl(339, 90%, 68%);
   border-color: hsl(339, 90%, 68%);
+}
+
+.dark .btn-outline-primary:hover {
+  color: rgb(68, 71, 90);
 }
 
 /*************************************************
@@ -1245,18 +1398,18 @@ a.badge:hover {
 
 .btn-toolbar .btn.btn-primary:hover,
 .btn-toolbar .btn.btn-primary:focus {
-  background-color: hsl(339, 90%, 58%) !important;
+  background-color: hsl(339, 90%, 78%) !important;
 }
 
 .btn-toolbar .btn.btn-primary:active,
 .btn-toolbar .btn.btn-primary.active {
-  background-color: hsl(339, 90%, 78%) !important;
+  background-color: hsl(339, 90%, 58%) !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 .2rem hsl(339, 90%, 58%);
+  box-shadow: 0 0 0 .2rem hsl(339, 90%, 78%);
 }
 
 /*************************************************
@@ -1373,7 +1526,6 @@ nav#navbar-main li.nav-item {
 }
 
 .navbar-light .navbar-brand {
-  text-transform: uppercase;
   font-weight: bold;
   font-size: 1.2em;
   color: #fff;
@@ -1833,8 +1985,13 @@ body.dark,
 .dark .docs-sidebar .nav > li:not(.active) > a,
 .dark .modal button.close,
 .dark input,
+.dark .form-control,
 .dark .form-control:focus {
   color: rgb(248, 248, 242);
+}
+
+.dark .form-control {
+  background-color: rgb(68, 71, 90);
 }
 
 .dark .form-control:focus {
@@ -1969,4 +2126,9 @@ body.dark,
 .dark a.badge:focus,
 .dark a.badge:hover {
   color: rgba(255, 255, 255, .68);
+}
+
+.dark .btn-primary,
+.dark .btn.btn-primary.active {
+  color: initial;
 }
