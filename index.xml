@@ -11,6 +11,27 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>RL Baselines Zoo</title>
+      <link>/project/rl-baselines-zoo/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/project/rl-baselines-zoo/</guid>
+      <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/rl-baselines-zoo&#34; target=&#34;_blank&#34;&gt;https://github.com/araffin/rl-baselines-zoo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Goals of this repository:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Provide a simple interface to train and enjoy RL agents&lt;/li&gt;
+&lt;li&gt;Benchmark the different Reinforcement Learning algorithms&lt;/li&gt;
+&lt;li&gt;Provide tuned hyperparameters for each environment and RL algorithm&lt;/li&gt;
+&lt;li&gt;Have fun with the trained agents!&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>S-RL Toolbox</title>
       <link>/project/srl-toolbox/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0200</pubDate>
