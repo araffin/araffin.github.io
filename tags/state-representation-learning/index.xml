@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 10 Oct 2018 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="/tags/state-representation-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
+      <link>/publication/decoupling/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/publication/decoupling/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>S-RL Toolbox</title>

@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 23 Nov 2018 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning to Drive Smoothly in Minutes</title>
+      <link>/project/learning-to-drive/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/project/learning-to-drive/</guid>
+      <description>Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.
+Github repository: https://github.com/araffin/learning-to-drive-in-5-minutes
+Blog post on Medium</description>
+    </item>
     
     <item>
       <title>RL Baselines Zoo</title>

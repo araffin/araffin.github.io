@@ -11,6 +11,29 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
+      <link>/publication/decoupling/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/publication/decoupling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning to Drive Smoothly in Minutes</title>
+      <link>/project/learning-to-drive/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/project/learning-to-drive/</guid>
+      <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34; target=&#34;_blank&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Blog post on &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>RL Baselines Zoo</title>
       <link>/project/rl-baselines-zoo/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0100</pubDate>

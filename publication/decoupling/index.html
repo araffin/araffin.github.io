@@ -15,10 +15,10 @@
   
     
   
-  <meta name="description" content="This paper describes an Open Source Software (OSS) project: PythonRobotics. This is a collection of robotics algorithms implemented in the Python programming language. The focus of the project is on autonomous navigation, and the goal is for beginners in robotics to understand the basic ideas behind each algorithm. In this project, the algorithms which are practical and widely used in both academia and industry are selected. Each sample code is written in Python3 and only depends on some standard modules for readability and ease of use. Each algorithm is written in Python3 and only depends on some common modules for readability, portability and ease of use. It includes intuitive animations to understand the behavior of the simulation.">
+  <meta name="description" content="Scaling end-to-end reinforcement learning to control real robots from vision presents a series of challenges, in particular in terms of sample efficiency. Against end-to-end learning, state representation learning can help learn a compact, efficient and relevant representation of states that speeds up policy learning, reducing the number of samples needed, and that is easier to interpret. We evaluate several state representation learning methods on goal based robotics tasks and propose a new unsupervised model that stacks representations and combines strengths of several of these approaches. This method encodes all the relevant features, performs on par or better than end-to-end learning, and is robust to hyper-parameters change.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/publication/python-robotics/">
+  <link rel="alternate" hreflang="en-us" href="/publication/decoupling/">
 
   
 
@@ -51,13 +51,6 @@
       
     
     
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous">
-        
-      
-    
 
     
 
@@ -86,7 +79,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/publication/python-robotics/">
+  <link rel="canonical" href="/publication/decoupling/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -94,25 +87,25 @@
   <meta property="twitter:creator" content="@araffin2">
   
   <meta property="og:site_name" content="Antonin Raffin | Homepage">
-  <meta property="og:url" content="/publication/python-robotics/">
-  <meta property="og:title" content="PythonRobotics: a Python code collection of robotics algorithms | Antonin Raffin | Homepage">
-  <meta property="og:description" content="This paper describes an Open Source Software (OSS) project: PythonRobotics. This is a collection of robotics algorithms implemented in the Python programming language. The focus of the project is on autonomous navigation, and the goal is for beginners in robotics to understand the basic ideas behind each algorithm. In this project, the algorithms which are practical and widely used in both academia and industry are selected. Each sample code is written in Python3 and only depends on some standard modules for readability and ease of use. Each algorithm is written in Python3 and only depends on some common modules for readability, portability and ease of use. It includes intuitive animations to understand the behavior of the simulation.">
+  <meta property="og:url" content="/publication/decoupling/">
+  <meta property="og:title" content="Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics | Antonin Raffin | Homepage">
+  <meta property="og:description" content="Scaling end-to-end reinforcement learning to control real robots from vision presents a series of challenges, in particular in terms of sample efficiency. Against end-to-end learning, state representation learning can help learn a compact, efficient and relevant representation of states that speeds up policy learning, reducing the number of samples needed, and that is easier to interpret. We evaluate several state representation learning methods on goal based robotics tasks and propose a new unsupervised model that stacks representations and combines strengths of several of these approaches. This method encodes all the relevant features, performs on par or better than end-to-end learning, and is robust to hyper-parameters change.">
   
   
     
   <meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-08-31T00:00:00&#43;02:00">
+  <meta property="article:published_time" content="2019-01-26T00:00:00&#43;01:00">
   
-  <meta property="article:modified_time" content="2018-08-31T00:00:00&#43;02:00">
-  
-
+  <meta property="article:modified_time" content="2019-01-26T00:00:00&#43;01:00">
   
 
   
 
-  <title>PythonRobotics: a Python code collection of robotics algorithms | Antonin Raffin | Homepage</title>
+  
+
+  <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics | Antonin Raffin | Homepage</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
@@ -264,7 +257,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">PythonRobotics: a Python code collection of robotics algorithms</h1>
+  <h1 itemprop="name">Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</h1>
 
   
 
@@ -278,22 +271,22 @@
   
   <div>
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Atsushi Sakai</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Daniel Ingram</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Joseph Dinius</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Karan Chawla</span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">Antonin Raffin</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Alexis Paques</span>
+      <span itemprop="name">Ashley Hill</span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">René Traoré</span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">Timothée Lesort</span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">Natalia Díaz-Rodríguez</span>
+    </span>, 
+    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">David Filliat</span>
     </span>
     
   </div>
@@ -301,9 +294,9 @@
 
   <span class="article-date">
     
-    <meta content="2018-08-31 00:00:00 &#43;0200 CEST" itemprop="datePublished">
-    <time datetime="2018-08-31 00:00:00 &#43;0200 CEST" itemprop="dateModified">
-      Aug 31, 2018
+    <meta content="2019-01-26 00:00:00 &#43;0100 CET" itemprop="datePublished">
+    <time datetime="2019-01-26 00:00:00 &#43;0100 CET" itemprop="dateModified">
+      Jan 26, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -323,35 +316,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=PythonRobotics%3a%20a%20Python%20code%20collection%20of%20robotics%20algorithms&amp;url=%2fpublication%2fpython-robotics%2f"
+         href="https://twitter.com/intent/tweet?text=Decoupling%20feature%20extraction%20from%20policy%20learning%3a%20assessing%20benefits%20of%20state%20representation%20learning%20in%20goal%20based%20robotics&amp;url=%2fpublication%2fdecoupling%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fpublication%2fpython-robotics%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fpublication%2fdecoupling%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpublication%2fpython-robotics%2f&amp;title=PythonRobotics%3a%20a%20Python%20code%20collection%20of%20robotics%20algorithms"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpublication%2fdecoupling%2f&amp;title=Decoupling%20feature%20extraction%20from%20policy%20learning%3a%20assessing%20benefits%20of%20state%20representation%20learning%20in%20goal%20based%20robotics"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpublication%2fpython-robotics%2f&amp;title=PythonRobotics%3a%20a%20Python%20code%20collection%20of%20robotics%20algorithms"
+         href="http://service.weibo.com/share/share.php?url=%2fpublication%2fdecoupling%2f&amp;title=Decoupling%20feature%20extraction%20from%20policy%20learning%3a%20assessing%20benefits%20of%20state%20representation%20learning%20in%20goal%20based%20robotics"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=PythonRobotics%3a%20a%20Python%20code%20collection%20of%20robotics%20algorithms&amp;body=%2fpublication%2fpython-robotics%2f">
+         href="mailto:?subject=Decoupling%20feature%20extraction%20from%20policy%20learning%3a%20assessing%20benefits%20of%20state%20representation%20learning%20in%20goal%20based%20robotics&amp;body=%2fpublication%2fdecoupling%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -386,7 +379,7 @@
 
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1808.10703" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=Hkl-di09FQ" target="_blank" rel="noopener">
   Preprint
 </a>
 
@@ -403,12 +396,18 @@
 
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/AtsushiSakai/PythonRobotics" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/araffin/robotics-rl-srl" target="_blank" rel="noopener">
   Code
 </a>
 
 
 
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/project/srl-toolbox/">
+    Project
+  </a>
+  
 
 
 
@@ -432,7 +431,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">This paper describes an Open Source Software (OSS) project: PythonRobotics. This is a collection of robotics algorithms implemented in the Python programming language. The focus of the project is on autonomous navigation, and the goal is for beginners in robotics to understand the basic ideas behind each algorithm. In this project, the algorithms which are practical and widely used in both academia and industry are selected. Each sample code is written in Python3 and only depends on some standard modules for readability and ease of use. Each algorithm is written in Python3 and only depends on some common modules for readability, portability and ease of use. It includes intuitive animations to understand the behavior of the simulation.</p>
+    <p class="pub-abstract" itemprop="text">Scaling end-to-end reinforcement learning to control real robots from vision presents a series of challenges, in particular in terms of sample efficiency. Against end-to-end learning, state representation learning can help learn a compact, efficient and relevant representation of states that speeds up policy learning, reducing the number of samples needed, and that is easier to interpret. We evaluate several state representation learning methods on goal based robotics tasks and propose a new unsupervised model that stacks representations and combines strengths of several of these approaches. This method encodes all the relevant features, performs on par or better than end-to-end learning, and is robust to hyper-parameters change.</p>
     
 
     
@@ -443,8 +442,8 @@
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
             
-            <a href="/publication/#0">
-              Uncategorized
+            <a href="/publication/#1">
+              Conference paper
             </a>
             
           </div>
@@ -456,6 +455,18 @@
     
 
     
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">Submitted to International Conference on Learning Representations (ICLR)</div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
 
     <div class="row">
       <div class="col-md-1"></div>
@@ -463,7 +474,7 @@
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Date</div>
           <div class="col-12 col-md-9" itemprop="datePublished">
-            August, 2018
+            January, 2019
           </div>
         </div>
       </div>
@@ -480,13 +491,11 @@
 
 <div class="article-tags">
   
+  <a class="badge badge-light" href="/tags/reinforcement-learning/">Reinforcement Learning</a>
+  
+  <a class="badge badge-light" href="/tags/state-representation-learning/">State Representation Learning</a>
+  
   <a class="badge badge-light" href="/tags/robotics/">Robotics</a>
-  
-  <a class="badge badge-light" href="/tags/kalman-filter/">Kalman Filter</a>
-  
-  <a class="badge badge-light" href="/tags/path-planning/">Path Planning</a>
-  
-  <a class="badge badge-light" href="/tags/path-tracking/">Path Tracking</a>
   
 </div>
 
@@ -500,6 +509,103 @@
 
 
 
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/photo_munich.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Antonin Raffin</a></h5>
+    <h6 class="card-subtitle">Research Engineer in Robotics and Machine Learning</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/antonin-raffin-106b18a8/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://medium.com/@araffin" target="_blank" rel="noopener">
+          <i class="fab fa-medium"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/araffin2" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.fr/citations?user=kik4AwIAAAAJ&amp;hl=fr" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/araffin" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 
 
@@ -564,10 +670,6 @@
 
     
     
-    
-    
-    <script src="/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
-    
 
     
     
@@ -579,14 +681,8 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-      
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
@@ -601,8 +697,6 @@
     
 
     
-    
-    <script>hljs.initHighlightingOnLoad();</script>
     
 
     

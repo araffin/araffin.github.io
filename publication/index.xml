@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
+      <link>/publication/decoupling/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/publication/decoupling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
       <link>/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
