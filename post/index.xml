@@ -4,12 +4,12 @@
     <title>Posts on Antonin Raffin | Homepage</title>
     <link>/post/</link>
     <description>Recent content in Posts on Antonin Raffin | Homepage</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
+    <copyright>&amp;copy; 2018 - {year}</copyright>
+    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,8 @@
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>/post/stable-baselines/</guid>
-      <description>Read the full article on Medium</description>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Sat, 10 Feb 2018 00:00:00 +0100</pubDate>
       
       <guid>/post/arduino-serial/</guid>
-      <description>Read the full article on Medium</description>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0100</pubDate>
       
       <guid>/post/racing-robot/</guid>
-      <description>Read the full article on Medium</description>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://becominghuman.ai/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

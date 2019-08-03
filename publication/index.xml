@@ -4,18 +4,18 @@
     <title>Publications on Antonin Raffin | Homepage</title>
     <link>/publication/</link>
     <description>Recent content in Publications on Antonin Raffin | Homepage</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
+    <copyright>&amp;copy; 2018 - {year}</copyright>
+    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
       <link>/publication/decoupling/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/publication/decoupling/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
       <link>/publication/srl-toolbox/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/publication/srl-toolbox/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
       <link>/publication/python-robotics/</link>
-      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/publication/python-robotics/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Unsupervised learning of state representations for multiple tasks</title>
       <link>/publication/multiple-tasks-srl/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/publication/multiple-tasks-srl/</guid>
       <description></description>

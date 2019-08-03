@@ -4,59 +4,91 @@
     <title>Machine Learning on Antonin Raffin | Homepage</title>
     <link>/tags/machine-learning/</link>
     <description>Recent content in Machine Learning on Antonin Raffin | Homepage</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0100</lastBuildDate>
+    <copyright>&amp;copy; 2018 - {year}</copyright>
+    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
       <link>/project/learning-to-drive/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/project/learning-to-drive/</guid>
-      <description>Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.
-Github repository: https://github.com/araffin/learning-to-drive-in-5-minutes
-Blog post on Medium</description>
+      <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34; target=&#34;_blank&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Blog post on &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>RL Baselines Zoo</title>
       <link>/project/rl-baselines-zoo/</link>
-      <pubDate>Fri, 23 Nov 2018 00:00:00 +0100</pubDate>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/rl-baselines-zoo/</guid>
-      <description>A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using Stable Baselines.
-Github repository: https://github.com/araffin/rl-baselines-zoo
-Goals of this repository:
- Provide a simple interface to train and enjoy RL agents Benchmark the different Reinforcement Learning algorithms Provide tuned hyperparameters for each environment and RL algorithm Have fun with the trained agents!  </description>
+      <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/rl-baselines-zoo&#34; target=&#34;_blank&#34;&gt;https://github.com/araffin/rl-baselines-zoo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Goals of this repository:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Provide a simple interface to train and enjoy RL agents&lt;/li&gt;
+&lt;li&gt;Benchmark the different Reinforcement Learning algorithms&lt;/li&gt;
+&lt;li&gt;Provide tuned hyperparameters for each environment and RL algorithm&lt;/li&gt;
+&lt;li&gt;Have fun with the trained agents!&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
     <item>
       <title>S-RL Toolbox</title>
       <link>/project/srl-toolbox/</link>
-      <pubDate>Wed, 10 Oct 2018 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/srl-toolbox/</guid>
-      <description> S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.
-Github repository: https://github.com/araffin/robotics-rl-srl
-Documentation: https://s-rl-toolbox.readthedocs.io
-Paper: https://arxiv.org/abs/1809.09369
-Main Features  10 RL algorithms (Stable Baselines included) logging / plotting / visdom integration / replay trained agent hyperparameter search (hyperband, hyperopt) integration with State Representation Learning (SRL) methods (for feature extraction) visualisation tools (explore latent space, display action proba, live plot in the state space, &amp;hellip;) robotics environments to compare SRL methods easy install using anaconda env or Docker images (CPU/GPU)  </description>
+      <description>
+
+&lt;p&gt;S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34; target=&#34;_blank&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Documentation: &lt;a href=&#34;https://s-rl-toolbox.readthedocs.io&#34; target=&#34;_blank&#34;&gt;https://s-rl-toolbox.readthedocs.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Paper: &lt;a href=&#34;https://arxiv.org/abs/1809.09369&#34; target=&#34;_blank&#34;&gt;https://arxiv.org/abs/1809.09369&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;main-features&#34;&gt;Main Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;10 RL algorithms (&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34;&gt;Stable Baselines&lt;/a&gt; included)&lt;/li&gt;
+&lt;li&gt;logging / plotting / visdom integration / replay trained agent&lt;/li&gt;
+&lt;li&gt;hyperparameter search (hyperband, hyperopt)&lt;/li&gt;
+&lt;li&gt;integration with State Representation Learning (SRL) methods (for feature extraction)&lt;/li&gt;
+&lt;li&gt;visualisation tools (explore latent space, display action proba, live plot in the state space, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;robotics environments to compare SRL methods&lt;/li&gt;
+&lt;li&gt;easy install using anaconda env or Docker images (CPU/GPU)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Stable Baselines</title>
       <link>/project/stable-baselines/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/stable-baselines/</guid>
-      <description>Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.
-Github repository: https://github.com/hill-a/stable-baselines
-You can read a detailed presentation of Stable Baselines in the Medium article</description>
+      <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
+
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can read a detailed presentation of Stable Baselines in the &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34;&gt;Medium article&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -65,17 +97,20 @@ You can read a detailed presentation of Stable Baselines in the Medium article</
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0100</pubDate>
       
       <guid>/post/racing-robot/</guid>
-      <description>Read the full article on Medium</description>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://becominghuman.ai/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Racing Robot</title>
       <link>/project/racing-robot/</link>
-      <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/racing-robot/</guid>
-      <description>Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63
-Video of the car: https://www.youtube.com/watch?v=xhI71ZdSh6k</description>
+      <description>&lt;p&gt;Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: &lt;a href=&#34;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34;&gt;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Video of the car: &lt;a href=&#34;https://www.youtube.com/watch?v=xhI71ZdSh6k&#34; target=&#34;_blank&#34;&gt;https://www.youtube.com/watch?v=xhI71ZdSh6k&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

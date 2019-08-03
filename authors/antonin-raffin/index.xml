@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Antonin Raffin on Antonin Raffin | Homepage</title>
+    <link>/authors/antonin-raffin/</link>
+    <description>Recent content in Antonin Raffin on Antonin Raffin | Homepage</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018 - {year}</copyright>
+    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0200</lastBuildDate>
+    
+	    <atom:link href="/authors/antonin-raffin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</title>
+      <link>/post/stable-baselines/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/post/stable-baselines/</guid>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simple and Robust {Computer — Arduino} Serial Communication</title>
+      <link>/post/arduino-serial/</link>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/post/arduino-serial/</guid>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Autonomous Racing Robot With an Arduino, a Raspberry Pi and a Pi Camera</title>
+      <link>/post/racing-robot/</link>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0100</pubDate>
+      
+      <guid>/post/racing-robot/</guid>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://becominghuman.ai/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

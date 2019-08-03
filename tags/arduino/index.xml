@@ -4,34 +4,45 @@
     <title>Arduino on Antonin Raffin | Homepage</title>
     <link>/tags/arduino/</link>
     <description>Recent content in Arduino on Antonin Raffin | Homepage</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 27 Oct 2017 00:00:00 +0200</lastBuildDate>
+    <copyright>&amp;copy; 2018 - {year}</copyright>
+    <lastBuildDate>Fri, 27 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Racing Robot</title>
       <link>/project/racing-robot/</link>
-      <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/racing-robot/</guid>
-      <description>Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63
-Video of the car: https://www.youtube.com/watch?v=xhI71ZdSh6k</description>
+      <description>&lt;p&gt;Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: &lt;a href=&#34;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34;&gt;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Video of the car: &lt;a href=&#34;https://www.youtube.com/watch?v=xhI71ZdSh6k&#34; target=&#34;_blank&#34;&gt;https://www.youtube.com/watch?v=xhI71ZdSh6k&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Arduino Robust Serial</title>
       <link>/project/arduino-robust-serial/</link>
-      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/arduino-robust-serial/</guid>
-      <description>Robust Arduino Serial is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.
-Please read the Medium Article to have an overview of this protocol.
-Implementations are available in various programming languages:
- Arduino (arduino-serial/ folder) Python C++ Rust  </description>
+      <description>&lt;p&gt;&lt;strong&gt;Robust Arduino Serial&lt;/strong&gt; is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Please read the &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Implementations are available in various programming languages:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Arduino (&lt;code&gt;arduino-serial/&lt;/code&gt; folder)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/python-arduino-serial&#34; target=&#34;_blank&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/cpp-arduino-serial&#34; target=&#34;_blank&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/rust-arduino-serial&#34; target=&#34;_blank&#34;&gt;Rust&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

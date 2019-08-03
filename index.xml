@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Antonin Raffin | Homepage on Antonin Raffin | Homepage</title>
+    <title>Antonin Raffin | Homepage</title>
     <link>/</link>
-    <description>Recent content in Antonin Raffin | Homepage on Antonin Raffin | Homepage</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on Antonin Raffin | Homepage</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2018 - {year}</copyright>
+    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
       <link>/publication/decoupling/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/publication/decoupling/</guid>
       <description></description>
@@ -22,7 +24,7 @@
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
       <link>/project/learning-to-drive/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/project/learning-to-drive/</guid>
       <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
@@ -36,7 +38,7 @@
     <item>
       <title>RL Baselines Zoo</title>
       <link>/project/rl-baselines-zoo/</link>
-      <pubDate>Fri, 23 Nov 2018 00:00:00 +0100</pubDate>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/rl-baselines-zoo/</guid>
       <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
@@ -57,7 +59,7 @@
     <item>
       <title>S-RL Toolbox</title>
       <link>/project/srl-toolbox/</link>
-      <pubDate>Wed, 10 Oct 2018 00:00:00 +0200</pubDate>
+      <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/srl-toolbox/</guid>
       <description>
@@ -87,7 +89,7 @@
     <item>
       <title>Stable Baselines</title>
       <link>/project/stable-baselines/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/stable-baselines/</guid>
       <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
@@ -101,7 +103,7 @@
     <item>
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
       <link>/publication/srl-toolbox/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0200</pubDate>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/publication/srl-toolbox/</guid>
       <description></description>
@@ -110,7 +112,7 @@
     <item>
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
       <link>/publication/python-robotics/</link>
-      <pubDate>Fri, 31 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/publication/python-robotics/</guid>
       <description></description>
@@ -149,7 +151,7 @@
     <item>
       <title>Racing Robot</title>
       <link>/project/racing-robot/</link>
-      <pubDate>Fri, 27 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/racing-robot/</guid>
       <description>&lt;p&gt;Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: &lt;a href=&#34;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34;&gt;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&lt;/a&gt;&lt;/p&gt;
@@ -161,7 +163,7 @@
     <item>
       <title>Arduino Robust Serial</title>
       <link>/project/arduino-robust-serial/</link>
-      <pubDate>Thu, 26 Oct 2017 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/arduino-robust-serial/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Robust Arduino Serial&lt;/strong&gt; is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.&lt;/p&gt;
@@ -182,7 +184,7 @@
     <item>
       <title>Unsupervised learning of state representations for multiple tasks</title>
       <link>/publication/multiple-tasks-srl/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/publication/multiple-tasks-srl/</guid>
       <description></description>
