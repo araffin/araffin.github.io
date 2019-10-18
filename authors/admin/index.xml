@@ -7,10 +7,19 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stable Baselines Tutorial</title>
+      <link>/talk/rl-tuto-jnrr19/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/rl-tuto-jnrr19/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Stable Baselines Tutorial</title>
@@ -55,20 +64,6 @@
       
       <guid>/publication/multiple-tasks-srl/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/authors/admin/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/authors/admin/</guid>
-      <description>
-
-&lt;h1 id=&#34;bio&#34;&gt;Bio&lt;/h1&gt;
-
-&lt;p&gt;Robots. Machine Learning. Blues Dance.&lt;/p&gt;
-</description>
     </item>
     
   </channel>
