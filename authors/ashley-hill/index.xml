@@ -7,7 +7,7 @@
     <description>Ashley Hill</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Ashley Hill</title>
       <link>/authors/ashley-hill/</link>
     </image>
@@ -33,7 +33,8 @@
       <link>/post/stable-baselines/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
       <guid>/post/stable-baselines/</guid>
-      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Read the full article on 
+&lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

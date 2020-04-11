@@ -7,7 +7,7 @@
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Projects</title>
       <link>/project/</link>
     </image>
@@ -19,7 +19,8 @@
       <guid>/project/learning-to-drive/</guid>
       <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
 &lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Blog post on &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Blog post on 
+&lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -28,7 +29,8 @@
       <link>/project/rl-baselines-zoo/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       <guid>/project/rl-baselines-zoo/</guid>
-      <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/rl-baselines-zoo&#34;&gt;https://github.com/araffin/rl-baselines-zoo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Goals of this repository:&lt;/p&gt;
 &lt;ol&gt;
@@ -51,7 +53,8 @@
 &lt;p&gt;Paper: &lt;a href=&#34;https://arxiv.org/abs/1809.09369&#34;&gt;https://arxiv.org/abs/1809.09369&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;main-features&#34;&gt;Main Features&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;10 RL algorithms (&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34;&gt;Stable Baselines&lt;/a&gt; included)&lt;/li&gt;
+&lt;li&gt;10 RL algorithms (
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt; included)&lt;/li&gt;
 &lt;li&gt;logging / plotting / visdom integration / replay trained agent&lt;/li&gt;
 &lt;li&gt;hyperparameter search (hyperband, hyperopt)&lt;/li&gt;
 &lt;li&gt;integration with State Representation Learning (SRL) methods (for feature extraction)&lt;/li&gt;
@@ -69,7 +72,8 @@
       <guid>/project/stable-baselines/</guid>
       <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
 &lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;You can read a detailed presentation of Stable Baselines in the &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34;&gt;Medium article&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can read a detailed presentation of Stable Baselines in the 
+&lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium article&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -89,13 +93,17 @@
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       <guid>/project/arduino-robust-serial/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Robust Arduino Serial&lt;/strong&gt; is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Please read the &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Please read the 
+&lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Implementations are available in various programming languages:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Arduino (&lt;code&gt;arduino-serial/&lt;/code&gt; folder)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/python-arduino-serial&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/cpp-arduino-serial&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/rust-arduino-serial&#34;&gt;Rust&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/araffin/python-arduino-serial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/araffin/cpp-arduino-serial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/araffin/rust-arduino-serial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
