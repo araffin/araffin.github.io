@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Daniel Ingram on Antonin Raffin | Homepage</title>
+    <title>Daniel Ingram | Antonin Raffin | Homepage</title>
     <link>/authors/daniel-ingram/</link>
-    <description>Recent content in Daniel Ingram on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Fri, 31 Aug 2018 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/authors/daniel-ingram/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/authors/daniel-ingram/index.xml" rel="self" type="application/rss+xml" />
+    <description>Daniel Ingram</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Fri, 31 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Daniel Ingram</title>
+      <link>/authors/daniel-ingram/</link>
+    </image>
     
     <item>
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
       <link>/publication/python-robotics/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/publication/python-robotics/</guid>
       <description></description>
     </item>

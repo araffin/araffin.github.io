@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ashley Hill on Antonin Raffin | Homepage</title>
+    <title>Ashley Hill | Antonin Raffin | Homepage</title>
     <link>/authors/ashley-hill/</link>
-    <description>Recent content in Ashley Hill on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/authors/ashley-hill/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/authors/ashley-hill/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ashley Hill</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Ashley Hill</title>
+      <link>/authors/ashley-hill/</link>
+    </image>
     
     <item>
       <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
       <link>/publication/decoupling/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/publication/decoupling/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
       <link>/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
       <guid>/publication/srl-toolbox/</guid>
       <description></description>
     </item>
@@ -34,9 +32,8 @@
       <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</title>
       <link>/post/stable-baselines/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
-      
       <guid>/post/stable-baselines/</guid>
-      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

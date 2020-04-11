@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recent &amp; Upcoming Talks on Antonin Raffin | Homepage</title>
+    <title>Recent &amp; Upcoming Talks | Antonin Raffin | Homepage</title>
     <link>/talk/</link>
-    <description>Recent content in Recent &amp; Upcoming Talks on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/talk/</link>
+    </image>
     
     <item>
       <title>RL Tutorial on Stable Baselines</title>
       <link>/talk/rl-tuto-jnrr19/</link>
       <pubDate>Fri, 18 Oct 2019 00:09:00 +0000</pubDate>
-      
       <guid>/talk/rl-tuto-jnrr19/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>SRL - Stable Baselines Presentation</title>
       <link>/talk/sb-ias-19/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
       <guid>/talk/sb-ias-19/</guid>
       <description></description>
     </item>

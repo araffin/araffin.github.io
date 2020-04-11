@@ -3,21 +3,28 @@
   <channel>
     <title>Antonin Raffin | Homepage</title>
     <link>/</link>
-    <description>Recent content on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <description>Antonin Raffin | Homepage</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Antonin Raffin | Homepage</title>
+      <link>/</link>
+    </image>
     
     <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>/talk/</link>
       <pubDate>Fri, 18 Oct 2019 00:09:00 +0000</pubDate>
-      
       <guid>/talk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>/post/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/post/</guid>
       <description></description>
     </item>
     
@@ -25,7 +32,6 @@
       <title>Projects</title>
       <link>/project/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/project/</guid>
       <description></description>
     </item>
@@ -34,26 +40,7 @@
       <title>Publications</title>
       <link>/publication/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/publication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>/post/</link>
-      <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
-      
-      <guid>/post/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link></link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid></guid>
       <description></description>
     </item>
     

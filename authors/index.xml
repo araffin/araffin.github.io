@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Antonin Raffin | Homepage</title>
+    <title>Authors | Antonin Raffin | Homepage</title>
     <link>/authors/</link>
-    <description>Recent content in Authors on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>/authors/</link>
+    </image>
     
     <item>
       <title></title>
       <link>/authors/admin/</link>
       <pubDate>Fri, 18 Oct 2019 00:09:00 +0000</pubDate>
-      
       <guid>/authors/admin/</guid>
-      <description>
-
-&lt;h1 id=&#34;bio&#34;&gt;Bio&lt;/h1&gt;
-
+      <description>&lt;h1 id=&#34;bio&#34;&gt;Bio&lt;/h1&gt;
 &lt;p&gt;Robots. Machine Learning. Blues Dance.&lt;/p&gt;
 </description>
     </item>
@@ -30,7 +26,6 @@
       <title>Ashley Hill</title>
       <link>/authors/ashley-hill/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/authors/ashley-hill/</guid>
       <description></description>
     </item>
@@ -39,7 +34,6 @@
       <title>David Filliat</title>
       <link>/authors/david-filliat/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/authors/david-filliat/</guid>
       <description></description>
     </item>
@@ -48,7 +42,6 @@
       <title>Natalia Díaz-Rodríguez</title>
       <link>/authors/natalia-diaz-rodriguez/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/authors/natalia-diaz-rodriguez/</guid>
       <description></description>
     </item>
@@ -57,7 +50,6 @@
       <title>René Traoré</title>
       <link>/authors/rene-traore/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/authors/rene-traore/</guid>
       <description></description>
     </item>
@@ -66,7 +58,6 @@
       <title>Timothée Lesort</title>
       <link>/authors/timothee-lesort/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/authors/timothee-lesort/</guid>
       <description></description>
     </item>
@@ -75,7 +66,6 @@
       <title>Alexis Paques</title>
       <link>/authors/alexis-paques/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/authors/alexis-paques/</guid>
       <description></description>
     </item>
@@ -84,7 +74,6 @@
       <title>Atsushi Sakai</title>
       <link>/authors/atsushi-sakai/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/authors/atsushi-sakai/</guid>
       <description></description>
     </item>
@@ -93,7 +82,6 @@
       <title>Daniel Ingram</title>
       <link>/authors/daniel-ingram/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/authors/daniel-ingram/</guid>
       <description></description>
     </item>
@@ -102,7 +90,6 @@
       <title>Joseph Dinius</title>
       <link>/authors/joseph-dinius/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/authors/joseph-dinius/</guid>
       <description></description>
     </item>
@@ -111,7 +98,6 @@
       <title>Karan Chawla</title>
       <link>/authors/karan-chawla/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/authors/karan-chawla/</guid>
       <description></description>
     </item>
@@ -120,7 +106,6 @@
       <title>Antonin Raffin</title>
       <link>/authors/antonin-raffin/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
-      
       <guid>/authors/antonin-raffin/</guid>
       <description></description>
     </item>
@@ -129,7 +114,6 @@
       <title>Freek Stulp</title>
       <link>/authors/freek-stulp/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>/authors/freek-stulp/</guid>
       <description></description>
     </item>
@@ -138,7 +122,6 @@
       <title>Oliver Brock</title>
       <link>/authors/oliver-brock/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>/authors/oliver-brock/</guid>
       <description></description>
     </item>
@@ -147,7 +130,6 @@
       <title>Rico Jonschkowski</title>
       <link>/authors/rico-jonschkowski/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>/authors/rico-jonschkowski/</guid>
       <description></description>
     </item>
@@ -156,7 +138,6 @@
       <title>Sebastian Höfer</title>
       <link>/authors/sebastian-hofer/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>/authors/sebastian-hofer/</guid>
       <description></description>
     </item>

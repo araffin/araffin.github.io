@@ -3,20 +3,19 @@
   <channel>
     <title>Antonin Raffin | Homepage</title>
     <link>/authors/admin/</link>
-    <description>Recent content on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Antonin Raffin | Homepage</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Fri, 18 Oct 2019 00:09:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Antonin Raffin | Homepage</title>
+      <link>/authors/admin/</link>
+    </image>
     
     <item>
       <title>RL Tutorial on Stable Baselines</title>
       <link>/talk/rl-tuto-jnrr19/</link>
       <pubDate>Fri, 18 Oct 2019 00:09:00 +0000</pubDate>
-      
       <guid>/talk/rl-tuto-jnrr19/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>SRL - Stable Baselines Presentation</title>
       <link>/talk/sb-ias-19/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
       <guid>/talk/sb-ias-19/</guid>
       <description></description>
     </item>
@@ -34,16 +32,23 @@
       <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
       <link>/publication/decoupling/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/publication/decoupling/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Learning to Drive Smoothly in Minutes</title>
+      <link>/post/learning-to-drive/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/post/learning-to-drive/</guid>
+      <description>&lt;p&gt;Read the full article on &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
       <link>/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
       <guid>/publication/srl-toolbox/</guid>
       <description></description>
     </item>
@@ -52,7 +57,6 @@
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
       <link>/publication/python-robotics/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/publication/python-robotics/</guid>
       <description></description>
     </item>
@@ -61,7 +65,6 @@
       <title>Unsupervised learning of state representations for multiple tasks</title>
       <link>/publication/multiple-tasks-srl/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>/publication/multiple-tasks-srl/</guid>
       <description></description>
     </item>

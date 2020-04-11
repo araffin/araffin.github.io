@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rust on Antonin Raffin | Homepage</title>
+    <title>Rust | Antonin Raffin | Homepage</title>
     <link>/tags/rust/</link>
-    <description>Recent content in Rust on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/tags/rust/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rust</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Rust</title>
+      <link>/tags/rust/</link>
+    </image>
     
     <item>
       <title>Arduino Robust Serial</title>
       <link>/project/arduino-robust-serial/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/arduino-robust-serial/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Robust Arduino Serial&lt;/strong&gt; is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Please read the &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Please read the &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Implementations are available in various programming languages:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Arduino (&lt;code&gt;arduino-serial/&lt;/code&gt; folder)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/python-arduino-serial&#34; target=&#34;_blank&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/cpp-arduino-serial&#34; target=&#34;_blank&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/rust-arduino-serial&#34; target=&#34;_blank&#34;&gt;Rust&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/python-arduino-serial&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/cpp-arduino-serial&#34;&gt;C++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/araffin/rust-arduino-serial&#34;&gt;Rust&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

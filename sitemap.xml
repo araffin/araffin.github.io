@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>/post/learning-to-drive/</loc>
+    <lastmod>2019-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/project/learning-to-drive/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url>
@@ -79,6 +84,11 @@
   
   <url>
     <loc>/authors/natalia-diaz-rodriguez/</loc>
+    <lastmod>2019-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -194,11 +204,6 @@
   
   <url>
     <loc>/authors/antonin-raffin/</loc>
-    <lastmod>2018-10-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2018-10-01T00:00:00+02:00</lastmod>
   </url>
   

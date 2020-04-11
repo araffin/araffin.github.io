@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Joseph Dinius on Antonin Raffin | Homepage</title>
+    <title>Joseph Dinius | Antonin Raffin | Homepage</title>
     <link>/authors/joseph-dinius/</link>
-    <description>Recent content in Joseph Dinius on Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018 - {year}</copyright>
-    <lastBuildDate>Fri, 31 Aug 2018 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/authors/joseph-dinius/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/authors/joseph-dinius/index.xml" rel="self" type="application/rss+xml" />
+    <description>Joseph Dinius</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Fri, 31 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Joseph Dinius</title>
+      <link>/authors/joseph-dinius/</link>
+    </image>
     
     <item>
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
       <link>/publication/python-robotics/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      
       <guid>/publication/python-robotics/</guid>
       <description></description>
     </item>
