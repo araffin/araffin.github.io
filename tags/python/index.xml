@@ -5,12 +5,25 @@
     <link>/tags/python/</link>
       <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <description>Python</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Python</title>
       <link>/tags/python/</link>
     </image>
+    
+    <item>
+      <title>Stable Baselines3</title>
+      <link>/project/stable-baselines3/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>/project/stable-baselines3/</guid>
+      <description>&lt;p&gt;Stable Baselines3 is a set of improved implementations of reinforcement learning algorithms in PyTorch. It is the next major version of Stable Baselines.&lt;/p&gt;
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Documentation: &lt;a href=&#34;https://stable-baselines3.readthedocs.io/&#34;&gt;https://stable-baselines3.readthedocs.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RL Baselines3 Zoo (collection of pre-trained agents): &lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RL Baselines3 Zoo also offers a simple interface to train, evaluate agents and do hyperparameter tuning.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
