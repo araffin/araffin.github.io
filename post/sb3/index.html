@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Antonin Raffin">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="THIS POST IS CURRENTLY A DRAFT - SB3 v1.0 will be released soon
+After several months of beta, we are happy to announce the release of Stable-Baselines3 (SB3) v1.0, a set of reliable implementations of reinforcement learning (RL) algorithms in PyTorch =D!">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/sb3/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(16, 89%, 60%)">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/sb3/">
+
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@araffin2">
+  <meta property="twitter:creator" content="@araffin2">
+  
+  <meta property="og:site_name" content="Antonin Raffin | Homepage">
+  <meta property="og:url" content="/post/sb3/">
+  <meta property="og:title" content="Stable-Baselines3: Reliable Reinforcement Learning Implementations | Antonin Raffin | Homepage">
+  <meta property="og:description" content="THIS POST IS CURRENTLY A DRAFT - SB3 v1.0 will be released soon
+After several months of beta, we are happy to announce the release of Stable-Baselines3 (SB3) v1.0, a set of reliable implementations of reinforcement learning (RL) algorithms in PyTorch =D!"><meta property="og:image" content="/post/sb3/featured.jpg">
+  <meta property="twitter:image" content="/post/sb3/featured.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-01-01T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2021-01-01T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/sb3/"
+  },
+  "headline": "Stable-Baselines3: Reliable Reinforcement Learning Implementations",
+  
+  "image": [
+    "/post/sb3/featured.jpg"
+  ],
+  
+  "datePublished": "2021-01-01T00:00:00Z",
+  "dateModified": "2021-01-01T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Antonin Raffin"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Antonin Raffin | Homepage",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "THIS POST IS CURRENTLY A DRAFT - SB3 v1.0 will be released soon\nAfter several months of beta, we are happy to announce the release of Stable-Baselines3 (SB3) v1.0, a set of reliable implementations of reinforcement learning (RL) algorithms in PyTorch =D!"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations | Antonin Raffin | Homepage</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Antonin Raffin | Homepage</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Antonin Raffin | Homepage</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications_selected"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Stable-Baselines3: Reliable Reinforcement Learning Implementations</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 2021
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/project/stable-baselines3/">
+    Project
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width: 2560px; max-height: 1812px;">
+  <div style="position: relative">
+    <img src="/post/sb3/featured.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="https://www.instagram.com/lucillehue/"><strong>L.M. Tenkes</strong></a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><strong>THIS POST IS CURRENTLY A DRAFT - SB3 v1.0 will be released soon</strong></p>
+<p>After several months of beta, we are happy to announce the release of 
+<a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">Stable-Baselines3 (SB3)</a> v1.0, a set of reliable implementations of reinforcement learning (RL) algorithms in PyTorch =D! It is the next major version of 
+<a href="https://github.com/hill-a/stable-baselines" target="_blank" rel="noopener">Stable Baselines</a>.</p>
+<p>The implementations have been 
+<a href="https://arxiv.org/abs/2005.05719" target="_blank" rel="noopener">benchmarked</a> against reference codebases, and automated unit tests cover 95% of the code.</p>
+<p>In this blog post, we give an overview of Stable-Baselines3: the motivation behind it, its design principles and features, how we ensure high-quality implementations and some concrete examples.</p>
+<!-- The algorithms follow a consistent interface and are accompanied by extensive documentation, making it simple to train and compare different RL algorithms. -->
+<h2 id="tldr">TL;DR:</h2>
+<p>
+<a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">Stable-Baselines3 (SB3)</a> is a library providing <em>reliable</em> implementations of reinforcement learning algorithms in PyTorch. It provides a <em>clean and simple interface</em> for the user, giving access to off-the-shelf state-of-the-art model-free RL algorithms.</p>
+<p>The library is <em>
+<a href="https://stable-baselines3.readthedocs.io/en/master/" target="_blank" rel="noopener">fully documented</a></em>, tested and its interface allows to train an RL agent in only few lines of code =):</p>
+<pre><code class="language-python">import gym
+from stable_baselines3 import SAC
+# Train an agent using Soft Actor-Critic on Pendulum-v0
+env = gym.make(&quot;Pendulum-v0&quot;)
+model = SAC(&quot;MlpPolicy&quot;, env, verbose=1)
+# Train the model
+model.learn(total_timesteps=20000)
+# Save the model
+model.save(&quot;sac_pendulum&quot;)
+# Load the trained model
+model = SAC.load(&quot;sac_pendulum&quot;)
+# Start a new episode
+obs = env.reset()
+# What action to take in state `obs`?
+action, _ = model.predict(obs, deterministic=True)
+</code></pre>
+<p>where defining and training a RL agent can be written in two lines of code:</p>
+<pre><code class="language-python">from stable_baselines3 import PPO
+# Train an agent using Proximal Policy Optimization on CartPole-v1
+model = PPO(&quot;MlpPolicy&quot;, &quot;CartPole-v1&quot;).learn(total_timesteps=20000)
+</code></pre>
+<h2 id="links">Links</h2>
+<p>GitHub repository: 
+<a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">https://github.com/DLR-RM/stable-baselines3</a></p>
+<p>Documentation: 
+<a href="https://stable-baselines3.readthedocs.io/" target="_blank" rel="noopener">https://stable-baselines3.readthedocs.io/</a></p>
+<p>RL Baselines3 Zoo: 
+<a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">https://github.com/DLR-RM/rl-baselines3-zoo</a></p>
+<p>Contrib: 
+<a href="https://github.com/Stable-Baselines-Team/stable-baselines3-contrib" target="_blank" rel="noopener">https://github.com/Stable-Baselines-Team/stable-baselines3-contrib</a></p>
+<p>RL Tutorial: 
+<a href="https://github.com/araffin/rl-tutorial-jnrr19" target="_blank" rel="noopener">https://github.com/araffin/rl-tutorial-jnrr19</a></p>
+<h2 id="motivation">Motivation</h2>
+<p>Deep reinforcement learning (RL) research has grown rapidly in recent years, yet results are often 
+<a href="https://arxiv.org/abs/1709.06560" target="_blank" rel="noopener">difficult to reproduce</a>.
+A major challenge is that small implementation details can have a substantial effect on performance &ndash; often greater than the 
+<a href="https://iclr.cc/virtual_2020/poster_r1etN1rtPB.html" target="_blank" rel="noopener">difference between algorithms</a>.
+It is particularly important that implementations used as experimental <em>baselines</em> are reliable; otherwise, novel algorithms compared to weak baselines lead to inflated estimates of performance improvements.</p>
+<p>To address this challenge, we propose Stable-Baselines3 (SB3), an open-source framework implementing seven commonly used model-free deep RL algorithms, relying on the 
+<a href="https://github.com/openai/gym" target="_blank" rel="noopener">OpenAI Gym interface</a>.</p>
+<p>We take great care to adhere to software engineering best practices to achieve high-quality implementations that match prior results.</p>
+<h2 id="history">History</h2>
+<p>SB3 builds on our experience maintaining <em>
+<a href="https://github.com/hill-a/stable-baselines" target="_blank" rel="noopener">Stable Baselines</a></em> (SB2), a fork of OpenAI Baselines built on TensorFlow 1.x.</p>
+<p>Stable-Baselines (SB2) is a trusted library and has already been used in <em>many 
+<a href="https://stable-baselines.readthedocs.io/en/master/misc/projects.html" target="_blank" rel="noopener">projects</a></em> and <em>
+<a href="https://scholar.google.fr/scholar?oi=bibs&amp;hl=fr&amp;cites=7029285800852969820" target="_blank" rel="noopener">papers</a></em>.</p>
+<p>Those two years of maintaining SB2 have been a rewarding exchange with our users, where tons of bugs where fixed and new features like callbacks where added to ease the use of the library.</p>
+<p>However, SB2 was still relying on OpenAI Baselines initial codebase and with the upcoming release of Tensorflow 2, more and more internal TF code was being deprecated.</p>
+<p>After discussing the matter with the community, we decided to go for a complete rewrite in PyTorch (cf issues 
+<a href="https://github.com/hill-a/stable-baselines/issues/366" target="_blank" rel="noopener">#366</a>, 
+<a href="https://github.com/hill-a/stable-baselines/issues/576" target="_blank" rel="noopener">#576</a> and 
+<a href="https://github.com/hill-a/stable-baselines/issues/733" target="_blank" rel="noopener">#733</a>), codename: Stable-Baselines3<sup>1</sup>.</p>
+<p>Stable-Baselines3 keeps the same easy-to-use API while improving a lot on the internal code, in particular by adding static type checking.</p>
+<p>Re-starting almost from scratch is long-term investment: it took 
+<a href="https://github.com/DLR-RM/stable-baselines3/issues/1" target="_blank" rel="noopener">quite some effort</a> and time but we now have a smaller, cleaner and reliable core that is easier to maintain and extend =).</p>
+<p><sup>1</sup> The very first name of the new version was &ldquo;torchy-baselines&rdquo;</p>
+<p>There are already 
+<a href="https://github.com/search?p=1&amp;q=reinforcement&#43;learning&#43;library&amp;type=Repositories" target="_blank" rel="noopener">many</a> open source reinforcement learning libraries (almost one new every week), so why did we create a new one? In the next sections you will learn about the design principles and main features of the Stable-Baselines3 library that differenciate it from others.</p>
+<h2 id="design-principles">Design Principles</h2>
+<p>Our main goal is to provide a user-friendly and reliable RL library.
+To keep SB3 simple to use and maintain, we focus on model-free, single-agent RL algorithms, and rely on external projects to extend the scope to 
+<a href="https://github.com/HumanCompatibleAI/imitation" target="_blank" rel="noopener">imitation</a> and 
+<a href="https://github.com/takuseno/d3rlpy" target="_blank" rel="noopener">offline</a> learning.</p>
+<p>We prioritize maintaining <em>stable</em> implementations over adding new features or algorithms, and avoid making breaking changes.
+We provide a consistent, clean and fully documented API, inspired by the 
+<a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">scikit-learn</a> API.</p>
+<p>Our code is 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/developer.html" target="_blank" rel="noopener">easily modifiable</a> by users as we favour readability and simplicity over modularity, although we make use of object-oriented programming to reduce code duplication.</p>
+<h2 id="features">Features</h2>
+<p>Stable-Baselines3 provides many features, ranging from a simple API to a complete 
+<a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">experimental framework</a> that allows advance usage like automatic hyperparameters tuning..</p>
+<h3 id="simple-api">Simple API</h3>
+<p>Training agents in Stable-Baselines3 takes just a few lines of code, after which the agent can be queried for actions (see quick example below).
+This allows researchers to easily use the baseline algorithms and components in their experiments (eg. 
+<a href="https://xbpeng.github.io/projects/Robotic_Imitation/index.html" target="_blank" rel="noopener">Imitating Animals</a>, 
+<a href="https://github.com/hardmaru/slimevolleygym" target="_blank" rel="noopener">Slime Volleyball</a>, 
+<a href="https://adversarialpolicies.github.io/" target="_blank" rel="noopener">Adversarial Policies</a>), as well as apply RL to novel tasks and environments, like 
+<a href="https://pwnagotchi.ai/" target="_blank" rel="noopener">continual learning</a> when attacking WiFi networks or 
+<a href="https://github.com/jaberkow/WaveRL" target="_blank" rel="noopener">dampening bridge vibrations</a>.</p>
+<pre><code class="language-python">from stable_baselines3 import A2C
+# Train an agent using A2C on LunarLander-v2
+model = A2C(&quot;MlpPolicy&quot;, &quot;LunarLander-v2&quot;)
+model.learn(total_timesteps=20000)
+
+# Retrieve and reset the environment
+env = model.get_env()
+obs = env.reset()
+
+# Query the agent (stochastic action here)
+action, _ = model.predict(obs, deterministic=False)
+
+</code></pre>
+<h3 id="documentation">Documentation</h3>
+<p>SB3 comes with 
+<a href="https://stable-baselines3.readthedocs.io/en/master/" target="_blank" rel="noopener">extensive documentation</a> of the code API.
+We also include a user guide, covering both basic and more advanced usage with a collection of concrete examples.
+Moreover, we have developed a 
+<a href="https://github.com/araffin/rl-tutorial-jnrr19" target="_blank" rel="noopener">Colab notebook based RL tutorial</a>, enabling users to demo the library directly in the browser.
+Additionally, we include 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html" target="_blank" rel="noopener">common tips</a> for running RL experiments and a 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/developer.html" target="_blank" rel="noopener">developer guide</a>.</p>
+<p>We also pay close attention to questions and uncertainties from SB3 users, updating the documentation to address these.</p>
+<h3 id="high-quality-implementations">High-Quality Implementations</h3>
+<p>Algorithms are verified against published results by comparing the agent learning curves (cf issues 
+<a href="https://github.com/DLR-RM/stable-baselines3/issues/48" target="_blank" rel="noopener">#48</a> and 
+<a href="https://github.com/DLR-RM/stable-baselines3/issues/49" target="_blank" rel="noopener">#48</a>).</p>
+<p>As an example, to compare against TD3 and SAC original implementation, we integrated SB3 callbacks and made sure both SB3 and original implementations were using the same hyperparameters (the code diff for SAC and TD3 repos can be found 
+<a href="https://github.com/rail-berkeley/softlearning/compare/master...Artemis-Skade:master" target="_blank" rel="noopener">here</a> and 
+<a href="https://github.com/sfujim/TD3/compare/master...araffin:master" target="_blank" rel="noopener">there</a>).</p>
+<!-- https://github.com/Artemis-Skade/softlearning -->
+<!-- https://github.com/araffin/TD3 -->
+<p>During this period, that&rsquo;s how we realized some tricky details that made a big difference.
+For example, PyTorch RMSProp is different from TensorFlow one (we include a 
+<a href="https://github.com/DLR-RM/stable-baselines3/blob/master/stable_baselines3/common/sb2_compat/rmsprop_tf_like.py" target="_blank" rel="noopener">custom version</a> inside our codebase), and the <code>epsilon</code> value of the optimizer can make a 
+<a href="https://twitter.com/araffin2/status/1329382226421837825" target="_blank" rel="noopener">big difference</a>:</p>
+<p><img src="./a2c.png" alt="A2C">
+<em>A and B are actually the same RL algorithm (A2C), sharing the exact same code, same hardware, same hyperparameters&hellip; except the epsilon value to avoid division by zero in the optimizer (one is <code>eps=1e-5</code>, the other <code>eps=1e-7</code>)</em></p>
+<p>Despite all those tricky details (and other 
+<a href="https://github.com/DLR-RM/stable-baselines3/issues/105" target="_blank" rel="noopener">nasty bugs</a>), at the end, we managed to match SB2 results and original implementations closely:</p>
+<p><img src="./a2c_comp.png" alt="A2C">
+<em>Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) A2C result on CartPole-v1</em></p>
+<p><img src="./Result_Breakout-1.png" alt="Breakout">
+<em>Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) results on BreakoutNoFrameskip-v4</em></p>
+<p><img src="./Result_HalfCheetah-1.png" alt="HalfCheetah">
+<em>Stable-Baselines3 (SB3) vs original implementations results on HalfCheetahBulletEnv-v0</em></p>
+<!-- Moreover, all functions are typed (parameter and return types) and documented with a consistent style, and most functions are covered by unit tests. -->
+<!-- Continuous integration checks that all changes pass unit tests and type check, as well as validating the code style and documentation. -->
+<h3 id="comprehensive">Comprehensive</h3>
+<p>Stable-Baselines3 contains the following state-of-the-art on- and off-policy algorithms, commonly used as experimental baselines: A2C, DDPG, DQN, HER, PPO, SAC and TD3.</p>
+<p>Moreover, SB3 provides various algorithm-independent features. We support logging to CSV files and 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/tensorboard.html" target="_blank" rel="noopener">TensorBoard</a>. Users can log custom metrics and modify training via user-provided 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/callbacks.html" target="_blank" rel="noopener">callbacks</a>.</p>
+<p>To speed up training, we support parallel (or &ldquo;vectorized&rdquo;) environments. To simplify training, we implement common environment wrappers, like preprocessing Atari observations to match the original DQN experiments.</p>
+<video controls>
+ <source src="./tb_video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p><em>Tensorboard video integration</em></p>
+<h3 id="experimental-framework">Experimental Framework</h3>
+<p>
+<a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">RL Baselines Zoo</a> provides scripts to train and evaluate agents, tune hyperparameters, record videos, store experiment setup and visualize results.
+We also include a collection of pre-trained reinforcement learning agents together with tuned hyperparameters for simple control tasks, 
+<a href="https://github.com/bulletphysics/bullet3/tree/master/examples/pybullet/gym/pybullet_envs" target="_blank" rel="noopener">PyBullet</a> environments and Atari games, optimized using 
+<a href="https://github.com/pfnet/optuna" target="_blank" rel="noopener">Optuna</a>.</p>
+<p>We follow best practices for training and evaluation, such as evaluating in a separate environment, using deterministic evaluation where required (SAC) and storing all hyperparameters necessary to replicate the experiment.</p>
+<p>Below, you can see basic usage of the RL zoo (training, loading, tuning hyperparameters), which has a simple command line:</p>
+<pre><code class="language-bash"># Train an A2C agent on Atari breakout using tuned hyperparameters,
+# evaluate the agent every 10k steps and save a checkpoint every 50k steps
+python train.py --algo a2c --env BreakoutNoFrameskip-v4 \
+    --eval-freq 10000 --save-freq 50000
+# Plot the learning curve
+python scripts/all_plots.py -a a2c -e BreakoutNoFrameskip-v4 -f logs/
+
+# Load and evaluate a trained agent for 1000 steps
+# optionally, you can also load a checkpoint using --load-checkpoint
+python enjoy.py --algo sac --env Pendulum-v0 -n 1000
+
+# Tune the hyperparameters of ppo on BipedalWalker-v3 with a budget of 50 trials
+# using 2 parallel jobs, a TPE sampler and median pruner
+python train.py --algo ppo --env BipedalWalker-v3 -optimize --n-trials 50 \
+    --n-jobs 2 --sampler tpe --pruner median
+
+</code></pre>
+<h3 id="stable-baselines3-contrib">Stable-Baselines3 Contrib</h3>
+<p>We implement experimental features in a separate 
+<a href="https://github.com/Stable-Baselines-Team/stable-baselines3-contrib" target="_blank" rel="noopener">contrib repository</a>.
+This allows SB3 to maintain a stable and compact core, while still providing the latest features, like 
+<a href="https://sb3-contrib.readthedocs.io/en/master/modules/qrdqn.html" target="_blank" rel="noopener">Quantile Regression DQN (QR-DQN)</a> or 
+<a href="https://sb3-contrib.readthedocs.io/en/master/modules/tqc.html" target="_blank" rel="noopener">Truncated Quantile Critics (TQC)</a>.</p>
+<p>Implementations in contrib need not be tightly integrated with the main SB3 codebase, but we maintain the same stringent review requirements to ensure users can trust the contrib implementations.
+Implementations from contrib that have stood the test of time may be integrated into the main repository.</p>
+<pre><code class="language-python">from sb3_contrib import QRDQN, TQC
+
+# Train an agent using QR-DQN on Acrobot-v0
+model = QRDQN(&quot;MlpPolicy&quot;, &quot;Acrobot-v0&quot;).learn(total_timesteps=20000)
+# Train an agent using Truncated Quantile Critics on Pendulum-v0
+model = TQC(&quot;MlpPolicy&quot;, &quot;Pendulum-v0&quot;).learn(total_timesteps=20000)
+</code></pre>
+<!-- ## What's new? -->
+<h2 id="migration-from-stable-baselines-sb2">Migration from Stable-Baselines (SB2)</h2>
+<p>If you are Stable-Baselines (SB2) user and would like to switch to SB3, we have a 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/migration.html" target="_blank" rel="noopener">migration guide</a> waiting for you ;)</p>
+<p>Most of the time, it only requires to change the import <code>from stable_baselines</code> by <code>from stable_baselines3</code> and rename some parameters.</p>
+<p>For instance, if your code was like that for Stable-Baselines:</p>
+<pre><code class="language-python">from stable_baselines import PPO2
+from stable_baselines.common.cmd_util import make_atari_env
+
+env = make_atari_env(&quot;BreakoutNoFrameskip-v4&quot;, num_env=8, seed=21)
+
+model = PPO2(&quot;MlpPolicy&quot;, env, n_steps=128, nminibatches=4,
+              noptepochs=4, ent_coef=0.01, verbose=1)
+
+model.learn(int(1e5))
+</code></pre>
+<p>the corresponding SB3 code is:</p>
+<pre><code class="language-python">from stable_baselines3 import PPO
+# cmd_util was renamed env_util for clarity
+from stable_baselines3.common.env_util import make_atari_env
+
+# num_env was renamed n_envs
+env = make_atari_env(&quot;BreakoutNoFrameskip-v4&quot;, n_envs=8, seed=21)
+
+# we use batch_size instead of nminibatches which
+# was dependent on the number of environments
+# batch_size = (n_steps * n_envs) // nminibatches = 256
+# noptepochs was renamed n_epochs
+model = PPO(&quot;MlpPolicy&quot;, env, n_steps=128, batch_size=256,
+            n_epochs=4, ent_coef=0.01, verbose=1)
+
+model.learn(int(1e5))
+</code></pre>
+<p>For a complete migration example, you can also compare the 
+<a href="https://github.com/araffin/rl-baselines-zoo" target="_blank" rel="noopener">RL Zoo of SB2</a> with the 
+<a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">one from SB3</a>.</p>
+<h2 id="examples">Examples</h2>
+<p>Let&rsquo;s see now how we can now use the library in practice with some examples. We&rsquo;re going to see how to easily customize the network architecture, train an agent to play Atari games and normalize observations when training on continuous control tasks like PyBullet environments.</p>
+<p>For each of them, you can try it online using 
+<a href="https://github.com/Stable-Baselines-Team/rl-colab-notebooks/tree/sb3" target="_blank" rel="noopener">Google colab notebook</a>.</p>
+<h3 id="custom-policy-network">Custom Policy Network</h3>
+<p>To
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/custom_policy.html" target="_blank" rel="noopener">customize a policy</a> with SB3, all you need to do is choose a network architecture and pass a <code>policy_kwargs</code> (&ldquo;policy keyword arguments&rdquo;) to the algorithm constructor.</p>
+<p>The following snippet shows how to customize the architecture and activation function for one on-policy (PPO) and one off-policy (SAC) algorithm:</p>
+<pre><code class="language-python">import torch as th
+
+from stable_baselines3 import PPO, SAC
+
+# Custom actor (pi) and value function (vf) networks
+# of two layers of size 32 each with Relu activation function
+policy_kwargs = dict(activation_fn=th.nn.ReLU,
+                     net_arch=dict(pi=[32, 32], vf=[32, 32]))
+# Create the agent
+model = PPO(&quot;MlpPolicy&quot;, &quot;CartPole-v1&quot;, policy_kwargs=policy_kwargs, verbose=1)
+
+# Custom actor architecture with two layers of 64 units each
+# Custom critic architecture with two layers of 400 and 300 units
+policy_kwargs = dict(net_arch=dict(pi=[64, 64], qf=[400, 300]))
+# Create the agent
+model = SAC(&quot;MlpPolicy&quot;, &quot;Pendulum-v0&quot;, policy_kwargs=policy_kwargs, verbose=1)
+model.learn(5000)
+</code></pre>
+<h3 id="atari-games">Atari Games</h3>
+<p>Training a RL agent on Atari games is straightforward thanks to <code>make_atari_env</code> helper function and the 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/vec_envs.html#vecframestack" target="_blank" rel="noopener">VecFrameStack</a> wrapper. It will do all the 
+<a href="https://stable-baselines3.readthedocs.io/en/master/common/atari_wrappers.html" target="_blank" rel="noopener">preprocessing</a> and multiprocessing for you.</p>
+<p>Colab link: 
+<a href="https://colab.research.google.com/github/Stable-Baselines-Team/rl-colab-notebooks/blob/sb3/atari_games.ipynb" target="_blank" rel="noopener">Try it online</a></p>
+<pre><code class="language-python">
+from stable_baselines3.common.env_util import make_atari_env
+from stable_baselines3.common.vec_env import VecFrameStack
+from stable_baselines3 import A2C
+
+# There already exists an environment generator
+# that will make and wrap atari environments correctly.
+# Here we are also multi-worker training (n_envs=4 =&gt; 4 environments)
+env = make_atari_env('PongNoFrameskip-v4', n_envs=4, seed=0)
+# Frame-stacking with 4 frames
+env = VecFrameStack(env, n_stack=4)
+
+model = A2C('CnnPolicy', env, verbose=1)
+model.learn(total_timesteps=25000)
+
+obs = env.reset()
+while True:
+    # By default, deterministic=False, so we use the stochastic policy
+    action, _states = model.predict(obs)
+    obs, rewards, dones, info = env.step(action)
+    env.render()
+</code></pre>
+<h3 id="pybullet-normalizing-input-features">PyBullet: Normalizing input features</h3>
+<p>Normalizing input features may be essential to successful training of an RL agent (by default, images are scaled but not other types of input), for instance when training on 
+<a href="https://github.com/bulletphysics/bullet3/" target="_blank" rel="noopener">PyBullet</a> environments. For that, a wrapper exists and will compute a running average and standard deviation of input features (it can do the same for rewards).</p>
+<p>Colab link: 
+<a href="https://colab.research.google.com/github/Stable-Baselines-Team/rl-colab-notebooks/blob/sb3/pybullet.ipynb" target="_blank" rel="noopener">Try it online</a></p>
+<pre><code class="language-python">import gym
+import pybullet_envs
+
+from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
+from stable_baselines3 import PPO
+
+env = DummyVecEnv([lambda: gym.make(&quot;HalfCheetahBulletEnv-v0&quot;)])
+# Automatically normalize the input features and reward
+env = VecNormalize(env, norm_obs=True, norm_reward=True,
+                   clip_obs=10.)
+
+model = PPO('MlpPolicy', env)
+model.learn(total_timesteps=2000)
+
+# Don't forget to save the VecNormalize statistics when saving the agent
+log_dir = &quot;/tmp/&quot;
+model.save(log_dir + &quot;ppo_halfcheetah&quot;)
+stats_path = os.path.join(log_dir, &quot;vec_normalize.pkl&quot;)
+env.save(stats_path)
+
+# To demonstrate loading
+del model, env
+
+# Load the agent
+model = PPO.load(log_dir + &quot;ppo_halfcheetah&quot;)
+
+# Load the saved statistics
+env = DummyVecEnv([lambda: gym.make(&quot;HalfCheetahBulletEnv-v0&quot;)])
+env = VecNormalize.load(stats_path, env)
+#  do not update them at test time
+env.training = False
+# reward normalization is not needed at test time
+env.norm_reward = False
+
+</code></pre>
+<h3 id="more-examples">More examples</h3>
+<p>You can find more examples and associated colab notebooks in the 
+<a href="https://stable-baselines3.readthedocs.io/en/master/guide/examples.html" target="_blank" rel="noopener">documentation</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We presented Stable-Baselines3 v1.0, a set of reliable reinforcement learning implementations and the next major version of the Stable-Baselines.</p>
+<p>If you want to follow the updates of the library, we encourage you to star the repo on 
+<a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">GitHub</a> and click on &ldquo;Watch -&gt; Custom -&gt; Releases&rdquo; to be notified each time a new version is released ;) (you can also follow 
+<a href="https://twitter.com/ARGleave" target="_blank" rel="noopener">Adam</a> or 
+<a href="https://twitter.com/araffin2" target="_blank" rel="noopener">Antonin</a> on Twitter).</p>
+<p>In case you want to contribute, make sure to read the 
+<a href="https://github.com/DLR-RM/stable-baselines3/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener">contributing guide</a> first.</p>
+<p>Finally, if you make a cool project using Stable-Baselines3, please tell us when you want it to appear in 
+<a href="https://stable-baselines3.readthedocs.io/en/master/misc/projects.html" target="_blank" rel="noopener">our project page</a>.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>This blog post was co-written by Stable-Baselines3 maintainers:</p>
+<ul>
+<li>
+<a href="https://github.com/araffin" target="_blank" rel="noopener">Antonin Raffin</a> (aka @araffin)</li>
+<li>
+<a href="https://github.com/hill-a" target="_blank" rel="noopener">Ashley Hill</a> (aka @hill-a)</li>
+<li>
+<a href="https://github.com/ernestum" target="_blank" rel="noopener">Maximilian Ernestus</a> (aka @ernestum)</li>
+<li>
+<a href="https://github.com/adamgleave" target="_blank" rel="noopener">Adam Gleave</a> (@AdamGleave)</li>
+<li>
+<a href="https://github.com/Miffyli" target="_blank" rel="noopener">Anssi Kanervisto</a> (@Miffyli).</li>
+</ul>
+<h2 id="citing-the-project">Citing the Project</h2>
+<p>To cite Stable-Baselines3 in publications:</p>
+<pre><code>@misc{stable-baselines3,
+  author = {Raffin, Antonin and Hill, Ashley and Ernestus, Maximilian and Gleave, Adam and Kanervisto, Anssi and Dormann, Noah},
+  title = {Stable Baselines3},
+  year = {2019},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/DLR-RM/stable-baselines3}},
+}
+</code></pre>
+<h3 id="did-you-find-this-post-helpful-consider-sharing-it-">Did you find this post helpful? Consider sharing it 🙌</h3>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/sb3/&amp;text=Stable-Baselines3:%20Reliable%20Reinforcement%20Learning%20Implementations" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/sb3/&amp;t=Stable-Baselines3:%20Reliable%20Reinforcement%20Learning%20Implementations" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Stable-Baselines3:%20Reliable%20Reinforcement%20Learning%20Implementations&amp;body=/post/sb3/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/sb3/&amp;title=Stable-Baselines3:%20Reliable%20Reinforcement%20Learning%20Implementations" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Stable-Baselines3:%20Reliable%20Reinforcement%20Learning%20Implementations%20/post/sb3/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/sb3/&amp;title=Stable-Baselines3:%20Reliable%20Reinforcement%20Learning%20Implementations" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu33d8f2710ea4928d295bd08cdc05f6eb_60040_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Antonin Raffin</a></h5>
+      <h6 class="card-subtitle">Research Engineer in Robotics and Machine Learning</h6>
+      <p class="card-text">Robots. Machine Learning. Blues Dance.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/antonin-raffin-106b18a8/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://medium.com/@araffin" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/araffin2" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.fr/citations?user=kik4AwIAAAAJ&amp;hl=fr" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/araffin" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.c816d323c3a55093dae0829b44ea1ca8.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2018 - 2021 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

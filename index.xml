@@ -5,12 +5,389 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2020</copyright><lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Fri, 09 Apr 2021 09:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>RL Tips and Tricks / The Challenges of Applying RL to Real Robots</title>
+      <link>/talk/rlvs/</link>
+      <pubDate>Fri, 09 Apr 2021 09:00:00 +0000</pubDate>
+      <guid>/talk/rlvs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations</title>
+      <link>/post/sb3/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/post/sb3/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;THIS POST IS CURRENTLY A DRAFT - SB3 v1.0 will be released soon&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After several months of beta, we are happy to announce the release of 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable-Baselines3 (SB3)&lt;/a&gt; v1.0, a set of reliable implementations of reinforcement learning (RL) algorithms in PyTorch =D! It is the next major version of 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The implementations have been 
+&lt;a href=&#34;https://arxiv.org/abs/2005.05719&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;benchmarked&lt;/a&gt; against reference codebases, and automated unit tests cover 95% of the code.&lt;/p&gt;
+&lt;p&gt;In this blog post, we give an overview of Stable-Baselines3: the motivation behind it, its design principles and features, how we ensure high-quality implementations and some concrete examples.&lt;/p&gt;
+&lt;!-- The algorithms follow a consistent interface and are accompanied by extensive documentation, making it simple to train and compare different RL algorithms. --&gt;
+&lt;h2 id=&#34;tldr&#34;&gt;TL;DR:&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable-Baselines3 (SB3)&lt;/a&gt; is a library providing &lt;em&gt;reliable&lt;/em&gt; implementations of reinforcement learning algorithms in PyTorch. It provides a &lt;em&gt;clean and simple interface&lt;/em&gt; for the user, giving access to off-the-shelf state-of-the-art model-free RL algorithms.&lt;/p&gt;
+&lt;p&gt;The library is &lt;em&gt;
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fully documented&lt;/a&gt;&lt;/em&gt;, tested and its interface allows to train an RL agent in only few lines of code =):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import gym
+from stable_baselines3 import SAC
+# Train an agent using Soft Actor-Critic on Pendulum-v0
+env = gym.make(&amp;quot;Pendulum-v0&amp;quot;)
+model = SAC(&amp;quot;MlpPolicy&amp;quot;, env, verbose=1)
+# Train the model
+model.learn(total_timesteps=20000)
+# Save the model
+model.save(&amp;quot;sac_pendulum&amp;quot;)
+# Load the trained model
+model = SAC.load(&amp;quot;sac_pendulum&amp;quot;)
+# Start a new episode
+obs = env.reset()
+# What action to take in state `obs`?
+action, _ = model.predict(obs, deterministic=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where defining and training a RL agent can be written in two lines of code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from stable_baselines3 import PPO
+# Train an agent using Proximal Policy Optimization on CartPole-v1
+model = PPO(&amp;quot;MlpPolicy&amp;quot;, &amp;quot;CartPole-v1&amp;quot;).learn(total_timesteps=20000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
+&lt;p&gt;GitHub repository: 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Documentation: 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stable-baselines3.readthedocs.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RL Baselines3 Zoo: 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Contrib: 
+&lt;a href=&#34;https://github.com/Stable-Baselines-Team/stable-baselines3-contrib&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/Stable-Baselines-Team/stable-baselines3-contrib&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RL Tutorial: 
+&lt;a href=&#34;https://github.com/araffin/rl-tutorial-jnrr19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/rl-tutorial-jnrr19&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Deep reinforcement learning (RL) research has grown rapidly in recent years, yet results are often 
+&lt;a href=&#34;https://arxiv.org/abs/1709.06560&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;difficult to reproduce&lt;/a&gt;.
+A major challenge is that small implementation details can have a substantial effect on performance &amp;ndash; often greater than the 
+&lt;a href=&#34;https://iclr.cc/virtual_2020/poster_r1etN1rtPB.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;difference between algorithms&lt;/a&gt;.
+It is particularly important that implementations used as experimental &lt;em&gt;baselines&lt;/em&gt; are reliable; otherwise, novel algorithms compared to weak baselines lead to inflated estimates of performance improvements.&lt;/p&gt;
+&lt;p&gt;To address this challenge, we propose Stable-Baselines3 (SB3), an open-source framework implementing seven commonly used model-free deep RL algorithms, relying on the 
+&lt;a href=&#34;https://github.com/openai/gym&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenAI Gym interface&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We take great care to adhere to software engineering best practices to achieve high-quality implementations that match prior results.&lt;/p&gt;
+&lt;h2 id=&#34;history&#34;&gt;History&lt;/h2&gt;
+&lt;p&gt;SB3 builds on our experience maintaining &lt;em&gt;
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;&lt;/em&gt; (SB2), a fork of OpenAI Baselines built on TensorFlow 1.x.&lt;/p&gt;
+&lt;p&gt;Stable-Baselines (SB2) is a trusted library and has already been used in &lt;em&gt;many 
+&lt;a href=&#34;https://stable-baselines.readthedocs.io/en/master/misc/projects.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;projects&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;
+&lt;a href=&#34;https://scholar.google.fr/scholar?oi=bibs&amp;amp;hl=fr&amp;amp;cites=7029285800852969820&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;papers&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Those two years of maintaining SB2 have been a rewarding exchange with our users, where tons of bugs where fixed and new features like callbacks where added to ease the use of the library.&lt;/p&gt;
+&lt;p&gt;However, SB2 was still relying on OpenAI Baselines initial codebase and with the upcoming release of Tensorflow 2, more and more internal TF code was being deprecated.&lt;/p&gt;
+&lt;p&gt;After discussing the matter with the community, we decided to go for a complete rewrite in PyTorch (cf issues 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines/issues/366&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#366&lt;/a&gt;, 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines/issues/576&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#576&lt;/a&gt; and 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines/issues/733&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#733&lt;/a&gt;), codename: Stable-Baselines3&lt;sup&gt;1&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Stable-Baselines3 keeps the same easy-to-use API while improving a lot on the internal code, in particular by adding static type checking.&lt;/p&gt;
+&lt;p&gt;Re-starting almost from scratch is long-term investment: it took 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quite some effort&lt;/a&gt; and time but we now have a smaller, cleaner and reliable core that is easier to maintain and extend =).&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; The very first name of the new version was &amp;ldquo;torchy-baselines&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;There are already 
+&lt;a href=&#34;https://github.com/search?p=1&amp;amp;q=reinforcement&amp;#43;learning&amp;#43;library&amp;amp;type=Repositories&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;many&lt;/a&gt; open source reinforcement learning libraries (almost one new every week), so why did we create a new one? In the next sections you will learn about the design principles and main features of the Stable-Baselines3 library that differenciate it from others.&lt;/p&gt;
+&lt;h2 id=&#34;design-principles&#34;&gt;Design Principles&lt;/h2&gt;
+&lt;p&gt;Our main goal is to provide a user-friendly and reliable RL library.
+To keep SB3 simple to use and maintain, we focus on model-free, single-agent RL algorithms, and rely on external projects to extend the scope to 
+&lt;a href=&#34;https://github.com/HumanCompatibleAI/imitation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;imitation&lt;/a&gt; and 
+&lt;a href=&#34;https://github.com/takuseno/d3rlpy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;offline&lt;/a&gt; learning.&lt;/p&gt;
+&lt;p&gt;We prioritize maintaining &lt;em&gt;stable&lt;/em&gt; implementations over adding new features or algorithms, and avoid making breaking changes.
+We provide a consistent, clean and fully documented API, inspired by the 
+&lt;a href=&#34;https://scikit-learn.org/stable/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;scikit-learn&lt;/a&gt; API.&lt;/p&gt;
+&lt;p&gt;Our code is 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/developer.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;easily modifiable&lt;/a&gt; by users as we favour readability and simplicity over modularity, although we make use of object-oriented programming to reduce code duplication.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;Stable-Baselines3 provides many features, ranging from a simple API to a complete 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;experimental framework&lt;/a&gt; that allows advance usage like automatic hyperparameters tuning..&lt;/p&gt;
+&lt;h3 id=&#34;simple-api&#34;&gt;Simple API&lt;/h3&gt;
+&lt;p&gt;Training agents in Stable-Baselines3 takes just a few lines of code, after which the agent can be queried for actions (see quick example below).
+This allows researchers to easily use the baseline algorithms and components in their experiments (eg. 
+&lt;a href=&#34;https://xbpeng.github.io/projects/Robotic_Imitation/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Imitating Animals&lt;/a&gt;, 
+&lt;a href=&#34;https://github.com/hardmaru/slimevolleygym&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slime Volleyball&lt;/a&gt;, 
+&lt;a href=&#34;https://adversarialpolicies.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adversarial Policies&lt;/a&gt;), as well as apply RL to novel tasks and environments, like 
+&lt;a href=&#34;https://pwnagotchi.ai/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;continual learning&lt;/a&gt; when attacking WiFi networks or 
+&lt;a href=&#34;https://github.com/jaberkow/WaveRL&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dampening bridge vibrations&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from stable_baselines3 import A2C
+# Train an agent using A2C on LunarLander-v2
+model = A2C(&amp;quot;MlpPolicy&amp;quot;, &amp;quot;LunarLander-v2&amp;quot;)
+model.learn(total_timesteps=20000)
+
+# Retrieve and reset the environment
+env = model.get_env()
+obs = env.reset()
+
+# Query the agent (stochastic action here)
+action, _ = model.predict(obs, deterministic=False)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;documentation&#34;&gt;Documentation&lt;/h3&gt;
+&lt;p&gt;SB3 comes with 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;extensive documentation&lt;/a&gt; of the code API.
+We also include a user guide, covering both basic and more advanced usage with a collection of concrete examples.
+Moreover, we have developed a 
+&lt;a href=&#34;https://github.com/araffin/rl-tutorial-jnrr19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Colab notebook based RL tutorial&lt;/a&gt;, enabling users to demo the library directly in the browser.
+Additionally, we include 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;common tips&lt;/a&gt; for running RL experiments and a 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/developer.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;developer guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We also pay close attention to questions and uncertainties from SB3 users, updating the documentation to address these.&lt;/p&gt;
+&lt;h3 id=&#34;high-quality-implementations&#34;&gt;High-Quality Implementations&lt;/h3&gt;
+&lt;p&gt;Algorithms are verified against published results by comparing the agent learning curves (cf issues 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues/48&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#48&lt;/a&gt; and 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues/49&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#48&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;As an example, to compare against TD3 and SAC original implementation, we integrated SB3 callbacks and made sure both SB3 and original implementations were using the same hyperparameters (the code diff for SAC and TD3 repos can be found 
+&lt;a href=&#34;https://github.com/rail-berkeley/softlearning/compare/master...Artemis-Skade:master&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; and 
+&lt;a href=&#34;https://github.com/sfujim/TD3/compare/master...araffin:master&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;there&lt;/a&gt;).&lt;/p&gt;
+&lt;!-- https://github.com/Artemis-Skade/softlearning --&gt;
+&lt;!-- https://github.com/araffin/TD3 --&gt;
+&lt;p&gt;During this period, that&amp;rsquo;s how we realized some tricky details that made a big difference.
+For example, PyTorch RMSProp is different from TensorFlow one (we include a 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/blob/master/stable_baselines3/common/sb2_compat/rmsprop_tf_like.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;custom version&lt;/a&gt; inside our codebase), and the &lt;code&gt;epsilon&lt;/code&gt; value of the optimizer can make a 
+&lt;a href=&#34;https://twitter.com/araffin2/status/1329382226421837825&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;big difference&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./a2c.png&#34; alt=&#34;A2C&#34;&gt;
+&lt;em&gt;A and B are actually the same RL algorithm (A2C), sharing the exact same code, same hardware, same hyperparameters&amp;hellip; except the epsilon value to avoid division by zero in the optimizer (one is &lt;code&gt;eps=1e-5&lt;/code&gt;, the other &lt;code&gt;eps=1e-7&lt;/code&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Despite all those tricky details (and other 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues/105&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nasty bugs&lt;/a&gt;), at the end, we managed to match SB2 results and original implementations closely:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./a2c_comp.png&#34; alt=&#34;A2C&#34;&gt;
+&lt;em&gt;Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) A2C result on CartPole-v1&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./Result_Breakout-1.png&#34; alt=&#34;Breakout&#34;&gt;
+&lt;em&gt;Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) results on BreakoutNoFrameskip-v4&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./Result_HalfCheetah-1.png&#34; alt=&#34;HalfCheetah&#34;&gt;
+&lt;em&gt;Stable-Baselines3 (SB3) vs original implementations results on HalfCheetahBulletEnv-v0&lt;/em&gt;&lt;/p&gt;
+&lt;!-- Moreover, all functions are typed (parameter and return types) and documented with a consistent style, and most functions are covered by unit tests. --&gt;
+&lt;!-- Continuous integration checks that all changes pass unit tests and type check, as well as validating the code style and documentation. --&gt;
+&lt;h3 id=&#34;comprehensive&#34;&gt;Comprehensive&lt;/h3&gt;
+&lt;p&gt;Stable-Baselines3 contains the following state-of-the-art on- and off-policy algorithms, commonly used as experimental baselines: A2C, DDPG, DQN, HER, PPO, SAC and TD3.&lt;/p&gt;
+&lt;p&gt;Moreover, SB3 provides various algorithm-independent features. We support logging to CSV files and 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/tensorboard.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TensorBoard&lt;/a&gt;. Users can log custom metrics and modify training via user-provided 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/callbacks.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;callbacks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To speed up training, we support parallel (or &amp;ldquo;vectorized&amp;rdquo;) environments. To simplify training, we implement common environment wrappers, like preprocessing Atari observations to match the original DQN experiments.&lt;/p&gt;
+&lt;video controls&gt;
+ &lt;source src=&#34;./tb_video.mp4&#34; type=&#34;video/mp4&#34;&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;
+&lt;p&gt;&lt;em&gt;Tensorboard video integration&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;experimental-framework&#34;&gt;Experimental Framework&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Baselines Zoo&lt;/a&gt; provides scripts to train and evaluate agents, tune hyperparameters, record videos, store experiment setup and visualize results.
+We also include a collection of pre-trained reinforcement learning agents together with tuned hyperparameters for simple control tasks, 
+&lt;a href=&#34;https://github.com/bulletphysics/bullet3/tree/master/examples/pybullet/gym/pybullet_envs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PyBullet&lt;/a&gt; environments and Atari games, optimized using 
+&lt;a href=&#34;https://github.com/pfnet/optuna&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Optuna&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We follow best practices for training and evaluation, such as evaluating in a separate environment, using deterministic evaluation where required (SAC) and storing all hyperparameters necessary to replicate the experiment.&lt;/p&gt;
+&lt;p&gt;Below, you can see basic usage of the RL zoo (training, loading, tuning hyperparameters), which has a simple command line:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Train an A2C agent on Atari breakout using tuned hyperparameters,
+# evaluate the agent every 10k steps and save a checkpoint every 50k steps
+python train.py --algo a2c --env BreakoutNoFrameskip-v4 \
+    --eval-freq 10000 --save-freq 50000
+# Plot the learning curve
+python scripts/all_plots.py -a a2c -e BreakoutNoFrameskip-v4 -f logs/
+
+# Load and evaluate a trained agent for 1000 steps
+# optionally, you can also load a checkpoint using --load-checkpoint
+python enjoy.py --algo sac --env Pendulum-v0 -n 1000
+
+# Tune the hyperparameters of ppo on BipedalWalker-v3 with a budget of 50 trials
+# using 2 parallel jobs, a TPE sampler and median pruner
+python train.py --algo ppo --env BipedalWalker-v3 -optimize --n-trials 50 \
+    --n-jobs 2 --sampler tpe --pruner median
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;stable-baselines3-contrib&#34;&gt;Stable-Baselines3 Contrib&lt;/h3&gt;
+&lt;p&gt;We implement experimental features in a separate 
+&lt;a href=&#34;https://github.com/Stable-Baselines-Team/stable-baselines3-contrib&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;contrib repository&lt;/a&gt;.
+This allows SB3 to maintain a stable and compact core, while still providing the latest features, like 
+&lt;a href=&#34;https://sb3-contrib.readthedocs.io/en/master/modules/qrdqn.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Quantile Regression DQN (QR-DQN)&lt;/a&gt; or 
+&lt;a href=&#34;https://sb3-contrib.readthedocs.io/en/master/modules/tqc.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Truncated Quantile Critics (TQC)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Implementations in contrib need not be tightly integrated with the main SB3 codebase, but we maintain the same stringent review requirements to ensure users can trust the contrib implementations.
+Implementations from contrib that have stood the test of time may be integrated into the main repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sb3_contrib import QRDQN, TQC
+
+# Train an agent using QR-DQN on Acrobot-v0
+model = QRDQN(&amp;quot;MlpPolicy&amp;quot;, &amp;quot;Acrobot-v0&amp;quot;).learn(total_timesteps=20000)
+# Train an agent using Truncated Quantile Critics on Pendulum-v0
+model = TQC(&amp;quot;MlpPolicy&amp;quot;, &amp;quot;Pendulum-v0&amp;quot;).learn(total_timesteps=20000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- ## What&#39;s new? --&gt;
+&lt;h2 id=&#34;migration-from-stable-baselines-sb2&#34;&gt;Migration from Stable-Baselines (SB2)&lt;/h2&gt;
+&lt;p&gt;If you are Stable-Baselines (SB2) user and would like to switch to SB3, we have a 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/migration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;migration guide&lt;/a&gt; waiting for you ;)&lt;/p&gt;
+&lt;p&gt;Most of the time, it only requires to change the import &lt;code&gt;from stable_baselines&lt;/code&gt; by &lt;code&gt;from stable_baselines3&lt;/code&gt; and rename some parameters.&lt;/p&gt;
+&lt;p&gt;For instance, if your code was like that for Stable-Baselines:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from stable_baselines import PPO2
+from stable_baselines.common.cmd_util import make_atari_env
+
+env = make_atari_env(&amp;quot;BreakoutNoFrameskip-v4&amp;quot;, num_env=8, seed=21)
+
+model = PPO2(&amp;quot;MlpPolicy&amp;quot;, env, n_steps=128, nminibatches=4,
+              noptepochs=4, ent_coef=0.01, verbose=1)
+
+model.learn(int(1e5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the corresponding SB3 code is:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from stable_baselines3 import PPO
+# cmd_util was renamed env_util for clarity
+from stable_baselines3.common.env_util import make_atari_env
+
+# num_env was renamed n_envs
+env = make_atari_env(&amp;quot;BreakoutNoFrameskip-v4&amp;quot;, n_envs=8, seed=21)
+
+# we use batch_size instead of nminibatches which
+# was dependent on the number of environments
+# batch_size = (n_steps * n_envs) // nminibatches = 256
+# noptepochs was renamed n_epochs
+model = PPO(&amp;quot;MlpPolicy&amp;quot;, env, n_steps=128, batch_size=256,
+            n_epochs=4, ent_coef=0.01, verbose=1)
+
+model.learn(int(1e5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For a complete migration example, you can also compare the 
+&lt;a href=&#34;https://github.com/araffin/rl-baselines-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Zoo of SB2&lt;/a&gt; with the 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;one from SB3&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s see now how we can now use the library in practice with some examples. We&amp;rsquo;re going to see how to easily customize the network architecture, train an agent to play Atari games and normalize observations when training on continuous control tasks like PyBullet environments.&lt;/p&gt;
+&lt;p&gt;For each of them, you can try it online using 
+&lt;a href=&#34;https://github.com/Stable-Baselines-Team/rl-colab-notebooks/tree/sb3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google colab notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;custom-policy-network&#34;&gt;Custom Policy Network&lt;/h3&gt;
+&lt;p&gt;To
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/custom_policy.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;customize a policy&lt;/a&gt; with SB3, all you need to do is choose a network architecture and pass a &lt;code&gt;policy_kwargs&lt;/code&gt; (&amp;ldquo;policy keyword arguments&amp;rdquo;) to the algorithm constructor.&lt;/p&gt;
+&lt;p&gt;The following snippet shows how to customize the architecture and activation function for one on-policy (PPO) and one off-policy (SAC) algorithm:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import torch as th
+
+from stable_baselines3 import PPO, SAC
+
+# Custom actor (pi) and value function (vf) networks
+# of two layers of size 32 each with Relu activation function
+policy_kwargs = dict(activation_fn=th.nn.ReLU,
+                     net_arch=dict(pi=[32, 32], vf=[32, 32]))
+# Create the agent
+model = PPO(&amp;quot;MlpPolicy&amp;quot;, &amp;quot;CartPole-v1&amp;quot;, policy_kwargs=policy_kwargs, verbose=1)
+
+# Custom actor architecture with two layers of 64 units each
+# Custom critic architecture with two layers of 400 and 300 units
+policy_kwargs = dict(net_arch=dict(pi=[64, 64], qf=[400, 300]))
+# Create the agent
+model = SAC(&amp;quot;MlpPolicy&amp;quot;, &amp;quot;Pendulum-v0&amp;quot;, policy_kwargs=policy_kwargs, verbose=1)
+model.learn(5000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;atari-games&#34;&gt;Atari Games&lt;/h3&gt;
+&lt;p&gt;Training a RL agent on Atari games is straightforward thanks to &lt;code&gt;make_atari_env&lt;/code&gt; helper function and the 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/vec_envs.html#vecframestack&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VecFrameStack&lt;/a&gt; wrapper. It will do all the 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/common/atari_wrappers.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;preprocessing&lt;/a&gt; and multiprocessing for you.&lt;/p&gt;
+&lt;p&gt;Colab link: 
+&lt;a href=&#34;https://colab.research.google.com/github/Stable-Baselines-Team/rl-colab-notebooks/blob/sb3/atari_games.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Try it online&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+from stable_baselines3.common.env_util import make_atari_env
+from stable_baselines3.common.vec_env import VecFrameStack
+from stable_baselines3 import A2C
+
+# There already exists an environment generator
+# that will make and wrap atari environments correctly.
+# Here we are also multi-worker training (n_envs=4 =&amp;gt; 4 environments)
+env = make_atari_env(&#39;PongNoFrameskip-v4&#39;, n_envs=4, seed=0)
+# Frame-stacking with 4 frames
+env = VecFrameStack(env, n_stack=4)
+
+model = A2C(&#39;CnnPolicy&#39;, env, verbose=1)
+model.learn(total_timesteps=25000)
+
+obs = env.reset()
+while True:
+    # By default, deterministic=False, so we use the stochastic policy
+    action, _states = model.predict(obs)
+    obs, rewards, dones, info = env.step(action)
+    env.render()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pybullet-normalizing-input-features&#34;&gt;PyBullet: Normalizing input features&lt;/h3&gt;
+&lt;p&gt;Normalizing input features may be essential to successful training of an RL agent (by default, images are scaled but not other types of input), for instance when training on 
+&lt;a href=&#34;https://github.com/bulletphysics/bullet3/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PyBullet&lt;/a&gt; environments. For that, a wrapper exists and will compute a running average and standard deviation of input features (it can do the same for rewards).&lt;/p&gt;
+&lt;p&gt;Colab link: 
+&lt;a href=&#34;https://colab.research.google.com/github/Stable-Baselines-Team/rl-colab-notebooks/blob/sb3/pybullet.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Try it online&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import gym
+import pybullet_envs
+
+from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
+from stable_baselines3 import PPO
+
+env = DummyVecEnv([lambda: gym.make(&amp;quot;HalfCheetahBulletEnv-v0&amp;quot;)])
+# Automatically normalize the input features and reward
+env = VecNormalize(env, norm_obs=True, norm_reward=True,
+                   clip_obs=10.)
+
+model = PPO(&#39;MlpPolicy&#39;, env)
+model.learn(total_timesteps=2000)
+
+# Don&#39;t forget to save the VecNormalize statistics when saving the agent
+log_dir = &amp;quot;/tmp/&amp;quot;
+model.save(log_dir + &amp;quot;ppo_halfcheetah&amp;quot;)
+stats_path = os.path.join(log_dir, &amp;quot;vec_normalize.pkl&amp;quot;)
+env.save(stats_path)
+
+# To demonstrate loading
+del model, env
+
+# Load the agent
+model = PPO.load(log_dir + &amp;quot;ppo_halfcheetah&amp;quot;)
+
+# Load the saved statistics
+env = DummyVecEnv([lambda: gym.make(&amp;quot;HalfCheetahBulletEnv-v0&amp;quot;)])
+env = VecNormalize.load(stats_path, env)
+#  do not update them at test time
+env.training = False
+# reward normalization is not needed at test time
+env.norm_reward = False
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;more-examples&#34;&gt;More examples&lt;/h3&gt;
+&lt;p&gt;You can find more examples and associated colab notebooks in the 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/examples.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We presented Stable-Baselines3 v1.0, a set of reliable reinforcement learning implementations and the next major version of the Stable-Baselines.&lt;/p&gt;
+&lt;p&gt;If you want to follow the updates of the library, we encourage you to star the repo on 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; and click on &amp;ldquo;Watch -&amp;gt; Custom -&amp;gt; Releases&amp;rdquo; to be notified each time a new version is released ;) (you can also follow 
+&lt;a href=&#34;https://twitter.com/ARGleave&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adam&lt;/a&gt; or 
+&lt;a href=&#34;https://twitter.com/araffin2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Antonin&lt;/a&gt; on Twitter).&lt;/p&gt;
+&lt;p&gt;In case you want to contribute, make sure to read the 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/blob/master/CONTRIBUTING.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;contributing guide&lt;/a&gt; first.&lt;/p&gt;
+&lt;p&gt;Finally, if you make a cool project using Stable-Baselines3, please tell us when you want it to appear in 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/misc/projects.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;our project page&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;about-the-authors&#34;&gt;About the authors&lt;/h2&gt;
+&lt;p&gt;This blog post was co-written by Stable-Baselines3 maintainers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/araffin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Antonin Raffin&lt;/a&gt; (aka @araffin)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/hill-a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ashley Hill&lt;/a&gt; (aka @hill-a)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/ernestum&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Maximilian Ernestus&lt;/a&gt; (aka @ernestum)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/adamgleave&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adam Gleave&lt;/a&gt; (@AdamGleave)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/Miffyli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anssi Kanervisto&lt;/a&gt; (@Miffyli).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;citing-the-project&#34;&gt;Citing the Project&lt;/h2&gt;
+&lt;p&gt;To cite Stable-Baselines3 in publications:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@misc{stable-baselines3,
+  author = {Raffin, Antonin and Hill, Ashley and Ernestus, Maximilian and Gleave, Adam and Kanervisto, Anssi and Dormann, Noah},
+  title = {Stable Baselines3},
+  year = {2019},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/DLR-RM/stable-baselines3}},
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
+</description>
+    </item>
     
     <item>
       <title>Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics</title>
