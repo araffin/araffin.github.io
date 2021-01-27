@@ -759,15 +759,15 @@ model = PPO(&quot;MlpPolicy&quot;, &quot;CartPole-v1&quot;).learn(total_timestep
 A major challenge is that small implementation details can have a substantial effect on performance &ndash; often greater than the 
 <a href="https://iclr.cc/virtual_2020/poster_r1etN1rtPB.html" target="_blank" rel="noopener">difference between algorithms</a>.
 It is particularly important that implementations used as experimental <em>baselines</em> are reliable; otherwise, novel algorithms compared to weak baselines lead to inflated estimates of performance improvements.</p>
-<p>To address this challenge, we propose Stable-Baselines3 (SB3), an open-source framework implementing seven commonly used model-free deep RL algorithms, relying on the 
+<p>To help with this problem, we present Stable-Baselines3 (SB3), an open-source framework implementing seven commonly used model-free deep RL algorithms, relying on the 
 <a href="https://github.com/openai/gym" target="_blank" rel="noopener">OpenAI Gym interface</a>.</p>
 <p>We take great care to adhere to software engineering best practices to achieve high-quality implementations that match prior results.</p>
 <h2 id="history">History</h2>
 <p>SB3 builds on our experience maintaining <em>
-<a href="https://github.com/hill-a/stable-baselines" target="_blank" rel="noopener">Stable Baselines</a></em> (SB2), a fork of OpenAI Baselines built on TensorFlow 1.x.</p>
-<p>Stable-Baselines (SB2) is a trusted library and has already been used in <em>many 
+<a href="https://github.com/hill-a/stable-baselines" target="_blank" rel="noopener">Stable Baselines</a></em> (SB2), a fork of OpenAI Baselines built on TensorFlow 1.x.
+Stable-Baselines (SB2) is a trusted library and has already been used in <em>many 
 <a href="https://stable-baselines.readthedocs.io/en/master/misc/projects.html" target="_blank" rel="noopener">projects</a></em> and <em>
-<a href="https://scholar.google.fr/scholar?oi=bibs&amp;hl=fr&amp;cites=7029285800852969820" target="_blank" rel="noopener">papers</a></em>.</p>
+<a href="https://scholar.google.fr/scholar?oi=bibs&amp;hl=fr&amp;cites=7029285800852969820" target="_blank" rel="noopener">papers</a></em> with already more than 250 citations!</p>
 <p>Those two years of maintaining SB2 have been a rewarding exchange with our users, where tons of bugs where fixed and new features like callbacks where added to ease the use of the library.</p>
 <p>However, SB2 was still relying on OpenAI Baselines initial codebase and with the upcoming release of Tensorflow 2, more and more internal TF code was being deprecated.</p>
 <p>After discussing the matter with the community, we decided to go for a complete rewrite in PyTorch (cf issues 
@@ -777,9 +777,9 @@ It is particularly important that implementations used as experimental <em>basel
 <p>Stable-Baselines3 keeps the same easy-to-use API while improving a lot on the internal code, in particular by adding static type checking.</p>
 <p>Re-starting almost from scratch is long-term investment: it took 
 <a href="https://github.com/DLR-RM/stable-baselines3/issues/1" target="_blank" rel="noopener">quite some effort</a> and time but we now have a smaller, cleaner and reliable core that is easier to maintain and extend =).</p>
-<p><sup>1</sup> The very first name of the new version was &ldquo;torchy-baselines&rdquo;</p>
 <p>There are already 
 <a href="https://github.com/search?p=1&amp;q=reinforcement&#43;learning&#43;library&amp;type=Repositories" target="_blank" rel="noopener">many</a> open source reinforcement learning libraries (almost one new every week), so why did we create a new one? In the next sections you will learn about the design principles and main features of the Stable-Baselines3 library that differenciate it from others.</p>
+<p><sup>1</sup> The very first name of the new version was &ldquo;torchy-baselines&rdquo;</p>
 <h2 id="design-principles">Design Principles</h2>
 <p>Our main goal is to provide a user-friendly and reliable RL library.
 To keep SB3 simple to use and maintain, we focus on model-free, single-agent RL algorithms, and rely on external projects to extend the scope to 
@@ -792,7 +792,7 @@ We provide a consistent, clean and fully documented API, inspired by the
 <a href="https://stable-baselines3.readthedocs.io/en/master/guide/developer.html" target="_blank" rel="noopener">easily modifiable</a> by users as we favour readability and simplicity over modularity, although we make use of object-oriented programming to reduce code duplication.</p>
 <h2 id="features">Features</h2>
 <p>Stable-Baselines3 provides many features, ranging from a simple API to a complete 
-<a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">experimental framework</a> that allows advance usage like automatic hyperparameters tuning..</p>
+<a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">experimental framework</a> that allows advance usage like automatic hyperparameters tuning.</p>
 <h3 id="simple-api">Simple API</h3>
 <p>Training agents in Stable-Baselines3 takes just a few lines of code, after which the agent can be queried for actions (see quick example below).
 This allows researchers to easily use the baseline algorithms and components in their experiments (eg. 
@@ -936,6 +936,9 @@ model.learn(int(1e5))
 <p>For a complete migration example, you can also compare the 
 <a href="https://github.com/araffin/rl-baselines-zoo" target="_blank" rel="noopener">RL Zoo of SB2</a> with the 
 <a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">one from SB3</a>.</p>
+<div style="margin-top:3em"></div>
+<hr/>
+<div style="margin-top:3em"></div>
 <h2 id="examples">Examples</h2>
 <p>Let&rsquo;s see now how we can now use the library in practice with some examples. We&rsquo;re going to see how to easily customize the network architecture, train an agent to play Atari games and normalize observations when training on continuous control tasks like PyBullet environments.</p>
 <p>For each of them, you can try it online using 
@@ -990,7 +993,7 @@ while True:
     obs, rewards, dones, info = env.step(action)
     env.render()
 </code></pre>
-<h3 id="pybullet-normalizing-input-features">PyBullet: Normalizing input features</h3>
+<h3 id="pybullet-normalizing-input-features">PyBullet: Normalizing Input Features</h3>
 <p>Normalizing input features may be essential to successful training of an RL agent (by default, images are scaled but not other types of input), for instance when training on 
 <a href="https://github.com/bulletphysics/bullet3/" target="_blank" rel="noopener">PyBullet</a> environments. For that, a wrapper exists and will compute a running average and standard deviation of input features (it can do the same for rewards).</p>
 <p>Colab link: 
@@ -1030,28 +1033,30 @@ env.training = False
 env.norm_reward = False
 
 </code></pre>
-<h3 id="more-examples">More examples</h3>
+<h3 id="more-examples">More Examples</h3>
 <p>You can find more examples and associated colab notebooks in the 
 <a href="https://stable-baselines3.readthedocs.io/en/master/guide/examples.html" target="_blank" rel="noopener">documentation</a>.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="to-the-infinity-and-beyond">To the Infinity and Beyond!</h2>
 <p>We presented Stable-Baselines3 v1.0, a set of reliable reinforcement learning implementations and the next major version of the Stable-Baselines.</p>
 <p>If you want to follow the updates of the library, we encourage you to star the repo on 
 <a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">GitHub</a> and click on &ldquo;Watch -&gt; Custom -&gt; Releases&rdquo; to be notified each time a new version is released ;) (you can also follow 
 <a href="https://twitter.com/ARGleave" target="_blank" rel="noopener">Adam</a> or 
-<a href="https://twitter.com/araffin2" target="_blank" rel="noopener">Antonin</a> on Twitter).</p>
+<a href="https://twitter.com/araffin2" target="_blank" rel="noopener">Antonin</a> on Twitter).
+Coming soon, one of our long-time requested feature: 
+<a href="https://github.com/DLR-RM/stable-baselines3/pull/243" target="_blank" rel="noopener">mixed observations</a> (aka dict obs) support.</p>
 <p>In case you want to contribute, make sure to read the 
 <a href="https://github.com/DLR-RM/stable-baselines3/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener">contributing guide</a> first.</p>
 <p>Finally, if you make a cool project using Stable-Baselines3, please tell us when you want it to appear in 
 <a href="https://stable-baselines3.readthedocs.io/en/master/misc/projects.html" target="_blank" rel="noopener">our project page</a>.</p>
-<h2 id="about-the-authors">About the authors</h2>
+<h2 id="about-the-authors">About the Authors</h2>
 <p>This blog post was co-written by Stable-Baselines3 maintainers:</p>
 <ul>
 <li>
-<a href="https://github.com/araffin" target="_blank" rel="noopener">Antonin Raffin</a> (aka @araffin)</li>
+<a href="https://github.com/araffin" target="_blank" rel="noopener">Antonin Raffin</a> (@araffin)</li>
 <li>
-<a href="https://github.com/hill-a" target="_blank" rel="noopener">Ashley Hill</a> (aka @hill-a)</li>
+<a href="https://github.com/hill-a" target="_blank" rel="noopener">Ashley Hill</a> (@hill-a)</li>
 <li>
-<a href="https://github.com/ernestum" target="_blank" rel="noopener">Maximilian Ernestus</a> (aka @ernestum)</li>
+<a href="https://github.com/ernestum" target="_blank" rel="noopener">Maximilian Ernestus</a> (@ernestum)</li>
 <li>
 <a href="https://github.com/adamgleave" target="_blank" rel="noopener">Adam Gleave</a> (@AdamGleave)</li>
 <li>
