@@ -23,11 +23,11 @@
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The implementations have been 
 &lt;a href=&#34;https://arxiv.org/abs/2005.05719&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;benchmarked&lt;/a&gt; against reference codebases, and automated unit tests cover 95% of the code.&lt;/p&gt;
-&lt;p&gt;In this blog post, we give an overview of Stable-Baselines3: the motivation behind it, its design principles and features, how we ensure high-quality implementations and some concrete examples.&lt;/p&gt;
+&lt;p&gt;In this blog post, we give you an overview of Stable-Baselines3: the motivation behind it, its design principles and features, how we ensure high-quality implementations and some concrete examples.&lt;/p&gt;
 &lt;!-- The algorithms follow a consistent interface and are accompanied by extensive documentation, making it simple to train and compare different RL algorithms. --&gt;
 &lt;h2 id=&#34;tldr&#34;&gt;TL;DR:&lt;/h2&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable-Baselines3 (SB3)&lt;/a&gt; is a library providing &lt;em&gt;reliable&lt;/em&gt; implementations of reinforcement learning algorithms in PyTorch. It provides a &lt;em&gt;clean and simple interface&lt;/em&gt; for the user, giving access to off-the-shelf state-of-the-art model-free RL algorithms.&lt;/p&gt;
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable-Baselines3 (SB3)&lt;/a&gt; is a library providing &lt;em&gt;reliable&lt;/em&gt; implementations of reinforcement learning algorithms in PyTorch. It provides a &lt;em&gt;clean and simple interface&lt;/em&gt;, giving you access to off-the-shelf state-of-the-art model-free RL algorithms.&lt;/p&gt;
 &lt;p&gt;The library is &lt;em&gt;
 &lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fully documented&lt;/a&gt;&lt;/em&gt;, tested and its interface allows to train an RL agent in only few lines of code =):&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import gym
@@ -74,9 +74,9 @@ It is particularly important that implementations used as experimental &lt;em&gt
 &lt;h2 id=&#34;history&#34;&gt;History&lt;/h2&gt;
 &lt;p&gt;SB3 builds on our experience maintaining &lt;em&gt;
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;&lt;/em&gt; (SB2), a fork of OpenAI Baselines built on TensorFlow 1.x.
-Stable-Baselines (SB2) is a trusted library and has already been used in &lt;em&gt;many 
+If you haven&amp;rsquo;t heard of it, Stable-Baselines (SB2) is a trusted library and has already been used in &lt;em&gt;many 
 &lt;a href=&#34;https://stable-baselines.readthedocs.io/en/master/misc/projects.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;projects&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;
-&lt;a href=&#34;https://scholar.google.fr/scholar?oi=bibs&amp;amp;hl=fr&amp;amp;cites=7029285800852969820&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;papers&lt;/a&gt;&lt;/em&gt; with already more than 250 citations!&lt;/p&gt;
+&lt;a href=&#34;https://scholar.google.fr/scholar?oi=bibs&amp;amp;hl=fr&amp;amp;cites=7029285800852969820&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;papers&lt;/a&gt;&lt;/em&gt; with already more than 270 citations!&lt;/p&gt;
 &lt;p&gt;Those two years of maintaining SB2 have been a rewarding exchange with our users, where tons of bugs where fixed and new features like callbacks where added to ease the use of the library.&lt;/p&gt;
 &lt;p&gt;However, SB2 was still relying on OpenAI Baselines initial codebase and with the upcoming release of Tensorflow 2, more and more internal TF code was being deprecated.&lt;/p&gt;
 &lt;p&gt;After discussing the matter with the community, we decided to go for a complete rewrite in PyTorch (cf issues 
@@ -101,10 +101,10 @@ We provide a consistent, clean and fully documented API, inspired by the
 &lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/developer.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;easily modifiable&lt;/a&gt; by users as we favour readability and simplicity over modularity, although we make use of object-oriented programming to reduce code duplication.&lt;/p&gt;
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
 &lt;p&gt;Stable-Baselines3 provides many features, ranging from a simple API to a complete 
-&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;experimental framework&lt;/a&gt; that allows advance usage like automatic hyperparameters tuning.&lt;/p&gt;
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;experimental framework&lt;/a&gt; that allows advanced usage like automatic hyperparameters tuning.&lt;/p&gt;
 &lt;h3 id=&#34;simple-api&#34;&gt;Simple API&lt;/h3&gt;
 &lt;p&gt;Training agents in Stable-Baselines3 takes just a few lines of code, after which the agent can be queried for actions (see quick example below).
-This allows researchers to easily use the baseline algorithms and components in their experiments (eg. 
+This allows you to easily use the baseline algorithms and components in your experiments (eg. 
 &lt;a href=&#34;https://xbpeng.github.io/projects/Robotic_Imitation/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Imitating Animals&lt;/a&gt;, 
 &lt;a href=&#34;https://github.com/hardmaru/slimevolleygym&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slime Volleyball&lt;/a&gt;, 
 &lt;a href=&#34;https://adversarialpolicies.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adversarial Policies&lt;/a&gt;), as well as apply RL to novel tasks and environments, like 
@@ -128,11 +128,13 @@ action, _ = model.predict(obs, deterministic=False)
 &lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;extensive documentation&lt;/a&gt; of the code API.
 We also include a user guide, covering both basic and more advanced usage with a collection of concrete examples.
 Moreover, we have developed a 
-&lt;a href=&#34;https://github.com/araffin/rl-tutorial-jnrr19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Colab notebook based RL tutorial&lt;/a&gt;, enabling users to demo the library directly in the browser.
+&lt;a href=&#34;https://github.com/araffin/rl-tutorial-jnrr19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Colab notebook based RL tutorial&lt;/a&gt;, so you can demo the library directly in the browser.
 Additionally, we include 
 &lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;common tips&lt;/a&gt; for running RL experiments and a 
 &lt;a href=&#34;https://stable-baselines3.readthedocs.io/en/master/guide/developer.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;developer guide&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We also pay close attention to questions and uncertainties from SB3 users, updating the documentation to address these.&lt;/p&gt;
+&lt;p&gt;We also pay close attention to 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&amp;#43;is%3Aopen&amp;#43;label%3Aquestion&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;questions&lt;/a&gt; and 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&amp;#43;is%3Aopen&amp;#43;label%3Adocumentation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uncertainties&lt;/a&gt; from SB3 users, updating the documentation to address these.&lt;/p&gt;
 &lt;h3 id=&#34;high-quality-implementations&#34;&gt;High-Quality Implementations&lt;/h3&gt;
 &lt;p&gt;Algorithms are verified against published results by comparing the agent learning curves (cf issues 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues/48&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#48&lt;/a&gt; and 
