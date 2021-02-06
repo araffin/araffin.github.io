@@ -235,9 +235,9 @@ After several months of beta, we are happy to announce the release of Stable-Bas
   <meta property="twitter:image" content="/post/sb3/featured.jpg"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2021-01-01T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2021-02-01T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2021-01-01T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2021-02-01T00:00:00&#43;00:00">
   
 
   
@@ -269,8 +269,8 @@ After several months of beta, we are happy to announce the release of Stable-Bas
     "/post/sb3/featured.jpg"
   ],
   
-  "datePublished": "2021-01-01T00:00:00Z",
-  "dateModified": "2021-01-01T00:00:00Z",
+  "datePublished": "2021-02-01T00:00:00Z",
+  "dateModified": "2021-02-01T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -622,7 +622,7 @@ After several months of beta, we are happy to announce the release of Stable-Bas
     
       
     
-    Jan 1, 2021
+    Feb 1, 2021
   </span>
   
 
@@ -801,10 +801,28 @@ This allows you to easily use the baseline algorithms and components in your exp
 <a href="https://adversarialpolicies.github.io/" target="_blank" rel="noopener">Adversarial Policies</a>), as well as apply RL to novel tasks and environments, like 
 <a href="https://pwnagotchi.ai/" target="_blank" rel="noopener">continual learning</a> when attacking WiFi networks or 
 <a href="https://github.com/jaberkow/WaveRL" target="_blank" rel="noopener">dampening bridge vibrations</a>.</p>
-<pre><code class="language-python">from stable_baselines3 import A2C
+<pre><code class="language-python">import gym
+
+from stable_baselines3 import A2C
+from stable_baselines3.common.monitor import Monitor
+from stable_baselines3.common.callbacks import CheckpointCallback, EvalCallback
+
+# Save a checkpoint every 1000 steps
+checkpoint_callback = CheckpointCallback(save_freq=5000, save_path=&quot;./logs/&quot;,
+                                         name_prefix=&quot;rl_model&quot;)
+
+# Evaluate the model periodically
+# and auto-save the best model and evaluations
+# Use a monitor wrapper to properly report episode stats
+eval_env = Monitor(gym.make(&quot;LunarLander-v2&quot;))
+# Use deterministic actions for evaluation
+eval_callback = EvalCallback(eval_env, best_model_save_path=&quot;./logs/&quot;,
+                             log_path=&quot;./logs/&quot;, eval_freq=2000,
+                             deterministic=True, render=False)
+
 # Train an agent using A2C on LunarLander-v2
-model = A2C(&quot;MlpPolicy&quot;, &quot;LunarLander-v2&quot;)
-model.learn(total_timesteps=20000)
+model = A2C(&quot;MlpPolicy&quot;, &quot;LunarLander-v2&quot;, verbose=1)
+model.learn(total_timesteps=20000, callback=[checkpoint_callback, eval_callback])
 
 # Retrieve and reset the environment
 env = model.get_env()
@@ -826,6 +844,8 @@ Additionally, we include
 <p>We also pay close attention to 
 <a href="https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&#43;is%3Aopen&#43;label%3Aquestion" target="_blank" rel="noopener">questions</a> and 
 <a href="https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&#43;is%3Aopen&#43;label%3Adocumentation" target="_blank" rel="noopener">uncertainties</a> from SB3 users, updating the documentation to address these.</p>
+<p><img src="./doc.png" alt="Documentation">
+<em>Stable-Baselines3 Documentation</em></p>
 <h3 id="high-quality-implementations">High-Quality Implementations</h3>
 <p>Algorithms are verified against published results by comparing the agent learning curves (cf issues 
 <a href="https://github.com/DLR-RM/stable-baselines3/issues/48" target="_blank" rel="noopener">#48</a> and 
