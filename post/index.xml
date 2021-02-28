@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
@@ -15,10 +15,9 @@
     <item>
       <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations</title>
       <link>/post/sb3/</link>
-      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       <guid>/post/sb3/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;THIS POST IS CURRENTLY A DRAFT - SB3 v1.0 will be released soon&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;After several months of beta, we are happy to announce the release of 
+      <description>&lt;p&gt;After several months of beta, we are happy to announce the release of 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable-Baselines3 (SB3)&lt;/a&gt; v1.0, a set of reliable implementations of reinforcement learning (RL) algorithms in PyTorch =D! It is the next major version of 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The implementations have been 
