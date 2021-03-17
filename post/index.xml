@@ -75,7 +75,7 @@ It is particularly important that implementations used as experimental &lt;em&gt
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;&lt;/em&gt; (SB2), a fork of OpenAI Baselines built on TensorFlow 1.x.
 If you haven&amp;rsquo;t heard of it, Stable-Baselines (SB2) is a trusted library and has already been used in &lt;em&gt;many 
 &lt;a href=&#34;https://stable-baselines.readthedocs.io/en/master/misc/projects.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;projects&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;
-&lt;a href=&#34;https://scholar.google.fr/scholar?oi=bibs&amp;amp;hl=fr&amp;amp;cites=7029285800852969820&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;papers&lt;/a&gt;&lt;/em&gt; with already more than 270 citations!&lt;/p&gt;
+&lt;a href=&#34;https://scholar.google.fr/scholar?oi=bibs&amp;amp;hl=fr&amp;amp;cites=7029285800852969820&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;papers&lt;/a&gt;&lt;/em&gt; with already more than 300+ citations!&lt;/p&gt;
 &lt;p&gt;Those two years of maintaining SB2 have been a rewarding exchange with our users, where tons of bugs where fixed and new features like callbacks where added to ease the use of the library.&lt;/p&gt;
 &lt;p&gt;However, SB2 was still relying on OpenAI Baselines initial codebase and with the upcoming release of Tensorflow 2, more and more internal TF code was being deprecated.&lt;/p&gt;
 &lt;p&gt;After discussing the matter with the community, we decided to go for a complete rewrite in PyTorch (cf issues 
@@ -328,7 +328,8 @@ while True:
 &lt;a href=&#34;https://github.com/bulletphysics/bullet3/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PyBullet&lt;/a&gt; environments. For that, a wrapper exists and will compute a running average and standard deviation of input features (it can do the same for rewards).&lt;/p&gt;
 &lt;p&gt;Colab link: 
 &lt;a href=&#34;https://colab.research.google.com/github/Stable-Baselines-Team/rl-colab-notebooks/blob/sb3/pybullet.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Try it online&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import gym
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import gym
 import pybullet_envs
 
 from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize

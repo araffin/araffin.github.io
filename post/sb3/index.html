@@ -764,7 +764,7 @@ It is particularly important that implementations used as experimental <em>basel
 <a href="https://github.com/hill-a/stable-baselines" target="_blank" rel="noopener">Stable Baselines</a></em> (SB2), a fork of OpenAI Baselines built on TensorFlow 1.x.
 If you haven&rsquo;t heard of it, Stable-Baselines (SB2) is a trusted library and has already been used in <em>many 
 <a href="https://stable-baselines.readthedocs.io/en/master/misc/projects.html" target="_blank" rel="noopener">projects</a></em> and <em>
-<a href="https://scholar.google.fr/scholar?oi=bibs&amp;hl=fr&amp;cites=7029285800852969820" target="_blank" rel="noopener">papers</a></em> with already more than 270 citations!</p>
+<a href="https://scholar.google.fr/scholar?oi=bibs&amp;hl=fr&amp;cites=7029285800852969820" target="_blank" rel="noopener">papers</a></em> with already more than 300+ citations!</p>
 <p>Those two years of maintaining SB2 have been a rewarding exchange with our users, where tons of bugs where fixed and new features like callbacks where added to ease the use of the library.</p>
 <p>However, SB2 was still relying on OpenAI Baselines initial codebase and with the upcoming release of Tensorflow 2, more and more internal TF code was being deprecated.</p>
 <p>After discussing the matter with the community, we decided to go for a complete rewrite in PyTorch (cf issues 
@@ -1017,7 +1017,8 @@ while True:
 <a href="https://github.com/bulletphysics/bullet3/" target="_blank" rel="noopener">PyBullet</a> environments. For that, a wrapper exists and will compute a running average and standard deviation of input features (it can do the same for rewards).</p>
 <p>Colab link: 
 <a href="https://colab.research.google.com/github/Stable-Baselines-Team/rl-colab-notebooks/blob/sb3/pybullet.ipynb" target="_blank" rel="noopener">Try it online</a></p>
-<pre><code class="language-python">import gym
+<pre><code class="language-python">import os
+import gym
 import pybullet_envs
 
 from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
