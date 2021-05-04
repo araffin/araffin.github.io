@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Freek Stulp | Antonin Raffin | Homepage</title>
-    <link>/authors/freek-stulp/</link>
-      <atom:link href="/authors/freek-stulp/index.xml" rel="self" type="application/rss+xml" />
-    <description>Freek Stulp</description>
+    <title>Bastian Deutschmann | Antonin Raffin | Homepage</title>
+    <link>/authors/bastian-deutschmann/</link>
+      <atom:link href="/authors/bastian-deutschmann/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bastian Deutschmann</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
-      <title>Freek Stulp</title>
-      <link>/authors/freek-stulp/</link>
+      <title>Bastian Deutschmann</title>
+      <link>/authors/bastian-deutschmann/</link>
     </image>
     
     <item>
@@ -33,22 +33,6 @@
 
 Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics</title>
-      <link>/publication/gsde/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/gsde/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unsupervised learning of state representations for multiple tasks</title>
-      <link>/publication/multiple-tasks-srl/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/multiple-tasks-srl/</guid>
-      <description></description>
     </item>
     
   </channel>

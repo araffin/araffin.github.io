@@ -5,12 +5,35 @@
     <link>/publication/</link>
       <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Publications</title>
       <link>/publication/</link>
     </image>
+    
+    <item>
+      <title>Fault-Tolerant Six-DoF Pose Estimation for Tendon-Driven Continuum Mechanisms</title>
+      <link>/publication/fault-tolerant/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/fault-tolerant/</guid>
+      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
     
     <item>
       <title>Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics</title>
@@ -33,14 +56,6 @@
       <link>/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/publication/srl-toolbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PythonRobotics: a Python code collection of robotics algorithms</title>
-      <link>/publication/python-robotics/</link>
-      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/python-robotics/</guid>
       <description></description>
     </item>
     

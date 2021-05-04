@@ -1,304 +1,166 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2021-04-09T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/2/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2021-04-09T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/authors/</loc>
-    <lastmod>2021-04-09T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/bastian-deutschmann/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/fault-tolerant/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/freek-stulp/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/robotics/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/talk/</loc>
     <lastmod>2021-04-09T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/reinforcement-learning/</loc>
     <lastmod>2021-04-09T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talk/rlvs/</loc>
     <lastmod>2021-04-09T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2021-04-09T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/</loc>
     <lastmod>2021-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/sb3/</loc>
     <lastmod>2021-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication_types/3/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/freek-stulp/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/gsde/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/robotics/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/deep-learning/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/machine-learning/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/python/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/stable-baselines3/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talk/rl-tuto-jnrr19/</loc>
     <lastmod>2019-10-18T00:09:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talk/sb-ias-19/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication_types/1/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/ashley-hill/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/david-filliat/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/decoupling/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/learning-to-drive/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/learning-to-drive/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/natalia-diaz-rodriguez/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/rene-traore/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/state-representation-learning/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/timothee-lesort/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/rl-baselines-zoo/</loc>
     <lastmod>2018-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/srl-toolbox/</loc>
     <lastmod>2018-10-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/stable-baselines/</loc>
     <lastmod>2018-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication_types/0/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/srl-toolbox/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/alexis-paques/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/atsushi-sakai/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/daniel-ingram/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/joseph-dinius/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/kalman-filter/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/karan-chawla/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/path-planning/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/path-tracking/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/python-robotics/</loc>
-    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/antonin-raffin/</loc>
     <lastmod>2018-10-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/stable-baselines/</loc>
     <lastmod>2018-10-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/arduino-serial/</loc>
     <lastmod>2018-03-01T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/racing-robot/</loc>
     <lastmod>2018-01-01T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/arduino/</loc>
     <lastmod>2017-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/racing-robot/</loc>
     <lastmod>2017-10-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/arduino-robust-serial/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/c&#43;&#43;/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/rust/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/oliver-brock/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/rico-jonschkowski/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/authors/sebastian-hofer/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/multiple-tasks-srl/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
   </url>
-  
 </urlset>
