@@ -5,12 +5,20 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Fri, 09 Apr 2021 09:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Sat, 29 May 2021 18:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Recent &amp; Upcoming Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Learning to Race in Hours with Reinforcement Learning</title>
+      <link>/talk/learning-race/</link>
+      <pubDate>Sat, 29 May 2021 18:00:00 +0000</pubDate>
+      <guid>/talk/learning-race/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>RL Tips and Tricks / The Challenges of Applying RL to Real Robots</title>

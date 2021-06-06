@@ -44,7 +44,7 @@
       <guid>/project/rl-baselines-zoo/</guid>
       <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/rl-baselines-zoo&#34;&gt;https://github.com/araffin/rl-baselines-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Goals of this repository:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Provide a simple interface to train and enjoy RL agents&lt;/li&gt;

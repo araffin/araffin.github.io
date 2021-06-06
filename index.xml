@@ -5,12 +5,20 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Sat, 29 May 2021 18:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Learning to Race in Hours with Reinforcement Learning</title>
+      <link>/talk/learning-race/</link>
+      <pubDate>Sat, 29 May 2021 18:00:00 +0000</pubDate>
+      <guid>/talk/learning-race/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Fault-Tolerant Six-DoF Pose Estimation for Tendon-Driven Continuum Mechanisms</title>
@@ -521,7 +529,7 @@ Coming soon, one of our long-time requested feature:
       <guid>/project/rl-baselines-zoo/</guid>
       <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/rl-baselines-zoo&#34;&gt;https://github.com/araffin/rl-baselines-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Goals of this repository:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Provide a simple interface to train and enjoy RL agents&lt;/li&gt;
