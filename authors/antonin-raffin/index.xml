@@ -5,7 +5,7 @@
     <link>/authors/antonin-raffin/</link>
       <atom:link href="/authors/antonin-raffin/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</title>
       <link>/post/stable-baselines/</link>
-      <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       <guid>/post/stable-baselines/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
@@ -25,7 +25,7 @@
     <item>
       <title>Simple and Robust {Computer — Arduino} Serial Communication</title>
       <link>/post/arduino-serial/</link>
-      <pubDate>Sat, 10 Feb 2018 00:00:00 +0100</pubDate>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
       <guid>/post/arduino-serial/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
@@ -35,7 +35,7 @@
     <item>
       <title>Autonomous Racing Robot With an Arduino, a Raspberry Pi and a Pi Camera</title>
       <link>/post/racing-robot/</link>
-      <pubDate>Fri, 10 Nov 2017 00:00:00 +0100</pubDate>
+      <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
       <guid>/post/racing-robot/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://becominghuman.ai/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;

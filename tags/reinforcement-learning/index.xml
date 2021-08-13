@@ -50,9 +50,12 @@
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
       <guid>/project/stable-baselines3/</guid>
       <description>&lt;p&gt;Stable Baselines3 is a set of improved implementations of reinforcement learning algorithms in PyTorch. It is the next major version of Stable Baselines.&lt;/p&gt;
-&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Documentation: &lt;a href=&#34;https://stable-baselines3.readthedocs.io/&#34;&gt;https://stable-baselines3.readthedocs.io/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;RL Baselines3 Zoo (collection of pre-trained agents): &lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Documentation: 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stable-baselines3.readthedocs.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RL Baselines3 Zoo (collection of pre-trained agents): 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;RL Baselines3 Zoo also offers a simple interface to train, evaluate agents and do hyperparameter tuning.&lt;/p&gt;
 </description>
     </item>
@@ -97,7 +100,8 @@
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
       <guid>/project/learning-to-drive/</guid>
       <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
-&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Blog post on 
 &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -110,7 +114,8 @@
       <guid>/project/rl-baselines-zoo/</guid>
       <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Goals of this repository:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Provide a simple interface to train and enjoy RL agents&lt;/li&gt;
@@ -127,9 +132,12 @@
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
       <guid>/project/srl-toolbox/</guid>
       <description>&lt;p&gt;S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.&lt;/p&gt;
-&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Documentation: &lt;a href=&#34;https://s-rl-toolbox.readthedocs.io&#34;&gt;https://s-rl-toolbox.readthedocs.io&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Paper: &lt;a href=&#34;https://arxiv.org/abs/1809.09369&#34;&gt;https://arxiv.org/abs/1809.09369&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Documentation: 
+&lt;a href=&#34;https://s-rl-toolbox.readthedocs.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://s-rl-toolbox.readthedocs.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Paper: 
+&lt;a href=&#34;https://arxiv.org/abs/1809.09369&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/1809.09369&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;main-features&#34;&gt;Main Features&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;10 RL algorithms (
@@ -150,7 +158,8 @@
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/project/stable-baselines/</guid>
       <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
-&lt;p&gt;Github repository: &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can read a detailed presentation of Stable Baselines in the 
 &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium article&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -167,7 +176,7 @@
     <item>
       <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</title>
       <link>/post/stable-baselines/</link>
-      <pubDate>Mon, 20 Aug 2018 00:00:00 +0200</pubDate>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       <guid>/post/stable-baselines/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
