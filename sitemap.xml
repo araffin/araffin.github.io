@@ -3,24 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2021-05-29T18:00:00+00:00</lastmod>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/1/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2021-05-29T18:00:00+00:00</lastmod>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/</loc>
-    <lastmod>2021-05-29T18:00:00+00:00</lastmod>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/freek-stulp/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/jens-kober/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/reinforcement-learning/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/robotics/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/gsde/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/learning-race/</loc>
     <lastmod>2021-05-29T18:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/</loc>
-    <lastmod>2021-05-29T18:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/reinforcement-learning/</loc>
-    <lastmod>2021-05-29T18:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2021-05-29T18:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication_types/2/</loc>
@@ -32,18 +53,6 @@
     <loc>/publication/fault-tolerant/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/freek-stulp/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/robotics/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/talk/rlvs/</loc>
     <lastmod>2021-04-09T09:00:00+00:00</lastmod>
   </url><url>
@@ -52,12 +61,6 @@
   </url><url>
     <loc>/post/sb3/</loc>
     <lastmod>2021-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/3/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/gsde/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/deep-learning/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
@@ -79,9 +82,6 @@
   </url><url>
     <loc>/talk/sb-ias-19/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/1/</loc>
-    <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/ashley-hill/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>

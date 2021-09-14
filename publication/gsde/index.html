@@ -229,14 +229,14 @@
   
   <meta property="og:site_name" content="Antonin Raffin | Homepage">
   <meta property="og:url" content="/publication/gsde/">
-  <meta property="og:title" content="Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics | Antonin Raffin | Homepage">
+  <meta property="og:title" content="Smooth Exploration for Robotic Reinforcement Learning | Antonin Raffin | Homepage">
   <meta property="og:description" content="We extend the original state-dependent exploration (SDE) to apply deep reinforcement learning algorithms directly on real robots. The resulting method, gSDE, yields competitive results in simulation but outperforms the unstructured exploration on the real robot."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-05-13T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2021-09-14T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-05-13T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2021-09-14T00:00:00&#43;00:00">
   
 
   
@@ -260,10 +260,10 @@
     "@type": "WebPage",
     "@id": "/publication/gsde/"
   },
-  "headline": "Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics",
+  "headline": "Smooth Exploration for Robotic Reinforcement Learning",
   
-  "datePublished": "2020-05-13T00:00:00Z",
-  "dateModified": "2020-05-13T00:00:00Z",
+  "datePublished": "2021-09-14T00:00:00Z",
+  "dateModified": "2021-09-14T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -296,7 +296,7 @@
 
 
 
-  <title>Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics | Antonin Raffin | Homepage</title>
+  <title>Smooth Exploration for Robotic Reinforcement Learning | Antonin Raffin | Homepage</title>
 
 </head>
 
@@ -590,7 +590,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics</h1>
+  <h1>Smooth Exploration for Robotic Reinforcement Learning</h1>
 
   
 
@@ -608,7 +608,7 @@
     
 
   
-  <span><a href="/authors/admin/">Antonin Raffin</a></span>, <span><a href="/authors/freek-stulp/">Freek Stulp</a></span>
+  <span><a href="/authors/admin/">Antonin Raffin</a></span>, <span><a href="/authors/jens-kober/">Jens Kober</a></span>, <span><a href="/authors/freek-stulp/">Freek Stulp</a></span>
   </div>
   
   
@@ -619,7 +619,7 @@
     
       
     
-    May 2020
+    September 2021
   </span>
   
 
@@ -672,8 +672,14 @@
 
 
   
+    
+  
 
 
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://openreview.net/forum?id=TSuSGVkjuXd" target="_blank" rel="noopener">
+  PDF
+</a>
 
 
 
@@ -687,7 +693,7 @@
   
     
   
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/DLR-RM/stable-baselines3/tree/sde" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">
   Code
 </a>
 
@@ -722,7 +728,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract">Reinforcement learning (RL) enables robots to learn skills from interactions with the real world. In practice, the unstructured step-based exploration used in Deep RL &ndash; often very successful in simulation &ndash; leads to jerky motion patterns on real robots. Consequences of the resulting shaky behavior are poor exploration, or even damage to the robot. We address these issues by adapting state-dependent exploration (SDE) to current Deep RL algorithms. To enable this adaptation, we propose three extensions to the original SDE, which leads to a new exploration method generalized state-dependent exploration (gSDE). We evaluate gSDE both in simulation, on PyBullet continuous control tasks, and directly on a tendon-driven elastic robot. gSDE yields competitive results in simulation but outperforms the unstructured exploration on the real robot.</p>
+    <p class="pub-abstract">Reinforcement learning (RL) enables robots to learn skills from interactions with the real world. In practice, the unstructured step-based exploration used in Deep RL &ndash; often very successful in simulation &ndash; leads to jerky motion patterns on real robots. Consequences of the resulting shaky behavior are poor exploration, or even damage to the robot. We address these issues by adapting state-dependent exploration (SDE) to current Deep RL algorithms. To enable this adaptation, we propose two extensions to the original SDE, using more general features and re-sampling the noise periodically, which leads to a new exploration method generalized state-dependent exploration (gSDE). We evaluate gSDE both in simulation, on PyBullet continuous control tasks, and directly on three different real robots: a tendon-driven elastic robot, a quadruped and an RC car. The noise sampling interval of gSDE enables a compromise between performance and smoothness, which allows training directly on the real robots without loss of performance.</p>
     
 
     
@@ -734,8 +740,8 @@
           <div class="col-12 col-md-9">
             
             
-            <a href="/publication/#3">
-              Preprint
+            <a href="/publication/#1">
+              Conference paper
             </a>
             
           </div>
@@ -746,6 +752,18 @@
     <div class="d-md-none space-below"></div>
     
 
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">5th Annual Conference on Robot Learning</div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
     
 
     <div class="space-below"></div>
@@ -779,7 +797,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/publication/gsde/&amp;text=Generalized%20State-Dependent%20Exploration%20for%20Deep%20Reinforcement%20Learning%20in%20Robotics" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/publication/gsde/&amp;text=Smooth%20Exploration%20for%20Robotic%20Reinforcement%20Learning" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -792,7 +810,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/publication/gsde/&amp;t=Generalized%20State-Dependent%20Exploration%20for%20Deep%20Reinforcement%20Learning%20in%20Robotics" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/publication/gsde/&amp;t=Smooth%20Exploration%20for%20Robotic%20Reinforcement%20Learning" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -805,7 +823,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Generalized%20State-Dependent%20Exploration%20for%20Deep%20Reinforcement%20Learning%20in%20Robotics&amp;body=/publication/gsde/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Smooth%20Exploration%20for%20Robotic%20Reinforcement%20Learning&amp;body=/publication/gsde/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -818,7 +836,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/publication/gsde/&amp;title=Generalized%20State-Dependent%20Exploration%20for%20Deep%20Reinforcement%20Learning%20in%20Robotics" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/publication/gsde/&amp;title=Smooth%20Exploration%20for%20Robotic%20Reinforcement%20Learning" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -831,7 +849,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Generalized%20State-Dependent%20Exploration%20for%20Deep%20Reinforcement%20Learning%20in%20Robotics%20/publication/gsde/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Smooth%20Exploration%20for%20Robotic%20Reinforcement%20Learning%20/publication/gsde/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -844,7 +862,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/publication/gsde/&amp;title=Generalized%20State-Dependent%20Exploration%20for%20Deep%20Reinforcement%20Learning%20in%20Robotics" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/publication/gsde/&amp;title=Smooth%20Exploration%20for%20Robotic%20Reinforcement%20Learning" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -996,6 +1014,34 @@
     
 
     <div class="media-body">
+      <h5 class="card-title"><a href="/authors/jens-kober/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+    
+    
+
+
+
+
+
+  
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+
+    <div class="media-body">
       <h5 class="card-title"><a href="/authors/freek-stulp/"></a></h5>
       
       
@@ -1028,11 +1074,11 @@
       
       <li><a href="/publication/srl-toolbox/">S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</a></li>
       
+      <li><a href="/publication/fault-tolerant/">Fault-Tolerant Six-DoF Pose Estimation for Tendon-Driven Continuum Mechanisms</a></li>
+      
       <li><a href="/project/learning-to-drive/">Learning to Drive Smoothly in Minutes</a></li>
       
       <li><a href="/post/learning-to-drive/">Learning to Drive Smoothly in Minutes</a></li>
-      
-      <li><a href="/project/srl-toolbox/">S-RL Toolbox</a></li>
       
     </ul>
   </div>

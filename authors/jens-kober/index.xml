@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>1 | Antonin Raffin | Homepage</title>
-    <link>/publication_types/1/</link>
-      <atom:link href="/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
-    <description>1</description>
+    <title>Jens Kober | Antonin Raffin | Homepage</title>
+    <link>/authors/jens-kober/</link>
+      <atom:link href="/authors/jens-kober/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jens Kober</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Tue, 14 Sep 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
-      <title>1</title>
-      <link>/publication_types/1/</link>
+      <title>Jens Kober</title>
+      <link>/authors/jens-kober/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>/publication/gsde/</link>
       <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
       <guid>/publication/gsde/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
-      <link>/publication/decoupling/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/decoupling/</guid>
       <description></description>
     </item>
     

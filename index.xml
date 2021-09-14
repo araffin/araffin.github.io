@@ -5,12 +5,20 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Sat, 29 May 2021 18:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Tue, 14 Sep 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Smooth Exploration for Robotic Reinforcement Learning</title>
+      <link>/publication/gsde/</link>
+      <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/gsde/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Learning to Race in Hours with Reinforcement Learning</title>
@@ -453,14 +461,6 @@ Coming soon, one of our long-time requested feature:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Generalized State-Dependent Exploration for Deep Reinforcement Learning in Robotics</title>
-      <link>/publication/gsde/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/gsde/</guid>
-      <description></description>
     </item>
     
     <item>
