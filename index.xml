@@ -5,12 +5,79 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Tue, 14 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Rliable: Better Evaluation for Reinforcement Learning</title>
+      <link>/post/rliable/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>/post/rliable/</guid>
+      <description>&lt;p&gt;It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results.
+Reporting results with poor comparison leads to a progress mirage and may undermine the stochasticity of the results. To this end, 
+&lt;a href=&#34;https://arxiv.org/abs/2108.13264&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep RL at the Edge of the Statistical Precipice&lt;/a&gt; (Neurips Oral) provides recommendations for a more rigorous evaluation of DeepRL algorithms. The paper comes with an open-source library named 
+&lt;a href=&#34;https://agarwl.github.io/rliable/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rliable&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This blog post is meant to be a visual explanation of the tools used by the 
+&lt;a href=&#34;https://agarwl.github.io/rliable/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rliable&lt;/a&gt; library to better evaluate and compare RL algorithms.
+We will through the different recommendation of the authors and give a visual explanation for each of them.&lt;/p&gt;
+&lt;h2 id=&#34;score-normalization&#34;&gt;Score Normalization&lt;/h2&gt;
+&lt;p&gt;To have more datapoints that just 10 random seeds, rliable recommends aggregating all N runs across all M tasks (e.g., aggregating all Atari games results) so we have a total of NxM runs from which we can sample from. To have comparable scores across tasks, we first need to normalize the scores of each run per task as follows:&lt;/p&gt;
+&lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./score_norm.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;p&gt;Note: the score may depend on what you want to compare. It is usually the final performance of the RL agent, after training.&lt;/p&gt;
+&lt;h2 id=&#34;stratified-bootstrap-confidence-intervals&#34;&gt;Stratified Bootstrap Confidence Intervals&lt;/h2&gt;
+&lt;p&gt;To account for uncertainty in aggregate performance, rliable uses stratified bootstrap confidence intervals.
+This may sound complicated, but we will go slowly through the meaning of each of those terms.&lt;/p&gt;
+&lt;p&gt;First, bootstrap means sampling with replacement. For instance, if we sample four times with replacement 3 runs of indices [1, 2, 3] on a task A, we may get: [2, 2, 3, 1] the first time, [3, 1, 1, 1] the second time, &amp;hellip;&lt;/p&gt;
+&lt;p&gt;Stratified bootstrap means that we first group our datapoints into buckets (or strata), and then sample with replacement each of those buckets according to their size:&lt;/p&gt;
+&lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./stratified_bootstrap.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;p&gt;In RL, the buckets are the different tasks or environments. With stratified bootstrap, all tasks are always represented in the sampled runs. This avoids computing the aggregate metrics only on a subset of all the environments:&lt;/p&gt;
+&lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./bootstrap_rl.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;p&gt;Each time we sample with replacement the runs, we compute the different metrics (for instance, mean score) for those sampled runs. To report uncertainty, rliable computes 
+&lt;a href=&#34;https://acclab.github.io/bootstrap-confidence-intervals.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;bootstrap confidence intervals&lt;/a&gt; (CIs) following the 
+&lt;a href=&#34;https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;percentiles&#39; method&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./bootstrap_ci.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;p&gt;Note: there are other methods for computing CI with bootstrap, but percentiles was found by the authors to work well in practice.&lt;/p&gt;
+&lt;h2 id=&#34;interquartile-mean-iqm&#34;&gt;Interquartile Mean (IQM)&lt;/h2&gt;
+&lt;p&gt;To summarize benchmark performance, it is common to report mean/median performance of the runs.
+However, mean is known to be sensible to outliers and median may not reflect enough the distribution of scores, so rliable suggests to use Interquartile Mean (IQM) instead:&lt;/p&gt;
+&lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./iqm.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;h2 id=&#34;performance-profiles&#34;&gt;Performance Profiles&lt;/h2&gt;
+&lt;p&gt;To report performance variability across tasks and runs, the authors proposes to use performance profiles.
+It tells for a given target performance (for example, 60% of the reference performance) the proportion of runs that achieve it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./perf_profile.jpg&#34; alt=&#34;Performance Profile&#34;&gt;
+Source: image from the authors of the rliable library&lt;/p&gt;
+&lt;h2 id=&#34;probability-of-improvement&#34;&gt;Probability of Improvement&lt;/h2&gt;
+&lt;p&gt;Finally, to test whether an algorithm X is probably better or not than an algorithm Y, rliable uses a modified 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mann–Whitney U test &lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./proba_improvement.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;p&gt;The probability of improvement is then average over the tasks.
+A probability of improvement around 0.5 means that the two algorithms have similar performances.&lt;/p&gt;
+&lt;h2 id=&#34;in-practice-using-the-rl-zoo&#34;&gt;In Practice: Using the RL Zoo&lt;/h2&gt;
+&lt;p&gt;To allow more users to use rliable, we added basic support of it in the 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo#plot-with-the-rliable-library&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Baselines3 Zoo&lt;/a&gt; which is a training framework for 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable-Baselines3&lt;/a&gt;. Fore more information, please follow the instructions in the 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo#plot-with-the-rliable-library&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this post, we have seen the different tools used by rliable to better evaluate RL algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;score normalization to aggregate scores across tasks&lt;/li&gt;
+&lt;li&gt;stratified bootstrap to provide proper confidence intervals&lt;/li&gt;
+&lt;li&gt;interquartile mean (IQM) to summarize benchmark performance&lt;/li&gt;
+&lt;li&gt;performance profile for an overview of the results and their variability&lt;/li&gt;
+&lt;li&gt;probability of improvement to compare two algorithms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;acknowledgement&#34;&gt;Acknowledgement&lt;/h2&gt;
+&lt;p&gt;I would like to thanks 
+&lt;a href=&#34;https://psc-g.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pablo Samuel Castro&lt;/a&gt; for checking the correctness of the visuals.&lt;/p&gt;
+&lt;p&gt;All the graphics were made using 
+&lt;a href=&#34;https://excalidraw.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;excalidraw&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
+</description>
+    </item>
     
     <item>
       <title>Smooth Exploration for Robotic Reinforcement Learning</title>
