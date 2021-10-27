@@ -18,7 +18,7 @@
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/post/rliable/</guid>
       <description>&lt;p&gt;It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results.
-Reporting results with poor comparison leads to a progress mirage and may undermine the stochasticity of the results. To this end, 
+Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results. To this end, 
 &lt;a href=&#34;https://arxiv.org/abs/2108.13264&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep RL at the Edge of the Statistical Precipice&lt;/a&gt; (Neurips Oral) provides recommendations for a more rigorous evaluation of DeepRL algorithms. The paper comes with an open-source library named 
 &lt;a href=&#34;https://agarwl.github.io/rliable/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rliable&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blog post is meant to be a visual explanation of the tools used by the 
@@ -52,7 +52,7 @@ It tells for a given target performance (for example, 60% of the reference perfo
 Source: image from the authors of the rliable library&lt;/p&gt;
 &lt;h2 id=&#34;probability-of-improvement&#34;&gt;Probability of Improvement&lt;/h2&gt;
 &lt;p&gt;Finally, to test whether an algorithm X is probably better or not than an algorithm Y, rliable uses a modified 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mann–Whitney U test &lt;/a&gt;:&lt;/p&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mann–Whitney U test&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./proba_improvement.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
 &lt;p&gt;The probability of improvement is then average over the tasks.
 A probability of improvement around 0.5 means that the two algorithms have similar performances.&lt;/p&gt;

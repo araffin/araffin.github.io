@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results. Reporting results with poor comparison leads to a progress mirage and may undermine the stochasticity of the results.">
+  <meta name="description" content="It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results. Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/rliable/">
@@ -233,7 +233,7 @@
   <meta property="og:site_name" content="Antonin Raffin | Homepage">
   <meta property="og:url" content="/post/rliable/">
   <meta property="og:title" content="Rliable: Better Evaluation for Reinforcement Learning | Antonin Raffin | Homepage">
-  <meta property="og:description" content="It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results. Reporting results with poor comparison leads to a progress mirage and may undermine the stochasticity of the results."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results. Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -283,7 +283,7 @@
       "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results. Reporting results with poor comparison leads to a progress mirage and may undermine the stochasticity of the results."
+  "description": "It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results. Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results."
 }
 </script>
 
@@ -655,7 +655,7 @@
 
     <div class="article-style">
       <p>It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results.
-Reporting results with poor comparison leads to a progress mirage and may undermine the stochasticity of the results. To this end, 
+Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results. To this end, 
 <a href="https://arxiv.org/abs/2108.13264" target="_blank" rel="noopener">Deep RL at the Edge of the Statistical Precipice</a> (Neurips Oral) provides recommendations for a more rigorous evaluation of DeepRL algorithms. The paper comes with an open-source library named 
 <a href="https://agarwl.github.io/rliable/" target="_blank" rel="noopener">rliable</a>.</p>
 <p>This blog post is meant to be a visual explanation of the tools used by the 
@@ -689,7 +689,7 @@ It tells for a given target performance (for example, 60% of the reference perfo
 Source: image from the authors of the rliable library</p>
 <h2 id="probability-of-improvement">Probability of Improvement</h2>
 <p>Finally, to test whether an algorithm X is probably better or not than an algorithm Y, rliable uses a modified 
-<a href="https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test" target="_blank" rel="noopener">Mann–Whitney U test </a>:</p>
+<a href="https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test" target="_blank" rel="noopener">Mann–Whitney U test</a>:</p>
 <p><object width="100%" type="image/svg+xml" data="./proba_improvement.svg"></object></p>
 <p>The probability of improvement is then average over the tasks.
 A probability of improvement around 0.5 means that the two algorithms have similar performances.</p>
