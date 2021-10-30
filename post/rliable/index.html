@@ -657,17 +657,17 @@
       <p>It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results.
 Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results. To this end, 
 <a href="https://arxiv.org/abs/2108.13264" target="_blank" rel="noopener">Deep RL at the Edge of the Statistical Precipice</a> (Neurips Oral) provides recommendations for a more rigorous evaluation of DeepRL algorithms. The paper comes with an open-source library named 
-<a href="https://agarwl.github.io/rliable/" target="_blank" rel="noopener">rliable</a>.</p>
+<a href="https://github.com/google-research/rliable" target="_blank" rel="noopener">rliable</a>.</p>
 <p>This blog post is meant to be a visual explanation of the tools used by the 
 <a href="https://agarwl.github.io/rliable/" target="_blank" rel="noopener">rliable</a> library to better evaluate and compare RL algorithms.
-We will through the different recommendation of the authors and give a visual explanation for each of them.</p>
+We will go through the different recommendations of the authors and give a visual explanation for each of them.</p>
 <h2 id="score-normalization">Score Normalization</h2>
 <p>To have more datapoints that just 10 random seeds, rliable recommends aggregating all N runs across all M tasks (e.g., aggregating all Atari games results) so we have a total of NxM runs from which we can sample from. To have comparable scores across tasks, we first need to normalize the scores of each run per task as follows:</p>
 <p><object width="100%" type="image/svg+xml" data="./score_norm.svg"></object></p>
 <p>Note: the score may depend on what you want to compare. It is usually the final performance of the RL agent, after training.</p>
 <h2 id="stratified-bootstrap-confidence-intervals">Stratified Bootstrap Confidence Intervals</h2>
 <p>To account for uncertainty in aggregate performance, rliable uses stratified bootstrap confidence intervals.
-This may sound complicated, but we will go slowly through the meaning of each of those terms.</p>
+This may sound complicated, but let&rsquo;s go slowly through the meaning of each of those terms.</p>
 <p>First, bootstrap means sampling with replacement. For instance, if we sample four times with replacement 3 runs of indices [1, 2, 3] on a task A, we may get: [2, 2, 3, 1] the first time, [3, 1, 1, 1] the second time, &hellip;</p>
 <p>Stratified bootstrap means that we first group our datapoints into buckets (or strata), and then sample with replacement each of those buckets according to their size:</p>
 <p><object width="100%" type="image/svg+xml" data="./stratified_bootstrap.svg"></object></p>
@@ -688,14 +688,14 @@ It tells for a given target performance (for example, 60% of the reference perfo
 <p><img src="./perf_profile.jpg" alt="Performance Profile">
 Source: image from the authors of the rliable library</p>
 <h2 id="probability-of-improvement">Probability of Improvement</h2>
-<p>Finally, to test whether an algorithm X is probably better or not than an algorithm Y, rliable uses a modified 
+<p>Finally, to test whether an algorithm X is probably better or not than an algorithm Y, rliable uses the U-statistic from a 
 <a href="https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test" target="_blank" rel="noopener">Mann–Whitney U test</a>:</p>
 <p><object width="100%" type="image/svg+xml" data="./proba_improvement.svg"></object></p>
 <p>The probability of improvement is then average over the tasks.
 A probability of improvement around 0.5 means that the two algorithms have similar performances.</p>
 <h2 id="in-practice-using-the-rl-zoo">In Practice: Using the RL Zoo</h2>
 <p>To allow more users to use rliable, we added basic support of it in the 
-<a href="https://github.com/DLR-RM/rl-baselines3-zoo#plot-with-the-rliable-library" target="_blank" rel="noopener">RL Baselines3 Zoo</a> which is a training framework for 
+<a href="https://github.com/DLR-RM/rl-baselines3-zoo#plot-with-the-rliable-library" target="_blank" rel="noopener">RL Baselines3 Zoo</a>, a training framework for 
 <a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">Stable-Baselines3</a>. Fore more information, please follow the instructions in the 
 <a href="https://github.com/DLR-RM/rl-baselines3-zoo#plot-with-the-rliable-library" target="_blank" rel="noopener">README</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
