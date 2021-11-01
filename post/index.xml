@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2021</copyright><lastBuildDate>Fri, 29 Oct 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
@@ -13,9 +13,9 @@
     </image>
     
     <item>
-      <title>Rliable: Better Evaluation for Reinforcement Learning</title>
+      <title>Rliable: Better Evaluation for Reinforcement Learning - A Visual Explanation</title>
       <link>/post/rliable/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/post/rliable/</guid>
       <description>&lt;p&gt;It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results.
 Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results. To this end, 
@@ -72,7 +72,8 @@ A probability of improvement around 0.5 means that the two algorithms have simil
 &lt;/ul&gt;
 &lt;h2 id=&#34;acknowledgement&#34;&gt;Acknowledgement&lt;/h2&gt;
 &lt;p&gt;I would like to thanks 
-&lt;a href=&#34;https://psc-g.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pablo Samuel Castro&lt;/a&gt; for checking the correctness of the visuals.&lt;/p&gt;
+&lt;a href=&#34;https://psc-g.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pablo Samuel Castro&lt;/a&gt; and 
+&lt;a href=&#34;https://agarwl.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rishabh Agarwal&lt;/a&gt; for checking the correctness of the visuals.&lt;/p&gt;
 &lt;p&gt;All the graphics were made using 
 &lt;a href=&#34;https://excalidraw.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;excalidraw&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
