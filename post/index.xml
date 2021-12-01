@@ -121,6 +121,8 @@ model = PPO(&amp;quot;MlpPolicy&amp;quot;, &amp;quot;CartPole-v1&amp;quot;).lear
 &lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
 &lt;p&gt;GitHub repository: 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Paper: 
+&lt;a href=&#34;http://jmlr.org/papers/v22/20-1364.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://jmlr.org/papers/v22/20-1364.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Documentation: 
 &lt;a href=&#34;https://stable-baselines3.readthedocs.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stable-baselines3.readthedocs.io/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;RL Baselines3 Zoo: 
@@ -463,13 +465,15 @@ Coming soon, one of our long-time requested feature:
 &lt;/ul&gt;
 &lt;h2 id=&#34;citing-the-project&#34;&gt;Citing the Project&lt;/h2&gt;
 &lt;p&gt;To cite Stable-Baselines3 in publications:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;@misc{stable-baselines3,
-  author = {Raffin, Antonin and Hill, Ashley and Ernestus, Maximilian and Gleave, Adam and Kanervisto, Anssi and Dormann, Noah},
-  title = {Stable Baselines3},
-  year = {2019},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/DLR-RM/stable-baselines3}},
+&lt;pre&gt;&lt;code&gt;@article{stable-baselines3,
+  author  = {Antonin Raffin and Ashley Hill and Adam Gleave and Anssi Kanervisto and Maximilian Ernestus and Noah Dormann},
+  title   = {Stable-Baselines3: Reliable Reinforcement Learning Implementations},
+  journal = {Journal of Machine Learning Research},
+  year    = {2021},
+  volume  = {22},
+  number  = {268},
+  pages   = {1-8},
+  url     = {http://jmlr.org/papers/v22/20-1364.html}
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
