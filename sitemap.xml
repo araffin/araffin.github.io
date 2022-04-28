@@ -2,8 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2021-10-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/</loc>
+    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/</loc>
+    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/reinforcement-learning/</loc>
+    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/tools-icra/</loc>
+    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/1/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/anssi-kanervisto/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/robotics/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/rousslan-fernand-julien-dossa/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/shengyi-huang/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/ppo-iclr/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/weixun-wang/</loc>
+    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/2/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/adam-gleave/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/ashley-hill/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/maximilian-ernestus/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/noah-dormann/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/sb3/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/</loc>
     <lastmod>2021-10-29T00:00:00+00:00</lastmod>
@@ -11,47 +74,17 @@
     <loc>/post/rliable/</loc>
     <lastmod>2021-10-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/1/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/authors/freek-stulp/</loc>
     <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/jens-kober/</loc>
     <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/reinforcement-learning/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/robotics/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/publication/gsde/</loc>
-    <lastmod>2021-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/learning-race/</loc>
     <lastmod>2021-05-29T18:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/</loc>
-    <lastmod>2021-05-29T18:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/2/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/bastian-deutschmann/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
@@ -85,9 +118,6 @@
   </url><url>
     <loc>/talk/sb-ias-19/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/ashley-hill/</loc>
-    <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/david-filliat/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
@@ -127,6 +157,33 @@
   </url><url>
     <loc>/publication/srl-toolbox/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/alexis-paques/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/atsushi-sakai/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/daniel-ingram/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/joseph-dinius/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/kalman-filter/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/karan-chawla/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/path-planning/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/path-tracking/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/python-robotics/</loc>
+    <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/antonin-raffin/</loc>
     <lastmod>2018-10-01T00:00:00+00:00</lastmod>

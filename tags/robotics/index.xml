@@ -5,12 +5,28 @@
     <link>/tags/robotics/</link>
       <atom:link href="/tags/robotics/index.xml" rel="self" type="application/rss+xml" />
     <description>Robotics</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Tue, 14 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Robotics</title>
       <link>/tags/robotics/</link>
     </image>
+    
+    <item>
+      <title>The 37 Implementation Details of Proximal Policy Optimization</title>
+      <link>/publication/ppo-iclr/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/ppo-iclr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
+      <link>/publication/sb3/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/sb3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Smooth Exploration for Robotic Reinforcement Learning</title>
@@ -105,6 +121,14 @@ Supplementary notes can be added here, including [code and math](https://sourcet
       <link>/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/publication/srl-toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PythonRobotics: a Python code collection of robotics algorithms</title>
+      <link>/publication/python-robotics/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/python-robotics/</guid>
       <description></description>
     </item>
     

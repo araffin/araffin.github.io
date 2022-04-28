@@ -5,12 +5,36 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Fri, 29 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Mon, 23 May 2022 08:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Tutorial: Tools for Robotic Reinforcement Learning</title>
+      <link>/talk/tools-icra/</link>
+      <pubDate>Mon, 23 May 2022 08:00:00 +0000</pubDate>
+      <guid>/talk/tools-icra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The 37 Implementation Details of Proximal Policy Optimization</title>
+      <link>/publication/ppo-iclr/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/ppo-iclr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
+      <link>/publication/sb3/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/sb3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Rliable: Better Evaluation for Reinforcement Learning - A Visual Explanation</title>
@@ -38,7 +62,7 @@ This may sound complicated, but let&amp;rsquo;s go slowly through the meaning of
 &lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./bootstrap_rl.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
 &lt;p&gt;Each time we sample with replacement the runs, we compute the different metrics (for instance, mean score) for those sampled runs. To report uncertainty, rliable computes 
 &lt;a href=&#34;https://acclab.github.io/bootstrap-confidence-intervals.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;bootstrap confidence intervals&lt;/a&gt; (CIs) following the 
-&lt;a href=&#34;https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;percentiles&#39; method&lt;/a&gt;:&lt;/p&gt;
+&lt;a href=&#34;https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;percentiles&amp;rsquo; method&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./bootstrap_ci.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
 &lt;p&gt;Note: there are other methods for computing CI with bootstrap, but percentiles was found by the authors to work well in practice.&lt;/p&gt;
 &lt;h2 id=&#34;interquartile-mean-iqm&#34;&gt;Interquartile Mean (IQM)&lt;/h2&gt;
@@ -661,6 +685,14 @@ Coming soon, one of our long-time requested feature:
       <link>/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/publication/srl-toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PythonRobotics: a Python code collection of robotics algorithms</title>
+      <link>/publication/python-robotics/</link>
+      <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/python-robotics/</guid>
       <description></description>
     </item>
     

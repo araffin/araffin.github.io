@@ -38,7 +38,7 @@ This may sound complicated, but let&amp;rsquo;s go slowly through the meaning of
 &lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./bootstrap_rl.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
 &lt;p&gt;Each time we sample with replacement the runs, we compute the different metrics (for instance, mean score) for those sampled runs. To report uncertainty, rliable computes 
 &lt;a href=&#34;https://acclab.github.io/bootstrap-confidence-intervals.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;bootstrap confidence intervals&lt;/a&gt; (CIs) following the 
-&lt;a href=&#34;https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;percentiles&#39; method&lt;/a&gt;:&lt;/p&gt;
+&lt;a href=&#34;https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;percentiles&amp;rsquo; method&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./bootstrap_ci.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
 &lt;p&gt;Note: there are other methods for computing CI with bootstrap, but percentiles was found by the authors to work well in practice.&lt;/p&gt;
 &lt;h2 id=&#34;interquartile-mean-iqm&#34;&gt;Interquartile Mean (IQM)&lt;/h2&gt;
