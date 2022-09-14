@@ -3,22 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+    <lastmod>2022-09-15T14:30:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+    <lastmod>2022-09-15T14:30:00+00:00</lastmod>
   </url><url>
     <loc>/authors/</loc>
-    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+    <lastmod>2022-09-15T14:30:00+00:00</lastmod>
   </url><url>
     <loc>/talk/</loc>
-    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+    <lastmod>2022-09-15T14:30:00+00:00</lastmod>
   </url><url>
     <loc>/tags/reinforcement-learning/</loc>
-    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+    <lastmod>2022-09-15T14:30:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2022-05-23T08:00:00+00:00</lastmod>
+    <lastmod>2022-09-15T14:30:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/rl-dresden/</loc>
+    <lastmod>2022-09-15T14:30:00+00:00</lastmod>
   </url><url>
     <loc>/talk/tools-icra/</loc>
     <lastmod>2022-05-23T08:00:00+00:00</lastmod>
