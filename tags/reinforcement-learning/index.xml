@@ -5,12 +5,20 @@
     <link>/tags/reinforcement-learning/</link>
       <atom:link href="/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Reinforcement Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Thu, 15 Sep 2022 14:30:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Reinforcement Learning</title>
       <link>/tags/reinforcement-learning/</link>
     </image>
+    
+    <item>
+      <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
+      <link>/publication/exploit-bert/</link>
+      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/exploit-bert/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Training RL agents directly on real robots</title>

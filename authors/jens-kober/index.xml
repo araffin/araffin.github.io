@@ -5,12 +5,20 @@
     <link>/authors/jens-kober/</link>
       <atom:link href="/authors/jens-kober/index.xml" rel="self" type="application/rss+xml" />
     <description>Jens Kober</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Tue, 14 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2022</copyright><lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jens Kober</title>
       <link>/authors/jens-kober/</link>
     </image>
+    
+    <item>
+      <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
+      <link>/publication/exploit-bert/</link>
+      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/exploit-bert/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Smooth Exploration for Robotic Reinforcement Learning</title>
