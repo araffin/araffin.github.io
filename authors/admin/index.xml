@@ -5,12 +5,20 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2023</copyright><lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2023</copyright><lastBuildDate>Wed, 28 Jun 2023 14:30:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>DQN Tutorial</title>
+      <link>/talk/rlss-23/</link>
+      <pubDate>Wed, 28 Jun 2023 14:30:00 +0000</pubDate>
+      <guid>/talk/rlss-23/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
