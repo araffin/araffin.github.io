@@ -112,7 +112,7 @@ If you don&amp;rsquo;t allocate enough resources to a trial, you won&amp;rsquo;t
 &lt;p&gt;A simple but effective scheduler is the 
 &lt;a href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.pruners.MedianPruner.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;median pruner&lt;/a&gt;, used in 
 &lt;a href=&#34;https://research.google/pubs/pub46180/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Vizier&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The idea is to prune if the best intermediate result of the trial is worse than the median of the intermediate results of previous trials at the same step.
+&lt;p&gt;The idea is to prune if the intermediate result of the trial is worse than the median of the intermediate results of previous trials at the same step.
 In other words, at a given time, you look at the current candidate.
 If it performs worse than half of the candidates at the same time, you stop it, otherwise you let it continue.&lt;/p&gt;
 &lt;p&gt;&lt;object width=&#34;100%&#34; type=&#34;image/svg+xml&#34; data=&#34;./img/median_pruner.svg&#34;&gt;&lt;/object&gt;&lt;/p&gt;
