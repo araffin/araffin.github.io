@@ -3,24 +3,54 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2023-06-28T10:00:00+00:00</lastmod>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/3/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/simple-open-loop/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/alin-albu-schaffer/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2023-06-28T10:00:00+00:00</lastmod>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/</loc>
-    <lastmod>2023-06-28T10:00:00+00:00</lastmod>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/freek-stulp/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/jens-kober/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/joao-silverio/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/olivier-sigaud/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/reinforcement-learning/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/robotics/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/iri-upc-23/</loc>
     <lastmod>2023-06-28T10:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/</loc>
-    <lastmod>2023-06-28T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/reinforcement-learning/</loc>
-    <lastmod>2023-06-28T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2023-06-28T10:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/rlss-23/</loc>
@@ -32,34 +62,10 @@
     <loc>/post/</loc>
     <lastmod>2023-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/3/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/alin-albu-schaffer/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/authors/daniel-seidel/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/freek-stulp/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/jens-kober/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/joao-silverio/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/publication/exploit-bert/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/</loc>
-    <lastmod>2022-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/robotics/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/rl-dresden/</loc>
