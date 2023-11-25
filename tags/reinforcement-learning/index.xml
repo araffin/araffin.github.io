@@ -5,12 +5,20 @@
     <link>/tags/reinforcement-learning/</link>
       <atom:link href="/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Reinforcement Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2023</copyright><lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2023</copyright><lastBuildDate>Mon, 27 Nov 2023 11:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Reinforcement Learning</title>
       <link>/tags/reinforcement-learning/</link>
     </image>
+    
+    <item>
+      <title>Practical Tips for Reliable Reinforcement Learning</title>
+      <link>/talk/tips-reliable-rl/</link>
+      <pubDate>Mon, 27 Nov 2023 11:00:00 +0000</pubDate>
+      <guid>/talk/tips-reliable-rl/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A Simple Open-Loop Baseline for Reinforcement Learning Locomotion Tasks</title>
