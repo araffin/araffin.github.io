@@ -30,14 +30,6 @@
     </item>
     
     <item>
-      <title>A Simple Open-Loop Baseline for Reinforcement Learning Locomotion Tasks</title>
-      <link>/publication/simple-open-loop/</link>
-      <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/publication/simple-open-loop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Knowledge Guided Reinforcement Learning for Robotics</title>
       <link>/talk/iri-upc-23/</link>
       <pubDate>Wed, 28 Jun 2023 10:00:00 +0000</pubDate>
@@ -54,14 +46,6 @@
     </item>
     
     <item>
-      <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
-      <link>/publication/exploit-bert/</link>
-      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/exploit-bert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Training RL agents directly on real robots</title>
       <link>/talk/rl-dresden/</link>
       <pubDate>Thu, 15 Sep 2022 14:30:00 +0000</pubDate>
@@ -74,30 +58,6 @@
       <link>/talk/tools-icra/</link>
       <pubDate>Mon, 23 May 2022 08:00:00 +0000</pubDate>
       <guid>/talk/tools-icra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The 37 Implementation Details of Proximal Policy Optimization</title>
-      <link>/publication/ppo-iclr/</link>
-      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/ppo-iclr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
-      <link>/publication/sb3/</link>
-      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/sb3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Smooth Exploration for Robotic Reinforcement Learning</title>
-      <link>/publication/gsde/</link>
-      <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/gsde/</guid>
       <description></description>
     </item>
     
@@ -154,14 +114,6 @@
       <link>/talk/sb-ias-19/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/talk/sb-ias-19/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
-      <link>/publication/decoupling/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/decoupling/</guid>
       <description></description>
     </item>
     
@@ -247,14 +199,6 @@
     </item>
     
     <item>
-      <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
-      <link>/publication/srl-toolbox/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/srl-toolbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</title>
       <link>/post/stable-baselines/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
@@ -262,14 +206,6 @@
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Unsupervised learning of state representations for multiple tasks</title>
-      <link>/publication/multiple-tasks-srl/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/multiple-tasks-srl/</guid>
-      <description></description>
     </item>
     
   </channel>

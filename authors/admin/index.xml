@@ -13,6 +13,16 @@
     </image>
     
     <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Mon, 05 Feb 2024 08:30:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;h1 id=&#34;bio&#34;&gt;Bio&lt;/h1&gt;
+&lt;p&gt;Robots. Machine Learning. Blues Dance.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Designing and Running Real-World RL Experiments</title>
       <link>/talk/design-real-rl-exp/</link>
       <pubDate>Mon, 05 Feb 2024 08:30:00 +0000</pubDate>

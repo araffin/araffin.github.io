@@ -847,7 +847,7 @@ Additionally, we include
 <p>We also pay close attention to 
 <a href="https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&#43;is%3Aopen&#43;label%3Aquestion" target="_blank" rel="noopener">questions</a> and 
 <a href="https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&#43;is%3Aopen&#43;label%3Adocumentation" target="_blank" rel="noopener">uncertainties</a> from SB3 users, updating the documentation to address these.</p>
-<p><img src="./doc.png" alt="Documentation">
+<p><img alt="Documentation" src="./doc.png">
 <em>Stable-Baselines3 Documentation</em></p>
 <h3 id="high-quality-implementations">High-Quality Implementations</h3>
 <p>Algorithms are verified against published results by comparing the agent learning curves (cf issues 
@@ -862,15 +862,15 @@ Additionally, we include
 For example, PyTorch RMSProp is different from TensorFlow one (we include a 
 <a href="https://github.com/DLR-RM/stable-baselines3/blob/master/stable_baselines3/common/sb2_compat/rmsprop_tf_like.py" target="_blank" rel="noopener">custom version</a> inside our codebase), and the <code>epsilon</code> value of the optimizer can make a 
 <a href="https://twitter.com/araffin2/status/1329382226421837825" target="_blank" rel="noopener">big difference</a>:</p>
-<p><img src="./a2c.png" alt="A2C">
+<p><img alt="A2C" src="./a2c.png">
 <em>A and B are actually the same RL algorithm (A2C), sharing the exact same code, same hardware, same hyperparameters&hellip; except the epsilon value to avoid division by zero in the optimizer (one is <code>eps=1e-5</code>, the other <code>eps=1e-7</code>)</em></p>
 <p>Despite all those tricky details (and other 
 <a href="https://github.com/DLR-RM/stable-baselines3/issues/105" target="_blank" rel="noopener">nasty bugs</a>), at the end, we managed to match SB2 results and original implementations closely:</p>
-<p><img src="./a2c_comp.png" alt="A2C">
+<p><img alt="A2C" src="./a2c_comp.png">
 <em>Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) A2C result on CartPole-v1</em></p>
-<p><img src="./Result_Breakout-1.png" alt="Breakout">
+<p><img alt="Breakout" src="./Result_Breakout-1.png">
 <em>Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) results on BreakoutNoFrameskip-v4</em></p>
-<p><img src="./Result_HalfCheetah-1.png" alt="HalfCheetah">
+<p><img alt="HalfCheetah" src="./Result_HalfCheetah-1.png">
 <em>Stable-Baselines3 (SB3) vs original implementations results on HalfCheetahBulletEnv-v0</em></p>
 <!-- Moreover, all functions are typed (parameter and return types) and documented with a consistent style, and most functions are covered by unit tests. -->
 <!-- Continuous integration checks that all changes pass unit tests and type check, as well as validating the code style and documentation. -->
