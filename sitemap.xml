@@ -71,6 +71,30 @@
     <loc>/post/</loc>
     <lastmod>2023-05-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/deep-learning/</loc>
+    <lastmod>2023-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/jax/</loc>
+    <lastmod>2023-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/machine-learning/</loc>
+    <lastmod>2023-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/project/</loc>
+    <lastmod>2023-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2023-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/project/sbx/</loc>
+    <lastmod>2023-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/project/datasaurust/</loc>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/rust/</loc>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/authors/daniel-seidel/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -139,18 +163,6 @@
   </url><url>
     <loc>/post/sb3/</loc>
     <lastmod>2021-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/deep-learning/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/machine-learning/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/project/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/python/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/project/stable-baselines3/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
@@ -249,9 +261,6 @@
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/c&#43;&#43;/</loc>
-    <lastmod>2017-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/rust/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/oliver-brock/</loc>

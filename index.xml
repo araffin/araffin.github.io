@@ -185,6 +185,49 @@ You start with many configurations and give them all a minimum budget.&lt;/p&gt;
     </item>
     
     <item>
+      <title>SBX: Stable Baselines Jax</title>
+      <link>/project/sbx/</link>
+      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+      <guid>/project/sbx/</guid>
+      <description>&lt;p&gt;Proof of concept version of Stable-Baselines3 in Jax.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/araffin/sbx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/sbx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Implemented algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1801.01290&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Soft Actor-Critic (SAC)&lt;/a&gt; and 
+&lt;a href=&#34;https://arxiv.org/abs/2110.01548&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SAC-N&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/2005.04269&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Truncated Quantile Critics (TQC)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://openreview.net/forum?id=xCVJMsPv3RT&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dropout Q-Functions for Doubly Efficient Reinforcement Learning (DroQ)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1707.06347&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Proximal Policy Optimization (PPO)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1312.5602&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep Q Network (DQN)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1802.09477&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Twin Delayed DDPG (TD3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1509.02971&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep Deterministic Policy Gradient (DDPG)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://openreview.net/forum?id=PczQtTsTIX&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Batch Normalization in Deep Reinforcement Learning (CrossQ)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Datasaurust</title>
+      <link>/project/datasaurust/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>/project/datasaurust/</guid>
+      <description>&lt;p&gt;Blazingly fast implementation of the 
+&lt;a href=&#34;https://www.research.autodesk.com/publications/same-stats-different-graphs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Datasaurus&lt;/a&gt; paper (500x faster than the original): &amp;ldquo;Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing&amp;rdquo; by Justin Matejka and George Fitzmaurice.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/araffin/datasaurust&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/datasaurust&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
       <link>/publication/exploit-bert/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
