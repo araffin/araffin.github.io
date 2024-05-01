@@ -28,7 +28,8 @@
   
     
   
-  <meta name="description" content="Selecting the right hyperparameters can make or break your machine learning model. But who has time for endless trial and error or manual guesswork? Luckily, automatic hyperparameter tuning is there to the rescue.">
+  <meta name="description" content="When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?
+The good news is that automatic hyperparameter tuning can save the day.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/hyperparam-tuning/">
@@ -232,7 +233,8 @@
   <meta property="og:site_name" content="Antonin Raffin | Homepage">
   <meta property="og:url" content="/post/hyperparam-tuning/">
   <meta property="og:title" content="Automatic Hyperparameter Tuning - A Visual Guide (Part 1) | Antonin Raffin | Homepage">
-  <meta property="og:description" content="Selecting the right hyperparameters can make or break your machine learning model. But who has time for endless trial and error or manual guesswork? Luckily, automatic hyperparameter tuning is there to the rescue."><meta property="og:image" content="/post/hyperparam-tuning/featured.png">
+  <meta property="og:description" content="When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?
+The good news is that automatic hyperparameter tuning can save the day."><meta property="og:image" content="/post/hyperparam-tuning/featured.png">
   <meta property="twitter:image" content="/post/hyperparam-tuning/featured.png"><meta property="og:locale" content="en-us">
   
     
@@ -286,7 +288,7 @@
       "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Selecting the right hyperparameters can make or break your machine learning model. But who has time for endless trial and error or manual guesswork? Luckily, automatic hyperparameter tuning is there to the rescue."
+  "description": "When you\u0026rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?\nThe good news is that automatic hyperparameter tuning can save the day."
 }
 </script>
 
@@ -672,12 +674,13 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Selecting the right hyperparameters can make or break your machine learning model. But who has time for endless trial and error or manual guesswork?
-Luckily, automatic hyperparameter tuning is there to the rescue.</p>
-<p>By cleverly sampling the search space and pruning unpromising trials early, automatic tuning can help you find the best hyperparameter settings quickly and effortlessly.
-Plus, it frees you up to focus on other important tasks, like drinking coffee or napping ;).
-As a personal and concrete example, I used this technique on a 
-<a href="https://arxiv.org/abs/2209.07171" target="_blank" rel="noopener">real elastic quadruped</a> to optimize the parameters of a controller directly on the real robot.</p>
+      <p>When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?</p>
+<p>The good news is that automatic hyperparameter tuning can save the day. By trying out a bunch of configurations and stopping the least promising ones early, you can find the perfect hyperparameters without breaking a sweat.</p>
+<p>The trick is to allocate your &ldquo;budget&rdquo; (aka time and resources) wisely. You want to try out as many combinations as possible, but you don&rsquo;t have an infinite amount of time.</p>
+<p>By pruning the bad trials early and focusing on the promising ones, you can find the best hyperparameters quickly and efficiently. And the best part? You can focus on more important things&hellip; like drinking coffee or taking a nap.</p>
+<p>As a personal and concrete example, I used this technique on a 
+<a href="https://arxiv.org/abs/2209.07171" target="_blank" rel="noopener">real elastic quadruped</a> to optimize the parameters of a controller directly on the real robot (it can also be good 
+<a href="https://arxiv.org/abs/2310.05808" target="_blank" rel="noopener">baseline</a> for locomotion).</p>
 <p>In this blog post, I&rsquo;ll explore some of the techniques for automatic hyperparameter tuning, using reinforcement learning as a concrete example.
 I&rsquo;ll discuss the challenges of hyperparameter optimization, and introduce different samplers and schedulers for exploring the hyperparameter space.
 In part two (WIP), I&rsquo;ll show how to use the 
@@ -686,9 +689,12 @@ In part two (WIP), I&rsquo;ll show how to use the
 The 
 <a href="https://araffin.github.io/tools-for-robotic-rl-icra2022/" target="_blank" rel="noopener">slides</a>, notebooks and videos are online:</p>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/AidFTOdGNFQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AidFTOdGNFQ?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
 
 <div style="margin-top: 50px"></div>
 <h2 id="hyperparameter-optimization-the-n-vs-bn-tradeoff">Hyperparameter Optimization: The &ldquo;n vs B/n&rdquo; tradeoff</h2>
