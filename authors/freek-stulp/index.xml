@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Freek Stulp | Antonin Raffin | Homepage</title>
-    <link>/authors/freek-stulp/</link>
-      <atom:link href="/authors/freek-stulp/index.xml" rel="self" type="application/rss+xml" />
+    <link>//localhost:1313/authors/freek-stulp/</link>
+      <atom:link href="//localhost:1313/authors/freek-stulp/index.xml" rel="self" type="application/rss+xml" />
     <description>Freek Stulp</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Freek Stulp</title>
-      <link>/authors/freek-stulp/</link>
+      <link>//localhost:1313/authors/freek-stulp/</link>
     </image>
     
     <item>
       <title>An Open-Loop Baseline for Reinforcement Learning Locomotion Tasks</title>
-      <link>/publication/simple-open-loop/</link>
+      <link>//localhost:1313/publication/simple-open-loop/</link>
       <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/publication/simple-open-loop/</guid>
+      <guid>//localhost:1313/publication/simple-open-loop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
-      <link>/publication/exploit-bert/</link>
+      <link>//localhost:1313/publication/exploit-bert/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/exploit-bert/</guid>
+      <guid>//localhost:1313/publication/exploit-bert/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Smooth Exploration for Robotic Reinforcement Learning</title>
-      <link>/publication/gsde/</link>
+      <link>//localhost:1313/publication/gsde/</link>
       <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/gsde/</guid>
+      <guid>//localhost:1313/publication/gsde/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fault-Tolerant Six-DoF Pose Estimation for Tendon-Driven Continuum Mechanisms</title>
-      <link>/publication/fault-tolerant/</link>
+      <link>//localhost:1313/publication/fault-tolerant/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/fault-tolerant/</guid>
+      <guid>//localhost:1313/publication/fault-tolerant/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -61,9 +61,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Unsupervised learning of state representations for multiple tasks</title>
-      <link>/publication/multiple-tasks-srl/</link>
+      <link>//localhost:1313/publication/multiple-tasks-srl/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/multiple-tasks-srl/</guid>
+      <guid>//localhost:1313/publication/multiple-tasks-srl/</guid>
       <description></description>
     </item>
     

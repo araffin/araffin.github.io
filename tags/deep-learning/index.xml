@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deep Learning | Antonin Raffin | Homepage</title>
-    <link>/tags/deep-learning/</link>
-      <atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <link>//localhost:1313/tags/deep-learning/</link>
+      <atom:link href="//localhost:1313/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Deep Learning</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Thu, 11 May 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Deep Learning</title>
-      <link>/tags/deep-learning/</link>
+      <link>//localhost:1313/tags/deep-learning/</link>
     </image>
     
     <item>
       <title>SBX: Stable Baselines Jax</title>
-      <link>/project/sbx/</link>
+      <link>//localhost:1313/project/sbx/</link>
       <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
-      <guid>/project/sbx/</guid>
+      <guid>//localhost:1313/project/sbx/</guid>
       <description>&lt;p&gt;Proof of concept version of Stable-Baselines3 in Jax.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/sbx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/sbx&lt;/a&gt;&lt;/p&gt;
@@ -45,9 +45,9 @@
     
     <item>
       <title>Stable Baselines3</title>
-      <link>/project/stable-baselines3/</link>
+      <link>//localhost:1313/project/stable-baselines3/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/stable-baselines3/</guid>
+      <guid>//localhost:1313/project/stable-baselines3/</guid>
       <description>&lt;p&gt;Stable Baselines3 is a set of improved implementations of reinforcement learning algorithms in PyTorch. It is the next major version of Stable Baselines.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
@@ -61,9 +61,9 @@
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
-      <link>/post/learning-to-drive/</link>
+      <link>//localhost:1313/post/learning-to-drive/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/post/learning-to-drive/</guid>
+      <guid>//localhost:1313/post/learning-to-drive/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -71,9 +71,9 @@
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
-      <link>/project/learning-to-drive/</link>
+      <link>//localhost:1313/project/learning-to-drive/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/project/learning-to-drive/</guid>
+      <guid>//localhost:1313/project/learning-to-drive/</guid>
       <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
@@ -84,9 +84,9 @@
     
     <item>
       <title>RL Baselines Zoo</title>
-      <link>/project/rl-baselines-zoo/</link>
+      <link>//localhost:1313/project/rl-baselines-zoo/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>/project/rl-baselines-zoo/</guid>
+      <guid>//localhost:1313/project/rl-baselines-zoo/</guid>
       <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Github repository: 
@@ -103,9 +103,9 @@
     
     <item>
       <title>S-RL Toolbox</title>
-      <link>/project/srl-toolbox/</link>
+      <link>//localhost:1313/project/srl-toolbox/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>/project/srl-toolbox/</guid>
+      <guid>//localhost:1313/project/srl-toolbox/</guid>
       <description>&lt;p&gt;S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
@@ -129,9 +129,9 @@
     
     <item>
       <title>Stable Baselines</title>
-      <link>/project/stable-baselines/</link>
+      <link>//localhost:1313/project/stable-baselines/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/project/stable-baselines/</guid>
+      <guid>//localhost:1313/project/stable-baselines/</guid>
       <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;

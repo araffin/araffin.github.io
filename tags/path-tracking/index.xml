@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Path Tracking | Antonin Raffin | Homepage</title>
-    <link>/tags/path-tracking/</link>
-      <atom:link href="/tags/path-tracking/index.xml" rel="self" type="application/rss+xml" />
+    <link>//localhost:1313/tags/path-tracking/</link>
+      <atom:link href="//localhost:1313/tags/path-tracking/index.xml" rel="self" type="application/rss+xml" />
     <description>Path Tracking</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Fri, 31 Aug 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Path Tracking</title>
-      <link>/tags/path-tracking/</link>
+      <link>//localhost:1313/tags/path-tracking/</link>
     </image>
     
     <item>
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
-      <link>/publication/python-robotics/</link>
+      <link>//localhost:1313/publication/python-robotics/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/python-robotics/</guid>
+      <guid>//localhost:1313/publication/python-robotics/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent &amp; Upcoming Talks | Antonin Raffin | Homepage</title>
-    <link>/talk/</link>
-      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <link>//localhost:1313/talk/</link>
+      <atom:link href="//localhost:1313/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Mon, 05 Feb 2024 08:30:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>/talk/</link>
+      <link>//localhost:1313/talk/</link>
     </image>
     
     <item>
       <title>Designing and Running Real-World RL Experiments</title>
-      <link>/talk/design-real-rl-exp/</link>
+      <link>//localhost:1313/talk/design-real-rl-exp/</link>
       <pubDate>Mon, 05 Feb 2024 08:30:00 +0000</pubDate>
-      <guid>/talk/design-real-rl-exp/</guid>
+      <guid>//localhost:1313/talk/design-real-rl-exp/</guid>
       <description>&lt;p&gt;This talk was also given at the RL Symposium organized by 
 &lt;a href=&#34;https://www.bu.edu/hic/frp-reinforcement-learning-symposium/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Boston University&lt;/a&gt; on May 10, 2024.&lt;/p&gt;
 </description>
@@ -24,58 +24,58 @@
     
     <item>
       <title>Practical Tips for Reliable Reinforcement Learning</title>
-      <link>/talk/tips-reliable-rl/</link>
+      <link>//localhost:1313/talk/tips-reliable-rl/</link>
       <pubDate>Tue, 12 Dec 2023 08:00:00 +0000</pubDate>
-      <guid>/talk/tips-reliable-rl/</guid>
+      <guid>//localhost:1313/talk/tips-reliable-rl/</guid>
       <description>&lt;p&gt;This talk was also given at the Industrial RL Workshop organized in Paris Saclay in November 2023.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Knowledge Guided Reinforcement Learning for Robotics</title>
-      <link>/talk/iri-upc-23/</link>
+      <link>//localhost:1313/talk/iri-upc-23/</link>
       <pubDate>Wed, 28 Jun 2023 10:00:00 +0000</pubDate>
-      <guid>/talk/iri-upc-23/</guid>
+      <guid>//localhost:1313/talk/iri-upc-23/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DQN Tutorial</title>
-      <link>/talk/rlss-23/</link>
+      <link>//localhost:1313/talk/rlss-23/</link>
       <pubDate>Tue, 27 Jun 2023 14:30:00 +0000</pubDate>
-      <guid>/talk/rlss-23/</guid>
+      <guid>//localhost:1313/talk/rlss-23/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Training RL agents directly on real robots</title>
-      <link>/talk/rl-dresden/</link>
+      <link>//localhost:1313/talk/rl-dresden/</link>
       <pubDate>Thu, 15 Sep 2022 14:30:00 +0000</pubDate>
-      <guid>/talk/rl-dresden/</guid>
+      <guid>//localhost:1313/talk/rl-dresden/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial: Tools for Robotic Reinforcement Learning</title>
-      <link>/talk/tools-icra/</link>
+      <link>//localhost:1313/talk/tools-icra/</link>
       <pubDate>Mon, 23 May 2022 08:00:00 +0000</pubDate>
-      <guid>/talk/tools-icra/</guid>
+      <guid>//localhost:1313/talk/tools-icra/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning to Race in Hours with Reinforcement Learning</title>
-      <link>/talk/learning-race/</link>
+      <link>//localhost:1313/talk/learning-race/</link>
       <pubDate>Sat, 29 May 2021 18:00:00 +0000</pubDate>
-      <guid>/talk/learning-race/</guid>
+      <guid>//localhost:1313/talk/learning-race/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RL Tips and Tricks / The Challenges of Applying RL to Real Robots</title>
-      <link>/talk/rlvs/</link>
+      <link>//localhost:1313/talk/rlvs/</link>
       <pubDate>Fri, 09 Apr 2021 09:00:00 +0000</pubDate>
-      <guid>/talk/rlvs/</guid>
+      <guid>//localhost:1313/talk/rlvs/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;a href=&#34;https://araffin.github.io/slides/rlvs-tips-tricks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Tips and Tricks Slides&lt;/a&gt;&lt;/li&gt;
@@ -89,17 +89,17 @@
     
     <item>
       <title>RL Tutorial on Stable Baselines</title>
-      <link>/talk/rl-tuto-jnrr19/</link>
+      <link>//localhost:1313/talk/rl-tuto-jnrr19/</link>
       <pubDate>Fri, 18 Oct 2019 00:09:00 +0000</pubDate>
-      <guid>/talk/rl-tuto-jnrr19/</guid>
+      <guid>//localhost:1313/talk/rl-tuto-jnrr19/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SRL - Stable Baselines Presentation</title>
-      <link>/talk/sb-ias-19/</link>
+      <link>//localhost:1313/talk/sb-ias-19/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/sb-ias-19/</guid>
+      <guid>//localhost:1313/talk/sb-ias-19/</guid>
       <description></description>
     </item>
     

@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Robotics | Antonin Raffin | Homepage</title>
-    <link>/tags/robotics/</link>
-      <atom:link href="/tags/robotics/index.xml" rel="self" type="application/rss+xml" />
+    <link>//localhost:1313/tags/robotics/</link>
+      <atom:link href="//localhost:1313/tags/robotics/index.xml" rel="self" type="application/rss+xml" />
     <description>Robotics</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Robotics</title>
-      <link>/tags/robotics/</link>
+      <link>//localhost:1313/tags/robotics/</link>
     </image>
     
     <item>
       <title>An Open-Loop Baseline for Reinforcement Learning Locomotion Tasks</title>
-      <link>/publication/simple-open-loop/</link>
+      <link>//localhost:1313/publication/simple-open-loop/</link>
       <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/publication/simple-open-loop/</guid>
+      <guid>//localhost:1313/publication/simple-open-loop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
-      <link>/publication/exploit-bert/</link>
+      <link>//localhost:1313/publication/exploit-bert/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/exploit-bert/</guid>
+      <guid>//localhost:1313/publication/exploit-bert/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The 37 Implementation Details of Proximal Policy Optimization</title>
-      <link>/publication/ppo-iclr/</link>
+      <link>//localhost:1313/publication/ppo-iclr/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/ppo-iclr/</guid>
+      <guid>//localhost:1313/publication/ppo-iclr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
-      <link>/publication/sb3/</link>
+      <link>//localhost:1313/publication/sb3/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/sb3/</guid>
+      <guid>//localhost:1313/publication/sb3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Smooth Exploration for Robotic Reinforcement Learning</title>
-      <link>/publication/gsde/</link>
+      <link>//localhost:1313/publication/gsde/</link>
       <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/gsde/</guid>
+      <guid>//localhost:1313/publication/gsde/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fault-Tolerant Six-DoF Pose Estimation for Tendon-Driven Continuum Mechanisms</title>
-      <link>/publication/fault-tolerant/</link>
+      <link>//localhost:1313/publication/fault-tolerant/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/fault-tolerant/</guid>
+      <guid>//localhost:1313/publication/fault-tolerant/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -77,17 +77,17 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
-      <link>/publication/decoupling/</link>
+      <link>//localhost:1313/publication/decoupling/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/decoupling/</guid>
+      <guid>//localhost:1313/publication/decoupling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
-      <link>/post/learning-to-drive/</link>
+      <link>//localhost:1313/post/learning-to-drive/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/post/learning-to-drive/</guid>
+      <guid>//localhost:1313/post/learning-to-drive/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -95,9 +95,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
-      <link>/project/learning-to-drive/</link>
+      <link>//localhost:1313/project/learning-to-drive/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/project/learning-to-drive/</guid>
+      <guid>//localhost:1313/project/learning-to-drive/</guid>
       <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
@@ -108,9 +108,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>S-RL Toolbox</title>
-      <link>/project/srl-toolbox/</link>
+      <link>//localhost:1313/project/srl-toolbox/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>/project/srl-toolbox/</guid>
+      <guid>//localhost:1313/project/srl-toolbox/</guid>
       <description>&lt;p&gt;S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
@@ -134,25 +134,25 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
-      <link>/publication/srl-toolbox/</link>
+      <link>//localhost:1313/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/srl-toolbox/</guid>
+      <guid>//localhost:1313/publication/srl-toolbox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
-      <link>/publication/python-robotics/</link>
+      <link>//localhost:1313/publication/python-robotics/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/python-robotics/</guid>
+      <guid>//localhost:1313/publication/python-robotics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Simple and Robust {Computer — Arduino} Serial Communication</title>
-      <link>/post/arduino-serial/</link>
+      <link>//localhost:1313/post/arduino-serial/</link>
       <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/post/arduino-serial/</guid>
+      <guid>//localhost:1313/post/arduino-serial/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -160,9 +160,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Autonomous Racing Robot With an Arduino, a Raspberry Pi and a Pi Camera</title>
-      <link>/post/racing-robot/</link>
+      <link>//localhost:1313/post/racing-robot/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-      <guid>/post/racing-robot/</guid>
+      <guid>//localhost:1313/post/racing-robot/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://becominghuman.ai/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -170,9 +170,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Racing Robot</title>
-      <link>/project/racing-robot/</link>
+      <link>//localhost:1313/project/racing-robot/</link>
       <pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>/project/racing-robot/</guid>
+      <guid>//localhost:1313/project/racing-robot/</guid>
       <description>&lt;p&gt;Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: 
 &lt;a href=&#34;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Video of the car: 
@@ -182,9 +182,9 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Arduino Robust Serial</title>
-      <link>/project/arduino-robust-serial/</link>
+      <link>//localhost:1313/project/arduino-robust-serial/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>/project/arduino-robust-serial/</guid>
+      <guid>//localhost:1313/project/arduino-robust-serial/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Robust Arduino Serial&lt;/strong&gt; is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Please read the 
 &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;

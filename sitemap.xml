@@ -2,279 +2,279 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/authors/admin/</loc>
+    <loc>//localhost:1313/authors/admin/</loc>
     <lastmod>2024-02-05T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2024-02-05T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/</loc>
+    <loc>//localhost:1313/authors/</loc>
     <lastmod>2024-02-05T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/design-real-rl-exp/</loc>
+    <loc>//localhost:1313/talk/design-real-rl-exp/</loc>
     <lastmod>2024-02-05T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/</loc>
+    <loc>//localhost:1313/talk/</loc>
     <lastmod>2024-02-05T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/reinforcement-learning/</loc>
+    <loc>//localhost:1313/tags/reinforcement-learning/</loc>
     <lastmod>2024-02-05T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
     <lastmod>2024-02-05T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/tips-reliable-rl/</loc>
+    <loc>//localhost:1313/talk/tips-reliable-rl/</loc>
     <lastmod>2023-12-12T08:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/3/</loc>
+    <loc>//localhost:1313/publication_types/3/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/alin-albu-schaffer/</loc>
+    <loc>//localhost:1313/authors/alin-albu-schaffer/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/simple-open-loop/</loc>
+    <loc>//localhost:1313/publication/simple-open-loop/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/freek-stulp/</loc>
+    <loc>//localhost:1313/authors/freek-stulp/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/jens-kober/</loc>
+    <loc>//localhost:1313/authors/jens-kober/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/joao-silverio/</loc>
+    <loc>//localhost:1313/authors/joao-silverio/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/olivier-sigaud/</loc>
+    <loc>//localhost:1313/authors/olivier-sigaud/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/</loc>
+    <loc>//localhost:1313/publication_types/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/</loc>
+    <loc>//localhost:1313/publication/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/reinforcement-learning/</loc>
+    <loc>//localhost:1313/tags/reinforcement-learning/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/robotics/</loc>
+    <loc>//localhost:1313/tags/robotics/</loc>
     <lastmod>2023-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/iri-upc-23/</loc>
+    <loc>//localhost:1313/talk/iri-upc-23/</loc>
     <lastmod>2023-06-28T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/rlss-23/</loc>
+    <loc>//localhost:1313/talk/rlss-23/</loc>
     <lastmod>2023-06-27T14:30:00+00:00</lastmod>
   </url><url>
-    <loc>/post/hyperparam-tuning/</loc>
+    <loc>//localhost:1313/post/hyperparam-tuning/</loc>
     <lastmod>2023-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
+    <loc>//localhost:1313/post/</loc>
     <lastmod>2023-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/deep-learning/</loc>
+    <loc>//localhost:1313/tags/deep-learning/</loc>
     <lastmod>2023-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/jax/</loc>
+    <loc>//localhost:1313/tags/jax/</loc>
     <lastmod>2023-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/machine-learning/</loc>
+    <loc>//localhost:1313/tags/machine-learning/</loc>
     <lastmod>2023-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/</loc>
+    <loc>//localhost:1313/project/</loc>
     <lastmod>2023-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/python/</loc>
+    <loc>//localhost:1313/tags/python/</loc>
     <lastmod>2023-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/sbx/</loc>
+    <loc>//localhost:1313/project/sbx/</loc>
     <lastmod>2023-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/datasaurust/</loc>
+    <loc>//localhost:1313/project/datasaurust/</loc>
     <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/rust/</loc>
+    <loc>//localhost:1313/tags/rust/</loc>
     <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/daniel-seidel/</loc>
+    <loc>//localhost:1313/authors/daniel-seidel/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/exploit-bert/</loc>
+    <loc>//localhost:1313/publication/exploit-bert/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/rl-dresden/</loc>
+    <loc>//localhost:1313/talk/rl-dresden/</loc>
     <lastmod>2022-09-15T14:30:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/tools-icra/</loc>
+    <loc>//localhost:1313/talk/tools-icra/</loc>
     <lastmod>2022-05-23T08:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/1/</loc>
+    <loc>//localhost:1313/publication_types/1/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/anssi-kanervisto/</loc>
+    <loc>//localhost:1313/authors/anssi-kanervisto/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/rousslan-fernand-julien-dossa/</loc>
+    <loc>//localhost:1313/authors/rousslan-fernand-julien-dossa/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/shengyi-huang/</loc>
+    <loc>//localhost:1313/authors/shengyi-huang/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/ppo-iclr/</loc>
+    <loc>//localhost:1313/publication/ppo-iclr/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/weixun-wang/</loc>
+    <loc>//localhost:1313/authors/weixun-wang/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/2/</loc>
+    <loc>//localhost:1313/publication_types/2/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/adam-gleave/</loc>
+    <loc>//localhost:1313/authors/adam-gleave/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/ashley-hill/</loc>
+    <loc>//localhost:1313/authors/ashley-hill/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/maximilian-ernestus/</loc>
+    <loc>//localhost:1313/authors/maximilian-ernestus/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/noah-dormann/</loc>
+    <loc>//localhost:1313/authors/noah-dormann/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/sb3/</loc>
+    <loc>//localhost:1313/publication/sb3/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/rliable/</loc>
+    <loc>//localhost:1313/post/rliable/</loc>
     <lastmod>2021-10-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/gsde/</loc>
+    <loc>//localhost:1313/publication/gsde/</loc>
     <lastmod>2021-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/learning-race/</loc>
+    <loc>//localhost:1313/talk/learning-race/</loc>
     <lastmod>2021-05-29T18:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/bastian-deutschmann/</loc>
+    <loc>//localhost:1313/authors/bastian-deutschmann/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/fault-tolerant/</loc>
+    <loc>//localhost:1313/publication/fault-tolerant/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/rlvs/</loc>
+    <loc>//localhost:1313/talk/rlvs/</loc>
     <lastmod>2021-04-09T09:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/sb3/</loc>
+    <loc>//localhost:1313/post/sb3/</loc>
     <lastmod>2021-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/stable-baselines3/</loc>
+    <loc>//localhost:1313/project/stable-baselines3/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/rl-tuto-jnrr19/</loc>
+    <loc>//localhost:1313/talk/rl-tuto-jnrr19/</loc>
     <lastmod>2019-10-18T00:09:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/sb-ias-19/</loc>
+    <loc>//localhost:1313/talk/sb-ias-19/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/david-filliat/</loc>
+    <loc>//localhost:1313/authors/david-filliat/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/decoupling/</loc>
+    <loc>//localhost:1313/publication/decoupling/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/learning-to-drive/</loc>
+    <loc>//localhost:1313/post/learning-to-drive/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/learning-to-drive/</loc>
+    <loc>//localhost:1313/project/learning-to-drive/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/natalia-diaz-rodriguez/</loc>
+    <loc>//localhost:1313/authors/natalia-diaz-rodriguez/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/rene-traore/</loc>
+    <loc>//localhost:1313/authors/rene-traore/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/state-representation-learning/</loc>
+    <loc>//localhost:1313/tags/state-representation-learning/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/timothee-lesort/</loc>
+    <loc>//localhost:1313/authors/timothee-lesort/</loc>
     <lastmod>2019-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/rl-baselines-zoo/</loc>
+    <loc>//localhost:1313/project/rl-baselines-zoo/</loc>
     <lastmod>2018-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/srl-toolbox/</loc>
+    <loc>//localhost:1313/project/srl-toolbox/</loc>
     <lastmod>2018-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/stable-baselines/</loc>
+    <loc>//localhost:1313/project/stable-baselines/</loc>
     <lastmod>2018-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication_types/0/</loc>
+    <loc>//localhost:1313/publication_types/0/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/srl-toolbox/</loc>
+    <loc>//localhost:1313/publication/srl-toolbox/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/alexis-paques/</loc>
+    <loc>//localhost:1313/authors/alexis-paques/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/atsushi-sakai/</loc>
+    <loc>//localhost:1313/authors/atsushi-sakai/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/daniel-ingram/</loc>
+    <loc>//localhost:1313/authors/daniel-ingram/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/joseph-dinius/</loc>
+    <loc>//localhost:1313/authors/joseph-dinius/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/kalman-filter/</loc>
+    <loc>//localhost:1313/tags/kalman-filter/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/karan-chawla/</loc>
+    <loc>//localhost:1313/authors/karan-chawla/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/path-planning/</loc>
+    <loc>//localhost:1313/tags/path-planning/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/path-tracking/</loc>
+    <loc>//localhost:1313/tags/path-tracking/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/python-robotics/</loc>
+    <loc>//localhost:1313/publication/python-robotics/</loc>
     <lastmod>2018-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/antonin-raffin/</loc>
+    <loc>//localhost:1313/authors/antonin-raffin/</loc>
     <lastmod>2018-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/stable-baselines/</loc>
+    <loc>//localhost:1313/post/stable-baselines/</loc>
     <lastmod>2018-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/arduino-serial/</loc>
+    <loc>//localhost:1313/post/arduino-serial/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/racing-robot/</loc>
+    <loc>//localhost:1313/post/racing-robot/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/arduino/</loc>
+    <loc>//localhost:1313/tags/arduino/</loc>
     <lastmod>2017-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/racing-robot/</loc>
+    <loc>//localhost:1313/project/racing-robot/</loc>
     <lastmod>2017-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/arduino-robust-serial/</loc>
+    <loc>//localhost:1313/project/arduino-robust-serial/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/c&#43;&#43;/</loc>
+    <loc>//localhost:1313/tags/c&#43;&#43;/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/oliver-brock/</loc>
+    <loc>//localhost:1313/authors/oliver-brock/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/rico-jonschkowski/</loc>
+    <loc>//localhost:1313/authors/rico-jonschkowski/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/sebastian-hofer/</loc>
+    <loc>//localhost:1313/authors/sebastian-hofer/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/multiple-tasks-srl/</loc>
+    <loc>//localhost:1313/publication/multiple-tasks-srl/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
   </url>
 </urlset>

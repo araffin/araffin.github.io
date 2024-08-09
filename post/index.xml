@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Antonin Raffin | Homepage</title>
-    <link>/post/</link>
-      <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>//localhost:1313/post/</link>
+      <atom:link href="//localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Mon, 15 May 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
-      <link>/post/</link>
+      <link>//localhost:1313/post/</link>
     </image>
     
     <item>
       <title>Automatic Hyperparameter Tuning - A Visual Guide (Part 1)</title>
-      <link>/post/hyperparam-tuning/</link>
+      <link>//localhost:1313/post/hyperparam-tuning/</link>
       <pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate>
-      <guid>/post/hyperparam-tuning/</guid>
+      <guid>//localhost:1313/post/hyperparam-tuning/</guid>
       <description>&lt;p&gt;When you&amp;rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?&lt;/p&gt;
 &lt;p&gt;The good news is that automatic hyperparameter tuning can save the day. By trying out a bunch of configurations and stopping the least promising ones early, you can find the perfect hyperparameters without breaking a sweat.&lt;/p&gt;
 &lt;p&gt;The trick is to allocate your &amp;ldquo;budget&amp;rdquo; (aka time and resources) wisely. You want to try out as many combinations as possible, but you don&amp;rsquo;t have an infinite amount of time.&lt;/p&gt;
@@ -149,9 +149,9 @@ You start with many configurations and give them all a minimum budget.&lt;/p&gt;
     
     <item>
       <title>Rliable: Better Evaluation for Reinforcement Learning - A Visual Explanation</title>
-      <link>/post/rliable/</link>
+      <link>//localhost:1313/post/rliable/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>/post/rliable/</guid>
+      <guid>//localhost:1313/post/rliable/</guid>
       <description>&lt;p&gt;It is critical for Reinforcement Learning (RL) practitioners to properly evaluate and compare results.
 Reporting results with poor comparison leads to a progress mirage and may underestimate the stochasticity of the results. To this end, 
 &lt;a href=&#34;https://arxiv.org/abs/2108.13264&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep RL at the Edge of the Statistical Precipice&lt;/a&gt; (Neurips Oral) provides recommendations for a more rigorous evaluation of DeepRL algorithms. The paper comes with an open-source library named 
@@ -183,7 +183,7 @@ However, mean is known to be sensible to outliers and median may not reflect eno
 &lt;h2 id=&#34;performance-profiles&#34;&gt;Performance Profiles&lt;/h2&gt;
 &lt;p&gt;To report performance variability across tasks and runs, the authors proposes to use performance profiles.
 It tells for a given target performance (for example, 60% of the reference performance) the proportion of runs that achieve it.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Performance Profile&#34; src=&#34;/post/rliable/perf_profile.jpg&#34;&gt;
+&lt;p&gt;&lt;img alt=&#34;Performance Profile&#34; src=&#34;//localhost:1313/post/rliable/perf_profile.jpg&#34;&gt;
 Source: image from the authors of the rliable library&lt;/p&gt;
 &lt;h2 id=&#34;probability-of-improvement&#34;&gt;Probability of Improvement&lt;/h2&gt;
 &lt;p&gt;Finally, to test whether an algorithm X is probably better or not than an algorithm Y, rliable uses the U-statistic from a 
@@ -217,9 +217,9 @@ A probability of improvement around 0.5 means that the two algorithms have simil
     
     <item>
       <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations</title>
-      <link>/post/sb3/</link>
+      <link>//localhost:1313/post/sb3/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/post/sb3/</guid>
+      <guid>//localhost:1313/post/sb3/</guid>
       <description>&lt;p&gt;After several months of beta, we are happy to announce the release of 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable-Baselines3 (SB3)&lt;/a&gt; v1.0, a set of reliable implementations of reinforcement learning (RL) algorithms in PyTorch =D! It is the next major version of 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
@@ -357,7 +357,7 @@ Additionally, we include
 &lt;p&gt;We also pay close attention to 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&amp;#43;is%3Aopen&amp;#43;label%3Aquestion&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;questions&lt;/a&gt; and 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues?q=is%3Aissue&amp;#43;is%3Aopen&amp;#43;label%3Adocumentation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uncertainties&lt;/a&gt; from SB3 users, updating the documentation to address these.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Documentation&#34; src=&#34;/post/sb3/doc.png&#34;&gt;
+&lt;p&gt;&lt;img alt=&#34;Documentation&#34; src=&#34;//localhost:1313/post/sb3/doc.png&#34;&gt;
 &lt;em&gt;Stable-Baselines3 Documentation&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;high-quality-implementations&#34;&gt;High-Quality Implementations&lt;/h3&gt;
 &lt;p&gt;Algorithms are verified against published results by comparing the agent learning curves (cf issues 
@@ -372,15 +372,15 @@ Additionally, we include
 For example, PyTorch RMSProp is different from TensorFlow one (we include a 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/blob/master/stable_baselines3/common/sb2_compat/rmsprop_tf_like.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;custom version&lt;/a&gt; inside our codebase), and the &lt;code&gt;epsilon&lt;/code&gt; value of the optimizer can make a 
 &lt;a href=&#34;https://twitter.com/araffin2/status/1329382226421837825&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;big difference&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;A2C&#34; src=&#34;/post/sb3/a2c.png&#34;&gt;
+&lt;p&gt;&lt;img alt=&#34;A2C&#34; src=&#34;//localhost:1313/post/sb3/a2c.png&#34;&gt;
 &lt;em&gt;A and B are actually the same RL algorithm (A2C), sharing the exact same code, same hardware, same hyperparameters&amp;hellip; except the epsilon value to avoid division by zero in the optimizer (one is &lt;code&gt;eps=1e-5&lt;/code&gt;, the other &lt;code&gt;eps=1e-7&lt;/code&gt;)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Despite all those tricky details (and other 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/issues/105&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nasty bugs&lt;/a&gt;), at the end, we managed to match SB2 results and original implementations closely:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;A2C&#34; src=&#34;/post/sb3/a2c_comp.png&#34;&gt;
+&lt;p&gt;&lt;img alt=&#34;A2C&#34; src=&#34;//localhost:1313/post/sb3/a2c_comp.png&#34;&gt;
 &lt;em&gt;Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) A2C result on CartPole-v1&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Breakout&#34; src=&#34;/post/sb3/Result_Breakout-1.png&#34;&gt;
+&lt;p&gt;&lt;img alt=&#34;Breakout&#34; src=&#34;//localhost:1313/post/sb3/Result_Breakout-1.png&#34;&gt;
 &lt;em&gt;Stable-Baselines (SB2) vs Stable-Baselines3 (SB3) results on BreakoutNoFrameskip-v4&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;HalfCheetah&#34; src=&#34;/post/sb3/Result_HalfCheetah-1.png&#34;&gt;
+&lt;p&gt;&lt;img alt=&#34;HalfCheetah&#34; src=&#34;//localhost:1313/post/sb3/Result_HalfCheetah-1.png&#34;&gt;
 &lt;em&gt;Stable-Baselines3 (SB3) vs original implementations results on HalfCheetahBulletEnv-v0&lt;/em&gt;&lt;/p&gt;
 &lt;!-- Moreover, all functions are typed (parameter and return types) and documented with a consistent style, and most functions are covered by unit tests. --&gt;
 &lt;!-- Continuous integration checks that all changes pass unit tests and type check, as well as validating the code style and documentation. --&gt;
@@ -617,9 +617,9 @@ Coming soon, one of our long-time requested feature:
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
-      <link>/post/learning-to-drive/</link>
+      <link>//localhost:1313/post/learning-to-drive/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/post/learning-to-drive/</guid>
+      <guid>//localhost:1313/post/learning-to-drive/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -627,9 +627,9 @@ Coming soon, one of our long-time requested feature:
     
     <item>
       <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</title>
-      <link>/post/stable-baselines/</link>
+      <link>//localhost:1313/post/stable-baselines/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>/post/stable-baselines/</guid>
+      <guid>//localhost:1313/post/stable-baselines/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -637,9 +637,9 @@ Coming soon, one of our long-time requested feature:
     
     <item>
       <title>Simple and Robust {Computer — Arduino} Serial Communication</title>
-      <link>/post/arduino-serial/</link>
+      <link>//localhost:1313/post/arduino-serial/</link>
       <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/post/arduino-serial/</guid>
+      <guid>//localhost:1313/post/arduino-serial/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -647,9 +647,9 @@ Coming soon, one of our long-time requested feature:
     
     <item>
       <title>Autonomous Racing Robot With an Arduino, a Raspberry Pi and a Pi Camera</title>
-      <link>/post/racing-robot/</link>
+      <link>//localhost:1313/post/racing-robot/</link>
       <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-      <guid>/post/racing-robot/</guid>
+      <guid>//localhost:1313/post/racing-robot/</guid>
       <description>&lt;p&gt;Read the full article on 
 &lt;a href=&#34;https://becominghuman.ai/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
 </description>

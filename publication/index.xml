@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications | Antonin Raffin | Homepage</title>
-    <link>/publication/</link>
-      <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    <link>//localhost:1313/publication/</link>
+      <atom:link href="//localhost:1313/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Publications</title>
-      <link>/publication/</link>
+      <link>//localhost:1313/publication/</link>
     </image>
     
     <item>
       <title>An Open-Loop Baseline for Reinforcement Learning Locomotion Tasks</title>
-      <link>/publication/simple-open-loop/</link>
+      <link>//localhost:1313/publication/simple-open-loop/</link>
       <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/publication/simple-open-loop/</guid>
+      <guid>//localhost:1313/publication/simple-open-loop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
-      <link>/publication/exploit-bert/</link>
+      <link>//localhost:1313/publication/exploit-bert/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/exploit-bert/</guid>
+      <guid>//localhost:1313/publication/exploit-bert/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The 37 Implementation Details of Proximal Policy Optimization</title>
-      <link>/publication/ppo-iclr/</link>
+      <link>//localhost:1313/publication/ppo-iclr/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/ppo-iclr/</guid>
+      <guid>//localhost:1313/publication/ppo-iclr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
-      <link>/publication/sb3/</link>
+      <link>//localhost:1313/publication/sb3/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/sb3/</guid>
+      <guid>//localhost:1313/publication/sb3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Smooth Exploration for Robotic Reinforcement Learning</title>
-      <link>/publication/gsde/</link>
+      <link>//localhost:1313/publication/gsde/</link>
       <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/gsde/</guid>
+      <guid>//localhost:1313/publication/gsde/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fault-Tolerant Six-DoF Pose Estimation for Tendon-Driven Continuum Mechanisms</title>
-      <link>/publication/fault-tolerant/</link>
+      <link>//localhost:1313/publication/fault-tolerant/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/fault-tolerant/</guid>
+      <guid>//localhost:1313/publication/fault-tolerant/</guid>
       <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -77,33 +77,33 @@ Supplementary notes can be added here, including [code and math](https://sourcet
     
     <item>
       <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
-      <link>/publication/decoupling/</link>
+      <link>//localhost:1313/publication/decoupling/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/decoupling/</guid>
+      <guid>//localhost:1313/publication/decoupling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
-      <link>/publication/srl-toolbox/</link>
+      <link>//localhost:1313/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/srl-toolbox/</guid>
+      <guid>//localhost:1313/publication/srl-toolbox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PythonRobotics: a Python code collection of robotics algorithms</title>
-      <link>/publication/python-robotics/</link>
+      <link>//localhost:1313/publication/python-robotics/</link>
       <pubDate>Fri, 31 Aug 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/python-robotics/</guid>
+      <guid>//localhost:1313/publication/python-robotics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unsupervised learning of state representations for multiple tasks</title>
-      <link>/publication/multiple-tasks-srl/</link>
+      <link>//localhost:1313/publication/multiple-tasks-srl/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/multiple-tasks-srl/</guid>
+      <guid>//localhost:1313/publication/multiple-tasks-srl/</guid>
       <description></description>
     </item>
     
