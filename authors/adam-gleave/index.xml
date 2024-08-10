@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Adam Gleave | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/authors/adam-gleave/</link>
-      <atom:link href="//localhost:1313/authors/adam-gleave/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/adam-gleave/</link>
+      <atom:link href="/authors/adam-gleave/index.xml" rel="self" type="application/rss+xml" />
     <description>Adam Gleave</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Sat, 04 Dec 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Adam Gleave</title>
-      <link>//localhost:1313/authors/adam-gleave/</link>
+      <link>/authors/adam-gleave/</link>
     </image>
     
     <item>
       <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
-      <link>//localhost:1313/publication/sb3/</link>
+      <link>/publication/sb3/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/sb3/</guid>
+      <guid>/publication/sb3/</guid>
       <description></description>
     </item>
     

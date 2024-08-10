@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sebastian Höfer | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/authors/sebastian-hofer/</link>
-      <atom:link href="//localhost:1313/authors/sebastian-hofer/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/sebastian-hofer/</link>
+      <atom:link href="/authors/sebastian-hofer/index.xml" rel="self" type="application/rss+xml" />
     <description>Sebastian Höfer</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Sebastian Höfer</title>
-      <link>//localhost:1313/authors/sebastian-hofer/</link>
+      <link>/authors/sebastian-hofer/</link>
     </image>
     
     <item>
       <title>Unsupervised learning of state representations for multiple tasks</title>
-      <link>//localhost:1313/publication/multiple-tasks-srl/</link>
+      <link>/publication/multiple-tasks-srl/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/multiple-tasks-srl/</guid>
+      <guid>/publication/multiple-tasks-srl/</guid>
       <description></description>
     </item>
     

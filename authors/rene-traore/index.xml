@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>René Traoré | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/authors/rene-traore/</link>
-      <atom:link href="//localhost:1313/authors/rene-traore/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/rene-traore/</link>
+      <atom:link href="/authors/rene-traore/index.xml" rel="self" type="application/rss+xml" />
     <description>René Traoré</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>René Traoré</title>
-      <link>//localhost:1313/authors/rene-traore/</link>
+      <link>/authors/rene-traore/</link>
     </image>
     
     <item>
       <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
-      <link>//localhost:1313/publication/decoupling/</link>
+      <link>/publication/decoupling/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/decoupling/</guid>
+      <guid>/publication/decoupling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
-      <link>//localhost:1313/publication/srl-toolbox/</link>
+      <link>/publication/srl-toolbox/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/srl-toolbox/</guid>
+      <guid>/publication/srl-toolbox/</guid>
       <description></description>
     </item>
     

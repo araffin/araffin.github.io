@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shengyi Huang | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/authors/shengyi-huang/</link>
-      <atom:link href="//localhost:1313/authors/shengyi-huang/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/shengyi-huang/</link>
+      <atom:link href="/authors/shengyi-huang/index.xml" rel="self" type="application/rss+xml" />
     <description>Shengyi Huang</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Shengyi Huang</title>
-      <link>//localhost:1313/authors/shengyi-huang/</link>
+      <link>/authors/shengyi-huang/</link>
     </image>
     
     <item>
       <title>The 37 Implementation Details of Proximal Policy Optimization</title>
-      <link>//localhost:1313/publication/ppo-iclr/</link>
+      <link>/publication/ppo-iclr/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/ppo-iclr/</guid>
+      <guid>/publication/ppo-iclr/</guid>
       <description></description>
     </item>
     

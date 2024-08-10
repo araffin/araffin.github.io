@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Anssi Kanervisto | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/authors/anssi-kanervisto/</link>
-      <atom:link href="//localhost:1313/authors/anssi-kanervisto/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/anssi-kanervisto/</link>
+      <atom:link href="/authors/anssi-kanervisto/index.xml" rel="self" type="application/rss+xml" />
     <description>Anssi Kanervisto</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Anssi Kanervisto</title>
-      <link>//localhost:1313/authors/anssi-kanervisto/</link>
+      <link>/authors/anssi-kanervisto/</link>
     </image>
     
     <item>
       <title>The 37 Implementation Details of Proximal Policy Optimization</title>
-      <link>//localhost:1313/publication/ppo-iclr/</link>
+      <link>/publication/ppo-iclr/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/ppo-iclr/</guid>
+      <guid>/publication/ppo-iclr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
-      <link>//localhost:1313/publication/sb3/</link>
+      <link>/publication/sb3/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/sb3/</guid>
+      <guid>/publication/sb3/</guid>
       <description></description>
     </item>
     

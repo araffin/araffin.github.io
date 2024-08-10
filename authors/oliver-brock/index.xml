@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Oliver Brock | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/authors/oliver-brock/</link>
-      <atom:link href="//localhost:1313/authors/oliver-brock/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/oliver-brock/</link>
+      <atom:link href="/authors/oliver-brock/index.xml" rel="self" type="application/rss+xml" />
     <description>Oliver Brock</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Oliver Brock</title>
-      <link>//localhost:1313/authors/oliver-brock/</link>
+      <link>/authors/oliver-brock/</link>
     </image>
     
     <item>
       <title>Unsupervised learning of state representations for multiple tasks</title>
-      <link>//localhost:1313/publication/multiple-tasks-srl/</link>
+      <link>/publication/multiple-tasks-srl/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/publication/multiple-tasks-srl/</guid>
+      <guid>/publication/multiple-tasks-srl/</guid>
       <description></description>
     </item>
     

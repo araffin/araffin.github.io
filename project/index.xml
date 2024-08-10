@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/project/</link>
-      <atom:link href="//localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Thu, 11 May 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Projects</title>
-      <link>//localhost:1313/project/</link>
+      <link>/project/</link>
     </image>
     
     <item>
       <title>SBX: Stable Baselines Jax</title>
-      <link>//localhost:1313/project/sbx/</link>
+      <link>/project/sbx/</link>
       <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/sbx/</guid>
+      <guid>/project/sbx/</guid>
       <description>&lt;p&gt;Proof of concept version of Stable-Baselines3 in Jax.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/sbx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/sbx&lt;/a&gt;&lt;/p&gt;
@@ -45,9 +45,9 @@
     
     <item>
       <title>Datasaurust</title>
-      <link>//localhost:1313/project/datasaurust/</link>
+      <link>/project/datasaurust/</link>
       <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/datasaurust/</guid>
+      <guid>/project/datasaurust/</guid>
       <description>&lt;p&gt;Blazingly fast implementation of the 
 &lt;a href=&#34;https://www.research.autodesk.com/publications/same-stats-different-graphs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Datasaurus&lt;/a&gt; paper (500x faster than the original): &amp;ldquo;Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing&amp;rdquo; by Justin Matejka and George Fitzmaurice.&lt;/p&gt;
 &lt;p&gt;Github repository: 
@@ -57,9 +57,9 @@
     
     <item>
       <title>Stable Baselines3</title>
-      <link>//localhost:1313/project/stable-baselines3/</link>
+      <link>/project/stable-baselines3/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/stable-baselines3/</guid>
+      <guid>/project/stable-baselines3/</guid>
       <description>&lt;p&gt;Stable Baselines3 is a set of improved implementations of reinforcement learning algorithms in PyTorch. It is the next major version of Stable Baselines.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
@@ -73,9 +73,9 @@
     
     <item>
       <title>Learning to Drive Smoothly in Minutes</title>
-      <link>//localhost:1313/project/learning-to-drive/</link>
+      <link>/project/learning-to-drive/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/learning-to-drive/</guid>
+      <guid>/project/learning-to-drive/</guid>
       <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
@@ -86,9 +86,9 @@
     
     <item>
       <title>RL Baselines Zoo</title>
-      <link>//localhost:1313/project/rl-baselines-zoo/</link>
+      <link>/project/rl-baselines-zoo/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/rl-baselines-zoo/</guid>
+      <guid>/project/rl-baselines-zoo/</guid>
       <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Github repository: 
@@ -105,9 +105,9 @@
     
     <item>
       <title>S-RL Toolbox</title>
-      <link>//localhost:1313/project/srl-toolbox/</link>
+      <link>/project/srl-toolbox/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/srl-toolbox/</guid>
+      <guid>/project/srl-toolbox/</guid>
       <description>&lt;p&gt;S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
@@ -131,9 +131,9 @@
     
     <item>
       <title>Stable Baselines</title>
-      <link>//localhost:1313/project/stable-baselines/</link>
+      <link>/project/stable-baselines/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/stable-baselines/</guid>
+      <guid>/project/stable-baselines/</guid>
       <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
 &lt;p&gt;Github repository: 
 &lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;
@@ -144,9 +144,9 @@
     
     <item>
       <title>Racing Robot</title>
-      <link>//localhost:1313/project/racing-robot/</link>
+      <link>/project/racing-robot/</link>
       <pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/racing-robot/</guid>
+      <guid>/project/racing-robot/</guid>
       <description>&lt;p&gt;Autonomous toy racing car. CAMaleon team at the Toulouse Robot Race 2017. Humbavision team at IronCar. Medium article: 
 &lt;a href=&#34;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/@araffin/autonomous-racing-robot-with-an-arduino-a-raspberry-pi-and-a-pi-camera-3e72819e1e63&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Video of the car: 
@@ -156,9 +156,9 @@
     
     <item>
       <title>Arduino Robust Serial</title>
-      <link>//localhost:1313/project/arduino-robust-serial/</link>
+      <link>/project/arduino-robust-serial/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/arduino-robust-serial/</guid>
+      <guid>/project/arduino-robust-serial/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Robust Arduino Serial&lt;/strong&gt; is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Please read the 
 &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;

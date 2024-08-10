@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; | Antonin Raffin | Homepage</title>
-    <link>//localhost:1313/tags/c&#43;&#43;/</link>
-      <atom:link href="//localhost:1313/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/c&#43;&#43;/</link>
+      <atom:link href="/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <description>C&#43;&#43;</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>C&#43;&#43;</title>
-      <link>//localhost:1313/tags/c&#43;&#43;/</link>
+      <link>/tags/c&#43;&#43;/</link>
     </image>
     
     <item>
       <title>Arduino Robust Serial</title>
-      <link>//localhost:1313/project/arduino-robust-serial/</link>
+      <link>/project/arduino-robust-serial/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/arduino-robust-serial/</guid>
+      <guid>/project/arduino-robust-serial/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Robust Arduino Serial&lt;/strong&gt; is a simple and robust serial communication protocol. It was designed to make two Arduinos communicate, but can also be useful when you want a computer (e.g. a Raspberry Pi) to communicate with an Arduino.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Please read the 
 &lt;a href=&#34;https://medium.com/@araffin/simple-and-robust-computer-arduino-serial-communication-f91b95596788&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium Article&lt;/a&gt; to have an overview of this protocol.&lt;/strong&gt;&lt;/p&gt;
