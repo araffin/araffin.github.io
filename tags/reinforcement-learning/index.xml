@@ -5,12 +5,20 @@
     <link>/tags/reinforcement-learning/</link>
       <atom:link href="/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Reinforcement Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Mon, 05 Feb 2024 08:30:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Fri, 22 Nov 2024 13:30:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Reinforcement Learning</title>
       <link>/tags/reinforcement-learning/</link>
     </image>
+    
+    <item>
+      <title>Ingredients for Learning Locomotion Directly on Real Hardware</title>
+      <link>/talk/ingredients-learning-loco/</link>
+      <pubDate>Fri, 22 Nov 2024 13:30:00 +0000</pubDate>
+      <guid>/talk/ingredients-learning-loco/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Designing and Running Real-World RL Experiments</title>
