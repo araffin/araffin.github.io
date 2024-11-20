@@ -1,79 +1,252 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reinforcement Learning, | Antonin Raffin | Homepage</title>
+    <title>Reinforcement Learning | Antonin Raffin | Homepage</title>
     <link>/tags/reinforcement-learning/</link>
       <atom:link href="/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
-    <description>Reinforcement Learning,</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <description>Reinforcement Learning</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2024</copyright><lastBuildDate>Fri, 22 Nov 2024 13:30:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
-      <title>Reinforcement Learning,</title>
+      <title>Reinforcement Learning</title>
       <link>/tags/reinforcement-learning/</link>
     </image>
     
     <item>
-      <title>An Open-Loop Baseline for Reinforcement Learning Locomotion Tasks</title>
-      <link>/publication/simple-open-loop/</link>
-      <pubDate>Wed, 04 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/publication/simple-open-loop/</guid>
+      <title>Ingredients for Learning Locomotion Directly on Real Hardware</title>
+      <link>/talk/ingredients-learning-loco/</link>
+      <pubDate>Fri, 22 Nov 2024 13:30:00 +0000</pubDate>
+      <guid>/talk/ingredients-learning-loco/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Learning to Exploit Elastic Actuators for Quadruped Locomotion</title>
-      <link>/publication/exploit-bert/</link>
-      <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/exploit-bert/</guid>
+      <title>Designing and Running Real-World RL Experiments</title>
+      <link>/talk/design-real-rl-exp/</link>
+      <pubDate>Mon, 05 Feb 2024 08:30:00 +0000</pubDate>
+      <guid>/talk/design-real-rl-exp/</guid>
+      <description>&lt;p&gt;This talk was also given at the RL Symposium organized by 
+&lt;a href=&#34;https://www.bu.edu/hic/frp-reinforcement-learning-symposium/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Boston University&lt;/a&gt; on May 10, 2024.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Practical Tips for Reliable Reinforcement Learning</title>
+      <link>/talk/tips-reliable-rl/</link>
+      <pubDate>Tue, 12 Dec 2023 08:00:00 +0000</pubDate>
+      <guid>/talk/tips-reliable-rl/</guid>
+      <description>&lt;p&gt;This talk was also given at the Industrial RL Workshop organized in Paris Saclay in November 2023.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Knowledge Guided Reinforcement Learning for Robotics</title>
+      <link>/talk/iri-upc-23/</link>
+      <pubDate>Wed, 28 Jun 2023 10:00:00 +0000</pubDate>
+      <guid>/talk/iri-upc-23/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>The 37 Implementation Details of Proximal Policy Optimization</title>
-      <link>/publication/ppo-iclr/</link>
-      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/ppo-iclr/</guid>
+      <title>DQN Tutorial</title>
+      <link>/talk/rlss-23/</link>
+      <pubDate>Tue, 27 Jun 2023 14:30:00 +0000</pubDate>
+      <guid>/talk/rlss-23/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Stable-Baselines3: Reliable Reinforcement Learning Implementations </title>
-      <link>/publication/sb3/</link>
-      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/sb3/</guid>
+      <title>SBX: Stable Baselines Jax</title>
+      <link>/project/sbx/</link>
+      <pubDate>Thu, 11 May 2023 00:00:00 +0000</pubDate>
+      <guid>/project/sbx/</guid>
+      <description>&lt;p&gt;Proof of concept version of Stable-Baselines3 in Jax.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/araffin/sbx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/sbx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Implemented algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1801.01290&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Soft Actor-Critic (SAC)&lt;/a&gt; and 
+&lt;a href=&#34;https://arxiv.org/abs/2110.01548&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SAC-N&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/2005.04269&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Truncated Quantile Critics (TQC)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://openreview.net/forum?id=xCVJMsPv3RT&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dropout Q-Functions for Doubly Efficient Reinforcement Learning (DroQ)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1707.06347&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Proximal Policy Optimization (PPO)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1312.5602&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep Q Network (DQN)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1802.09477&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Twin Delayed DDPG (TD3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1509.02971&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep Deterministic Policy Gradient (DDPG)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://openreview.net/forum?id=PczQtTsTIX&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Batch Normalization in Deep Reinforcement Learning (CrossQ)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Training RL agents directly on real robots</title>
+      <link>/talk/rl-dresden/</link>
+      <pubDate>Thu, 15 Sep 2022 14:30:00 +0000</pubDate>
+      <guid>/talk/rl-dresden/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Smooth Exploration for Robotic Reinforcement Learning</title>
-      <link>/publication/gsde/</link>
-      <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/gsde/</guid>
+      <title>Tutorial: Tools for Robotic Reinforcement Learning</title>
+      <link>/talk/tools-icra/</link>
+      <pubDate>Mon, 23 May 2022 08:00:00 +0000</pubDate>
+      <guid>/talk/tools-icra/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics</title>
-      <link>/publication/decoupling/</link>
+      <title>Learning to Race in Hours with Reinforcement Learning</title>
+      <link>/talk/learning-race/</link>
+      <pubDate>Sat, 29 May 2021 18:00:00 +0000</pubDate>
+      <guid>/talk/learning-race/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RL Tips and Tricks / The Challenges of Applying RL to Real Robots</title>
+      <link>/talk/rlvs/</link>
+      <pubDate>Fri, 09 Apr 2021 09:00:00 +0000</pubDate>
+      <guid>/talk/rlvs/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://araffin.github.io/slides/rlvs-tips-tricks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Tips and Tricks Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://araffin.github.io/slides/rlvs-sb3-handson/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SB3 Hands-on Session slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/araffin/rl-handson-rlvs21&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SB3 Hands-on Session github repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stable Baselines3</title>
+      <link>/project/stable-baselines3/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>/project/stable-baselines3/</guid>
+      <description>&lt;p&gt;Stable Baselines3 is a set of improved implementations of reinforcement learning algorithms in PyTorch. It is the next major version of Stable Baselines.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/stable-baselines3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Documentation: 
+&lt;a href=&#34;https://stable-baselines3.readthedocs.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stable-baselines3.readthedocs.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RL Baselines3 Zoo (collection of pre-trained agents): 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RL Baselines3 Zoo also offers a simple interface to train, evaluate agents and do hyperparameter tuning.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RL Tutorial on Stable Baselines</title>
+      <link>/talk/rl-tuto-jnrr19/</link>
+      <pubDate>Fri, 18 Oct 2019 00:09:00 +0000</pubDate>
+      <guid>/talk/rl-tuto-jnrr19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRL - Stable Baselines Presentation</title>
+      <link>/talk/sb-ias-19/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/talk/sb-ias-19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning to Drive Smoothly in Minutes</title>
+      <link>/post/learning-to-drive/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/decoupling/</guid>
-      <description></description>
+      <guid>/post/learning-to-drive/</guid>
+      <description>&lt;p&gt;Read the full article on 
+&lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>S-RL Toolbox: Environments, Datasets and Evaluation Metrics for State Representation Learning</title>
-      <link>/publication/srl-toolbox/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/srl-toolbox/</guid>
-      <description></description>
+      <title>Learning to Drive Smoothly in Minutes</title>
+      <link>/project/learning-to-drive/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/project/learning-to-drive/</guid>
+      <description>&lt;p&gt;Learning to drive smoothly in minutes, using a reinforcement learning algorithm &amp;ndash; Soft Actor-Critic (SAC) &amp;ndash; and a Variational AutoEncoder (VAE) in the Donkey Car simulator.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/araffin/learning-to-drive-in-5-minutes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/learning-to-drive-in-5-minutes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Blog post on 
+&lt;a href=&#34;https://towardsdatascience.com/learning-to-drive-smoothly-in-minutes-450a7cdb35f4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Unsupervised learning of state representations for multiple tasks</title>
-      <link>/publication/multiple-tasks-srl/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/multiple-tasks-srl/</guid>
-      <description></description>
+      <title>RL Baselines Zoo</title>
+      <link>/project/rl-baselines-zoo/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>/project/rl-baselines-zoo/</guid>
+      <description>&lt;p&gt;A collection of trained Reinforcement Learning (RL) agents, with tuned hyperparameters, using 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/DLR-RM/rl-baselines3-zoo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Goals of this repository:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Provide a simple interface to train and enjoy RL agents&lt;/li&gt;
+&lt;li&gt;Benchmark the different Reinforcement Learning algorithms&lt;/li&gt;
+&lt;li&gt;Provide tuned hyperparameters for each environment and RL algorithm&lt;/li&gt;
+&lt;li&gt;Have fun with the trained agents!&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>S-RL Toolbox</title>
+      <link>/project/srl-toolbox/</link>
+      <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>/project/srl-toolbox/</guid>
+      <description>&lt;p&gt;S-RL Toolbox: Reinforcement Learning (RL) and State Representation Learning (SRL) Toolbox for Robotics.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/araffin/robotics-rl-srl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/robotics-rl-srl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Documentation: 
+&lt;a href=&#34;https://s-rl-toolbox.readthedocs.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://s-rl-toolbox.readthedocs.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Paper: 
+&lt;a href=&#34;https://arxiv.org/abs/1809.09369&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/1809.09369&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;main-features&#34;&gt;Main Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;10 RL algorithms (
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stable Baselines&lt;/a&gt; included)&lt;/li&gt;
+&lt;li&gt;logging / plotting / visdom integration / replay trained agent&lt;/li&gt;
+&lt;li&gt;hyperparameter search (hyperband, hyperopt)&lt;/li&gt;
+&lt;li&gt;integration with State Representation Learning (SRL) methods (for feature extraction)&lt;/li&gt;
+&lt;li&gt;visualisation tools (explore latent space, display action proba, live plot in the state space, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;robotics environments to compare SRL methods&lt;/li&gt;
+&lt;li&gt;easy install using anaconda env or Docker images (CPU/GPU)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stable Baselines</title>
+      <link>/project/stable-baselines/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>/project/stable-baselines/</guid>
+      <description>&lt;p&gt;Stable Baselines is a set of improved implementations of Reinforcement Learning (RL) algorithms based on OpenAI Baselines.&lt;/p&gt;
+&lt;p&gt;Github repository: 
+&lt;a href=&#34;https://github.com/hill-a/stable-baselines&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/hill-a/stable-baselines&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can read a detailed presentation of Stable Baselines in the 
+&lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium article&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stable Baselines: a Fork of OpenAI Baselines — Reinforcement Learning Made Easy</title>
+      <link>/post/stable-baselines/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>/post/stable-baselines/</guid>
+      <description>&lt;p&gt;Read the full article on 
+&lt;a href=&#34;https://towardsdatascience.com/stable-baselines-a-fork-of-openai-baselines-reinforcement-learning-made-easy-df87c4b2fc82&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>
