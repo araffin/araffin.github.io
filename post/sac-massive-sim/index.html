@@ -8,208 +8,207 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 4.8.0">
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
 
   <meta name="author" content="Antonin Raffin">
 
+  
+  
+  
+    
+  
+  <meta name="description" content="This post details how I managed to get the Soft-Actor Critic (SAC) and other off-policy reinforcement learning algorithms to work on massively parallel simulators (think Isaac Sim with thousands of robots simulated in parallel).">
 
-
-
-
-
-  <meta name="description" content="This post details how I managed to get the Soft-Actor Critic (SAC) and other off-policy reinforcement learning algorithms to work on massively parallel simulators (think Isaac Sim with thousands of robots simulated in parallel).
-If you follow the journey, you will learn about overlooked details in task design and algorithm implementation that can have a big impact on performance.">
-
-
+  
   <link rel="alternate" hreflang="en-us" href="/post/sac-massive-sim/">
 
+  
 
 
-
-
-
-
+  
+  
+  
   <meta name="theme-color" content="hsl(16, 89%, 60%)">
+  
 
-
-
-
-
+  
+  
+  
   <script src="/js/mathjax-config.js"></script>
+  
 
-
-
-
-
-
-
+  
+  
+  
+  
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-
-
-
-
-
-
-
-
+    
+    
+    
+      
+    
+    
+      
+      
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-light.min.css" crossorigin="anonymous" title="hl-light">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-light.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
 
+    
 
+    
 
+    
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
+      
+    
+      
 
+      
+      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
 
+      
+      
 
+      
+    
 
+  
 
+  
+  
+  
+   
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
   <link rel="stylesheet" href="/css/academic.css">
 
+  
 
 
 
 
+  
 
 
-
-
-
+  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_32x32_fill_lanczos_center_3.png">
@@ -217,40 +216,39 @@ If you follow the journey, you will learn about overlooked details in task desig
 
   <link rel="canonical" href="/post/sac-massive-sim/">
 
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+    
+  
+  
   <meta property="twitter:card" content="summary_large_image">
-
+  
   <meta property="og:site_name" content="Antonin Raffin | Homepage">
   <meta property="og:url" content="/post/sac-massive-sim/">
   <meta property="og:title" content="Getting SAC to Work on a Massive Parallel Simulator: An RL Journey With Off-Policy Algorithms (Part I) | Antonin Raffin | Homepage">
-  <meta property="og:description" content="This post details how I managed to get the Soft-Actor Critic (SAC) and other off-policy reinforcement learning algorithms to work on massively parallel simulators (think Isaac Sim with thousands of robots simulated in parallel).
-If you follow the journey, you will learn about overlooked details in task design and algorithm implementation that can have a big impact on performance."><meta property="og:image" content="/post/sac-massive-sim/featured.jpg">
+  <meta property="og:description" content="This post details how I managed to get the Soft-Actor Critic (SAC) and other off-policy reinforcement learning algorithms to work on massively parallel simulators (think Isaac Sim with thousands of robots simulated in parallel)."><meta property="og:image" content="/post/sac-massive-sim/featured.jpg">
   <meta property="twitter:image" content="/post/sac-massive-sim/featured.jpg"><meta property="og:locale" content="en-us">
-
-
+  
+    
       <meta property="article:published_time" content="2025-02-10T00:00:00&#43;00:00">
-
+    
     <meta property="article:modified_time" content="2025-02-10T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
 
 
 
 
 
 
-
-
-
-
-
-
-
+  
 
 
 
@@ -264,19 +262,19 @@ If you follow the journey, you will learn about overlooked details in task desig
     "@id": "/post/sac-massive-sim/"
   },
   "headline": "Getting SAC to Work on a Massive Parallel Simulator: An RL Journey With Off-Policy Algorithms (Part I)",
-
+  
   "image": [
     "/post/sac-massive-sim/featured.jpg"
   ],
-
+  
   "datePublished": "2025-02-10T00:00:00Z",
   "dateModified": "2025-02-10T00:00:00Z",
-
+  
   "author": {
     "@type": "Person",
     "name": "Antonin Raffin"
   },
-
+  
   "publisher": {
     "@type": "Organization",
     "name": "Antonin Raffin | Homepage",
@@ -285,19 +283,19 @@ If you follow the journey, you will learn about overlooked details in task desig
       "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "This post details how I managed to get the Soft-Actor Critic (SAC) and other off-policy reinforcement learning algorithms to work on massively parallel simulators (think Isaac Sim with thousands of robots simulated in parallel).\nIf you follow the journey, you will learn about overlooked details in task design and algorithm implementation that can have a big impact on performance."
+  "description": "This post details how I managed to get the Soft-Actor Critic (SAC) and other off-policy reinforcement learning algorithms to work on massively parallel simulators (think Isaac Sim with thousands of robots simulated in parallel)."
 }
 </script>
 
+  
+
+  
 
 
+  
 
 
-
-
-
-
-
+  
 
 
 
@@ -323,17 +321,17 @@ If you follow the journey, you will learn about overlooked details in task desig
       </div>
 
       <div id="search-box">
-
+        
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
         autocomplete="off" autocorrect="off" spellcheck="false" type="search">
-
+        
       </div>
 
     </section>
     <section class="section-search-results">
 
       <div id="search-hits">
-
+        
       </div>
 
     </section>
@@ -341,7 +339,7 @@ If you follow the journey, you will learn about overlooked details in task desig
 </aside>
 
 
-
+  
 
 
 
@@ -352,223 +350,223 @@ If you follow the journey, you will learn about overlooked details in task desig
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
-
+    
     <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Antonin Raffin | Homepage</a>
     </div>
+    
 
-
-
+    
     <button type="button" class="navbar-toggler" data-toggle="collapse"
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
 
-
-
+    
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
       <a class="navbar-brand" href="/">Antonin Raffin | Homepage</a>
     </div>
+    
 
-
-
-
+    
+    
     <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
-
+      
       <ul class="navbar-nav d-md-inline-flex">
+        
 
+        
 
+        
+        
+        
+          
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
 
         <li class="nav-item">
           <a class="nav-link " href="/#about"><span>Home</span></a>
         </li>
 
+        
+        
 
+        
 
+        
+        
+        
+          
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
 
         <li class="nav-item">
           <a class="nav-link " href="/#projects"><span>Projects</span></a>
         </li>
 
+        
+        
 
+        
 
+        
+        
+        
+          
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
 
         <li class="nav-item">
           <a class="nav-link " href="/#publications_selected"><span>Publications</span></a>
         </li>
 
+        
+        
 
+        
 
+        
+        
+        
+          
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
 
         <li class="nav-item">
           <a class="nav-link " href="/#talks"><span>Talks</span></a>
         </li>
 
+        
+        
 
+        
 
+        
+        
+        
+          
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
 
         <li class="nav-item">
           <a class="nav-link " href="/#posts"><span>Posts</span></a>
         </li>
 
+        
+        
 
+        
 
+        
+        
+        
+          
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
 
         <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
+        
+        
 
+      
 
-
-
-
-
+        
       </ul>
     </div>
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
+      
       <li class="nav-item">
         <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
+      
 
+      
 
-
-
-
+      
 
     </ul>
 
@@ -578,6 +576,7 @@ If you follow the journey, you will learn about overlooked details in task desig
 
   <article class="article">
 
+  
 
 
 
@@ -598,50 +597,49 @@ If you follow the journey, you will learn about overlooked details in task desig
 
 
 
-
-
-
-
-
+  
+  
+    
+  
 
 
 <div class="article-container pt-3">
   <h1>Getting SAC to Work on a Massive Parallel Simulator: An RL Journey With Off-Policy Algorithms (Part I)</h1>
 
+  
 
-
-
+  
 
 
 <div class="article-metadata">
 
+  
+  
 
-
-
-
+  
   <span class="article-date">
-
-
-
-
+    
+    
+      
+    
     Feb 10, 2025
   </span>
+  
 
+  
 
+  
 
+  
+  
+  
 
-
-
-
-
-
-
-
-
+  
+  
 
 </div>
 
-
+  
 
 
 
@@ -662,7 +660,7 @@ If you follow the journey, you will learn about overlooked details in task desig
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 395px;">
   <div style="position: relative">
     <img src="/post/sac-massive-sim/featured_hufd7daa78f73a0ea9a2b095306d3c61af_375575_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-
+    
   </div>
 </div>
 
@@ -673,7 +671,7 @@ If you follow the journey, you will learn about overlooked details in task desig
     <div class="article-style">
       <p>This post details how I managed to get the Soft-Actor Critic (SAC) and other off-policy reinforcement learning algorithms to work on massively parallel simulators (think Isaac Sim with thousands of robots simulated in parallel).
 If you follow the journey, you will learn about overlooked details in task design and algorithm implementation that can have a big impact on performance.</p>
-<p>Spoiler alert:
+<p>Spoiler alert: 
 <a href="#appendix---affected-paperscode">quite a few papers/code</a> are affected by the problem described below.</p>
 <ul>
 <li>Part I is about identifying the problem and trying out quick fixes on SAC.</li>
@@ -683,7 +681,7 @@ If you follow the journey, you will learn about overlooked details in task desig
 <p>The story begins a few months ago when I saw another paper using the same recipe for learning locomotion: train a PPO agent in simulation using thousands of environments in parallel and domain randomization, then deploy it on the real robot.
 This recipe has become the standard since 2021, when ETH Zurich and NVIDIA<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> showed that it was possible to learn locomotion in minutes on a single workstation.
 The codebase and the simulator (called Isaac Gym at that time) that were published became the basis for much follow-up work<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
-<p>As an RL researcher focused on
+<p>As an RL researcher focused on 
 <a href="https://proceedings.mlr.press/v164/raffin22a/raffin22a.pdf" target="_blank" rel="noopener">learning directly on real robots</a>, I was curious and suspicious about one aspect of this trend: why is no one trying an algorithm other than PPO?<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>
 PPO benefits from fast and parallel environments<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, but PPO is not the only deep reinforcement learning (DRL) algorithm for continuous control tasks and there are alternatives like SAC or TQC that can lead to better performance<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>.</p>
 <p>So I decided to investigate why these off-policy algorithms are not used by practitioners, and maybe why they don&rsquo;t work with massively parallel simulators.</p>
@@ -704,12 +702,12 @@ As researchers, we tend to publish only positive results, but I think a lot of v
 <li>There may be some peculiarities in the environment design that favor PPO over algorithms. In other words, the massively parallel environments might be optimized for PPO.</li>
 <li>SAC/TQC and derivatives are tuned for sample efficiency, not fast wall clock time. In the case of massively parallel simulation, what matters is how long it takes to train, not how many samples are used. They probably need to be tuned/adjusted for this new setting.</li>
 </ul>
-<p>Note: during my journey, I will (obviously) be using
-<a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">Stable-Baselines3</a> and its fast Jax version
+<p>Note: during my journey, I will (obviously) be using 
+<a href="https://github.com/DLR-RM/stable-baselines3" target="_blank" rel="noopener">Stable-Baselines3</a> and its fast Jax version 
 <a href="https://github.com/araffin/sbx" target="_blank" rel="noopener">SBX</a>.</p>
 <h2 id="the-hunt-begins">The Hunt Begins</h2>
 <p>There are now many massively parallel simulators available (Isaac Sim, Brax, MJX, Genesis, &hellip;), here, I chose to focus on Isaac Sim because it was one of the first and is probably the most influential one.</p>
-<p>As with any RL problem, starting simple is the
+<p>As with any RL problem, starting simple is the 
 <a href="https://www.youtube.com/watch?v=eZ6ZEpCi6D8" target="_blank" rel="noopener">key to success</a>.</p>
 <video controls src="https://b2drop.eudat.eu/public.php/dav/files/z5LFrzLNfrPMd9o/ppo_trained.mp4">
 </video>
@@ -723,7 +721,7 @@ The agent receives information about its current task as input (joint positions,
 The robot is rewarded for following the correct desired velocity (linear and angular) and for other secondary tasks (feet air time, smooth control, &hellip;).
 An episode ends when the robot falls over and is timed out (
 <a href="https://www.youtube.com/watch?v=eZ6ZEpCi6D8" target="_blank" rel="noopener">truncation</a>) after 1000 steps<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>.</p>
-<p>After some
+<p>After some 
 <a href="https://github.com/isaac-sim/IsaacLab/pull/2022" target="_blank" rel="noopener">quick optimizations</a> (SB3 now runs 4x faster, at 60 000 fps for 2048 envs with PPO), I did some sanity checks.
 First, I ran PPO with the tuned hyperparameters found in the repo, and it was able to quickly solve the task.
 In 5 minutes, it gets an average episode return of ~30 (above an episode return of 15, the task is almost solved).
@@ -735,8 +733,8 @@ Something was wrong.</p>
 </video>
 <p style="font-size: 14pt; text-align:center;">SAC out of the box on Isaac Sim during training.</p>
 <p>Because of the very large movements, my suspicion was towards what action the robot is allowed to do.
-Looking at the code, the RL agent commands a (scaled)
-<a href="https://github.com/isaac-sim/IsaacLab/blob/f1a4975eb7bae8509082a8ff02fd775810a73531/source/isaaclab/isaaclab/envs/mdp/actions/joint_actions.py#L134" target="_blank" rel="noopener">delta</a> with respect to a default
+Looking at the code, the RL agent commands a (scaled) 
+<a href="https://github.com/isaac-sim/IsaacLab/blob/f1a4975eb7bae8509082a8ff02fd775810a73531/source/isaaclab/isaaclab/envs/mdp/actions/joint_actions.py#L134" target="_blank" rel="noopener">delta</a> with respect to a default 
 <a href="https://github.com/isaac-sim/IsaacLab/blob/f1a4975eb7bae8509082a8ff02fd775810a73531/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/velocity_env_cfg.py#L112" target="_blank" rel="noopener">joint position</a>:</p>
 <pre><code class="language-python"># Note desired_joint_pos is of dimension 12 (3 joints per leg)
 desired_joint_pos = default_joint_pos + scale * action
@@ -747,19 +745,19 @@ desired_joint_pos = default_joint_pos + scale * action
 Box(-100.0, 100.0, (12,), float32)
 </code></pre>
 <p>Ah ah!
-The action space defines continuous actions of dimension 12 (nothing wrong here), but the limits $[-100, 100]$ are surprisingly large, e.g., it allows a delta of +/- 1432 deg!! in joint angle when
+The action space defines continuous actions of dimension 12 (nothing wrong here), but the limits $[-100, 100]$ are surprisingly large, e.g., it allows a delta of +/- 1432 deg!! in joint angle when 
 <a href="https://github.com/isaac-sim/IsaacLab/blob/f1a4975eb7bae8509082a8ff02fd775810a73531/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/a1/rough_env_cfg.py#L30" target="_blank" rel="noopener">scale=0.25</a>, like for the Unitree A1 robot.
-To understand why
-<a href="https://www.youtube.com/watch?v=Ikngt0_DXJg" target="_blank" rel="noopener">normalizing</a> the action space
+To understand why 
+<a href="https://www.youtube.com/watch?v=Ikngt0_DXJg" target="_blank" rel="noopener">normalizing</a> the action space 
 <a href="https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html" target="_blank" rel="noopener">matters</a> (usually a bounded space in $[-1, 1]$), we need to dig deeper into how PPO works.</p>
 <h2 id="ppo-gaussian-distribution">PPO Gaussian Distribution</h2>
-<p>Like many RL algorithms,
+<p>Like many RL algorithms, 
 <a href="https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/" target="_blank" rel="noopener">PPO</a> relies on a probability distribution to select actions.
 During training, at each timestep, it samples an action $a_t \sim N(\mu_\theta(s_t), \sigma^2)$ from a Gaussian distribution in the case of continuous actions<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>.
-The mean of the Gaussian $\mu_\theta(s_t)$ is the output of the actor neural network (with parameters $\theta$) and the standard deviation is a
-<a href="https://github.com/DLR-RM/stable-baselines3/blob/55d6f18dbd880c62d40a276349b8bac7ebf453cd/stable_baselines3/common/distributions.py#L150" target="_blank" rel="noopener">learnable parameter</a> $\sigma$, usually
+The mean of the Gaussian $\mu_\theta(s_t)$ is the output of the actor neural network (with parameters $\theta$) and the standard deviation is a 
+<a href="https://github.com/DLR-RM/stable-baselines3/blob/55d6f18dbd880c62d40a276349b8bac7ebf453cd/stable_baselines3/common/distributions.py#L150" target="_blank" rel="noopener">learnable parameter</a> $\sigma$, usually 
 <a href="https://github.com/leggedrobotics/rsl_rl/blob/f80d4750fbdfb62cfdb0c362b7063450f427cf35/rsl_rl/modules/actor_critic.py#L26" target="_blank" rel="noopener">initialized</a> with $\sigma_0 = 1.0$.</p>
-<p>This means that at the beginning of training, most of the sampled actions will be in $[-3, 3]$ (from the
+<p>This means that at the beginning of training, most of the sampled actions will be in $[-3, 3]$ (from the 
 <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule" target="_blank" rel="noopener">Three Sigma Rule</a>):</p>
 <img style="max-width:80%" src="./img/gaussian.svg"/>
 <p style="font-size: 14pt; text-align:center;">The initial Gaussian distribution used by PPO for sampling actions.</p>
@@ -782,9 +780,9 @@ array([ 3.2,  2.8,  2.7,  2.8,  2.9,  2.7,  3.2,  2.9,  7.2,  5.7,  5. ,  5.8])
 <p>Now that we know that we need less than 5% of the action space to solve the task, let&rsquo;s see why this might explain why SAC doesn&rsquo;t work in this case<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>.</p>
 <!-- Note: if in rad, 3 rad is already 171 degrees (but action scale = 0.25, so ~40 deg, action scale = 0.5 for Anymal). -->
 <h2 id="sac-squashed-gaussian">SAC Squashed Gaussian</h2>
-<p>SAC and other off-policy algorithms for continuous actions (such as DDPG, TD3 or
+<p>SAC and other off-policy algorithms for continuous actions (such as DDPG, TD3 or 
 <a href="https://sb3-contrib.readthedocs.io/en/master/modules/tqc.html" target="_blank" rel="noopener">TQC</a>) have an additional transformation at the end of the actor network.
-SAC squashes the action sampled from an unbounded Gaussian distribution using a
+SAC squashes the action sampled from an unbounded Gaussian distribution using a 
 <a href="https://pytorch.org/docs/stable/generated/torch.nn.Tanh.html" target="_blank" rel="noopener">$tanh()$</a> function.
 Therefore, the sampled actions are always in $[-1, 1]$.
 SAC then linearly rescales the sampled action to match the action space definition, i.e. it transforms the action from $[-1, 1]$ to $[\text{low}, \text{high}]$<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>.</p>
@@ -813,10 +811,10 @@ In addition, SAC&rsquo;s learned gaits are not as pleasing as PPO&rsquo;s, for e
 <p>Part II will explore these aspects (and more environments), review SAC design decisions (for example, try to remove the squashed Gaussian), and tune it for speed, but for now let&rsquo;s see what this means for the RL community.</p>
 <h2 id="outro-what-does-that-mean-for-the-rl-community">Outro: What Does That Mean for the RL Community?</h2>
 <p>When I found out about this problem, I was curious to see how widespread it was in the community.
-After a quick search, it turns out that there are a lot of papers/code affected<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup> by this large boundary problem (see a non-exhaustive
+After a quick search, it turns out that there are a lot of papers/code affected<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup> by this large boundary problem (see a non-exhaustive 
 <a href="#appendix---affected-paperscode">list of affected papers/code below</a>).</p>
 <p>Although the initial choice of bounds may be a conscious and convenient one (no need to specify the real bounds, PPO will figure it out), it seems to have worked a bit by accident for those who built on top of it, and probably discouraged practitioners from trying other algorithms.</p>
-<p>My recommendation would be to always have properly defined action bounds, and if they are not known in advance, you can always
+<p>My recommendation would be to always have properly defined action bounds, and if they are not known in advance, you can always 
 <a href="https://gist.github.com/araffin/e069945a68aa0d51fcdff3f01e945c70" target="_blank" rel="noopener">plot the action distribution</a> and adjust the limits when iterating on the environment design.</p>
 <!-- TODO: get feedback if this is an overlooked problem or known issue but PPO is nice because it can decide which action space to choose? -->
 <!-- Quick tuning: use TQC (equal or better perf than SAC), faster training with JIT and multi gradient steps, policy delay and train_freq, bigger batch size.
@@ -841,7 +839,7 @@ Replace state-dependent std with independent: auto-tuning entropy coeff broken, 
 Note: two variations of the same issue: unbounded (matches Gaussian dist real domain)
 and clipped to high limits
 
-Note: brax PPO seems to implement tanh Gaussian dist (action limited to [-1, 1]):
+Note: brax PPO seems to implement tanh Gaussian dist (action limited to [-1, 1]): 
 https://github.com/google/brax/blob/241f9bc5bbd003f9cfc9ded7613388e2fe125af6/brax/training/agents/ppo/networks.py#L78
 MuJoCo playground and Brax clip: https://github.com/google-deepmind/mujoco_playground/blob/0f3adda84f2a2ab55e9d9aaf7311c917518ec25c/mujoco_playground/_src/wrapper_torch.py#L158
 but not really defined explicitly in the env (for the limits)
@@ -872,15 +870,15 @@ Note: rescale action doesn't work for PPO, need retuning? need tanh normal? -->
 <li>
 <a href="https://github.com/ZiwenZhuang/parkour/blob/789e83c40b95fdd49fda7c1725c8c573df42d2a9/legged_gym/legged_gym/envs/base/legged_robot_config.py#L169" target="_blank" rel="noopener">Robot Parkour Learning</a></li>
 </ul>
-<p>You can probably find many more looking at
+<p>You can probably find many more looking at 
 <a href="https://scholar.google.com/scholar?cites=8503164023891275626&amp;as_sdt=2005&amp;sciodt=0,5" target="_blank" rel="noopener">works that cite the ETH paper</a>.</p>
 <ul>
-<li>Seems to be fixed in
+<li>Seems to be fixed in 
 <a href="https://github.com/chengxuxin/extreme-parkour/blob/d2ffe27ba59a3229fad22a9fc94c38010bb1f519/legged_gym/legged_gym/envs/base/legged_robot_config.py#L120" target="_blank" rel="noopener">Extreme Parkour</a> (clip action 1.2)</li>
-<li>Almost fixed in
+<li>Almost fixed in 
 <a href="https://github.com/Improbable-AI/walk-these-ways/blob/0e7236bdc81ce855cbe3d70345a7899452bdeb1c/scripts/train.py#L200" target="_blank" rel="noopener">Walk this way</a> (clip action 10)</li>
 </ul>
-<!--
+<!-- 
 Related:
 - [Parallel Q Learning (PQL)](https://github.com/Improbable-AI/pql) but only tackles classic MuJoCo locomotion envs -->
 <h2 id="citation">Citation</h2>
@@ -905,13 +903,13 @@ Related:
 <p>Rudin, Nikita, et al. &ldquo;Learning to walk in minutes using massively parallel deep reinforcement learning.&rdquo; Conference on Robot Learning. PMLR, 2022.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Like the
+<p>Like the 
 <a href="https://www.youtube.com/watch?v=7_LW7u-nk6Q" target="_blank" rel="noopener">BD-1 Disney robot</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>I was not the only one asking why SAC doesn&rsquo;t work:
-<a href="https://forums.developer.nvidia.com/t/poor-performance-of-soft-actor-critic-sac-in-omniverseisaacgym/266970" target="_blank" rel="noopener">nvidia forum</a>
-<a href="https://www.reddit.com/r/reinforcementlearning/comments/lcx0cm/scaling_up_sac_with_parallel_environments/" target="_blank" rel="noopener">reddit1</a>
+<p>I was not the only one asking why SAC doesn&rsquo;t work: 
+<a href="https://forums.developer.nvidia.com/t/poor-performance-of-soft-actor-critic-sac-in-omniverseisaacgym/266970" target="_blank" rel="noopener">nvidia forum</a> 
+<a href="https://www.reddit.com/r/reinforcementlearning/comments/lcx0cm/scaling_up_sac_with_parallel_environments/" target="_blank" rel="noopener">reddit1</a> 
 <a href="https://www.reddit.com/r/reinforcementlearning/comments/12h1faq/isaac_gym_with_offpolicy_algorithms" target="_blank" rel="noopener">reddit2</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
@@ -925,18 +923,18 @@ Related:
 <p>Yes, we tend to be lazy.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p>The control loop runs at
+<p>The control loop runs at 
 <a href="https://github.com/isaac-sim/IsaacLab/blob/f1a4975eb7bae8509082a8ff02fd775810a73531/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/velocity_env_cfg.py#L302" target="_blank" rel="noopener">50 Hz</a>, so after 20s.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8">
 <p>This is not true for the PPO implementation in Brax which uses a squashed Gaussian like SAC.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:9">
-<p>The code to record and plot action distribution is on
+<p>The code to record and plot action distribution is on 
 <a href="https://gist.github.com/araffin/e069945a68aa0d51fcdff3f01e945c70" target="_blank" rel="noopener">GitHub</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:10">
-<p>Action spaces that are too small are also problematic. See
+<p>Action spaces that are too small are also problematic. See 
 <a href="https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html" target="_blank" rel="noopener">SB3 RL Tips and Tricks</a>.&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:11">
@@ -956,7 +954,7 @@ Related:
 
     </div>
 
-
+    
 
 
 
@@ -966,85 +964,85 @@ Related:
 
 <div class="share-box" aria-hidden="true">
   <ul class="share">
-
-
-
-
-
-
-
-
+    
+      
+      
+      
+        
+      
+      
+      
       <li>
         <a href="https://twitter.com/intent/tweet?url=/post/sac-massive-sim/&amp;text=Getting%20SAC%20to%20Work%20on%20a%20Massive%20Parallel%20Simulator:%20An%20RL%20Journey%20With%20Off-Policy%20Algorithms%20%28Part%20I%29" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
-
-
-
-
-
-
-
-
+    
+      
+      
+      
+        
+      
+      
+      
       <li>
         <a href="https://www.facebook.com/sharer.php?u=/post/sac-massive-sim/&amp;t=Getting%20SAC%20to%20Work%20on%20a%20Massive%20Parallel%20Simulator:%20An%20RL%20Journey%20With%20Off-Policy%20Algorithms%20%28Part%20I%29" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
-
-
-
-
-
-
-
-
+    
+      
+      
+      
+        
+      
+      
+      
       <li>
         <a href="mailto:?subject=Getting%20SAC%20to%20Work%20on%20a%20Massive%20Parallel%20Simulator:%20An%20RL%20Journey%20With%20Off-Policy%20Algorithms%20%28Part%20I%29&amp;body=/post/sac-massive-sim/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
-
-
-
-
-
-
-
-
+    
+      
+      
+      
+        
+      
+      
+      
       <li>
         <a href="https://www.linkedin.com/shareArticle?url=/post/sac-massive-sim/&amp;title=Getting%20SAC%20to%20Work%20on%20a%20Massive%20Parallel%20Simulator:%20An%20RL%20Journey%20With%20Off-Policy%20Algorithms%20%28Part%20I%29" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
-
-
-
-
-
-
-
-
+    
+      
+      
+      
+        
+      
+      
+      
       <li>
         <a href="https://web.whatsapp.com/send?text=Getting%20SAC%20to%20Work%20on%20a%20Massive%20Parallel%20Simulator:%20An%20RL%20Journey%20With%20Off-Policy%20Algorithms%20%28Part%20I%29%20/post/sac-massive-sim/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
-
-
-
-
-
-
-
-
+    
+      
+      
+      
+        
+      
+      
+      
       <li>
         <a href="https://service.weibo.com/share/share.php?url=/post/sac-massive-sim/&amp;title=Getting%20SAC%20to%20Work%20on%20a%20Massive%20Parallel%20Simulator:%20An%20RL%20Journey%20With%20Off-Policy%20Algorithms%20%28Part%20I%29" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
-
+    
   </ul>
 </div>
 
@@ -1059,132 +1057,132 @@ Related:
 
 
 
+  
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+  
+  
+  
+    
+  
+  
+  
   <div class="media author-card content-widget-hr">
-
-
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_90bd568b0c44ac02.jpg" alt="Avatar">
-
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hude3a62d3a42e4e03c4c1814b0a41a4f6_54165_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
 
     <div class="media-body">
       <h5 class="card-title"><a href="/">Antonin Raffin</a></h5>
       <h6 class="card-subtitle">Research Engineer in Robotics and Machine Learning</h6>
       <p class="card-text">Robots. Machine Learning. Blues Dance.</p>
       <ul class="network-icon" aria-hidden="true">
-
-
-
-
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
     <li>
       <a href="https://www.linkedin.com/in/antonin-raffin-106b18a8/" target="_blank" rel="noopener">
         <i class="fab fa-linkedin"></i>
       </a>
     </li>
-
-
-
-
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
     <li>
       <a href="https://bsky.app/profile/araffin.bsky.social" target="_blank" rel="noopener">
         <i class="fab fa-bluesky"></i>
       </a>
     </li>
-
-
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
     <li>
       <a href="https://scholar.google.fr/citations?user=kik4AwIAAAAJ&amp;hl=fr" target="_blank" rel="noopener">
         <i class="ai ai-google-scholar"></i>
       </a>
     </li>
-
-
-
-
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
     <li>
       <a href="https://github.com/araffin" target="_blank" rel="noopener">
         <i class="fab fa-github"></i>
       </a>
     </li>
-
-
-
-
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
     <li>
       <a href="https://www.twitch.tv/givethatrobotacookie" target="_blank" rel="noopener">
         <i class="fab fa-twitch"></i>
       </a>
     </li>
-
-
-
-
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
     <li>
       <a href="https://www.youtube.com/user/atooo57" target="_blank" rel="noopener">
         <i class="fab fa-youtube"></i>
       </a>
     </li>
-
+  
 </ul>
 
     </div>
@@ -1201,53 +1199,53 @@ Related:
 
 
 
-
-
+  
+  
 
 
 
   </div>
 </article>
 
+      
 
-
-
-
-
+    
+    
+    
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
+      
 
-
-
-
+      
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+      
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
+    
+    
     <script>const code_highlighting = true;</script>
+    
 
-
-
-
+    
+    
     <script>const isSiteThemeDark = true;</script>
+    
 
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
     <script>
       const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
       const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
@@ -1258,13 +1256,13 @@ Related:
         'talk' : "Talks"
         };
     </script>
+    
 
+    
+    
 
-
-
-
-
-
+    
+    
     <script id="search-hit-fuse-template" type="text/x-template">
       <div class="search-hit" id="summary-{{key}}">
       <div class="search-hit-content">
@@ -1276,57 +1274,57 @@ Related:
       </div>
       </div>
     </script>
+    
 
-
-
-
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
 
+    
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
     <script src="/js/academic.min.80e8497da12d94dc7fea279b7993043d.js"></script>
 
+    
 
 
 
 
 
 
-
-
-
+  
+  
   <div class="container">
     <footer class="site-footer">
-
+  
 
   <p class="powered-by">
-    © 2018 - 2025 &middot;
+    © 2018 - 2025 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
-
+    
     <span class="float-right" aria-hidden="true">
       <a href="#" class="back-to-top">
         <span class="button_icon">
@@ -1334,14 +1332,14 @@ Related:
         </span>
       </a>
     </span>
-
+    
   </p>
 </footer>
 
   </div>
+  
 
-
-
+  
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
