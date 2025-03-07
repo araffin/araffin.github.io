@@ -47,7 +47,7 @@ As researchers, we tend to publish only positive results, but I think a lot of v
 &lt;ul&gt;
 &lt;li&gt;PPO is fast to train (in terms of computation time) and was tuned for the massively parallel environment.&lt;/li&gt;
 &lt;li&gt;As researchers, we tend to take the path of least resistance and build on proven solutions (the original training code is open source and the simulator is freely available) to get new interesting results&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
-&lt;li&gt;There may be some peculiarities in the environment design that favor PPO over algorithms. In other words, the massively parallel environments might be optimized for PPO.&lt;/li&gt;
+&lt;li&gt;There may be some peculiarities in the environment design that favor PPO over other algorithms. In other words, the massively parallel environments might be optimized for PPO.&lt;/li&gt;
 &lt;li&gt;SAC/TQC and derivatives are tuned for sample efficiency, not fast wall clock time. In the case of massively parallel simulation, what matters is how long it takes to train, not how many samples are used. They probably need to be tuned/adjusted for this new setting.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Note: during my journey, I will (obviously) be using 
@@ -71,7 +71,7 @@ An episode ends when the robot falls over and is timed out (
 &lt;a href=&#34;https://www.youtube.com/watch?v=eZ6ZEpCi6D8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;truncation&lt;/a&gt;) after 1000 steps&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;After some 
 &lt;a href=&#34;https://github.com/isaac-sim/IsaacLab/pull/2022&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quick optimizations&lt;/a&gt; (SB3 now runs 4x faster, at 60 000 fps for 2048 envs with PPO), I did some sanity checks.
-First, I ran PPO with the tuned hyperparameters found in the repo, and it was able to quickly solve the task.
+First, I ran PPO with the tuned hyperparameters found in the repository, and it was able to quickly solve the task.
 In 5 minutes, it gets an average episode return of ~30 (above an episode return of 15, the task is almost solved).
 Then I tried SAC and TQC, with default hyperparameters (and observation normalization), and, as expected, it didn&amp;rsquo;t work.
 No matter how long it was training, there was no sign of improvement.&lt;/p&gt;
@@ -130,9 +130,8 @@ array([ 3.2,  2.8,  2.7,  2.8,  2.9,  2.7,  3.2,  2.9,  7.2,  5.7,  5. ,  5.8])
 &lt;h2 id=&#34;sac-squashed-gaussian&#34;&gt;SAC Squashed Gaussian&lt;/h2&gt;
 &lt;p&gt;SAC and other off-policy algorithms for continuous actions (such as DDPG, TD3 or 
 &lt;a href=&#34;https://sb3-contrib.readthedocs.io/en/master/modules/tqc.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TQC&lt;/a&gt;) have an additional transformation at the end of the actor network.
-SAC squashes the action sampled from an unbounded Gaussian distribution using a 
-&lt;a href=&#34;https://pytorch.org/docs/stable/generated/torch.nn.Tanh.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;$tanh()$&lt;/a&gt; function.
-Therefore, the sampled actions are always in $[-1, 1]$.
+In SAC, actions are sampled from an unbounded Gaussian distribution and then passed through a 
+&lt;a href=&#34;https://pytorch.org/docs/stable/generated/torch.nn.Tanh.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;$tanh()$&lt;/a&gt; function to squash them to the range $[-1, 1]$.
 SAC then linearly rescales the sampled action to match the action space definition, i.e. it transforms the action from $[-1, 1]$ to $[\text{low}, \text{high}]$&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;What does this mean?
 Assuming we start with a standard deviation similar to PPO, this is what the sampled action distribution looks like after squashing&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
@@ -146,13 +145,28 @@ The fact that the actions are rescaled to fit the action space boundaries explai
 &lt;h2 id=&#34;quick-fix&#34;&gt;Quick Fix&lt;/h2&gt;
 &lt;p&gt;When I discovered that the action limits were way too large, my first reflex was to re-train SAC, but with only 3% of the action space, to more or less match the effective action space of PPO.
 Although it didn&amp;rsquo;t reach PPO performance, there was finally some sign of life (an average episodic return slightly positive after a while).&lt;/p&gt;
-&lt;p&gt;What I tried next was to reduce SAC exploration by having a smaller entropy coefficient&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt; at the beginning of training.
+&lt;p&gt;What I tried next was to use a neural network similar to the one used by PPO for this task and reduce SAC exploration by having a smaller entropy coefficient&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt; at the beginning of training.
 Bingo!
 SAC finally learned to solve the task!&lt;/p&gt;
-&lt;!-- TODO: image learning curve? --&gt;
+&lt;img style=&#34;max-width:90%&#34; src=&#34;./img/learning_curve.svg&#34;/&gt;
+&lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;Learning curve on the Unitree A1 task using 2048 envs.&lt;/p&gt;
 &lt;video controls src=&#34;https://b2drop.eudat.eu/public.php/dav/files/z5LFrzLNfrPMd9o/sac_trained_cut_1.mp4&#34;&gt;
 &lt;/video&gt;
 &lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;Trained SAC agent after the quick fix.&lt;/p&gt;
+&lt;p&gt;SAC Hyperparameters (the ones not specified are 
+&lt;a href=&#34;https://github.com/araffin/sbx/blob/8238fccc19048340870e4869813835b8fb02e577/sbx/sac/sac.py#L54-L64&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SB3 defaults&lt;/a&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sac_hyperparams = dict(
+    policy_kwargs={
+        # Similar to PPO network tuned for Unitree A1 task
+        &amp;quot;activation_fn&amp;quot;: jax.nn.elu,
+        &amp;quot;net_arch&amp;quot;: [512, 256, 128],
+    },
+    # When using 2048 envs, gradient_steps=512 corresponds
+    # to an update-to-data ratio of 1/4
+    gradient_steps=512,
+    ent_coef=&amp;quot;auto_0.006&amp;quot;,
+)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;thats-all-folks&#34;&gt;That&amp;rsquo;s all folks?&lt;/h2&gt;
 &lt;p&gt;Although SAC can now solve this locomotion task, it takes more time to train, is not consistent, and the performance is slightly below PPO&amp;rsquo;s.
 In addition, SAC&amp;rsquo;s learned gaits are not as pleasing as PPO&amp;rsquo;s, for example, SAC agents tend to keep one leg up in the air&amp;hellip;&lt;/p&gt;
@@ -240,7 +254,7 @@ Related:
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;acknowledgement&#34;&gt;Acknowledgement&lt;/h2&gt;
-&lt;p&gt;I would like to thank Anssi and Leon for their feedback =).&lt;/p&gt;
+&lt;p&gt;I would like to thank Anssi, Leon, Ria and Costa for their feedback =).&lt;/p&gt;
 &lt;!-- All the graphics were made using [excalidraw](https://excalidraw.com/). --&gt;
 &lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
 &lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
