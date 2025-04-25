@@ -29,7 +29,7 @@
     
   
   <meta name="description" content="When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?
-The good news is that automatic hyperparameter tuning can save the day.">
+The good news is that automatic hyperparameter tuning can help you.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/hyperparam-tuning/">
@@ -231,7 +231,7 @@ The good news is that automatic hyperparameter tuning can save the day.">
   <meta property="og:url" content="/post/hyperparam-tuning/">
   <meta property="og:title" content="Automatic Hyperparameter Tuning - A Visual Guide (Part 1) | Antonin Raffin | Homepage">
   <meta property="og:description" content="When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?
-The good news is that automatic hyperparameter tuning can save the day."><meta property="og:image" content="/post/hyperparam-tuning/featured.png">
+The good news is that automatic hyperparameter tuning can help you."><meta property="og:image" content="/post/hyperparam-tuning/featured.png">
   <meta property="twitter:image" content="/post/hyperparam-tuning/featured.png"><meta property="og:locale" content="en-us">
   
     
@@ -285,7 +285,7 @@ The good news is that automatic hyperparameter tuning can save the day."><meta p
       "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "When you\u0026rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?\nThe good news is that automatic hyperparameter tuning can save the day."
+  "description": "When you\u0026rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?\nThe good news is that automatic hyperparameter tuning can help you."
 }
 </script>
 
@@ -672,16 +672,16 @@ The good news is that automatic hyperparameter tuning can save the day."><meta p
 
     <div class="article-style">
       <p>When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?</p>
-<p>The good news is that automatic hyperparameter tuning can save the day. By trying out a bunch of configurations and stopping the least promising ones early, you can find the perfect hyperparameters without breaking a sweat.</p>
-<p>The trick is to allocate your &ldquo;budget&rdquo; (aka time and resources) wisely. You want to try out as many combinations as possible, but you don&rsquo;t have an infinite amount of time.</p>
-<p>By pruning the bad trials early and focusing on the promising ones, you can find the best hyperparameters quickly and efficiently. And the best part? You can focus on more important things&hellip; like drinking coffee or taking a nap.</p>
+<p>The good news is that automatic hyperparameter tuning can help you.
+The trick is to allocate your &ldquo;budget&rdquo; (aka time and resources) wisely. You want to try out as many combinations as possible, but you don&rsquo;t have an infinite amount of time.
+By pruning the bad trials early and focusing on the promising ones, you can find the best hyperparameters quickly and efficiently.</p>
 <p>As a personal and concrete example, I used this technique on a 
 <a href="https://arxiv.org/abs/2209.07171" target="_blank" rel="noopener">real elastic quadruped</a> to optimize the parameters of a controller directly on the real robot (it can also be good 
 <a href="https://arxiv.org/abs/2310.05808" target="_blank" rel="noopener">baseline</a> for locomotion).</p>
 <p>In this blog post, I&rsquo;ll explore some of the techniques for automatic hyperparameter tuning, using reinforcement learning as a concrete example.
 I&rsquo;ll discuss the challenges of hyperparameter optimization, and introduce different samplers and schedulers for exploring the hyperparameter space.
-In 
-<a href="../optuna/">part two</a>, I&rsquo;ll show how to use the 
+
+<a href="../optuna/">Part two</a> shows how to use the 
 <a href="https://github.com/optuna/optuna" target="_blank" rel="noopener">Optuna library</a> to put these techniques into practice.</p>
 <p>If you prefer to learn with video, I gave this tutorial at ICRA 2022.
 The 
@@ -716,8 +716,8 @@ After some time, say 25% of the total budget, you decide to prune the least prom
 <p><object width="100%" type="image/svg+xml" data="./img/perf_landscape.svg"></object></p>
 <p>In this example, we want to obtain high returns (red area).
 The performance depends on two parameters that we can tune.</p>
-<p>Of course, if we knew the performance landscape in advance, we wouldn&rsquo;t need any tuning, we could directly choose the optimal parameters for our task.</p>
-<p>In this particular example, you can notice that one parameter must be tuned precisely (parameter one), while the second one can be chosen more loosely (it doesn&rsquo;t impact performance much). Again, you don&rsquo;t know this in advance.</p>
+<p>Of course, if we knew the performance landscape in advance, we wouldn&rsquo;t need any tuning, we could directly choose the optimal parameters for the task.</p>
+<p>In this particular example, you can notice that one parameter must be tuned precisely (parameter 1), while the second one can be chosen more loosely (it doesn&rsquo;t impact performance much). Again, you don&rsquo;t know this in advance.</p>
 <h3 id="grid-search">Grid Search</h3>
 <p>A common and inefficient way to sample hyperparameters is to discretize the search space and try all configurations: this is called grid search.</p>
 <p><object width="100%" type="image/svg+xml" data="./img/grid_search_comb.svg"></object></p>
@@ -757,10 +757,6 @@ Around these observations, the uncertainty of the surrogate model will be small.
 <a href="https://blog.otoro.net/2017/10/29/visual-evolution-strategies/" target="_blank" rel="noopener">Evolution Strategies</a> (ES, CMA-ES) and 
 <a href="https://en.wikipedia.org/wiki/Particle_swarm_optimization" target="_blank" rel="noopener">Particle Swarm Optimization</a> (PSO).
 Both of those approaches optimize a population of solutions that evolves over time.</p>
-<hr>
-<p>Now that you&rsquo;re familiar with the different samplers for automatic hyperparameter tuning, it&rsquo;s time to dive into another critical aspect: pruners.
-These techniques work hand in hand with the search algorithms to further improve the efficiency of the optimization process.</p>
-<hr>
 <h2 id="schedulers--pruners">Schedulers / Pruners</h2>
 <p>The job of the pruner is to identify and discard poorly performing hyperparameter configurations, eliminating them from further consideration.
 This ensures that your resources are focused on the most promising candidates, saving valuable time and computating power.</p>
@@ -792,10 +788,8 @@ You start with many configurations and give them all a minimum budget.</p>
 <li>the various schedulers that decide how to allocate resources and when to stop a trial</li>
 </ul>
 <p>The 
-<a href="../optuna/">second part</a> will be about applying hyperparameter tuning in practice with the 
-<a href="https://github.com/optuna/optuna" target="_blank" rel="noopener">Optuna</a> library, using reinforcement learning as an example
-(if you are impatient, the video and the colab notebook are already 
-<a href="https://araffin.github.io/tools-for-robotic-rl-icra2022/" target="_blank" rel="noopener">online</a>).</p>
+<a href="../optuna/">second part</a> is about applying hyperparameter tuning in practice with the 
+<a href="https://github.com/optuna/optuna" target="_blank" rel="noopener">Optuna</a> library, using reinforcement learning as an example.</p>
 <h2 id="citation">Citation</h2>
 <pre><code>@article{raffin2023hyperparameter,
   title   = &quot;Automatic Hyperparameter Tuning - A Visual Guide&quot;,
