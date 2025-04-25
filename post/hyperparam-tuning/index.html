@@ -680,9 +680,10 @@ The good news is that automatic hyperparameter tuning can save the day."><meta p
 <a href="https://arxiv.org/abs/2310.05808" target="_blank" rel="noopener">baseline</a> for locomotion).</p>
 <p>In this blog post, I&rsquo;ll explore some of the techniques for automatic hyperparameter tuning, using reinforcement learning as a concrete example.
 I&rsquo;ll discuss the challenges of hyperparameter optimization, and introduce different samplers and schedulers for exploring the hyperparameter space.
-In part two (WIP), I&rsquo;ll show how to use the 
+In 
+<a href="../optuna/">part two</a>, I&rsquo;ll show how to use the 
 <a href="https://github.com/optuna/optuna" target="_blank" rel="noopener">Optuna library</a> to put these techniques into practice.</p>
-<p>If you prefer to learn with video, I recently gave this tutorial at ICRA 2022.
+<p>If you prefer to learn with video, I gave this tutorial at ICRA 2022.
 The 
 <a href="https://araffin.github.io/tools-for-robotic-rl-icra2022/" target="_blank" rel="noopener">slides</a>, notebooks and videos are online:</p>
 
@@ -790,10 +791,21 @@ You start with many configurations and give them all a minimum budget.</p>
 <li>the different samplers that choose which set of parameters to try</li>
 <li>the various schedulers that decide how to allocate resources and when to stop a trial</li>
 </ul>
-<p>The second part (WIP) will be about applying hyperparameter tuning in practice with the 
+<p>The 
+<a href="../optuna/">second part</a> will be about applying hyperparameter tuning in practice with the 
 <a href="https://github.com/optuna/optuna" target="_blank" rel="noopener">Optuna</a> library, using reinforcement learning as an example
 (if you are impatient, the video and the colab notebook are already 
 <a href="https://araffin.github.io/tools-for-robotic-rl-icra2022/" target="_blank" rel="noopener">online</a>).</p>
+<h2 id="citation">Citation</h2>
+<pre><code>@article{raffin2023hyperparameter,
+  title   = &quot;Automatic Hyperparameter Tuning - A Visual Guide&quot;,
+  author  = &quot;Raffin, Antonin&quot;,
+  journal = &quot;araffin.github.io&quot;,
+  year    = &quot;2023&quot;,
+  month   = &quot;May&quot;,
+  url     = &quot;https://araffin.github.io/post/hyperparam-tuning/&quot;
+}
+</code></pre>
 <h2 id="acknowledgement">Acknowledgement</h2>
 <p>All the graphics were made using 
 <a href="https://excalidraw.com/" target="_blank" rel="noopener">excalidraw</a>.</p>
