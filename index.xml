@@ -5,12 +5,20 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Wed, 21 May 2025 11:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Recent Advances in RL for Continuous Control</title>
+      <link>/talk/recent-advances-rl-cern/</link>
+      <pubDate>Wed, 21 May 2025 11:00:00 +0000</pubDate>
+      <guid>/talk/recent-advances-rl-cern/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Automatic Hyperparameter Tuning - In Practice (Part 2)</title>
@@ -666,6 +674,14 @@ This happens because the policies don&amp;rsquo;t care about the tracking accura
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Enabling Reinforcement Learning on Real Robots</title>
+      <link>/talk/phd-defense-inria/</link>
+      <pubDate>Fri, 31 Jan 2025 13:30:00 +0000</pubDate>
+      <guid>/talk/phd-defense-inria/</guid>
+      <description></description>
     </item>
     
     <item>
