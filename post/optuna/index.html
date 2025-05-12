@@ -887,6 +887,8 @@ model = PPO(&quot;MlpPolicy&quot;, vec_env, verbose=1, **hyperparams)
 model.learn(40_000, progress_bar=False)
 </code></pre>
 <p>It should give you better results than the default hyperparameters with half of the training budget.</p>
+<img style="max-width:80%" src="./img/Results_Pendulum-v1.svg"/>
+<p style="font-size: 14pt; text-align:center;">Learning curve for PPO with default and tuned hyperparameters</p>
 <p>Note: I recommend using the 
 <a href="https://github.com/DLR-RM/rl-baselines3-zoo" target="_blank" rel="noopener">RL Zoo</a> for more complex settings.
 It includes automatic hyperparameter tuning, loading trial and distributed optimization.
@@ -971,7 +973,7 @@ I&rsquo;ve covered:</p>
 }
 </code></pre>
 <h2 id="acknowledgement">Acknowledgement</h2>
-<p>I would like to thank Anssi for his feedback =).</p>
+<p>I would like to thank Anssi and Costa for their feedback =).</p>
 <h3 id="did-you-find-this-post-helpful-consider-sharing-it-">Did you find this post helpful? Consider sharing it 🙌</h3>
 <h2 id="footnotes">Footnotes</h2>
 <div class="footnotes" role="doc-endnotes">

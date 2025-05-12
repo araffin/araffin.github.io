@@ -243,6 +243,8 @@ model = PPO(&amp;quot;MlpPolicy&amp;quot;, vec_env, verbose=1, **hyperparams)
 model.learn(40_000, progress_bar=False)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It should give you better results than the default hyperparameters with half of the training budget.&lt;/p&gt;
+&lt;img style=&#34;max-width:80%&#34; src=&#34;./img/Results_Pendulum-v1.svg&#34;/&gt;
+&lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;Learning curve for PPO with default and tuned hyperparameters&lt;/p&gt;
 &lt;p&gt;Note: I recommend using the 
 &lt;a href=&#34;https://github.com/DLR-RM/rl-baselines3-zoo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Zoo&lt;/a&gt; for more complex settings.
 It includes automatic hyperparameter tuning, loading trial and distributed optimization.
@@ -327,7 +329,7 @@ I&amp;rsquo;ve covered:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;acknowledgement&#34;&gt;Acknowledgement&lt;/h2&gt;
-&lt;p&gt;I would like to thank Anssi for his feedback =).&lt;/p&gt;
+&lt;p&gt;I would like to thank Anssi and Costa for their feedback =).&lt;/p&gt;
 &lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
 &lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
