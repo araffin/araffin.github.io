@@ -19,8 +19,11 @@
       <guid>/post/tune-sac-isaac-sim/</guid>
       <description>&lt;p&gt;This second post details how I tuned the Soft-Actor Critic (SAC) algorithm to learn as fast as PPO in the context of a massively parallel simulator (thousands of robots simulated in parallel).
 If you read along, you will learn how to automatically tune SAC for speed, how to find better action boundaries, and what I tried that didn&amp;rsquo;t work.&lt;/p&gt;
-&lt;p&gt;If you haven&amp;rsquo;t read it yet, please have a look at 
-&lt;a href=&#34;../sac-massive-sim/&#34;&gt;part I&lt;/a&gt; which is about analysing why SAC doesn&amp;rsquo;t work how of the box on Isaac Sim environments.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;../sac-massive-sim/&#34;&gt;Part I&lt;/a&gt; is about analysing why SAC doesn&amp;rsquo;t work how of the box on Isaac Sim environments.&lt;/li&gt;
+&lt;li&gt;Part II is about tuning SAC for speed and making it work as good as PPO.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;in-the-previous-episode&#34;&gt;In the Previous Episode&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;In the 
 &lt;a href=&#34;../sac-massive-sim/&#34;&gt;first part&lt;/a&gt;, I stopped at the point where we could detect some signs of life from SAC (it was learning something).&lt;/p&gt;
@@ -28,10 +31,11 @@ If you read along, you will learn how to automatically tune SAC for speed, how t
 &lt;p&gt;However, SAC took more time to train than PPO (12 minutes vs. 6 minutes), and it did not reach PPO&amp;rsquo;s performance level.
 Luckily, I still had several ideas for improving SAC&amp;rsquo;s training speed and performance&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;defining-proper-action-bound---extracting-the-limits-with-ppo&#34;&gt;Defining Proper Action Bound - Extracting the Limits with PPO&lt;/h2&gt;
-&lt;p&gt;An aspect I wanted to improve was properly defining the boundaries of the action space.
-In part one, I quickly fixed it by limiting the action space to 3% of the original.
-For a more precise definition, I 
-&lt;a href=&#34;https://gist.github.com/araffin/e069945a68aa0d51fcdff3f01e945c70&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;recorded&lt;/a&gt; the actions taken by a trained PPO agent and took the 2.5th and 97.5th percentile for the new limits.
+&lt;p&gt;First, I wanted to have a finer definition of the action space.
+Definining correct boundaries for the action space is important both for the speed of convergence and the final performance.
+A larger action space provides the agent with more flexibility, potentially leading to better performance at the cost of slower learning. Conversely, a smaller action space can accelerate learning but may result in suboptimal solutions.&lt;/p&gt;
+&lt;p&gt;Thus, instead of simply restricting the action space to a small percentage of the original, I 
+&lt;a href=&#34;https://gist.github.com/araffin/e069945a68aa0d51fcdff3f01e945c70&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;recorded&lt;/a&gt; the actions taken by a trained PPO agent and took the 2.5th and 97.5th percentiles for the new limits.
 In other words, the new action space contains 95% of the actions commanded by a trained PPO agent&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# np.percentile(actions, 2.5, axis=0)
 low = np.array([-2.0, -0.4, -2.6, -1.3, -2.2, -1.9, -0.7, -0.4, -2.1, -2.4, -2.5, -1.7])
@@ -39,7 +43,8 @@ low = np.array([-2.0, -0.4, -2.6, -1.3, -2.2, -1.9, -0.7, -0.4, -2.1, -2.4, -2.5
 high = np.array([1.1, 2.6, 0.7, 1.9, 1.3, 2.6, 3.4, 3.8, 3.4, 3.4, 1.9, 2.1])
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;need-for-speed-or-how-i-learned-to-stop-worrying-about-sample-efficiency&#34;&gt;Need for Speed or: How I Learned to Stop Worrying About Sample Efficiency&lt;/h2&gt;
-&lt;p&gt;The SAC algorithm and its derivatives (such as TQC) are optimized for sample efficiency.
+&lt;p&gt;The second aspect I wanted to improve were SAC&amp;rsquo;s hyperparameters.
+The default hyperparameters of SAC algorithm and its derivatives (such as TQC) are optimized for sample efficiency.
 This is ideal for learning directly on a single real robot, but suboptimal for training thousands of robots in simulation.&lt;/p&gt;
 &lt;p&gt;In 
 &lt;a href=&#34;../sac-massive-sim/&#34;&gt;part one&lt;/a&gt;, I quickly tuned SAC by hand to get it up and running.
@@ -58,13 +63,14 @@ That&amp;rsquo;s why I turned to automatic hyperparameter optimization.&lt;/p&gt
 In practice, this translates to an objective function that looks like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def objective(trial: optuna.Trial) -&amp;gt; float:
     &amp;quot;&amp;quot;&amp;quot;Optimize for best performance after 5 minutes of training.&amp;quot;&amp;quot;&amp;quot;
+    # Sample hyperparameters
     hyperparams = sample_sac_params(trial)
     agent = sbx.SAC(env=env, **hyperparams)
-    # Exit the training loop after 5 minutes
+    # Callback to exit the training loop after 5 minutes
     callback = TimeoutCallback(timeout=60 * 5)
-    # Max budget of 50_000_000 timesteps
+    # Train with a max budget of 50_000_000 timesteps
     agent.learn(total_timesteps=int(5e7), callback=callback)
-    # Log the number of steps in the environments
+    # Log the number of interactions with the environments
     trial.set_user_attr(&amp;quot;num_timesteps&amp;quot;, agent.num_timesteps)
     # Evaluate the trained agent
     env.seed(args_cli.seed)
@@ -72,7 +78,7 @@ In practice, this translates to an objective function that looks like this:&lt;/
     return mean_reward
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The agent is evaluated after five minutes of training, regardless of how many interactions with the environment were needed (the &lt;code&gt;TimeoutCallback&lt;/code&gt; forces the agent to exit the training loop).&lt;/p&gt;
-&lt;h3 id=&#34;sac-hyperparameters&#34;&gt;SAC Hyperparameters&lt;/h3&gt;
+&lt;h3 id=&#34;sac-hyperparameters-sampler&#34;&gt;SAC Hyperparameters Sampler&lt;/h3&gt;
 &lt;p&gt;Similar to 
 &lt;a href=&#34;../optuna/&#34;&gt;PPO&lt;/a&gt;, many hyperparameters can be tuned for SAC.
 After some trial and error, I came up with the following sampling function (I&amp;rsquo;ve included comments that explain the meaning of each parameter):&lt;/p&gt;
@@ -85,9 +91,10 @@ After some trial and error, I came up with the following sampling function (I&am
     # From 2^7=128 to 2^12 = 4096, the mini-batch size
     batch_size_pow = trial.suggest_int(&amp;quot;batch_size_pow&amp;quot;, 7, 12, log=True)
     # How big should should the actor and critic networks be
-    # net_arch = trial.suggest_categorical(&amp;quot;net_arch&amp;quot;, [&amp;quot;default&amp;quot;, &amp;quot;medium&amp;quot;, &amp;quot;simba&amp;quot;, &amp;quot;large&amp;quot;, &amp;quot;xlarge&amp;quot;])
-    # Use int to be able to use CMA-ES
-    net_arch_complexity = trial.suggest_int(&amp;quot;net_arch_complexity&amp;quot;, 3, 4)
+    # net_arch = trial.suggest_categorical(&amp;quot;net_arch&amp;quot;, [&amp;quot;default&amp;quot;, &amp;quot;simba&amp;quot;, &amp;quot;large&amp;quot;])
+    # I&#39;m using integers to be able to use CMA-ES,
+    # &amp;quot;default&amp;quot; is [256, 256], &amp;quot;large&amp;quot; is [512, 256, 128]
+    net_arch_complexity = trial.suggest_int(&amp;quot;net_arch_complexity&amp;quot;, 0, 3)
     # From 1 to 8 (how often should we update the networks, every train_freq steps in the env)
     train_freq_pow = trial.suggest_int(&amp;quot;train_freq_pow&amp;quot;, 0, 3)
     # From 1 to 1024 (how many gradient steps by step in the environment)
@@ -117,18 +124,22 @@ After some trial and error, I came up with the following sampling function (I&am
         &amp;quot;net_arch_complexity&amp;quot;: net_arch_complexity,
     })
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The replay ratio (also known as update-to-data ratio or UTD ratio) is a metric that measures the number of gradient updates performed per environment interaction or experience collected.
+&lt;h3 id=&#34;replay-ratio&#34;&gt;Replay Ratio&lt;/h3&gt;
+&lt;p&gt;A metric that will be useful to understand the tuned hyperparameters is the replay ratio.
+The replay ratio (also known as update-to-data ratio or UTD ratio) measures the number of gradient updates performed per environment interaction or experience collected.
 This ratio represents how many times an agent updates its parameters relative to how much new experience it gathers.
 It is defined as &lt;code&gt;replay_ratio = n_gradient_steps / (n_envs * train_freq)&lt;/code&gt; for SAC.&lt;/p&gt;
 &lt;p&gt;In a classic setting, the replay ratio is usually greater than one when optimizing for sample efficiency.
 That means that SAC does at least one gradient step per interaction with the environment.
 However, in the current setting, since collecting new data is cheap, the replay ratio tends to be lower than 1/4 (one gradient step for every four steps in the environment).&lt;/p&gt;
-&lt;p&gt;To optimize the hyperparameters, I used Optuna&amp;rsquo;s CMA-ES sampler for 100 trials (taking about 10 hours with a population size of 10 individuals).
+&lt;h3 id=&#34;optimization-result---tuned-hyperparameters&#34;&gt;Optimization Result - Tuned Hyperparameters&lt;/h3&gt;
+&lt;p&gt;To optimize the hyperparameters, I used Optuna&amp;rsquo;s CMA-ES sampler for 100 trials&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; (taking about 10 hours with a population size of 10 individuals).
 Afterward, I retrained the best trials to 
 &lt;a href=&#34;https://arxiv.org/abs/2209.07171&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;filter out&lt;/a&gt; any lucky seeds, i.e., to find hyperparameters that work consistently across different runs.&lt;/p&gt;
+&lt;p&gt;This is how the optimization looks like, many trials were successful:&lt;/p&gt;
 &lt;img style=&#34;max-width: 100%&#34; src=&#34;./img/optuna_sac.png&#34; alt=&#34;Hyperparameter optimization history&#34; /&gt;
 &lt;p style=&#34;font-size: 12pt; text-align:center;&#34;&gt;Hyperparameter optimization history&lt;/p&gt;
-&lt;p&gt;These are the hyperparameters of SAC, optimized for speed:&lt;/p&gt;
+&lt;p&gt;These are the tuned hyperparameters of SAC found by the CMA-ES sampler while optimizing for speed:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;batch_size: 512
 buffer_size: 2_000_000
 ent_coef: auto_0.009471776840423638
@@ -152,12 +163,13 @@ train_freq: 1
 &lt;li&gt;The lower replay ratio (RR ≈ 0.03 for 1024 environments, or three gradient steps every 100 steps in an environment) and higher policy delay (update the actor after eight actor updates) make it faster, as less time is taken for gradient updates.&lt;/li&gt;
 &lt;li&gt;The discount factor is lower than the default value of 0.99, which favors shorter-term rewards.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Here is the result in video and the associated learning curves&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;p&gt;Here is the result in video and the associated learning curves&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
 &lt;img style=&#34;max-width:100%&#34; src=&#34;./img/learning_curve_unitree.svg&#34;/&gt;
 &lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;Learning curve on the Unitree A1 task using 1024 envs.&lt;/p&gt;
 &lt;video controls src=&#34;https://b2drop.eudat.eu/public.php/dav/files/q6aM4WCSNF28ErD/&#34;&gt;
 &lt;/video&gt;
 &lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;Trained SAC agent after automatic tuning.&lt;/p&gt;
+&lt;p&gt;With those tuned hyperparameters, SAC learns faster than in part I, reaches a higher performance and the learned gaits look better =) (no more feet in the air).&lt;/p&gt;
 &lt;!-- ### Improving Convergence
 
 To improve the convergence of SAC (see the oscillations in the learning curve), I replaced the constant learning rate with a linear schedule:
@@ -171,7 +183,7 @@ and also the effect on the trained policy (no more leg up in the air) --&gt;
 &lt;h2 id=&#34;does-it-work---more-environments&#34;&gt;Does it work? - More Environments&lt;/h2&gt;
 &lt;p&gt;So far, I have only optimized and tested the hyperparameters in one environment.
 The goal is to make it work in any locomotion environment.&lt;/p&gt;
-&lt;p&gt;After it successfully learned on the flat Unitree A1 environment, I tested the same recipe&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; on the GO1, GO2, Anymal-B, and Anymal-C environments, as well as the flat 
+&lt;p&gt;After it successfully learned on the flat Unitree A1 environment, I tested the same recipe&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; on the GO1, GO2, Anymal-B, and Anymal-C environments, as well as the flat 
 &lt;a href=&#34;https://github.com/louislelay/disney_bdx_rl_isaaclab&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disney BD-X&lt;/a&gt; environment and &amp;hellip; it worked!&lt;/p&gt;
 &lt;video controls src=&#34;https://b2drop.eudat.eu/public.php/dav/files/RKCWddABEtj5MFT/&#34;&gt;
 &lt;/video&gt;
@@ -182,8 +194,8 @@ And &amp;hellip; it worked partially.&lt;/p&gt;
 &lt;h2 id=&#34;solving-harder-environments&#34;&gt;Solving Harder Environments&lt;/h2&gt;
 &lt;h3 id=&#34;identifying-the-problem-why-it-doesnt-work&#34;&gt;Identifying the problem: Why it doesn&amp;rsquo;t work?&lt;/h3&gt;
 &lt;p&gt;In the &amp;ldquo;Rough&amp;rdquo; environment, the SAC-trained agent exhibits inconsistent behavior.
-For instance, it manages to climb down the same pyramid steps without falling, yet at another time, it does nothing.
-Additionally, no matter how long it is trained, it does not seem to be able to learn to solve the &amp;ldquo;inverted pyramid,&amp;rdquo; which is probably one of the hardest tasks.&lt;/p&gt;
+For instance, one time, the robot manages to climb down the same pyramid steps without falling, yet at another time, it does nothing.
+Additionally, no matter how long SAC trains, it does not seem to be able to learn to solve the &amp;ldquo;inverted pyramid&amp;rdquo;, which is probably one of the hardest tasks:&lt;/p&gt;
 &lt;img style=&#34;max-width: 100%&#34; src=&#34;./img/inverted_pyramid.jpg&#34; alt=&#34;The inverted pyramid task.&#34; /&gt;
 &lt;p style=&#34;font-size: 12pt; text-align:center;&#34;&gt;The inverted pyramid task.&lt;/p&gt;
 &lt;p&gt;I decided to isolate this task by training SAC only on the inverted pyramid.
@@ -193,8 +205,9 @@ This reminded me of SAC failing on the
 &lt;a href=&#34;https://openreview.net/forum?id=TSuSGVkjuXd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;bad default&lt;/a&gt; for robots).&lt;/p&gt;
 &lt;h3 id=&#34;improving-exploration-and-performance&#34;&gt;Improving Exploration and Performance&lt;/h3&gt;
 &lt;p&gt;To test this hypothesis, I simplified the problem by lowering the step of the inverted pyramid and used a more consistent exploration scheme, 
-&lt;a href=&#34;https://openreview.net/forum?id=TSuSGVkjuXd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gSDE&lt;/a&gt;, that I developed during my PhD to train RL directly on real robots.
-In its simplest form, gSDE repeats the noise vector for n steps (instead of sampling it at every timestep).
+&lt;a href=&#34;https://openreview.net/forum?id=TSuSGVkjuXd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gSDE&lt;/a&gt;, that I developed during my PhD to train RL directly on real robots.&lt;/p&gt;
+&lt;p&gt;In its simplest form, gSDE repeats the noise vector for $n$-steps (instead of sampling it at every timestep).
+In other words, instead of selecting actions following $a_t = \mu_\theta(s_t) + \epsilon_t$&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; and sampling $\epsilon_t \sim N(0, \sigma^2)$ at every step during exploration, gSDE samples $\epsilon \sim N(0, \sigma^2)$ once and keeps it constant for $n$-steps.
 With this improved exploration, the robot could finally learn to partially solve this task.&lt;/p&gt;
 &lt;!-- (note: gSDE is necessary for this to work well, lowering the step of the inverted pyramid alone is not enough). --&gt;
 &lt;!-- (note: gSDE also allowed to have better performance on the flat terrain, maybe my PhD was useful ^^?) --&gt;
@@ -205,8 +218,8 @@ With this improved exploration, the robot could finally learn to partially solve
 To close the gap, I drew inspiration from the recent 
 &lt;a href=&#34;https://github.com/younggyoseo/FastTD3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FastTD3&lt;/a&gt; paper and implemented 
 &lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/pull/2144&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;n-step returns&lt;/a&gt; for all off-policy algorithms in SB3.
-Using &lt;code&gt;n_steps=3&lt;/code&gt; allowed SAC to finally solve the hardest task&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;!&lt;/p&gt;
-&lt;p&gt;To sum up, here are the manual changes I made compared to the automatically optimized one:&lt;/p&gt;
+Using &lt;code&gt;n_steps=3&lt;/code&gt; allowed SAC to finally solve the hardest task&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;!&lt;/p&gt;
+&lt;p&gt;To sum up, here are the manual changes I made to SAC&amp;rsquo;s hyperparameters, compared to the automatically optimized one:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Note: we must use train_freq &amp;gt; 1 to enable gSDE
 # which resamples the noise every n steps (here every 10 steps)
 train_freq: 10
@@ -217,7 +230,7 @@ use_sde: True
 # N-step return
 n_steps: 3
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And the associated learning curves&lt;sup id=&#34;fnref1:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;(plotting the current curriculum level on the y-axis&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;):&lt;/p&gt;
+&lt;p&gt;And the associated learning curves&lt;sup id=&#34;fnref1:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;(plotting the current curriculum level on the y-axis&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;):&lt;/p&gt;
 &lt;img style=&#34;max-width:100%&#34; src=&#34;./img/learning_curve_rough.svg&#34;/&gt;
 &lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;Learning curve on the Anymal-C &#34;Rough&#34; task using 1024 envs (except for PPO).&lt;/p&gt;
 &lt;img style=&#34;max-width:100%&#34; src=&#34;./img/learning_curve_rough_efficiency.svg&#34;/&gt;
@@ -319,16 +332,22 @@ Fixing this initialization problem solved my original issue (and the std of the 
 &lt;p&gt;I repeat the same process for any new environment where those boundaries would not work (taking sometime the 0.5 and 99.5 percentiles to have a larger space).&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;The results are plotted for only three independent runs (random seeds). This is usually insufficient for RL due to the stochasticity of the results. However, in this case, the results tend to be consistent between runs (limited variability). I observed this during the many runs I did while debugging (and writting this blog post), so the trend is likely correct, even with a limited number of seeds. I only have one machine to run the tests, but I will try to run more tests in the coming weeks and update the plots.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here, I only optimized for the Unitree A1 flat task due to limited computation power. It would be interesting to tune SAC directly for the &amp;ldquo;Rough&amp;rdquo; variant, including &lt;code&gt;n_steps&lt;/code&gt; and gSDE train frequency as hyperparameters.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;I updated the limits for each family of robots. The PPO percentiles technique worked nicely.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The results are plotted for only three independent runs (random seeds). This is usually insufficient for RL due to the stochasticity of the results. However, in this case, the results tend to be consistent between runs (limited variability). I observed this during the many runs I did while debugging (and writting this blog post), so the trend is likely correct, even with a limited number of seeds. I only have one machine to run the tests, but I will try to run more tests in the coming weeks and update the plots.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;Although there is still a slight performance gap between SAC and PPO, after reading the FastTD3 paper and conducting my own experiments, I believe that the environment rewards were tuned for PPO to achieve a desired behavior. In other words, I&amp;rsquo;m suspecting that the weighting of the reward terms was asjuted for PPO. To achieve similar performance, different weights are probably needed for SAC.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I updated the limits for each family of robots. The PPO percentiles technique worked nicely.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;I&amp;rsquo;m plotting the current state of the terrain curriculum (the higher the number, the harder the task/terrain) as the reward magnitude doesn&amp;rsquo;t tell the whole story for the &amp;ldquo;Rough&amp;rdquo; task.&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;$\mu_\theta(s_t)$ is the actor network output, it represents the mean of the Gaussian distribution.&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;Although there is still a slight performance gap between SAC and PPO, after reading the FastTD3 paper and conducting my own experiments, I believe that the environment rewards were tuned for PPO to achieve a desired behavior. In other words, I&amp;rsquo;m suspecting that the weighting of the reward terms was asjuted for PPO. To achieve similar performance, different weights are probably needed for SAC.&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;I&amp;rsquo;m plotting the current state of the terrain curriculum (the higher the number, the harder the task/terrain) as the reward magnitude doesn&amp;rsquo;t tell the whole story for the &amp;ldquo;Rough&amp;rdquo; task.&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
@@ -680,7 +699,7 @@ If you follow the journey, you will learn about overlooked details in task desig
 &lt;ul&gt;
 &lt;li&gt;Part I is about identifying the problem and trying out quick fixes on SAC.&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;../tune-sac-isaac-sim/&#34;&gt;Part II&lt;/a&gt; will be about tuning SAC for speed and making it work as good as PPO.&lt;/li&gt;
+&lt;a href=&#34;../tune-sac-isaac-sim/&#34;&gt;Part II&lt;/a&gt; is about tuning SAC for speed and making it work as good as PPO.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;a-suspicious-trend-ppo-ppo-ppo-&#34;&gt;A Suspicious Trend: PPO, PPO, PPO, &amp;hellip;&lt;/h2&gt;
 &lt;p&gt;The story begins a few months ago when I saw another paper using the same recipe for learning locomotion: train a PPO agent in simulation using thousands of environments in parallel and domain randomization, then deploy it on the real robot.
