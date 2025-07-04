@@ -670,7 +670,7 @@
 
     <div class="article-style">
       <p>This second post details how I tuned the Soft-Actor Critic (SAC) algorithm to learn as fast as PPO in the context of a massively parallel simulator (thousands of robots simulated in parallel).
-If you read along, you will learn how to automatically tune SAC for speed, how to find better action boundaries, and what I tried that didn&rsquo;t work.</p>
+If you read along, you will learn how to automatically tune SAC for speed (i.e., minimize wall clock time), how to find better action boundaries, and what I tried that didn&rsquo;t work.</p>
 <ul>
 <li>
 <a href="../sac-massive-sim/">Part I</a> is about analysing why SAC doesn&rsquo;t work how of the box on Isaac Sim environments.</li>
@@ -999,7 +999,7 @@ Fixing this initialization problem solved my original issue (and the std of the 
 <p>$\mu_\theta(s_t)$ is the actor network output, it represents the mean of the Gaussian distribution.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p>Although there is still a slight performance gap between SAC and PPO, after reading the FastTD3 paper and conducting my own experiments, I believe that the environment rewards were tuned for PPO to achieve a desired behavior. In other words, I&rsquo;m suspecting that the weighting of the reward terms was asjuted for PPO. To achieve similar performance, different weights are probably needed for SAC.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Although there is still a slight performance gap between SAC and PPO, after reading the FastTD3 paper and conducting my own experiments, I believe that the environment rewards were tuned for PPO to encourage a desired behavior. In other words, I suspect that the weighting of the reward terms was adjusted for PPO. To achieve similar performance, SAC probably needs different weights.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8">
 <p>I&rsquo;m plotting the current state of the terrain curriculum (the higher the number, the harder the task/terrain) as the reward magnitude doesn&rsquo;t tell the whole story for the &ldquo;Rough&rdquo; task.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>

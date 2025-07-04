@@ -18,7 +18,7 @@
       <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
       <guid>/post/tune-sac-isaac-sim/</guid>
       <description>&lt;p&gt;This second post details how I tuned the Soft-Actor Critic (SAC) algorithm to learn as fast as PPO in the context of a massively parallel simulator (thousands of robots simulated in parallel).
-If you read along, you will learn how to automatically tune SAC for speed, how to find better action boundaries, and what I tried that didn&amp;rsquo;t work.&lt;/p&gt;
+If you read along, you will learn how to automatically tune SAC for speed (i.e., minimize wall clock time), how to find better action boundaries, and what I tried that didn&amp;rsquo;t work.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;a href=&#34;../sac-massive-sim/&#34;&gt;Part I&lt;/a&gt; is about analysing why SAC doesn&amp;rsquo;t work how of the box on Isaac Sim environments.&lt;/li&gt;
@@ -347,7 +347,7 @@ Fixing this initialization problem solved my original issue (and the std of the 
 &lt;p&gt;$\mu_\theta(s_t)$ is the actor network output, it represents the mean of the Gaussian distribution.&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:7&#34;&gt;
-&lt;p&gt;Although there is still a slight performance gap between SAC and PPO, after reading the FastTD3 paper and conducting my own experiments, I believe that the environment rewards were tuned for PPO to achieve a desired behavior. In other words, I&amp;rsquo;m suspecting that the weighting of the reward terms was asjuted for PPO. To achieve similar performance, different weights are probably needed for SAC.&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Although there is still a slight performance gap between SAC and PPO, after reading the FastTD3 paper and conducting my own experiments, I believe that the environment rewards were tuned for PPO to encourage a desired behavior. In other words, I suspect that the weighting of the reward terms was adjusted for PPO. To achieve similar performance, SAC probably needs different weights.&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:8&#34;&gt;
 &lt;p&gt;I&amp;rsquo;m plotting the current state of the terrain curriculum (the higher the number, the harder the task/terrain) as the reward magnitude doesn&amp;rsquo;t tell the whole story for the &amp;ldquo;Rough&amp;rdquo; task.&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -647,8 +647,9 @@ I&amp;rsquo;ve covered:&lt;/p&gt;
 &lt;li&gt;speeding up the tuning process with distributed optimization&lt;/li&gt;
 &lt;li&gt;tips and tricks to keep in mind when doing automatic hyperparameter tuning&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;As a conclusion and transition to the next blog post (WIP), I will use this technique to 
-&lt;a href=&#34;./sac-massive-sim/&#34;&gt;tune SAC for fast training&lt;/a&gt; when using a massively parallel environment like Isaac Sim.&lt;/p&gt;
+&lt;p&gt;As a conclusion and transition to the 
+&lt;a href=&#34;../tune-sac-isaac-sim/&#34;&gt;next blog post&lt;/a&gt;, I will use this technique to 
+&lt;a href=&#34;../sac-massive-sim/&#34;&gt;tune SAC for fast training&lt;/a&gt; when using a massively parallel environment like Isaac Sim.&lt;/p&gt;
 &lt;p&gt;PS: In case you missed it, you can find the final script here: 
 &lt;a href=&#34;https://gist.github.com/araffin/d16e77aa88ffc246856f4452ab8a2524&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gist.github.com/araffin/d16e77aa88ffc246856f4452ab8a2524&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;appendix---the-optuna-library&#34;&gt;Appendix - The Optuna Library&lt;/h2&gt;
