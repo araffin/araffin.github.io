@@ -161,7 +161,7 @@ train_freq: 1
 &lt;p&gt;Compared to the default hyperparameters of SAC, there are some notable changes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The network architecture is much larger (&lt;code&gt;[512, 256, 128]&lt;/code&gt; vs. &lt;code&gt;[256, 256]&lt;/code&gt;), but similar to that used by PPO in Isaac Sim.&lt;/li&gt;
-&lt;li&gt;The lower replay ratio (RR ≈ 0.03 for 1024 environments, or three gradient steps every 100 steps in an environment) and higher policy delay (update the actor after eight actor updates) make it faster, as less time is taken for gradient updates.&lt;/li&gt;
+&lt;li&gt;The lower replay ratio (RR ≈ 0.03 for 1024 environments, or three gradient steps every 100 steps in an environment) and higher policy delay (update the actor once every eight critic updates) make it faster, as less time is taken for gradient updates.&lt;/li&gt;
 &lt;li&gt;The discount factor is lower than the default value of 0.99, which favors shorter-term rewards.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Here is the result in video and the associated learning curves&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
