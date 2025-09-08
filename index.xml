@@ -21,6 +21,14 @@
     </item>
     
     <item>
+      <title>Designing (Robot) Software That Is Easy to Use</title>
+      <link>/talk/write-easy-use-software/</link>
+      <pubDate>Sat, 27 Sep 2025 08:00:00 +0000</pubDate>
+      <guid>/talk/write-easy-use-software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Getting SAC to Work on a Massive Parallel Simulator: Tuning for Speed (Part II)</title>
       <link>/post/tune-sac-isaac-sim/</link>
       <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
