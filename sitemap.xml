@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2025-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/</loc>
+    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/phd-defense-tum/</loc>
+    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/</loc>
+    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/reinforcement-learning/</loc>
+    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/tune-sac-isaac-sim/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
@@ -11,22 +29,7 @@
     <loc>/post/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2025-05-21T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/</loc>
-    <lastmod>2025-05-21T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/</loc>
-    <lastmod>2025-05-21T11:00:00+00:00</lastmod>
-  </url><url>
     <loc>/talk/recent-advances-rl-cern/</loc>
-    <lastmod>2025-05-21T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/reinforcement-learning/</loc>
-    <lastmod>2025-05-21T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2025-05-21T11:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/optuna/</loc>
