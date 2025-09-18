@@ -723,9 +723,10 @@ In the tabular case, this action is found by enumerating all possible actions.</
 <p>The idea is to start with an initial estimate for the first iteration ($n = 0$)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and slowly update the estimate over time according to the 
 <a href="#bellman-eq">Bellman equations</a>.
 For each transition tuple $(s_t, a_t, r_t, s_{t+1})$, we compute the error between the <span style="color: #1864AB">estimation</span>  and the <span style="color: #A61E4D">target</span> value and update the estimate with a learning rate $\eta$:</p>
-<p>$$
-Q^n(s_t, a_t) = Q^{n-1}(s_t, a_t) + \eta \cdot \bigl(\color{#A61E4D}{r_t + \gamma \cdot \max_{a&rsquo;} Q^{n-1}(s_{t+1}, a&rsquo;)} - \color{#1864AB}{Q^{n-1}(s_t, a_t)}\bigr).
-$$</p>
+<!--$$
+  Q^n(s_t, a_t) = Q^{n-1}(s_t, a_t) + \eta \cdot \bigl(\color{#A61E4D}{r_t + \gamma \cdot \max_{a'} Q^{n-1}(s_{t+1}, a')} - \color{#1864AB}{Q^{n-1}(s_t, a_t)}\bigr).
+$$-->
+<img style="height: 50px;" src="./img/q_learning.svg"/>
 <p>Under the assumptions that all state-action pairs are visited an infinite number of times and that we use a learning rate $\eta \in ]0,1[$, the $Q$-learning algorithm converges to a fixed point (i.e., $Q^{n+1}(s, a) = Q^n(s, a)$): the optimal action-value function $Q^*(s, a)$.</p>
 <!--<img style="width:50%" src="./img/tabular_limit_1.svg"/>
 <p style="font-size: 14pt; text-align:center;">
