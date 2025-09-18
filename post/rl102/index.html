@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Antonin Raffin">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This blog post is meant to be a practical introduction to (deep) reinforcement learning1, presenting the main concepts and providing intuitions to understand the more recent Deep RL algorithms. For a more in-depth and theoretical introduction, I recommend reading the RL Bible by Sutton and Barto.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/rl102/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(16, 89%, 60%)">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-light.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-light.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+   
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png">
+
+  <link rel="canonical" href="/post/rl102/">
+
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Antonin Raffin | Homepage">
+  <meta property="og:url" content="/post/rl102/">
+  <meta property="og:title" content="RL102: From Tabular Q-Learning to Deep Q-Learning (DQN) | Antonin Raffin | Homepage">
+  <meta property="og:description" content="This blog post is meant to be a practical introduction to (deep) reinforcement learning1, presenting the main concepts and providing intuitions to understand the more recent Deep RL algorithms. For a more in-depth and theoretical introduction, I recommend reading the RL Bible by Sutton and Barto."><meta property="og:image" content="/post/rl102/featured.png">
+  <meta property="twitter:image" content="/post/rl102/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2025-09-16T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2025-09-16T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/rl102/"
+  },
+  "headline": "RL102: From Tabular Q-Learning to Deep Q-Learning (DQN)",
+  
+  "image": [
+    "/post/rl102/featured.png"
+  ],
+  
+  "datePublished": "2025-09-16T00:00:00Z",
+  "dateModified": "2025-09-16T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Antonin Raffin"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Antonin Raffin | Homepage",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "This blog post is meant to be a practical introduction to (deep) reinforcement learning1, presenting the main concepts and providing intuitions to understand the more recent Deep RL algorithms. For a more in-depth and theoretical introduction, I recommend reading the RL Bible by Sutton and Barto."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>RL102: From Tabular Q-Learning to Deep Q-Learning (DQN) | Antonin Raffin | Homepage</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Antonin Raffin | Homepage</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Antonin Raffin | Homepage</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications_selected"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>RL102: From Tabular Q-Learning to Deep Q-Learning (DQN)</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 16, 2025
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 420px;">
+  <div style="position: relative">
+    <img src="/post/rl102/featured_hu9d79f8a65a6536af143de239a0ff7c77_293887_720x0_resize_lanczos_3.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>This blog post is meant to be a practical introduction to (deep) reinforcement learning<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, presenting the main concepts and providing intuitions to understand the more recent Deep RL algorithms.
+For a more in-depth and theoretical introduction, I recommend reading the 
+<a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">RL Bible</a> by Sutton and Barto.</p>
+<p>The plan for this post is to start from tabular Q-learning and work our way up to Deep Q-learning (DQN).
+In a following post, I will continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.</p>
+<p>The associated code and notebooks for this tutorial can be found on GitHub: 
+<a href="https://github.com/araffin/rlss23-dqn-tutorial" target="_blank" rel="noopener">https://github.com/araffin/rlss23-dqn-tutorial</a></p>
+<p>Note: this post is a written version of the 
+<a href="https://araffin.github.io/talk/rlss-23/" target="_blank" rel="noopener">tutorial</a> I gave at the 
+<a href="https://rlsummerschool.com/" target="_blank" rel="noopener">RL Summer School 2023</a>. It is also part of my PhD Thesis (to be published).</p>
+<p>Note: I assume you are familiar with basic RL concepts, if not please have a look at this 
+<a href="https://spinningup.openai.com/en/latest/spinningup/rl_intro.html" target="_blank" rel="noopener">RL 101</a> tutorial.
+I provide a very short formal introduction to the RL terminology used in this post at the end of it.</p>
+<h2 id="tabular-rl-a-discrete-world">Tabular RL: A Discrete World</h2>
+<p>In tabular RL, states and actions are discrete, so in this setting it is possible to represent the world as a large table.
+Each entry corresponds to a state and can be subdivided by the number of possible actions in that state.</p>
+<img style="width:70%" src="./img/q_table.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+Illustration of a $Q$-Table representing the expected outcomes of actions for each state.
+</p>
+<h2 id="action-value-function-q-function">Action-Value Function ($Q$-function)</h2>
+<p>One key element to solve the discounted 
+<a href="https://spinningup.openai.com/en/latest/spinningup/rl_intro.html" target="_blank" rel="noopener">RL problem</a> is the action-value function, or $Q$-function, noted $Q^{\pi}$ for a given policy $\pi$.
+It is defined as the expected discounted return starting in state $s$, taking action $a$, and following policy $\pi$:</p>
+<!--Q^{\pi}(s, a) = \mathop{\mathbb{E}}_{\tau \sim \pi}{r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \ldots \left| s_t = s, a_t = a\right.}.-->
+<img style="width:80%" src="./img/q_eq23.svg"/>
+<p>In other words, the $Q$-function gives an estimate of <em>how good it is to take the action $a$ in state $s$ while following a policy $\pi(s)$</em>.</p>
+<p>The $Q$-function can be estimated recursively, also known as the Bellman equation:</p>
+<!--Q^{\pi}(s, a) = \mathop{\mathbb{E}}_{s'\sim P}\left[ r(s,a) + \gamma \mathop{\mathbb{E}}_{a'\sim \pi}\left[ Q^{\pi}(s',a') \right] \right].-->
+<img id="bellman-eq" style="width:60%" src="./img/q_eq24.svg"/>
+<p>This rewrite allows to build an estimate of the $Q$-value without having to wait for terminal states.
+It is the formula used in practice.</p>
+<p>By definition of the optimal policy, which selects the actions that <strong>max</strong>imize the <span style="color: #5F3DC4">expected return</span>, the following optimal $Q$-function Bellman equation is obtained:</p>
+<!--Q^{\ast}(s,a) = \mathop{\mathbb{E}}_{s'\sim P}\left[ r(s,a) + \gamma \boldsymbol{\max_{a'}} \color{#5F3DC4}{Q^{\ast}(s',a')} \right].-->
+<img style="width:60%" src="./img/q_eq25.svg"/>
+<p>The other way around, if we have the optimal action-value function $Q^\ast$, we can retrieve the action taken by the optimal policy $\pi^*$ using:</p>
+<p>\begin{align}
+\pi^*(s) = \mathop{\text{argmax}}_{a \in A}{\ Q^{\ast}(s, a)}.
+\end{align}</p>
+<!--(not optimal most of the time)-->
+<p>Similarly, we can derive a greedy policy from the $Q$-function associated with policy $\pi$:</p>
+<p>\begin{align}
+\pi(s) = \mathop{\text{argmax}}_{a \in A}\ Q^\pi(s, a).
+\end{align}</p>
+<p>This policy is implicitly defined: we take the action that maximizes the $Q$-function.
+In the tabular case, this action is found by enumerating all possible actions.</p>
+<p>For the rest of this blog post, I will drop the $\pi$ superscript from $Q^{\pi}$ so as not to overload the notation (more indices are coming), but unless otherwise noted, $Q$ will always be $Q^{\pi}$.</p>
+<h2 id="q-learning">$Q$-Learning</h2>
+<p>For discrete states and actions, the $Q$-learning algorithm can be used to estimate the $Q$-function of a policy, in this particular case represented as a lookup table ($Q$-table, shown 
+<a href="#tabular-rl-a-discrete-world">above</a>).</p>
+<h3 id="an-iterative-algorithm">An iterative algorithm</h3>
+<p>The idea is to start with an initial estimate for the first iteration ($n = 0$)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and slowly update the estimate over time according to the 
+<a href="#bellman-eq">Bellman equations</a>.
+For each transition tuple $(s_t, a_t, r_t, s_{t+1})$, we compute the error between the <span style="color: #1864AB">estimation</span>  and the <span style="color: #A61E4D">target</span> value and update the estimate with a learning rate $\eta$:</p>
+<p>$$
+Q^n(s_t, a_t) = Q^{n-1}(s_t, a_t) + \eta \cdot \bigl(\color{#A61E4D}{r_t + \gamma \cdot \max_{a&rsquo;} Q^{n-1}(s_{t+1}, a&rsquo;)} - \color{#1864AB}{Q^{n-1}(s_t, a_t)}\bigr).
+$$</p>
+<p>Under the assumptions that all state-action pairs are visited an infinite number of times and that we use a learning rate $\eta \in ]0,1[$, the $Q$-learning algorithm converges to a fixed point (i.e., $Q^{n+1}(s, a) = Q^n(s, a)$): the optimal action-value function $Q^*(s, a)$.</p>
+<!--<img style="width:50%" src="./img/tabular_limit_1.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+Illustration of a $Q$-function approximated by a lookup table (tabular case)
+</p>
+<img style="width:50%" src="./img/tabular_limit_2.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+Illustration of a $Q$-function approximated using regression (FQI)
+</p>-->
+<h3 id="limitations-of-q-learning">Limitations of $Q$-learning</h3>
+<p>The main limitation of $Q$-learning and its $Q$-table is that it can only handle discrete states.
+The size of the table grows with the number of states, which becomes intractable when this number is infinite (continuous states).</p>
+<img width="50%"  src="./img/tabular_limit_1.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+Illustration of a $Q$-function approximated by a lookup table (tabular case).
+</p>
+<p>Moreover, it does not provide any generalization (as shown in the picture above): knowing the $Q$-values for some states does not help to predict the $Q$-values of unseen states.</p>
+<h2 id="function-approximation-and-fitted-q-iteration-fqi">Function Approximation and Fitted Q-Iteration (FQI)</h2>
+<p>A straightforward extension to $Q$-learning is to estimate the $Q$-function using function approximation instead of a $Q$-table, as displayed in the figure below:</p>
+<img style="width:100%" src="./img/q_table_fqi.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+Illustration of a $Q$-Table (left) and Fitted Q-Iteration (FQI) value estimator (right).
+Compared to the $Q$-Table, which is limited to discrete states, the FQI value estimator approximates the $Q$-value for continuous state spaces.
+</p>
+<h3 id="a-regression-problem">A Regression Problem</h3>
+<p>In other words, the $Q$-value estimation problem can be formulated as a regression problem ($\color{#1864AB}{f_{\textcolor{black}{\theta}}(X)} = \color{#A61E4D}{Y}$):</p>
+<!--\begin{align}
+\color[rgb]{0.09,0.39,0.67}{Q^n_{\theta}(s_t, a_t)} &= 
+\color[rgb]{0.65,0.12,0.30}{r_t + \gamma \cdot \max_{a' \in \mathcal{A}}(Q^{n-1}_{\theta}(s_{t+1}, a'))} \\
+\mathcal{L}(\theta, X, Y) &= 
+\frac{1}{2} \bigl(\color[rgb]{0.65,0.12,0.30}{Y} - \color[rgb]{0.09,0.39,0.67}{f_{\theta}(X)}\bigr)^2
+\end{align}-->
+<img style="width:50%" src="./img/fqi_eq29.svg"/>
+<p>where $\color{#1864AB}{X = (s_t, a_t)}$ is the input, $\color{#A61E4D}{Y = r_t + \gamma \cdot \max_{a&rsquo; \in \mathcal{A}} \ldots }$ is the target, $\theta$ are the parameters to be optimized<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, and $\mathcal{L}$ is the loss function.</p>
+<p>This is similar to what the $Q$-learning algorithm does.</p>
+<div class="d-flex align-items-baseline">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class="img-responsive flex-wrap w-50" >
+
+
+  <a data-fancybox="" href="./img/tabular_limit_1.svg" >
+
+
+  <img src="./img/tabular_limit_1.svg" alt=""  >
+</a>
+
+
+
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class="img-responsive flex-wrap w-50" >
+
+
+  <a data-fancybox="" href="./img/tabular_limit_2.svg" >
+
+
+  <img src="./img/tabular_limit_2.svg" alt=""  >
+</a>
+
+
+
+</figure>
+
+</div>
+<p style="font-size: 14pt; text-align:center;">
+Illustration of a $Q$-function approximated by a lookup table (left, tabular case) and using regression (right, FQI)
+</p>
+<p>Since the target $\color{#A61E4D}{Y}$ used to update $Q_{\theta}$ depends on $Q_{\theta}$ itself, we need to iterate.</p>
+<p>Computing an iterative approximation of the $Q$-function using regression is the main idea behind the 
+<a href="https://www.jmlr.org/papers/volume6/ernst05a/ernst05a.pdf" target="_blank" rel="noopener">Fitted Q-Iteration</a> algorithm (FQI), presented below.
+This algorithm uses a fixed dataset $\mathcal{D}$ of $m$ transitions $(s_t, a_t, r_t, s_{t+1})$.</p>
+<img style="width:100%" src="./img/fqi_algo.svg"/>
+<p>In Python code, this is how the FQI algorithm looks like:</p>
+<pre><code class="language-python">initial_targets = rewards
+# Initial Q-value estimate
+qf_input = np.concatenate((states, actions))
+# qf_model can be any sklearn regression model
+# for instance: qf_model = LinearRegression()
+qf_model.fit(qf_input, initial_targets)
+ 
+for _ in range(N_ITERATIONS):
+    # Re-use Q-value model from previous iteration
+    # to create the next targets
+    next_q_values = get_max_q_values(qf_model, next_states)
+    # Non-terminal states target
+    targets[non_terminal_states] = rewards + gamma * next_q_values
+    # Special case for terminal states
+    targets[terminal_states] = rewards
+    # Update Q-value estimate
+    qf_model.fit(qf_input, targets)
+</code></pre>
+<h3 id="limitations-of-fqi">Limitations of FQI</h3>
+<p>FQI is a step toward a more practical algorithm, but it still has some limitations:</p>
+<ol>
+<li>It requires a dataset of transitions $\mathcal{D}$ and does not provide an explicit way to collect new transitions</li>
+<li>A loop over actions is needed to obtain $\max_{a&rsquo; \in \mathcal{A}}Q^{n-1}_\theta(\ldots)$, which is inefficient</li>
+<li>Because $Q_\theta^{n}$ depends on $Q_\theta^{n-1}$, this leads to instability (the regression target is constantly moving)</li>
+</ol>
+<h2 id="deep-q-learning-dqn---extending-fqi">Deep Q-Learning (DQN) - Extending FQI</h2>
+<p>The 
+<a href="https://arxiv.org/abs/1312.5602" target="_blank" rel="noopener">Deep Q-Learning</a> (DQN) algorithm introduces several components to overcome the limitations of FQI.</p>
+<h3 id="experience-replay">Experience Replay</h3>
+<p>First, instead of having a fixed dataset of transitions, DQN uses 
+<a href="https://apps.dtic.mil/sti/tr/pdf/ADA261434.pdf" target="_blank" rel="noopener">experience replay</a>, also called a replay buffer.</p>
+<p>The replay buffer, shown below, is a first in first out (FIFO) data structure of capacity $m$, the maximum number of transitions that can be stored.
+When the buffer is full, old experience is removed.</p>
+<p>Experience replay provides a compromise between online learning, where transitions are discarded after use, and offline learning, where transitions are stored forever.</p>
+<img style="width:100%" src="./img/replay_buffer.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+DQN replay buffer.
+</p>
+<p>To train its $Q$-network, DQN creates mini-batches<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> of experience by sampling uniformly from the replay buffer, as illustrated below.</p>
+<p>This breaks the correlation between consecutive samples, allows the agent to learn from diverse experiences (not just the most recent ones), and allows more efficient use of data by reusing past transitions multiple times.</p>
+<img style="width:60%" src="./img/replay_buffer_sampling.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+DQN replay buffer sampling.
+</p>
+<h3 id="epsilon-greedy-exploration">$\epsilon$-greedy Exploration</h3>
+<img style="width:60%" src="./img/epsilon_greedy.svg"/>
+<p>DQN collects samples using an $\epsilon$-greedy strategy: at each step, it chooses a random action with a probability $\epsilon$, or otherwise follows the greedy policy (take the action with the highest $Q$-value in that state).</p>
+<p>To balance exploration and exploitation, DQN starts with $\epsilon_\text{initial} = 1$ (random policy) and linearly decreases its value until it reaches its final value, usually $\epsilon_\text{final} = 0.01$.</p>
+<h3 id="q-network-and-target-q-network">$Q$-Network and Target $Q$-network</h3>
+<img style="width:100%" src="./img/target_net.svg"/>
+<p>Like 
+<a href="https://link.springer.com/chapter/10.1007/11564096_32" target="_blank" rel="noopener">Neural FQI</a> (NFQ), DQN uses a neural network to approximate the $Q$-function.
+However, to avoid the loop over actions of FQI, it outputs all the $Q$-values for a given state.</p>
+<p>Finally, to stabilize learning, DQN uses an old copy of the $Q$-network $Q_{\theta_\text{targ}}$ to compute the regression target.
+This second network, the target network, is updated every $k$ steps, so that it slowly follows the online $Q$-network.</p>
+<h3 id="the-full-dqn-algorithm">The Full DQN Algorithm</h3>
+<img style="width:100%" src="./img/dqn.svg"/>
+<p style="font-size: 14pt; text-align:center;">
+  Deep Q-Network (DQN) and its main components.
+</p>
+<img style="width:100%" src="https://araffin.github.io/slides/dqn-tutorial/images/dqn/annotated_dqn.png"/>
+<p style="font-size: 14pt; text-align:center;">
+  Annotated DQN algorithm from the <a href="https://arxiv.org/abs/1312.5602">DQN paper</a>.
+</p>
+<p>Overall, the DQN algorithm is very similar to the FQI algorithm, the main difference being that DQN alternates between collecting new transitions and updating its network.</p>
+<img style="width:100%" src="./img/dqn_algo.svg"/>
+<h2 id="beyond-dqn-algorithms-for-continuous-action-spaces-ddpg-td3-sac-">Beyond DQN: Algorithms for Continuous Action Spaces (DDPG, TD3, SAC, &hellip;)</h2>
+<p>In this post, I started from the tabular case, where you can use the $Q$-learning algorithm to estimate the $Q$-value function, represented as a table.</p>
+<p>To extend the idea of $Q$-learning to continuous states, FQI replaces the $Q$-table with function approximation.
+It then refines its estimate iteratively, solving a regression problem at each step.</p>
+<p>Finally, DQN introduces several components to overcome the limitations of FQI.
+Notably it uses a neural network for faster inference and a replay buffer to re-use past data.</p>
+<p>The key components of DQN ($Q$-network, target network, replay buffer) are at the core of Deep RL algorithms for continuous control used on real robots, such as Soft Actor-Critic (SAC).
+I will introduce these algorithms in a future blog post.</p>
+<h2 id="appendix-rl101">Appendix: RL101</h2>
+<p>Here is a very short formal introduction to the RL terminology used in this post.</p>
+<p>In reinforcement learning, an agent interacts with its environment, usually modeled as a Markov Decision Process<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> (MDP) $(\mathcal{S}, \mathcal{A}, P, r)$ where $\mathcal{S}$ is the state space, $\mathcal{A}$ the action space and $P(\mathbf{s}&rsquo; \mid \mathbf{s}, \mathbf{a})$ the transition function.
+At every step $t$, the agent performs an action $\mathbf{a}$ in state $\mathbf{s}$ following its policy $\pi : \mathcal{S} \mapsto \mathcal{A}$.
+It then receives a feedback signal in the next state $\mathbf{s}&rsquo;$: the reward $r(\mathbf{s}, \mathbf{a})$. The objective of the agent is to maximize the long-term reward.
+More formally, the goal is to maximize the expectation of the sum of discounted reward, over the trajectories $\rho_\pi$ generated using its policy $\pi$:</p>
+<!--J = \sum_t \mathbb{E}_{(\mathbf{s}_t,\mathbf{a}_t)\sim\rho_\pi}\left[ \gamma^t \, r(\mathbf{s}_t,\mathbf{a}_t) \right]-->
+<img style="width:50%" src="./img/rl_obj.svg"/>
+<p>where $\gamma \in [0,1)$ is the discount factor and represents a trade-off between maximizing short-term and long-term rewards.
+The agent-environment interactions are often broken down into sequences called <em>episodes</em>, that end when the agent reaches a terminal state.</p>
+<p>In the example of learning to walk, if the goal is to achieve the fastest speed, an immediate reward can be the distance traveled between two timesteps.
+The state would be the current information about the robot (joint positions, velocities, torques, linear acceleration, &hellip;) and the action would be a desired motor position.</p>
+<h2 id="citation">Citation</h2>
+<pre><code>@article{raffin2025rl102,
+  title   = &quot;RL102: From Tabular Q-Learning to Deep Q-Learning (DQN)&quot;,
+  author  = &quot;Raffin, Antonin&quot;,
+  journal = &quot;araffin.github.io&quot;,
+  year    = &quot;2025&quot;,
+  month   = &quot;Sept&quot;,
+  url     = &quot;https://araffin.github.io/post/rl102/&quot;
+}
+</code></pre>
+<h2 id="acknowledgement">Acknowledgement</h2>
+<p>I would like to thank Anssi and Alison for their feedback =).</p>
+<p>All the graphics were made using 
+<a href="https://excalidraw.com/" target="_blank" rel="noopener">excalidraw</a>.</p>
+<h3 id="did-you-find-this-post-helpful-consider-sharing-it-">Did you find this post helpful? Consider sharing it 🙌</h3>
+<h2 id="footnotes">Footnotes</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>I will focus for now on value-based methods.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>The initial estimate is usually zero.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>To ease the transition to DQN, we consider only parametric estimators here (i.e., we exclude kNN 
+<a href="https://en.wikipedia.org/wiki/Nonparametric_regression" target="_blank" rel="noopener">for instance</a>)&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Rather than doing updates using the entire dataset, it is more practical to perform gradient updates with subsets sampled from the dataset.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>The Markov property states that next state and reward depend only on the current state and action, not on the history of previous states and actions.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/rl102/&amp;text=RL102:%20From%20Tabular%20Q-Learning%20to%20Deep%20Q-Learning%20%28DQN%29" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/rl102/&amp;t=RL102:%20From%20Tabular%20Q-Learning%20to%20Deep%20Q-Learning%20%28DQN%29" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=RL102:%20From%20Tabular%20Q-Learning%20to%20Deep%20Q-Learning%20%28DQN%29&amp;body=/post/rl102/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/rl102/&amp;title=RL102:%20From%20Tabular%20Q-Learning%20to%20Deep%20Q-Learning%20%28DQN%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=RL102:%20From%20Tabular%20Q-Learning%20to%20Deep%20Q-Learning%20%28DQN%29%20/post/rl102/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/rl102/&amp;title=RL102:%20From%20Tabular%20Q-Learning%20to%20Deep%20Q-Learning%20%28DQN%29" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hude3a62d3a42e4e03c4c1814b0a41a4f6_54165_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Antonin Raffin</a></h5>
+      <h6 class="card-subtitle">Research Engineer in Robotics and Machine Learning</h6>
+      <p class="card-text">Robots. Machine Learning. Blues Dance.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/antonin-raffin-106b18a8/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://bsky.app/profile/araffin.bsky.social" target="_blank" rel="noopener">
+        <i class="fab fa-bluesky"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.fr/citations?user=kik4AwIAAAAJ&amp;hl=fr" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/araffin" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.twitch.tv/givethatrobotacookie" target="_blank" rel="noopener">
+        <i class="fab fa-twitch"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.youtube.com/user/atooo57" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.80e8497da12d94dc7fea279b7993043d.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2018 - 2025 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
