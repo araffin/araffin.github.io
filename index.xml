@@ -58,16 +58,16 @@ Illustration of a $Q$-Table representing the expected outcomes of actions for ea
 &lt;a href=&#34;https://spinningup.openai.com/en/latest/spinningup/rl_intro.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL problem&lt;/a&gt; is the action-value function, or $Q$-function, noted $Q^{\pi}$ for a given policy $\pi$.
 It is defined as the expected discounted return starting in state $s$, taking action $a$, and following policy $\pi$:&lt;/p&gt;
 &lt;!--Q^{\pi}(s, a) = \mathop{\mathbb{E}}_{\tau \sim \pi}{r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \ldots \left| s_t = s, a_t = a\right.}.--&gt;
-&lt;img style=&#34;width:80%&#34; src=&#34;./img/q_eq23.svg&#34;/&gt;
+&lt;img style=&#34;height: 70px;&#34; src=&#34;./img/q_eq23.svg&#34;/&gt;
 &lt;p&gt;In other words, the $Q$-function gives an estimate of &lt;em&gt;how good it is to take the action $a$ in state $s$ while following a policy $\pi(s)$&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;The $Q$-function can be estimated recursively, also known as the Bellman equation:&lt;/p&gt;
 &lt;!--Q^{\pi}(s, a) = \mathop{\mathbb{E}}_{s&#39;\sim P}\left[ r(s,a) + \gamma \mathop{\mathbb{E}}_{a&#39;\sim \pi}\left[ Q^{\pi}(s&#39;,a&#39;) \right] \right].--&gt;
-&lt;img id=&#34;bellman-eq&#34; style=&#34;width:60%&#34; src=&#34;./img/q_eq24.svg&#34;/&gt;
+&lt;img id=&#34;bellman-eq&#34; style=&#34;height: 85px;&#34; src=&#34;./img/q_eq24.svg&#34;/&gt;
 &lt;p&gt;This rewrite allows to build an estimate of the $Q$-value without having to wait for terminal states.
 It is the formula used in practice.&lt;/p&gt;
 &lt;p&gt;By definition of the optimal policy, which selects the actions that &lt;strong&gt;max&lt;/strong&gt;imize the &lt;span style=&#34;color: #5F3DC4&#34;&gt;expected return&lt;/span&gt;, the following optimal $Q$-function Bellman equation is obtained:&lt;/p&gt;
 &lt;!--Q^{\ast}(s,a) = \mathop{\mathbb{E}}_{s&#39;\sim P}\left[ r(s,a) + \gamma \boldsymbol{\max_{a&#39;}} \color{#5F3DC4}{Q^{\ast}(s&#39;,a&#39;)} \right].--&gt;
-&lt;img style=&#34;width:60%&#34; src=&#34;./img/q_eq25.svg&#34;/&gt;
+&lt;img style=&#34;height: 60px;&#34; src=&#34;./img/q_eq25.svg&#34;/&gt;
 &lt;p&gt;The other way around, if we have the optimal action-value function $Q^\ast$, we can retrieve the action taken by the optimal policy $\pi^*$ using:&lt;/p&gt;
 &lt;p&gt;\begin{align}
 \pi^*(s) = \mathop{\text{argmax}}_{a \in A}{\ Q^{\ast}(s, a)}.
@@ -122,7 +122,7 @@ Compared to the $Q$-Table, which is limited to discrete states, the FQI value es
 \mathcal{L}(\theta, X, Y) &amp;= 
 \frac{1}{2} \bigl(\color[rgb]{0.65,0.12,0.30}{Y} - \color[rgb]{0.09,0.39,0.67}{f_{\theta}(X)}\bigr)^2
 \end{align}--&gt;
-&lt;img style=&#34;width:50%&#34; src=&#34;./img/fqi_eq29.svg&#34;/&gt;
+&lt;img style=&#34;height: 110px;&#34; src=&#34;./img/fqi_eq29.svg&#34;/&gt;
 &lt;p&gt;where $\color{#1864AB}{X = (s_t, a_t)}$ is the input, $\color{#A61E4D}{Y = r_t + \gamma \cdot \max_{a&amp;rsquo; \in \mathcal{A}} \ldots }$ is the target, $\theta$ are the parameters to be optimized&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, and $\mathcal{L}$ is the loss function.&lt;/p&gt;
 &lt;p&gt;This is similar to what the $Q$-learning algorithm does.&lt;/p&gt;
 &lt;div class=&#34;d-flex align-items-baseline&#34;&gt;
@@ -273,7 +273,7 @@ At every step $t$, the agent performs an action $\mathbf{a}$ in state $\mathbf{s
 It then receives a feedback signal in the next state $\mathbf{s}&amp;rsquo;$: the reward $r(\mathbf{s}, \mathbf{a})$. The objective of the agent is to maximize the long-term reward.
 More formally, the goal is to maximize the expectation of the sum of discounted reward, over the trajectories $\rho_\pi$ generated using its policy $\pi$:&lt;/p&gt;
 &lt;!--J = \sum_t \mathbb{E}_{(\mathbf{s}_t,\mathbf{a}_t)\sim\rho_\pi}\left[ \gamma^t \, r(\mathbf{s}_t,\mathbf{a}_t) \right]--&gt;
-&lt;img style=&#34;width:50%&#34; src=&#34;./img/rl_obj.svg&#34;/&gt;
+&lt;img style=&#34;height: 60px;&#34; src=&#34;./img/rl_obj.svg&#34;/&gt;
 &lt;p&gt;where $\gamma \in [0,1)$ is the discount factor and represents a trade-off between maximizing short-term and long-term rewards.
 The agent-environment interactions are often broken down into sequences called &lt;em&gt;episodes&lt;/em&gt;, that end when the agent reaches a terminal state.&lt;/p&gt;
 &lt;p&gt;In the example of learning to walk, if the goal is to achieve the fastest speed, an immediate reward can be the distance traveled between two timesteps.
