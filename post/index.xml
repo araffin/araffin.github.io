@@ -41,12 +41,12 @@ Illustration of a $Q$-Table representing the expected outcomes of actions for ea
 &lt;p&gt;One key element to solve the discounted 
 &lt;a href=&#34;https://spinningup.openai.com/en/latest/spinningup/rl_intro.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL problem&lt;/a&gt; is the action-value function, or $Q$-function, noted $Q^{\pi}$ for a given policy $\pi$.
 It is defined as the expected discounted return starting in state $s$, taking action $a$, and following policy $\pi$:&lt;/p&gt;
-&lt;!--Q^{\pi}(s, a) = \mathop{\mathbb{E}}_{\tau \sim \pi}{r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \ldots \left| s_t = s, a_t = a\right.}.--&gt;
-&lt;img style=&#34;height: 70px;&#34; src=&#34;./img/q_eq23.svg&#34;/&gt;
+&lt;!--Q^{\pi}(s, a) = \mathop{\mathbb{E}}_{\tau \sim \pi}\left[{r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + \ldots \left| s_t = s, a_t = a\right.}\right].--&gt;
+&lt;img style=&#34;height: 45px;&#34; src=&#34;./img/q_eq23.svg&#34;/&gt;
 &lt;p&gt;In other words, the $Q$-function gives an estimate of &lt;em&gt;how good it is to take the action $a$ in state $s$ while following a policy $\pi(s)$&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;The $Q$-function can be estimated recursively, also known as the Bellman equation:&lt;/p&gt;
 &lt;!--Q^{\pi}(s, a) = \mathop{\mathbb{E}}_{s&#39;\sim P}\left[ r(s,a) + \gamma \mathop{\mathbb{E}}_{a&#39;\sim \pi}\left[ Q^{\pi}(s&#39;,a&#39;) \right] \right].--&gt;
-&lt;img id=&#34;bellman-eq&#34; style=&#34;height: 85px;&#34; src=&#34;./img/q_eq24.svg&#34;/&gt;
+&lt;img id=&#34;bellman-eq&#34; style=&#34;height: 55px;&#34; src=&#34;./img/q_eq24.svg&#34;/&gt;
 &lt;p&gt;This rewrite allows to build an estimate of the $Q$-value without having to wait for terminal states.
 It is the formula used in practice.&lt;/p&gt;
 &lt;p&gt;By definition of the optimal policy, which selects the actions that &lt;strong&gt;max&lt;/strong&gt;imize the &lt;span style=&#34;color: #5F3DC4&#34;&gt;expected return&lt;/span&gt;, the following optimal $Q$-function Bellman equation is obtained:&lt;/p&gt;
