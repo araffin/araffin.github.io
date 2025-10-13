@@ -911,8 +911,8 @@ It also appears that this variant requires specific tuning (and that state-depen
 <!-- Note: tried with both state-dependent std and independent std -->
 <!-- TODO: try with fixed std? more tuning, tune notably the target entropy, any other mechanism to avoid explosion of losses/divergence? -->
 <h3 id="kl-divergence-adaptive-learning-rate">KL Divergence Adaptive Learning Rate</h3>
-<p>One component of PPO that allows for better performance is the learning rate schedule (although it is not critical, it ease hyperparameter tuning).
-It automatically adjusts the learning rate to maintain a constant KL divergence between two updates, ensuring that the new policy remains close to the previous one (and ensuring that the learning rate is large enough too).
+<p>One component of PPO that allows for better performance is the learning rate schedule (although it is not critical, it eases hyperparameter tuning).
+It automatically adjusts the learning rate to maintain a constant KL divergence between two updates, ensuring that the new policy remains close to the previous one (and ensuring that the learning rate is large enough, too).
 It should be possible to do something similar with SAC.
 However, when I tried to approximate the KL divergence using either the log probability or the extracted Gaussian parameters (mean and standard deviation), it didn&rsquo;t work.
 The KL divergence values were too large and inconsistent.
@@ -926,8 +926,8 @@ Rather than approximating only the expected return, TQC models the distribution 
 TQC&rsquo;s performance tends to be on par with SAC&rsquo;s, but it can outperform SAC in 
 <a href="%28https://araffin.github.io/slides/recent-advances-rl/#/9%29">harder environments</a> (at the cost of a slightly more expensive gradient step).
 TQC also has a parameter that controls the overestimation bias of the Q-value function (how many top quantiles to drop).</p>
-<p>While writting this blog (and doing experiments), TQC tended to be more easy to tune.
-However, after finding good hyperparmaters for speed, SAC was faster and reach equivalent performance compared to TQC (except on the Disney robot env where TQC tend to work better).</p>
+<p>While writing this blog (and doing experiments), TQC tended to be easier to tune.
+However, after finding good hyperparameters for speed, SAC was faster and reached equivalent performance compared to TQC (except on the Disney robot env where TQC tends to work better).</p>
 <!-- and also tried to limit the overestimation of the $Q$-value by dropping more quantiles:
 ```python
 top_quantiles_to_drop_per_net = 5  # The default value is 2
