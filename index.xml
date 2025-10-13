@@ -328,7 +328,7 @@ The state would be the current information about the robot (joint positions, vel
 If you read along, you will learn how to automatically tune SAC for speed (i.e., minimize wall clock time), how to find better action boundaries, and what I tried that didn&amp;rsquo;t work.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;../sac-massive-sim/&#34;&gt;Part I&lt;/a&gt; is about analysing why SAC doesn&amp;rsquo;t work how of the box on Isaac Sim environments.&lt;/li&gt;
+&lt;a href=&#34;../sac-massive-sim/&#34;&gt;Part I&lt;/a&gt; analyzes why SAC doesn&amp;rsquo;t work out of the box on Isaac Sim environments.&lt;/li&gt;
 &lt;li&gt;Part II is about tuning SAC for speed and making it work as good as PPO.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;in-the-previous-episode&#34;&gt;In the Previous Episode&amp;hellip;&lt;/h2&gt;
