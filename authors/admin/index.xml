@@ -5,7 +5,7 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Tue, 28 Oct 2025 09:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Thu, 30 Oct 2025 14:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
@@ -15,11 +15,19 @@
     <item>
       <title></title>
       <link>/authors/admin/</link>
-      <pubDate>Tue, 28 Oct 2025 09:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Oct 2025 14:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
       <description>&lt;h1 id=&#34;bio&#34;&gt;Bio&lt;/h1&gt;
 &lt;p&gt;Antonin Raffin is a research engineer at the German Aerospace Center (DLR) who specializes in reinforcement learning (RL). He is the lead developer of Stable-Baselines3 (SB3), an open-source library that implements Deep RL algorithms. His main focus is on learning controllers directly on real robots and improving the reproducibility of RL.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Stable-Baselines3 (SB3) Tutorial: Getting Started With Reinforcement Learning</title>
+      <link>/talk/sb3-gym-quickstart/</link>
+      <pubDate>Thu, 30 Oct 2025 14:00:00 +0000</pubDate>
+      <guid>/talk/sb3-gym-quickstart/</guid>
+      <description></description>
     </item>
     
     <item>

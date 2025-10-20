@@ -3,24 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/</loc>
-    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/phd-defense-tum/</loc>
-    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/</loc>
-    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/reinforcement-learning/</loc>
-    <lastmod>2025-10-28T09:00:00+00:00</lastmod>
+    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/sb3-gym-quickstart/</loc>
+    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
+    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/phd-defense-tum/</loc>
     <lastmod>2025-10-28T09:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/write-easy-use-software/</loc>

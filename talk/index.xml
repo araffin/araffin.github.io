@@ -5,12 +5,20 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Tue, 28 Oct 2025 09:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Thu, 30 Oct 2025 14:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Recent &amp; Upcoming Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Stable-Baselines3 (SB3) Tutorial: Getting Started With Reinforcement Learning</title>
+      <link>/talk/sb3-gym-quickstart/</link>
+      <pubDate>Thu, 30 Oct 2025 14:00:00 +0000</pubDate>
+      <guid>/talk/sb3-gym-quickstart/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PhD Defense: Enabling Reinforcement Learning on Real Robots</title>
