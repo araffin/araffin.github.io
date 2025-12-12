@@ -673,7 +673,8 @@
 For a more in-depth and theoretical introduction, I recommend reading the 
 <a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">RL Bible</a> by Sutton and Barto.</p>
 <p>The plan for this post is to start from tabular Q-learning and work our way up to Deep Q-learning (DQN).
-In a following post, I will continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.</p>
+In a 
+<a href="../rl103">following post (RL103)</a>, I continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.</p>
 <p>The associated code and notebooks for this tutorial can be found on GitHub: 
 <a href="https://github.com/araffin/rlss23-dqn-tutorial" target="_blank" rel="noopener">https://github.com/araffin/rlss23-dqn-tutorial</a></p>
 <p>Note: this post is a written version of the 
@@ -902,7 +903,8 @@ It then refines its estimate iteratively, solving a regression problem at each s
 <p>Finally, DQN introduces several components to overcome the limitations of FQI.
 Notably it uses a neural network for faster inference and a replay buffer to re-use past data.</p>
 <p>The key components of DQN ($Q$-network, target network, replay buffer) are at the core of Deep RL algorithms for continuous control used on real robots, such as Soft Actor-Critic (SAC).
-I will introduce these algorithms in a future blog post.</p>
+I introduce these algorithms in the 
+<a href="../rl103">next blog post (RL103)</a>.</p>
 <h2 id="appendix-rl101">Appendix: RL101</h2>
 <p>Here is a very short formal introduction to the RL terminology used in this post.</p>
 <p>In reinforcement learning, an agent interacts with its environment, usually modeled as a Markov Decision Process<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> (MDP) $(\mathcal{S}, \mathcal{A}, P, r)$ where $\mathcal{S}$ is the state space, $\mathcal{A}$ the action space and $P(\mathbf{s}&rsquo; \mid \mathbf{s}, \mathbf{a})$ the transition function.
@@ -915,6 +917,32 @@ More formally, the goal is to maximize the expectation of the sum of discounted 
 The agent-environment interactions are often broken down into sequences called <em>episodes</em>, that end when the agent reaches a terminal state.</p>
 <p>In the example of learning to walk, if the goal is to achieve the fastest speed, an immediate reward can be the distance traveled between two timesteps.
 The state would be the current information about the robot (joint positions, velocities, torques, linear acceleration, &hellip;) and the action would be a desired motor position.</p>
+<h2 id="appendix-dqn-code">Appendix: DQN Code</h2>
+<p>Similar to FQI, the 
+<a href="https://github.com/DLR-RM/stable-baselines3/blob/c6ce50fc7020eb8c009d9579e0c0dbbdba024bc0/stable_baselines3/dqn/dqn.py#L187" target="_blank" rel="noopener">DQN update</a> looks like that:</p>
+<pre><code class="language-python"># Sample replay buffer
+replay_data = replay_buffer.sample(batch_size)
+
+with th.no_grad():
+    # Compute the next Q-values using the target network
+    next_q_values = q_net_target(replay_data.next_observations)
+    # Follow greedy policy: use the one with the highest value
+    next_q_values, _ = next_q_values.max(dim=1)
+    # 1-step TD target (handle both terminated and not terminated states in one line)
+    target_q_values = replay_data.rewards + (1 - replay_data.terminated) * gamma * next_q_values
+
+# Get current Q-values estimates
+current_q_values = q_net(replay_data.observations)
+# Retrieve the q-values for the actions from the replay buffer
+current_q_values = th.gather(current_q_values, dim=1, index=replay_data.actions.long())
+
+# Compute loss
+loss = F.mse_loss(current_q_values, target_q_values)
+# Optimize the policy
+policy.optimizer.zero_grad()
+loss.backward()
+policy.optimizer.step()
+</code></pre>
 <h2 id="citation">Citation</h2>
 <pre><code>@article{raffin2025rl102,
   title   = &quot;RL102: From Tabular Q-Learning to Deep Q-Learning (DQN)&quot;,

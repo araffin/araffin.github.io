@@ -5,12 +5,166 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Thu, 30 Oct 2025 14:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Fri, 12 Dec 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>RL103: From Deep Q-Learning (DQN) to Soft Actor-Critic (SAC) and Beyond</title>
+      <link>/post/rl103/</link>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/post/rl103/</guid>
+      <description>&lt;p&gt;This second blog post continues my practical introduction to (deep) reinforcement learning, presenting the main concepts and providing intuitions to understand the more recent Deep RL algorithms.&lt;/p&gt;
+&lt;p&gt;In a 
+&lt;a href=&#34;../rl102&#34;&gt;first post (RL102)&lt;/a&gt;, I started from tabular Q-learning and worked my way up to Deep Q-learning (DQN).
+In this second post, I continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.&lt;/p&gt;
+&lt;p&gt;Note: this post is part of my PhD Thesis (to be published).&lt;/p&gt;
+&lt;h2 id=&#34;fqi-and-dqn-limitations&#34;&gt;FQI and DQN Limitations&lt;/h2&gt;
+&lt;p&gt;While FQI and DQN algorithms can handle continuous state spaces, they are still limited to discrete action spaces.
+Indeed, &lt;span style=&#34;color:#5F3DC4&#34;&gt;all possible actions&lt;/span&gt;
+($\color{#5F3DC4}{a \in \mathcal{A}}$) must be enumerated to compute $\max_{a&amp;rsquo; \in \mathcal{A}}Q^{n-1}_\theta(\ldots)$
+(see 
+&lt;a href=&#34;../rl102/#the-full-dqn-algorithm&#34;&gt;part I&lt;/a&gt;), used to update the $Q$-value estimate and select the action according to the greedy policy&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;One solution to enable $Q$-learning in continuous action space is to parametrize the $Q$-function so that its maximum can be easily and analytically determined.
+This is what the 
+&lt;a href=&#34;https://arxiv.org/abs/1603.00748&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Normalized Advantage Function (NAF)&lt;/a&gt; does by restricting the $Q$-function to a function quadratic in $a$.&lt;/p&gt;
+&lt;h2 id=&#34;extending-dqn-to-continuous-actions-deep-deterministic-policy-gradient-ddpg&#34;&gt;Extending DQN to Continuous Actions: Deep Deterministic Policy Gradient (DDPG)&lt;/h2&gt;
+&lt;p&gt;Another possibility is to train a second network $\pi_{\phi}(s)$ to maximize the learned $Q$-function&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.
+In other words, $\pi_{\phi}$ is the actor network with parameters $\phi$ and outputs the action that leads to the highest return according to the $Q$-function:&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\max_{a \in A} Q_\theta(s, a) \approx Q_\theta(s, \pi_{\phi}(s)).
+\end{align}&lt;/p&gt;
+&lt;p&gt;This idea, developed by the 
+&lt;a href=&#34;https://arxiv.org/abs/1509.02971&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deep Deterministic Policy Gradient (DDPG)&lt;/a&gt; algorithm, provides an explicit deterministic policy $\pi_{\phi}$ for continuous actions.
+Since $Q_\theta$ and $\pi_{\phi}$ are both differentiable, the actor network $\pi_{\phi}$ is directly trained to maximize $Q_\theta(s, \pi_{\phi}(s))$ using samples from the replay buffer $\mathcal{D}$ (as illustrated in the figure below).
+The DDPG actor&amp;rsquo;s loss is therefore:&lt;/p&gt;
+&lt;!--\begin{align}--&gt;
+  &lt;!--\mathcal{L}_\pi(\phi, \mathcal{D}) = \max_{\phi} \mathbb{E}_{s \sim \mathcal{D}}\left[ Q_\theta(s, \pi_\phi(s)) \right].--&gt;
+&lt;!--\end{align}--&gt;
+&lt;img style=&#34;height: 50px;&#34; src=&#34;./img/ddpg.svg&#34;/&gt;
+&lt;p&gt;For the update of the $Q$-function $Q_\theta$, DDPG uses the same regression target as DQN.&lt;/p&gt;
+&lt;img width=&#34;100%&#34;  src=&#34;./img/ddpg_grad_flow.svg&#34;/&gt;
+&lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;
+  DDPG update of the actor network.
+  The gradient computed using the DDPG loss is backpropagated through the $Q$-network to update the actor network so that it maximizes the $Q$-function.
+&lt;/p&gt;
+&lt;p&gt;DDPG extends DQN to continuous actions but has some practical limitations.
+$\pi_{\phi}$ tends to exploit regions of the state space where the $Q$-function 
+&lt;a href=&#34;https://arxiv.org/abs/1802.09477&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;overestimates the $Q$-value&lt;/a&gt;, as shown below.&lt;/p&gt;
+&lt;img width=&#34;100%&#34;  src=&#34;./img/q_value_overestimation.svg&#34;/&gt;
+&lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;
+  Illustration of the overestimation and extrapolation error when approximating the $Q$-function.
+  In regions where there is training data (black dots), the approximation matches the true $Q$-function.
+  However, outside the training data support, there may be extrapolation error (in red) and overestimation that the actor network can exploit.
+&lt;/p&gt;
+&lt;p&gt;These regions are usually those that are not well covered by samples from the buffer $\mathcal{D}$.
+Because of this interaction between the actor and critic networks, DDPG is also often unstable in practice (divergent behavior).&lt;/p&gt;
+&lt;h2 id=&#34;twin-delayed-ddpg-td3-and-soft-actor-critic-sac&#34;&gt;Twin Delayed DDPG (TD3) and Soft Actor-Critic (SAC)&lt;/h2&gt;
+&lt;p&gt;To overcome the limitations of DDPG, 
+&lt;a href=&#34;https://arxiv.org/abs/1802.09477&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Twin Delayed DDPG (TD3)&lt;/a&gt; employs three key techniques:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Twin $Q$-networks: TD3 uses two separate $Q$-networks and selects the minimum $Q$-value estimate from the two networks. This helps to reduce overestimation bias in the $Q$-value estimates.&lt;/li&gt;
+&lt;li&gt;Delayed policy updates: TD3 updates the policy network less frequently than the $Q$-networks, allowing the policy network to converge before being updated.&lt;/li&gt;
+&lt;li&gt;Target action noise: TD3 adds noise to the target action during the $Q$-network update step.
+This makes it harder for the actor to exploit the learned $Q$-function.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Since TD3 learns a deterministic actor network $\pi_{\phi}$, it relies on external noise during the exploration phase.
+A common approach is to use a 
+&lt;a href=&#34;https://arxiv.org/abs/2005.05719&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;step-based Gaussian noise&lt;/a&gt;:&lt;/p&gt;
+&lt;!--\begin{align}
+  \mathbf{a}_t = \pi_{\phi}(\mathbf{s}_t) + \epsilon_t,  \epsilon_t \sim \mathcal{N}(0, \sigma^2).
+\end{align}--&gt;
+&lt;img style=&#34;height: 25px;&#34; src=&#34;./img/eq2161.svg&#34;/&gt;
+&lt;img style=&#34;height: 25px;&#34; src=&#34;./img/eq2162.svg&#34;/&gt;
+&lt;p&gt;While the standard deviation $\sigma$ is usually kept constant, it is a critical hyperparameter that gives a compromise between exploration and exploitation.&lt;/p&gt;
+&lt;p&gt;To better balance exploration and exploitation, 
+&lt;a href=&#34;https://arxiv.org/abs/1801.01290&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Soft Actor-Critic (SAC)&lt;/a&gt;, successor of 
+&lt;a href=&#34;https://arxiv.org/abs/1702.08165&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Soft Q-Learning (SQL)&lt;/a&gt;, optimizes the maximum-entropy objective, which is slightly different from the 
+&lt;a href=&#34;../rl102#appendix-rl101&#34;&gt;classical RL objective&lt;/a&gt;:&lt;/p&gt;
+&lt;!--\begin{align}
+  \label{eq:2_maxent_objective}
+  J(\pi) = \sum_{t} \mathbb{E}_{(\mathbf{s}_t, \mathbf{a}_t) \sim \rho_\pi}\!\left[ \gamma^t\, r(\mathbf{s}_t,\mathbf{a}_t) + \color{#006400}{\alpha\,\mathcal{H}(\pi(\cdot \mid \mathbf{s}_t))} \right]
+\end{align}--&gt;
+&lt;img style=&#34;height: 55px;&#34; src=&#34;./img/eq217.svg&#34;/&gt;
+&lt;p&gt;where &lt;span style=&#34;color:#006400&#34;&gt;$\mathcal{H}$ is the policy entropy&lt;/span&gt; and &lt;span style=&#34;color:#006400&#34;&gt;$\alpha$ is the entropy temperature&lt;/span&gt;, allowing a trade-off between the two objectives.
+This objective encourages exploration by maximizing the entropy of the policy while still solving the task by maximizing the expected return (classic RL objective).&lt;/p&gt;
+&lt;p&gt;SAC learns a stochastic policy using a 
+&lt;a href=&#34;../sac-massive-sim/#sac-squashed-gaussian&#34;&gt;squashed Gaussian distribution&lt;/a&gt;, and incorporates the clipped double $Q$-learning trick from TD3.
+In its 
+&lt;a href=&#34;https://arxiv.org/abs/1812.05905&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;latest iteration&lt;/a&gt;, SAC automatically adjusts the entropy coefficient $\alpha$, eliminating the need to tune this crucial hyperparameter.&lt;/p&gt;
+&lt;img style=&#34;width:100%&#34; src=&#34;./img/sac_algo.svg&#34;/&gt;
+&lt;p&gt;In summary, as shown in the algorithm block above, SAC combines several key elements from the algorithms presented in this 
+&lt;a href=&#34;../rl102&#34;&gt;blog post series&lt;/a&gt;.
+It uses the update rule from FQI and adopts the Q-network, target network and replay buffer from DQN to learn the $Q$-function.&lt;/p&gt;
+&lt;p&gt;SAC also incorporates techniques from DDPG to handle continuous actions, uses the clipped double $Q$-learning trick from TD3 to reduce overestimation bias, and optimizes the maximum entropy objective with a stochastic policy to balance exploration and exploitation.&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/blob/c6ce50fc7020eb8c009d9579e0c0dbbdba024bc0/stable_baselines3/sac/sac.py#L202&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SAC&lt;/a&gt; and its variants are the algorithms I used during my PhD to train RL agents 
+&lt;a href=&#34;https://www.youtube.com/watch?v=3UKVTJU89Lc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;directly on real robots&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;beyond-sac-tqc-redq-droq-&#34;&gt;Beyond SAC: TQC, REDQ, DroQ, &amp;hellip;&lt;/h2&gt;
+&lt;p&gt;Several 
+&lt;a href=&#34;https://araffin.github.io/slides/recent-advances-rl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;extensions of SAC&lt;/a&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; have been proposed, in particular to improve the sample efficiency.
+One notable example is 
+&lt;a href=&#34;https://arxiv.org/abs/2005.04269&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Truncated Quantile Critics (TQC)&lt;/a&gt; which builds upon SAC by incorporating 
+&lt;a href=&#34;https://arxiv.org/abs/1707.06887&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;distributional RL&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In distributional RL, the $Q$-function estimates the distribution of returns instead of just the expected return.
+The figure below illustrates the benefits of learning the distribution of returns rather than only the expected value in an example.&lt;/p&gt;
+&lt;img width=&#34;80%&#34;  src=&#34;./img/distributional_rl.svg&#34;/&gt;
+&lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;
+  An example where learning the distribution of returns (distributional RL) instead of the expected value (classic RL) can be useful.
+  We plot the distribution of returns for a given state-action pair $(s, a)$.
+  In this case, there is a bimodal distribution.
+  Learning the expected value of it instead of the distribution itself is harder and does not allow to measure the risk of taking a particular action.
+&lt;/p&gt;
+&lt;p&gt;A key idea to improve sample efficiency is to perform multiple gradient updates for each data collection step.
+However, simply increasing the 
+&lt;a href=&#34;../tune-sac-isaac-sim/#replay-ratio&#34;&gt;update-to-data (UTD) ratio&lt;/a&gt; may not lead to better performance due to the overestimation bias.&lt;/p&gt;
+&lt;p&gt;To address this issue, the algorithms 
+&lt;a href=&#34;https://arxiv.org/abs/2101.05982&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;REDQ&lt;/a&gt; and 
+&lt;a href=&#34;https://arxiv.org/abs/2110.02034&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DroQ&lt;/a&gt; rely on ensembling techniques (explicit for REDQ, implicit for DroQ with dropout).
+Finally, a new algorithm, 
+&lt;a href=&#34;https://arxiv.org/abs/1902.05605&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CrossQ&lt;/a&gt;, takes a different approach by removing the target network and using batch normalization to stabilize learning&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;citation&#34;&gt;Citation&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;@article{raffin2025rl103,
+  title   = &amp;quot;RL103: From Deep Q-Learning (DQN) to Soft Actor-Critic (SAC) and Beyond&amp;quot;,
+  author  = &amp;quot;Raffin, Antonin&amp;quot;,
+  journal = &amp;quot;araffin.github.io&amp;quot;,
+  year    = &amp;quot;2025&amp;quot;,
+  month   = &amp;quot;Dec&amp;quot;,
+  url     = &amp;quot;https://araffin.github.io/post/rl103/&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;acknowledgement&#34;&gt;Acknowledgement&lt;/h2&gt;
+&lt;p&gt;I would like to thank Anssi and Alison for their feedback =).&lt;/p&gt;
+&lt;p&gt;All the graphics were made using 
+&lt;a href=&#34;https://excalidraw.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;excalidraw&lt;/a&gt; and 
+&lt;a href=&#34;https://viereck.ch/latex-to-svg/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;latex-to-svg&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;did-you-find-this-post-helpful-consider-sharing-it-&#34;&gt;Did you find this post helpful? Consider sharing it 🙌&lt;/h3&gt;
+&lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Selecting the best action with $\arg\max_{\color{#5F3DC4}{a \in \mathcal{A}}} Q(s, a)$&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;A third option is to sample the $Q$-value, as explored by 
+&lt;a href=&#34;https://arxiv.org/abs/1806.10293&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;QT-Opt&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Several SAC extensions are available in 
+&lt;a href=&#34;https://github.com/Stable-Baselines-Team/stable-baselines3-contrib&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SB3 Contrib&lt;/a&gt; and 
+&lt;a href=&#34;https://github.com/araffin/sbx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SBX (SB3 + Jax)&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;To be continued&amp;hellip;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Stable-Baselines3 (SB3) Tutorial: Getting Started With Reinforcement Learning</title>
@@ -45,7 +199,8 @@
 For a more in-depth and theoretical introduction, I recommend reading the 
 &lt;a href=&#34;http://incompleteideas.net/book/the-book-2nd.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Bible&lt;/a&gt; by Sutton and Barto.&lt;/p&gt;
 &lt;p&gt;The plan for this post is to start from tabular Q-learning and work our way up to Deep Q-learning (DQN).
-In a following post, I will continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.&lt;/p&gt;
+In a 
+&lt;a href=&#34;../rl103&#34;&gt;following post (RL103)&lt;/a&gt;, I continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.&lt;/p&gt;
 &lt;p&gt;The associated code and notebooks for this tutorial can be found on GitHub: 
 &lt;a href=&#34;https://github.com/araffin/rlss23-dqn-tutorial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/rlss23-dqn-tutorial&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Note: this post is a written version of the 
@@ -274,7 +429,8 @@ It then refines its estimate iteratively, solving a regression problem at each s
 &lt;p&gt;Finally, DQN introduces several components to overcome the limitations of FQI.
 Notably it uses a neural network for faster inference and a replay buffer to re-use past data.&lt;/p&gt;
 &lt;p&gt;The key components of DQN ($Q$-network, target network, replay buffer) are at the core of Deep RL algorithms for continuous control used on real robots, such as Soft Actor-Critic (SAC).
-I will introduce these algorithms in a future blog post.&lt;/p&gt;
+I introduce these algorithms in the 
+&lt;a href=&#34;../rl103&#34;&gt;next blog post (RL103)&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;appendix-rl101&#34;&gt;Appendix: RL101&lt;/h2&gt;
 &lt;p&gt;Here is a very short formal introduction to the RL terminology used in this post.&lt;/p&gt;
 &lt;p&gt;In reinforcement learning, an agent interacts with its environment, usually modeled as a Markov Decision Process&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; (MDP) $(\mathcal{S}, \mathcal{A}, P, r)$ where $\mathcal{S}$ is the state space, $\mathcal{A}$ the action space and $P(\mathbf{s}&amp;rsquo; \mid \mathbf{s}, \mathbf{a})$ the transition function.
@@ -287,6 +443,32 @@ More formally, the goal is to maximize the expectation of the sum of discounted 
 The agent-environment interactions are often broken down into sequences called &lt;em&gt;episodes&lt;/em&gt;, that end when the agent reaches a terminal state.&lt;/p&gt;
 &lt;p&gt;In the example of learning to walk, if the goal is to achieve the fastest speed, an immediate reward can be the distance traveled between two timesteps.
 The state would be the current information about the robot (joint positions, velocities, torques, linear acceleration, &amp;hellip;) and the action would be a desired motor position.&lt;/p&gt;
+&lt;h2 id=&#34;appendix-dqn-code&#34;&gt;Appendix: DQN Code&lt;/h2&gt;
+&lt;p&gt;Similar to FQI, the 
+&lt;a href=&#34;https://github.com/DLR-RM/stable-baselines3/blob/c6ce50fc7020eb8c009d9579e0c0dbbdba024bc0/stable_baselines3/dqn/dqn.py#L187&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DQN update&lt;/a&gt; looks like that:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Sample replay buffer
+replay_data = replay_buffer.sample(batch_size)
+
+with th.no_grad():
+    # Compute the next Q-values using the target network
+    next_q_values = q_net_target(replay_data.next_observations)
+    # Follow greedy policy: use the one with the highest value
+    next_q_values, _ = next_q_values.max(dim=1)
+    # 1-step TD target (handle both terminated and not terminated states in one line)
+    target_q_values = replay_data.rewards + (1 - replay_data.terminated) * gamma * next_q_values
+
+# Get current Q-values estimates
+current_q_values = q_net(replay_data.observations)
+# Retrieve the q-values for the actions from the replay buffer
+current_q_values = th.gather(current_q_values, dim=1, index=replay_data.actions.long())
+
+# Compute loss
+loss = F.mse_loss(current_q_values, target_q_values)
+# Optimize the policy
+policy.optimizer.zero_grad()
+loss.backward()
+policy.optimizer.step()
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;citation&#34;&gt;Citation&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;@article{raffin2025rl102,
   title   = &amp;quot;RL102: From Tabular Q-Learning to Deep Q-Learning (DQN)&amp;quot;,
