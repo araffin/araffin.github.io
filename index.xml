@@ -27,7 +27,8 @@ In this second post, I continue on to the Soft Actor-Critic (SAC) algorithm and 
 Indeed, &lt;span style=&#34;color:#5F3DC4&#34;&gt;all possible actions&lt;/span&gt;
 ($\color{#5F3DC4}{a \in \mathcal{A}}$) must be enumerated to compute $\max_{a&amp;rsquo; \in \mathcal{A}}Q^{n-1}_\theta(\ldots)$
 (see 
-&lt;a href=&#34;../rl102/#the-full-dqn-algorithm&#34;&gt;part I&lt;/a&gt;), used to update the $Q$-value estimate and select the action according to the greedy policy&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;a href=&#34;../rl102/#the-full-dqn-algorithm&#34;&gt;part I&lt;/a&gt;).
+This $\max$ operation is used to update the $Q$-value estimate and select the action according to the greedy policy&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;One solution to enable $Q$-learning in continuous action space is to parametrize the $Q$-function so that its maximum can be easily and analytically determined.
 This is what the 
 &lt;a href=&#34;https://arxiv.org/abs/1603.00748&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Normalized Advantage Function (NAF)&lt;/a&gt; does by restricting the $Q$-function to a function quadratic in $a$.&lt;/p&gt;
@@ -45,12 +46,12 @@ The DDPG actor&amp;rsquo;s loss is therefore:&lt;/p&gt;
   &lt;!--\mathcal{L}_\pi(\phi, \mathcal{D}) = \max_{\phi} \mathbb{E}_{s \sim \mathcal{D}}\left[ Q_\theta(s, \pi_\phi(s)) \right].--&gt;
 &lt;!--\end{align}--&gt;
 &lt;img style=&#34;height: 50px;&#34; src=&#34;./img/ddpg.svg&#34;/&gt;
-&lt;p&gt;For the update of the $Q$-function $Q_\theta$, DDPG uses the same regression target as DQN.&lt;/p&gt;
 &lt;img width=&#34;100%&#34;  src=&#34;./img/ddpg_grad_flow.svg&#34;/&gt;
 &lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;
   DDPG update of the actor network.
   The gradient computed using the DDPG loss is backpropagated through the $Q$-network to update the actor network so that it maximizes the $Q$-function.
 &lt;/p&gt;
+&lt;p&gt;For the update of the $Q$-function $Q_\theta$, DDPG uses the same regression target as DQN.&lt;/p&gt;
 &lt;p&gt;DDPG extends DQN to continuous actions but has some practical limitations.
 $\pi_{\phi}$ tends to exploit regions of the state space where the $Q$-function 
 &lt;a href=&#34;https://arxiv.org/abs/1802.09477&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;overestimates the $Q$-value&lt;/a&gt;, as shown below.&lt;/p&gt;
@@ -244,7 +245,8 @@ It is the formula used in practice.&lt;/p&gt;
 In the tabular case, this action is found by enumerating all possible actions.&lt;/p&gt;
 &lt;p&gt;For the rest of this blog post, I will drop the $\pi$ superscript from $Q^{\pi}$ so as not to overload the notation (more indices are coming), but unless otherwise noted, $Q$ will always be $Q^{\pi}$.&lt;/p&gt;
 &lt;h2 id=&#34;q-learning&#34;&gt;$Q$-Learning&lt;/h2&gt;
-&lt;p&gt;For discrete states and actions, the $Q$-learning algorithm can be used to estimate the $Q$-function of a policy, in this particular case represented as a lookup table ($Q$-table, shown 
+&lt;p&gt;For discrete states and actions, the 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Q-learning&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;$Q$-learning algorithm&lt;/a&gt; can be used to estimate the $Q$-function of a policy, in this particular case represented as a lookup table ($Q$-table, shown 
 &lt;a href=&#34;#tabular-rl-a-discrete-world&#34;&gt;above&lt;/a&gt;).&lt;/p&gt;
 &lt;h3 id=&#34;an-iterative-algorithm&#34;&gt;An iterative algorithm&lt;/h3&gt;
 &lt;p&gt;The idea is to start with an initial estimate for the first iteration ($n = 0$)&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; and slowly update the estimate over time according to the 

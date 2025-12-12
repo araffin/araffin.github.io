@@ -718,7 +718,8 @@ It is the formula used in practice.</p>
 In the tabular case, this action is found by enumerating all possible actions.</p>
 <p>For the rest of this blog post, I will drop the $\pi$ superscript from $Q^{\pi}$ so as not to overload the notation (more indices are coming), but unless otherwise noted, $Q$ will always be $Q^{\pi}$.</p>
 <h2 id="q-learning">$Q$-Learning</h2>
-<p>For discrete states and actions, the $Q$-learning algorithm can be used to estimate the $Q$-function of a policy, in this particular case represented as a lookup table ($Q$-table, shown 
+<p>For discrete states and actions, the 
+<a href="https://en.wikipedia.org/wiki/Q-learning" target="_blank" rel="noopener">$Q$-learning algorithm</a> can be used to estimate the $Q$-function of a policy, in this particular case represented as a lookup table ($Q$-table, shown 
 <a href="#tabular-rl-a-discrete-world">above</a>).</p>
 <h3 id="an-iterative-algorithm">An iterative algorithm</h3>
 <p>The idea is to start with an initial estimate for the first iteration ($n = 0$)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and slowly update the estimate over time according to the 
