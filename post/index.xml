@@ -21,7 +21,8 @@
 &lt;p&gt;In a 
 &lt;a href=&#34;../rl102&#34;&gt;first post (RL102)&lt;/a&gt;, I started from tabular Q-learning and worked my way up to Deep Q-learning (DQN).
 In this second post, I continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.&lt;/p&gt;
-&lt;p&gt;Note: this post is part of my PhD Thesis (to be published).&lt;/p&gt;
+&lt;p&gt;Note: this post is part of my 
+&lt;a href=&#34;https://mediatum.ub.tum.de/?id=1743420&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PhD Thesis&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;fqi-and-dqn-limitations&#34;&gt;FQI and DQN Limitations&lt;/h2&gt;
 &lt;p&gt;While FQI and DQN algorithms can handle continuous state spaces, they are still limited to discrete action spaces.
 Indeed, &lt;span style=&#34;color:#5F3DC4&#34;&gt;all possible actions&lt;/span&gt;
@@ -182,7 +183,8 @@ In a
 &lt;a href=&#34;https://github.com/araffin/rlss23-dqn-tutorial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/araffin/rlss23-dqn-tutorial&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Note: this post is a written version of the 
 &lt;a href=&#34;https://araffin.github.io/talk/rlss-23/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tutorial&lt;/a&gt; I gave at the 
-&lt;a href=&#34;https://rlsummerschool.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Summer School 2023&lt;/a&gt;. It is also part of my PhD Thesis (to be published).&lt;/p&gt;
+&lt;a href=&#34;https://rlsummerschool.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL Summer School 2023&lt;/a&gt;. It is also part of my 
+&lt;a href=&#34;https://mediatum.ub.tum.de/?id=1743420&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PhD Thesis&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Note: I assume you are familiar with basic RL concepts, if not please have a look at this 
 &lt;a href=&#34;https://spinningup.openai.com/en/latest/spinningup/rl_intro.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL 101&lt;/a&gt; tutorial.
 I provide a very short formal introduction to the RL terminology used in this post at the end of it.&lt;/p&gt;
