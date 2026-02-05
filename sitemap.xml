@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2026-02-06T09:00:00+00:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2025-12-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/</loc>
+    <lastmod>2026-02-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/</loc>
+    <lastmod>2026-02-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/rl-sota-2026-mannheim/</loc>
+    <lastmod>2026-02-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/reinforcement-learning/</loc>
+    <lastmod>2026-02-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2026-02-06T09:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
@@ -11,22 +29,7 @@
     <loc>/post/rl103/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/authors/</loc>
-    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/</loc>
-    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/reinforcement-learning/</loc>
-    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
-  </url><url>
     <loc>/talk/sb3-gym-quickstart/</loc>
-    <lastmod>2025-10-30T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2025-10-30T14:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/phd-defense-tum/</loc>

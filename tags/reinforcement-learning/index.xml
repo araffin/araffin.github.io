@@ -5,12 +5,20 @@
     <link>/tags/reinforcement-learning/</link>
       <atom:link href="/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Reinforcement Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2025</copyright><lastBuildDate>Thu, 30 Oct 2025 14:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2026</copyright><lastBuildDate>Fri, 06 Feb 2026 09:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Reinforcement Learning</title>
       <link>/tags/reinforcement-learning/</link>
     </image>
+    
+    <item>
+      <title>Recent Advances in RL for Continuous Control (SOTA) - Early 2026 Update</title>
+      <link>/talk/rl-sota-2026-mannheim/</link>
+      <pubDate>Fri, 06 Feb 2026 09:00:00 +0000</pubDate>
+      <guid>/talk/rl-sota-2026-mannheim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Stable-Baselines3 (SB3) Tutorial: Getting Started With Reinforcement Learning</title>
