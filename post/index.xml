@@ -22,7 +22,8 @@
 &lt;a href=&#34;../rl102&#34;&gt;first post (RL102)&lt;/a&gt;, I started from tabular Q-learning and worked my way up to Deep Q-learning (DQN).
 In this second post, I continue on to the Soft Actor-Critic (SAC) algorithm and its extensions.&lt;/p&gt;
 &lt;p&gt;Note: this post is part of my 
-&lt;a href=&#34;https://mediatum.ub.tum.de/?id=1743420&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PhD Thesis&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://mediatum.ub.tum.de/?id=1743420&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PhD Thesis&lt;/a&gt; and you can watch part of this blog on 
+&lt;a href=&#34;https://www.youtube.com/watch?v=Sb0dgmxbGZY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;YouTube&lt;/a&gt; (presented at a ML workshop in CERN).&lt;/p&gt;
 &lt;h2 id=&#34;fqi-and-dqn-limitations&#34;&gt;FQI and DQN Limitations&lt;/h2&gt;
 &lt;p&gt;While FQI and DQN algorithms can handle continuous state spaces, they are still limited to discrete action spaces.
 Indeed, &lt;span style=&#34;color:#5F3DC4&#34;&gt;all possible actions&lt;/span&gt;
