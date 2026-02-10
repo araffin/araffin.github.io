@@ -55,6 +55,11 @@ The DDPG actor&amp;rsquo;s loss is therefore:&lt;/p&gt;
   &lt;!--\mathcal{L}_\pi(\phi, \mathcal{D}) = \max_{\phi} \mathbb{E}_{s \sim \mathcal{D}}\left[ Q_\theta(s, \pi_\phi(s)) \right].--&gt;
 &lt;!--\end{align}--&gt;
 &lt;img style=&#34;height: 50px;&#34; src=&#34;./img/ddpg.svg&#34;/&gt;
+&lt;video controls src=&#34;https://araffin.github.io/slides/advances-rl-sota-2026/images/DDPGLoss.mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;
+  An animation of the DDPG update of the actor network.
+&lt;/p&gt;
 &lt;img width=&#34;100%&#34;  src=&#34;./img/ddpg_grad_flow.svg&#34;/&gt;
 &lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;
   DDPG update of the actor network.
@@ -81,6 +86,11 @@ Because of this interaction between the actor and critic networks, DDPG is also 
 &lt;li&gt;Target action noise: TD3 adds noise to the target action during the $Q$-network update step.
 This makes it harder for the actor to exploit the learned $Q$-function.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;video controls src=&#34;https://araffin.github.io/slides/advances-rl-sota-2026/images/QOverestimation.mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p style=&#34;font-size: 14pt; text-align:center;&#34;&gt;
+  An animation of the overestimation and extrapolation error and how TD3 tries to reduce it.
+&lt;/p&gt;
 &lt;p&gt;Since TD3 learns a deterministic actor network $\pi_{\phi}$, it relies on external noise during the exploration phase.
 A common approach is to use a 
 &lt;a href=&#34;https://arxiv.org/abs/2005.05719&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;step-based Gaussian noise&lt;/a&gt;:&lt;/p&gt;
