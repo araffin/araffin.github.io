@@ -98,8 +98,9 @@ A common approach is to use a
 &lt;a href=&#34;https://arxiv.org/abs/1702.08165&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Soft Q-Learning (SQL)&lt;/a&gt;, optimizes the maximum-entropy objective, which is slightly different from the 
 &lt;a href=&#34;../rl102#appendix-rl101&#34;&gt;classical RL objective&lt;/a&gt;:&lt;/p&gt;
 &lt;!--\begin{align}
+  https://viereck.ch/latex-to-svg/
   \label{eq:2_maxent_objective}
-  J(\pi) = \sum_{t} \mathbb{E}_{(\mathbf{s}_t, \mathbf{a}_t) \sim \rho_\pi}\!\left[ \gamma^t\, r(\mathbf{s}_t,\mathbf{a}_t) + \color{#006400}{\alpha\,\mathcal{H}(\pi(\cdot \mid \mathbf{s}_t))} \right]
+  J(\pi) = \sum_{t} \mathbb{E}_{(\mathbf{s}_t, \mathbf{a}_t) \sim \rho_\pi}\!\left[ \gamma^t [r(\mathbf{s}_t,\mathbf{a}_t) + \color{#006400}{\alpha\,\mathcal{H}(\pi(\cdot \mid \mathbf{s}_t))}] \right]
 \end{align}--&gt;
 &lt;img style=&#34;height: 55px;&#34; src=&#34;./img/eq217.svg&#34;/&gt;
 &lt;p&gt;where &lt;span style=&#34;color:#006400&#34;&gt;$\mathcal{H}$ is the policy entropy&lt;/span&gt; and &lt;span style=&#34;color:#006400&#34;&gt;$\alpha$ is the entropy temperature&lt;/span&gt;, allowing a trade-off between the two objectives.

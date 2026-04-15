@@ -752,8 +752,9 @@ A common approach is to use a
 <a href="https://arxiv.org/abs/1702.08165" target="_blank" rel="noopener">Soft Q-Learning (SQL)</a>, optimizes the maximum-entropy objective, which is slightly different from the 
 <a href="../rl102#appendix-rl101">classical RL objective</a>:</p>
 <!--\begin{align}
+  https://viereck.ch/latex-to-svg/
   \label{eq:2_maxent_objective}
-  J(\pi) = \sum_{t} \mathbb{E}_{(\mathbf{s}_t, \mathbf{a}_t) \sim \rho_\pi}\!\left[ \gamma^t\, r(\mathbf{s}_t,\mathbf{a}_t) + \color{#006400}{\alpha\,\mathcal{H}(\pi(\cdot \mid \mathbf{s}_t))} \right]
+  J(\pi) = \sum_{t} \mathbb{E}_{(\mathbf{s}_t, \mathbf{a}_t) \sim \rho_\pi}\!\left[ \gamma^t [r(\mathbf{s}_t,\mathbf{a}_t) + \color{#006400}{\alpha\,\mathcal{H}(\pi(\cdot \mid \mathbf{s}_t))}] \right]
 \end{align}-->
 <img style="height: 55px;" src="./img/eq217.svg"/>
 <p>where <span style="color:#006400">$\mathcal{H}$ is the policy entropy</span> and <span style="color:#006400">$\alpha$ is the entropy temperature</span>, allowing a trade-off between the two objectives.
