@@ -5,12 +5,22 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonin Raffin | Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2026</copyright><lastBuildDate>Fri, 06 Feb 2026 09:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2026</copyright><lastBuildDate>Tue, 09 Jun 2026 14:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Antonin Raffin | Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>DQN Tutorial - RL Summer School 2026</title>
+      <link>/talk/rlss-26/</link>
+      <pubDate>Tue, 09 Jun 2026 14:00:00 +0000</pubDate>
+      <guid>/talk/rlss-26/</guid>
+      <description>&lt;p&gt;A blog post of this tutorial can be found here: 
+&lt;a href=&#34;https://araffin.github.io/post/rl102/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://araffin.github.io/post/rl102/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Recent Advances in RL for Continuous Control (SOTA) - Early 2026 Update</title>
