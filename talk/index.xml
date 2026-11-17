@@ -5,12 +5,20 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2026</copyright><lastBuildDate>Sat, 15 Aug 2026 16:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2018 - 2026</copyright><lastBuildDate>Tue, 24 Nov 2026 14:30:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Recent &amp; Upcoming Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Direct Policy Search Lecture - University of Stuttgart</title>
+      <link>/talk/uni-stuttgart-26-pg/</link>
+      <pubDate>Tue, 24 Nov 2026 14:30:00 +0000</pubDate>
+      <guid>/talk/uni-stuttgart-26-pg/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Making RL Work Out-of-the-Box (WIP)</title>
