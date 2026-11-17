@@ -28,7 +28,12 @@
   
     
   
-  <meta name="description" content="This is the second (and last) post on automatic hyperparameter optimization. In the first part, I introduced the challenges and main components of hyperparameter tuning (samplers, pruners, objective function, &hellip;). This second part is about the practical application of this technique with the Optuna library, in a reinforcement learning setting (using the Stable-Baselines3 (SB3) library).">
+  <meta name="description" content="This is the second (and last) post on automatic hyperparameter optimization.
+In the 
+first part, I introduced the challenges and main components of hyperparameter tuning (samplers, pruners, objective function, &hellip;).
+This second part is about the practical application of this technique with the 
+Optuna library, in a reinforcement learning setting (using the 
+Stable-Baselines3 (SB3) library).">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/optuna/">
@@ -211,8 +216,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_32x32_fill_lanczos_center_3.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu_af34c444dd05aea.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu_1efa2e2a6ae35d4.png">
 
   <link rel="canonical" href="/post/optuna/">
 
@@ -229,7 +234,12 @@
   <meta property="og:site_name" content="Antonin Raffin | Homepage">
   <meta property="og:url" content="/post/optuna/">
   <meta property="og:title" content="Automatic Hyperparameter Tuning - In Practice (Part 2) | Antonin Raffin | Homepage">
-  <meta property="og:description" content="This is the second (and last) post on automatic hyperparameter optimization. In the first part, I introduced the challenges and main components of hyperparameter tuning (samplers, pruners, objective function, &hellip;). This second part is about the practical application of this technique with the Optuna library, in a reinforcement learning setting (using the Stable-Baselines3 (SB3) library)."><meta property="og:image" content="/post/optuna/featured.png">
+  <meta property="og:description" content="This is the second (and last) post on automatic hyperparameter optimization.
+In the 
+first part, I introduced the challenges and main components of hyperparameter tuning (samplers, pruners, objective function, &hellip;).
+This second part is about the practical application of this technique with the 
+Optuna library, in a reinforcement learning setting (using the 
+Stable-Baselines3 (SB3) library)."><meta property="og:image" content="/post/optuna/featured.png">
   <meta property="twitter:image" content="/post/optuna/featured.png"><meta property="og:locale" content="en-us">
   
     
@@ -280,10 +290,10 @@
     "name": "Antonin Raffin | Homepage",
     "logo": {
       "@type": "ImageObject",
-      "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png"
+      "url": "/images/icon_hu_1efa2e2a6ae35d4.png"
     }
   },
-  "description": "This is the second (and last) post on automatic hyperparameter optimization. In the first part, I introduced the challenges and main components of hyperparameter tuning (samplers, pruners, objective function, \u0026hellip;). This second part is about the practical application of this technique with the Optuna library, in a reinforcement learning setting (using the Stable-Baselines3 (SB3) library)."
+  "description": "\u003cp\u003eThis is the second (and last) post on automatic hyperparameter optimization.\nIn the \n\u003ca href=\"https://araffin.github.io/post/hyperparam-tuning/\" target=\"_blank\" rel=\"noopener\"\u003efirst part\u003c/a\u003e, I introduced the challenges and main components of hyperparameter tuning (samplers, pruners, objective function, \u0026hellip;).\nThis second part is about the practical application of this technique with the \n\u003ca href=\"https://github.com/optuna/optuna\" target=\"_blank\" rel=\"noopener\"\u003eOptuna library\u003c/a\u003e, in a reinforcement learning setting (using the \n\u003ca href=\"https://github.com/DLR-RM/stable-baselines3\" target=\"_blank\" rel=\"noopener\"\u003eStable-Baselines3 (SB3)\u003c/a\u003e library).\u003c/p\u003e"
 }
 </script>
 
@@ -659,7 +669,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 355px;">
   <div style="position: relative">
-    <img src="/post/optuna/featured_huc57320215524e0497f084432cbb2fb08_314883_720x0_resize_lanczos_3.png" alt="" class="featured-image">
+    <img src="/post/optuna/featured_hu_73a3c17aaf214e3.png" alt="" class="featured-image">
     
   </div>
 </div>
@@ -680,12 +690,8 @@ This second part is about the practical application of this technique with the
 <p>Note: if you prefer to learn with video, I gave this tutorial at ICRA 2022.
 The 
 <a href="https://araffin.github.io/tools-for-robotic-rl-icra2022/" target="_blank" rel="noopener">slides</a>, notebooks and videos are online:</p>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ihP7E76KGOI?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ihP7E76KGOI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <div style="margin-top: 50px"></div>
@@ -1118,7 +1124,7 @@ I&rsquo;ve covered:</p>
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hude3a62d3a42e4e03c4c1814b0a41a4f6_54165_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_23f7d20f27c75da6.jpg" alt="Avatar">
     
 
     <div class="media-body">
@@ -1346,7 +1352,7 @@ I&rsquo;ve covered:</p>
     
     
     
-    <script src="/js/academic.min.80e8497da12d94dc7fea279b7993043d.js"></script>
+    <script src="/js/academic.min.34f3bedc2cdecfb6d3591687e96311b4.js"></script>
 
     
 

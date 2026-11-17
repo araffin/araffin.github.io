@@ -29,7 +29,9 @@
     
   
   <meta name="description" content="When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?
-The good news is that automatic hyperparameter tuning can help you.">
+The good news is that automatic hyperparameter tuning can help you.
+The trick is to allocate your &ldquo;budget&rdquo; (aka time and resources) wisely. You want to try out as many combinations as possible, but you don&rsquo;t have an infinite amount of time.
+By pruning the bad trials early and focusing on the promising ones, you can find the best hyperparameters quickly and efficiently.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/hyperparam-tuning/">
@@ -212,8 +214,8 @@ The good news is that automatic hyperparameter tuning can help you.">
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_32x32_fill_lanczos_center_3.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu_af34c444dd05aea.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu_1efa2e2a6ae35d4.png">
 
   <link rel="canonical" href="/post/hyperparam-tuning/">
 
@@ -231,7 +233,9 @@ The good news is that automatic hyperparameter tuning can help you.">
   <meta property="og:url" content="/post/hyperparam-tuning/">
   <meta property="og:title" content="Automatic Hyperparameter Tuning - A Visual Guide (Part 1) | Antonin Raffin | Homepage">
   <meta property="og:description" content="When you&rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?
-The good news is that automatic hyperparameter tuning can help you."><meta property="og:image" content="/post/hyperparam-tuning/featured.png">
+The good news is that automatic hyperparameter tuning can help you.
+The trick is to allocate your &ldquo;budget&rdquo; (aka time and resources) wisely. You want to try out as many combinations as possible, but you don&rsquo;t have an infinite amount of time.
+By pruning the bad trials early and focusing on the promising ones, you can find the best hyperparameters quickly and efficiently."><meta property="og:image" content="/post/hyperparam-tuning/featured.png">
   <meta property="twitter:image" content="/post/hyperparam-tuning/featured.png"><meta property="og:locale" content="en-us">
   
     
@@ -282,10 +286,10 @@ The good news is that automatic hyperparameter tuning can help you."><meta prope
     "name": "Antonin Raffin | Homepage",
     "logo": {
       "@type": "ImageObject",
-      "url": "/images/icon_huc6f7a4edf58249363e4a58dcffa16205_339058_192x192_fill_lanczos_center_3.png"
+      "url": "/images/icon_hu_1efa2e2a6ae35d4.png"
     }
   },
-  "description": "When you\u0026rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?\nThe good news is that automatic hyperparameter tuning can help you."
+  "description": "\u003cp\u003eWhen you\u0026rsquo;re building a machine learning model, you want to find the best hyperparameters to make it shine. But who has the luxury of trying out every possible combination?\u003c/p\u003e\n\u003cp\u003eThe good news is that automatic hyperparameter tuning can help you.\nThe trick is to allocate your \u0026ldquo;budget\u0026rdquo; (aka time and resources) wisely. You want to try out as many combinations as possible, but you don\u0026rsquo;t have an infinite amount of time.\nBy pruning the bad trials early and focusing on the promising ones, you can find the best hyperparameters quickly and efficiently.\u003c/p\u003e"
 }
 </script>
 
@@ -661,7 +665,7 @@ The good news is that automatic hyperparameter tuning can help you."><meta prope
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 355px;">
   <div style="position: relative">
-    <img src="/post/hyperparam-tuning/featured_hu112576971c103f00866ca62bf985cc0c_213946_720x0_resize_lanczos_3.png" alt="" class="featured-image">
+    <img src="/post/hyperparam-tuning/featured_hu_abfe1e03d7ba3d3.png" alt="" class="featured-image">
     
   </div>
 </div>
@@ -686,12 +690,8 @@ I&rsquo;ll discuss the challenges of hyperparameter optimization, and introduce 
 <p>If you prefer to learn with video, I gave this tutorial at ICRA 2022.
 The 
 <a href="https://araffin.github.io/tools-for-robotic-rl-icra2022/" target="_blank" rel="noopener">slides</a>, notebooks and videos are online:</p>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AidFTOdGNFQ?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AidFTOdGNFQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <div style="margin-top: 50px"></div>
@@ -927,7 +927,7 @@ You start with many configurations and give them all a minimum budget.</p>
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hude3a62d3a42e4e03c4c1814b0a41a4f6_54165_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu_23f7d20f27c75da6.jpg" alt="Avatar">
     
 
     <div class="media-body">
@@ -1155,7 +1155,7 @@ You start with many configurations and give them all a minimum budget.</p>
     
     
     
-    <script src="/js/academic.min.80e8497da12d94dc7fea279b7993043d.js"></script>
+    <script src="/js/academic.min.34f3bedc2cdecfb6d3591687e96311b4.js"></script>
 
     
 
